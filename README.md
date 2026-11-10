@@ -6,12 +6,12 @@
 Pick a style, bring your story, and let your coding agent direct.<br>
 <sub>NEO 的代码影片风格库，风格一个一个做，每种都配一支完全用代码做出来的短片 · 🇨🇳 中文用户请看 <a href="README.zh-CN.md">简体中文说明</a></sub>
 
-<a href="styles/folding-city/STYLE.md"><img alt="Style 01 · Folding City" src="https://img.shields.io/badge/-%E2%96%B6%20Style%2001%20%C2%B7%20Folding%20City-F4502A?style=for-the-badge"></a> <a href="README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/README-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-555?style=for-the-badge"></a> <a href="https://github.com/neohoy/neo-cine/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/neohoy/neo-cine?style=for-the-badge&color=FFC21A&label=stars"></a> <a href="#thanks-and-licence"><img alt="MIT" src="https://img.shields.io/badge/licence-MIT-1B49F5?style=for-the-badge"></a>
+<a href="https://neohoy.github.io/neo-cine/"><img alt="Watch the gallery" src="https://img.shields.io/badge/-%E2%96%B6%20Watch%20the%20gallery-F4502A?style=for-the-badge"></a> <a href="README.zh-CN.md"><img alt="简体中文" src="https://img.shields.io/badge/README-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-555?style=for-the-badge"></a> <a href="https://github.com/neohoy/neo-cine/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/neohoy/neo-cine?style=for-the-badge&color=FFC21A&label=stars"></a> <a href="#thanks-and-licence"><img alt="MIT" src="https://img.shields.io/badge/licence-MIT-1B49F5?style=for-the-badge"></a>
 
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-10 · [Style 01: Folding City](styles/folding-city/STYLE.md)**: a flat poster city that opens, folds and stands up. [See it ↓](#the-styles)
+🆕 **2026-11-10 · [Style 01: Folding City](https://neohoy.github.io/neo-cine/)**: a flat poster city that opens, folds and stands up. [See it ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -20,7 +20,7 @@ other agents may not reproduce them well.
 ## 🎬 Style 01: Folding City
 
 <table><tr>
-<td width="50%" valign="top"><a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4"><img src="docs/folding-city/title.jpg" alt="Shenzhen, Folded: the demo film of Folding City"></a><br><b>▶ The demo film</b> · <i>Shenzhen, Folded</i> · 40 s<br><sub>Luohu, Futian, Nanshan: three districts on one hinge chain, in one take. No narration; the score and every sound effect are synthesized in code.</sub></td>
+<td width="50%" valign="top"><a href="https://neohoy.github.io/neo-cine/"><img src="docs/folding-city/title.jpg" alt="Shenzhen, Folded: the demo film of Folding City"></a><br><b>▶ The demo film</b> · <i>Shenzhen, Folded</i> · 40 s<br><sub>Luohu, Futian, Nanshan: three districts on one hinge chain, in one take. No narration; the score and every sound effect are synthesized in code.</sub></td>
 <td width="50%" valign="top"><a href="styles/folding-city/STYLE.md"><img src="docs/folding-city/oblique.jpg" alt="Folding City: the style, open"></a><br><b>The style, open</b> · style prompt · shot table · full source<br><sub>A city drawn as a flat poster that is really a 3D model. Take the look, the moves and the sound to your own city, campus or product.</sub></td>
 </tr></table>
 
@@ -42,7 +42,7 @@ What the style does:
 <div align="center">
 
 Every frame and every note of it was written in code.<br>
-[**▶ Download the film (1080p, 53 MB)**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**Style prompt**](styles/folding-city/STYLE.md) · [**Demo notes and shot table**](styles/folding-city/DEMO.md) · [**Source**](styles/folding-city/demo/)
+[**▶ Watch**](https://neohoy.github.io/neo-cine/) · [**Download 1080p**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**Style prompt**](styles/folding-city/STYLE.md) · [**Demo notes and shot table**](styles/folding-city/DEMO.md) · [**Source**](styles/folding-city/demo/)
 
 </div>
 
@@ -152,7 +152,7 @@ If a step stays stuck, [open an issue](https://github.com/neohoy/neo-cine/issues
 
 ## The styles
 
-Click a frame for its `STYLE.md`. More are on the way, one at a time.
+Click a frame for its `STYLE.md`, or watch the films in the [gallery](https://neohoy.github.io/neo-cine/). More are on the way, one at a time.
 
 <!-- styles:start -->
 

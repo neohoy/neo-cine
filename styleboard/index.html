@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEO-Cine · film styles for Claude Code, made in code</title>
+<meta name="description" content="NEO-Cine: film styles for Claude Code, made one at a time (1 so far). Each style is a reusable prompt plus a short film made entirely in code, with no video model. Official site of github.com/neohoy/neo-cine.">
+<link rel="canonical" href="https://neohoy.github.io/neo-cine/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEO-Cine">
+<meta property="og:url" content="https://neohoy.github.io/neo-cine/">
+<meta property="og:title" content="NEO-Cine · film styles for Claude Code, made in code">
+<meta property="og:description" content="NEO-Cine: film styles for Claude Code, made one at a time (1 so far). Each style is a reusable prompt plus a short film made entirely in code, with no video model. Official site of github.com/neohoy/neo-cine.">
+<meta property="og:image" content="https://neohoy.github.io/neo-cine/posters/folding-city.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEO-Cine · film styles for Claude Code, made in code">
+<meta name="twitter:description" content="NEO-Cine: film styles for Claude Code, made one at a time (1 so far). Each style is a reusable prompt plus a short film made entirely in code, with no video model. Official site of github.com/neohoy/neo-cine.">
+<meta name="twitter:image" content="https://neohoy.github.io/neo-cine/posters/folding-city.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "CollectionPage",
+   "@id": "https://neohoy.github.io/neo-cine/",
+   "url": "https://neohoy.github.io/neo-cine/",
+   "name": "NEO-Cine gallery",
+   "description": "NEO-Cine: film styles for Claude Code, made one at a time (1 so far). Each style is a reusable prompt plus a short film made entirely in code, with no video model. Official site of github.com/neohoy/neo-cine.",
+   "about": {
+    "@id": "https://github.com/neohoy/neo-cine"
+   },
+   "author": {
+    "@id": "https://github.com/neohoy"
+   }
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "@id": "https://github.com/neohoy/neo-cine",
+   "name": "NEO-Cine",
+   "url": "https://github.com/neohoy/neo-cine",
+   "codeRepository": "https://github.com/neohoy/neo-cine",
+   "description": "Film styles, each a style prompt plus a demo film made entirely in code, packaged as a Claude Code skill. Built on the framework of Lemo-Opuscar.",
+   "license": "https://opensource.org/licenses/MIT",
+   "author": {
+    "@id": "https://github.com/neohoy"
+   },
+   "isBasedOn": "https://github.com/lemomo-ai/lemo-opuscar",
+   "keywords": [
+    "Claude Code skill",
+    "film styles",
+    "no video model",
+    "motion graphics",
+    "creative coding"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://github.com/neohoy",
+   "name": "NEO",
+   "url": "https://github.com/neohoy",
+   "sameAs": [
+    "https://github.com/neohoy"
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<!-- Layout and behaviour adapted from Lemo-Opuscar's styleboard/template.html (MIT, © 2026 LemoLab); the look is NEO-Cine's own. -->
+<style>
+:root{
+  --night:#171a5c; --deep:#10134a; --ink:#141a5e; --paper:#ffffff; --cream:#fff3d6;
+  --orange:#f4502a; --cobalt:#1b49f5; --yellow:#ffc21a; --soft:#c9cdf2; --dim:#8e94d6; --line:rgba(255,255,255,.18);
+  --sans:"Inter Tight","Noto Sans SC","PingFang SC","Helvetica Neue",Arial,sans-serif; --cn:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--night);scroll-behavior:smooth}
+body{margin:0;color:var(--paper);font:500 17px/1.55 var(--sans);background:var(--night);min-height:100vh;overflow-x:hidden}
+a{color:var(--yellow)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+
+/* ================= the house: a folding screen of three plates, then the title ================= */
+.house{position:relative;overflow:hidden;padding:0 0 56px;isolation:isolate;background:var(--night)}
+.house::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,var(--orange) 0 33.34%,var(--cobalt) 33.34% 66.67%,var(--yellow) 66.67%);height:10px}
+.marquee{position:relative;z-index:2;text-align:center;padding:92px 16px 0}
+.fold{display:flex;justify-content:center;width:300px;height:96px;margin:0 auto 40px;perspective:900px}
+.fold i{flex:1;height:100%;transform-style:preserve-3d}
+.fold i:nth-child(1){background:var(--orange);transform-origin:100% 50%;animation:foldA 7s cubic-bezier(.7,0,.2,1) infinite alternate}
+.fold i:nth-child(2){background:var(--cobalt)}
+.fold i:nth-child(3){background:var(--yellow);transform-origin:0 50%;animation:foldB 7s cubic-bezier(.7,0,.2,1) infinite alternate}
+@keyframes foldA{0%,18%{transform:rotateY(0);filter:none}82%,100%{transform:rotateY(62deg);filter:brightness(.78)}}
+@keyframes foldB{0%,18%{transform:rotateY(0);filter:none}82%,100%{transform:rotateY(-62deg);filter:brightness(.86)}}
+.presents{margin:0;font:700 13px/1 var(--sans);letter-spacing:.42em;color:var(--soft);text-transform:uppercase}
+.wordmark{margin:20px 0 0;font:900 clamp(64px,13vw,176px)/.9 var(--sans);letter-spacing:-.02em;color:var(--paper)}
+.wordmark::after{content:"";display:block;width:clamp(56px,7vw,96px);height:clamp(6px,.8vw,10px);margin:clamp(18px,2.4vw,30px) auto 0;background:var(--yellow)}
+.edition{margin:22px auto 0;font:700 clamp(13px,1.6vw,16px)/1 var(--sans);letter-spacing:.38em;color:var(--paper);text-transform:uppercase}
+.tagline{margin:22px auto 0;max-width:720px;font:500 clamp(19px,2.3vw,24px)/1.4 var(--sans);color:var(--paper)}
+.tagline-cn{margin:8px auto 0;max-width:640px;font:400 14.5px/1.7 var(--cn);color:var(--soft)}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin:40px 0 0}
+.stat{display:flex;align-items:stretch;background:var(--paper);color:var(--ink)}
+.stat b{display:grid;place-items:center;min-width:64px;padding:0 14px;background:var(--ink);color:var(--paper);font:900 28px/1 var(--sans);box-shadow:inset 0 0 0 3px var(--paper)}
+.stat span{display:flex;flex-direction:column;justify-content:center;gap:5px;padding:11px 18px 10px 14px;text-align:left;font:800 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.stat small{font:500 11.5px/1 var(--cn);letter-spacing:.1em;color:#5b62a8;text-transform:none}
+
+/* ================= category tabs ================= */
+.tabs{position:sticky;top:0;z-index:10;background:rgba(16,19,74,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding-top:12px;padding-bottom:12px}   /* wide screens: every category tab visible (they wrap) */
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tabs button{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;background:transparent;color:var(--paper);
+  font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;border:1px solid var(--line)}
+.tabs button small{font:500 11px/1 var(--cn);letter-spacing:.06em;color:var(--dim);text-transform:none}
+.tabs button:hover{border-color:var(--yellow)}
+.tabs button.on{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.tabs button.on small{color:#5a4a12}
+
+/* ================= categories ================= */
+main{padding-bottom:40px}
+.category{padding-top:72px;scroll-margin-top:70px}
+.cat-head{display:flex;align-items:center;justify-content:center;text-align:center;margin-bottom:34px}
+.cat-no{margin:0;font:700 11px/1 var(--sans);letter-spacing:.5em;color:var(--dim);text-transform:uppercase}
+.cat-head h2{margin:12px 0 0;font:900 clamp(24px,3.4vw,40px)/1.1 var(--sans);letter-spacing:.02em;color:var(--paper)}
+.cat-head h2::after{content:"";display:block;width:44px;height:5px;margin:14px auto 0;background:var(--yellow)}
+.cat-cn{margin:12px 0 0;font:500 14px/1.4 var(--cn);color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,420px));justify-content:center;gap:34px}
+
+/* ================= style card ================= */
+.nominee{position:relative;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);
+  box-shadow:10px 10px 0 var(--yellow);transition:transform .25s ease,box-shadow .25s ease}
+.nominee:hover{transform:translate(-4px,-4px);box-shadow:14px 14px 0 var(--orange)}
+.screen{position:relative;aspect-ratio:16/9;background:var(--deep);overflow:hidden}
+.screen .still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.nominee:hover .still{transform:scale(1.04)}
+.empty{display:grid;place-items:center;height:100%;color:var(--dim);font:600 18px var(--sans)}
+.play{position:absolute;inset:0;z-index:3;display:grid;place-items:center;border:0;background:transparent;cursor:pointer}
+.play i{width:68px;height:68px;background:var(--paper);display:grid;place-items:center;box-shadow:6px 6px 0 var(--ink);transition:transform .2s,background .2s}
+.play i::before{content:"";margin-left:5px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent var(--ink)}
+.play:hover i{transform:translate(-2px,-2px);background:var(--yellow)}
+.play span{position:absolute;right:10px;bottom:10px;font:800 11px/1 var(--sans);letter-spacing:.14em;color:var(--paper);background:var(--ink);padding:6px 8px}
+.plate{position:relative;display:flex;flex-direction:column;flex:1;padding:22px 26px 24px}
+.plate .no{position:absolute;right:0;top:0;margin:0;padding:9px 12px;background:var(--ink);color:var(--paper);font:900 15px/1 var(--sans)}
+.plate h3{margin:0;padding-right:44px;font:900 25px/1.15 var(--sans);letter-spacing:-.005em;color:var(--ink)}
+.plate .cn{margin:6px 0 0;font:700 15px/1.3 var(--cn);letter-spacing:.1em;color:var(--ink)}
+.for{margin:16px 0 0;font:italic 600 17px/1.3 var(--sans);color:var(--cobalt)}
+.for em{font-weight:700}
+.line{margin:10px 0 0;font:500 16px/1.5 var(--sans);color:#262c74}
+.line-cn{margin:6px 0 0;font:400 13.5px/1.7 var(--cn);color:#5b62a8}
+.by{margin:12px 0 0;font:600 14px/1.4 var(--sans);color:#5b62a8}
+.by a{color:var(--cobalt);text-decoration:none;border-bottom:1px solid rgba(27,73,245,.4)}
+.by span{display:block;margin-top:4px;font:400 12.5px/1.6 var(--cn)}
+.uses{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.uses li{font:700 10.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1.5px solid var(--ink);padding:6px 8px}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:auto;padding-top:20px;font:800 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.links a{text-decoration:none;color:var(--ink);border-bottom:2px solid transparent;padding-bottom:3px}
+.links a:hover{border-color:var(--orange)}
+.links .watch{color:var(--orange)}
+.links .watch::before{content:"▶ "}
+
+/* ================= screening room: two doors fold open ================= */
+.room{position:fixed;inset:0;z-index:40;display:none;place-items:center;padding:24px 16px;background:rgba(10,12,48,.97);perspective:2200px}
+.room.on{display:grid}
+.drape{position:fixed;top:0;bottom:0;width:50%;z-index:3;pointer-events:none;transition:transform 1s cubic-bezier(.7,0,.2,1),filter 1s}
+.drape.l{left:0;background:var(--orange);transform-origin:0 50%}
+.drape.r{right:0;background:var(--cobalt);transform-origin:100% 50%}
+.room.open .drape.l{transform:rotateY(-91deg);filter:brightness(.7)}
+.room.open .drape.r{transform:rotateY(91deg);filter:brightness(.7)}
+.stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:20px;width:min(1400px,82vw)}
+.stage video{width:100%;max-height:74vh;background:#000;box-shadow:12px 12px 0 var(--yellow)}
+.envelope{text-align:center;opacity:0;transform:translateY(8px);transition:opacity .6s .8s,transform .6s .8s}
+.room.open .envelope{opacity:1;transform:none}
+.envelope p{margin:0;font:700 12px/1.2 var(--sans);letter-spacing:.36em;text-transform:uppercase;color:var(--dim)}
+.envelope h4{margin:10px 0 0;font:900 clamp(20px,2.6vw,30px)/1.2 var(--sans);color:var(--paper)}
+.envelope h4 small{font:700 .62em/1 var(--cn);letter-spacing:.1em;color:var(--soft);margin-left:12px}
+.envelope .f{margin-top:8px;font:italic 600 17px/1.3 var(--sans);letter-spacing:0;text-transform:none;color:var(--yellow)}
+.close{position:fixed;right:18px;top:16px;z-index:4;font:800 11px/1 var(--sans);letter-spacing:.2em;color:var(--ink);background:var(--paper);border:0;padding:10px 13px;cursor:pointer;box-shadow:4px 4px 0 var(--yellow)}
+
+.repo{display:inline-flex;align-items:center;gap:12px;margin:34px auto 0;padding:14px 22px 13px;background:var(--yellow);
+  color:var(--ink);font:800 13px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;box-shadow:6px 6px 0 var(--orange);transition:transform .2s,box-shadow .2s}
+.repo svg{width:18px;height:18px;fill:currentColor;flex:none}
+.repo span{margin-right:-.22em;padding-top:1px}   /* cancel the trailing letter-spacing so the label sits centred */
+.repo:hover,.repo:focus-visible{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--orange)}
+.repo .stars{display:inline-flex;align-items:center;gap:6px;margin-left:2px;padding-left:14px;border-left:2px solid rgba(20,26,94,.4);letter-spacing:.06em}
+.repo .stars[hidden]{display:none}
+.repo .stars i{font-style:normal}
+footer{text-align:center;padding:64px 16px 60px;border-top:1px solid var(--line);margin-top:80px}
+footer .sig{margin:0;font:800 13px/1 var(--sans);letter-spacing:.42em;color:var(--yellow);text-transform:uppercase}
+footer .fine{margin:16px 0 0;font:500 17px var(--sans);color:var(--paper)}
+footer .fine-cn{margin:6px 0 0;font:400 13px/1.7 var(--cn);color:var(--dim)}
+footer .fine-cn a{color:var(--soft)}
+footer .repo-link{display:inline-block;margin:22px 0 0;font:800 12px/1 var(--sans);letter-spacing:.28em;color:var(--paper);text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--yellow);padding-bottom:6px}
+footer .repo-link:hover{color:var(--yellow)}
+
+/* ================= feature: the newest style, above the grid ================= */
+.feature{position:relative;z-index:2;text-align:center;padding:64px 0 76px;background:var(--deep)}
+.feature .kicker{margin:0;font:800 13px/1 var(--sans);letter-spacing:.42em;color:var(--yellow);text-transform:uppercase}
+.feature .kicker small{display:block;margin-top:10px;font:500 13px/1 var(--cn);letter-spacing:.3em;color:var(--soft)}
+.feature h2{margin:20px 0 0;font:900 clamp(44px,7.4vw,104px)/.95 var(--sans);letter-spacing:-.015em;color:var(--paper)}
+.feature .sub{margin:16px 0 0;font:700 clamp(15px,1.8vw,19px)/1.2 var(--cn);letter-spacing:.2em;color:var(--soft)}
+.feature .sub em{font:italic 600 1em var(--sans);letter-spacing:.02em;color:var(--paper)}
+.feature .frame{position:relative;max-width:1100px;margin:38px auto 0;background:var(--paper);box-shadow:16px 16px 0 var(--yellow)}
+.feature .screen{margin:0;aspect-ratio:16/9;cursor:pointer}
+.feature .play i{width:96px;height:96px;box-shadow:8px 8px 0 var(--ink)}
+.feature .play i::before{border-width:16px 0 16px 26px;margin-left:7px}
+.feature .blurb{max-width:760px;margin:44px auto 0;font:500 clamp(18px,2.1vw,22px)/1.45 var(--sans);color:var(--paper)}
+.feature .blurb-cn{max-width:680px;margin:10px auto 0;font:400 14.5px/1.75 var(--cn);color:var(--soft)}
+.feature .links{justify-content:center;margin-top:8px}
+.feature .links a{color:var(--paper)}
+.feature .links .watch{color:var(--yellow)}
+.feature .links a:hover{border-color:var(--yellow)}
+@media (max-width:720px){.feature{padding:44px 0 56px}.feature .frame{box-shadow:8px 8px 0 var(--yellow)}.feature .play i{width:70px;height:70px}}
+
+@media (prefers-reduced-motion:reduce){.fold i{animation:none!important}.drape,.envelope{transition:none}}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  .marquee{padding:64px 24px 0}
+  .fold{width:210px;height:68px;margin-bottom:30px}
+  .presents{font-size:10.5px;letter-spacing:.26em}
+  .edition{letter-spacing:.22em}
+  .repo{gap:9px;padding:13px 14px 12px;font-size:11px;letter-spacing:.14em}.repo span{margin-right:-.14em}
+  .repo .stars{padding-left:9px}
+  .grid{grid-template-columns:1fr;gap:28px}
+  .nominee{box-shadow:6px 6px 0 var(--yellow)}
+  .tabs .wrap{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}   /* phones: one swipeable row */
+  .plate{padding:18px 18px 22px}
+  .stage{width:94vw}
+  .stage video{box-shadow:6px 6px 0 var(--yellow)}
+}
+</style>
+</head>
+<body>
+
+<header class="house">
+  <div class="marquee">
+    <div class="fold" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="presents">NEO造物集 presents</p>
+    <h1 class="wordmark">NEO-Cine</h1>
+    <p class="edition">Film styles made in code</p>
+    <p class="tagline">Every style is a reusable prompt, and a short film directed, drawn and scored entirely in code.</p>
+    <p class="tagline-cn">每个风格是一份可复用的提示词，外加一支完全用代码导演、作画、配乐的短片。风格一个一个做。</p>
+    <a class="repo" href="https://github.com/neohoy/neo-cine" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>Get the styles on GitHub</span><b class="stars" data-stars hidden>★ <i></i></b></a>
+    <div class="stats"><div class="stat"><b>1</b><span>Style<small>种风格</small></span></div><div class="stat"><b>1</b><span>Category<small>个分类</small></span></div><div class="stat"><b>40</b><span>Seconds of film<small>秒影片</small></span></div></div>
+  </div>
+</header>
+
+
+
+<section class="feature" id="feature"><div class="wrap">
+  <p class="kicker">Newest style · No. 01<small>最新风格</small></p>
+  <h2>Folding City</h2>
+  <p class="sub">折叠城市 · <em>Shenzhen, Folded</em></p>
+  <div class="frame nominee-like" data-en="Folding City" data-cn="折叠城市" data-film="Shenzhen, Folded">
+    <div class="screen"><img class="still" src="../styles/folding-city/poster.jpg" alt="Folding City — Shenzhen, Folded">
+      <button class="play" type="button" data-src="../styles/folding-city/folding-city.mp4" data-poster="../styles/folding-city/poster.jpg" aria-label="Play Shenzhen, Folded"><i></i><span>0:40</span></button></div>
+  </div>
+  <p class="blurb">Three districts of Shenzhen as flat posters that open into streets, fold like doors and screens, and stand up as walls until the city closes into a U.</p>
+  <p class="blurb-cn">深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。</p>
+  <nav class="links"><a class="watch" href="#feature" data-feature>Watch the film</a><a href="../styles/folding-city/STYLE.md" target="_blank" rel="noopener">STYLE.md</a><a href="../styles/folding-city/STYLE.zh-CN.md" target="_blank" rel="noopener">风格说明</a></nav>
+</div></section>
+
+<main><div class="wrap">
+<section class="category" id="graphic-type">
+  <header class="cat-head"><div><p class="cat-no">Category 01</p><h2>Graphic &amp; Type</h2><p class="cat-cn">图形与排版 · 1 style</p></div></header>
+  <div class="grid">
+<article class="nominee" data-slug="folding-city" data-en="Folding City" data-cn="折叠城市" data-film="Shenzhen, Folded">
+  <div class="screen"><img class="still" src="img/folding-city_0.jpg" alt="Folding City — Shenzhen, Folded" loading="lazy"><button class="play" type="button" data-src="../styles/folding-city/folding-city.mp4" data-poster="../styles/folding-city/poster.jpg" aria-label="Play Shenzhen, Folded"><i></i><span>0:40</span></button></div>
+  <div class="plate">
+    <p class="no">01</p>
+    <h3>Folding City</h3><p class="cn">折叠城市</p>
+    <p class="for">for <em>Shenzhen, Folded</em></p>
+    <p class="line">Three districts of Shenzhen as flat posters that open into streets, fold like doors and screens, and stand up as walls until the city closes into a U.</p><p class="line-cn">深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。</p>
+    <ul class=uses aria-label="Best for"><li>City and district promos</li><li>Campus, park or property walk-throughs</li><li>Openers for travel and place-based series</li></ul>
+    <nav class="links"><a class="watch" href="../styles/folding-city/folding-city.mp4" data-play>Watch the film</a><a href="../styles/folding-city/STYLE.md" target="_blank" rel="noopener">STYLE.md</a><a href="../styles/folding-city/STYLE.zh-CN.md" target="_blank" rel="noopener">风格说明</a></nav>
+  </div>
+</article>
+  </div>
+</section>
+</div></main>
+
+<footer>
+  <p class="sig">NEO造物集 · NEO-Cine</p>
+  <p class="fine">Every frame on this page was rendered by the project's own code.</p>
+  <p class="fine-cn">页面上的每一帧，都是本项目的代码自己渲染的。</p>
+  <a class="repo-link" href="https://github.com/neohoy/neo-cine" target="_blank" rel="noopener">github.com/neohoy/neo-cine</a>
+  <p class="fine-cn">Official repository, by NEO (<a href="https://github.com/neohoy" target="_blank" rel="noopener">@neohoy</a>) · 官方仓库</p>
+  <p class="fine-cn">Built on the framework of <a href="https://github.com/lemomo-ai/lemo-opuscar" target="_blank" rel="noopener">Lemo-Opuscar</a> by LemoLab · 建在 LemoLab 的 Lemo-Opuscar 框架上</p>
+</footer>
+
+<div class="room" id="room" role="dialog" aria-modal="true" aria-label="Screening room">
+  <div class="drape l"></div><div class="drape r"></div>
+  <button class="close" type="button">Close ✕</button>
+  <div class="stage">
+    <video controls playsinline></video>
+    <div class="envelope"><p>Now showing</p><h4></h4><p class="f"></p></div>
+  </div>
+</div>
+
+<script>
+const sections=[...document.querySelectorAll('.category')];
+const tabsEl=document.getElementById('tabs');   // there are tabs only when there is more than one category
+function show(f){
+  for(const s of sections) s.style.display=(f==='all'||s.id===f)?'':'none';
+  if(tabsEl) tabsEl.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
+  try{localStorage.setItem('neocine-cat',f)}catch(e){}
+}
+if(tabsEl){
+  tabsEl.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b)return;
+    show(b.dataset.f);
+    const top=document.querySelector('main').getBoundingClientRect().top+scrollY-60;
+    if(scrollY>top) scrollTo({top});
+  });
+  let saved='all'; try{saved=localStorage.getItem('neocine-cat')||'all'}catch(e){}
+  show(tabsEl.querySelector(`button[data-f="${saved}"]`)?saved:'all');
+}
+
+// GitHub star count on the header button; if the API can't be reached the button just has no number
+(function(){
+  const el=document.querySelector('[data-stars]'); if(!el) return;
+  const show=n=>{ el.querySelector('i').textContent=n>=1000?(n/1000).toFixed(1).replace(/\.0$/,'')+'k':String(n); el.hidden=false; };
+  const KEY='neocine-stars';
+  try{ const c=JSON.parse(sessionStorage.getItem(KEY)||'null'); if(c&&Date.now()-c.t<36e5){ if(c.n>0) show(c.n); return; } }catch(e){}
+  fetch('https://api.github.com/repos/neohoy/neo-cine').then(r=>r.ok?r.json():null).then(d=>{
+    if(!d||typeof d.stargazers_count!=='number') return;
+    if(d.stargazers_count>0) show(d.stargazers_count);
+    try{ sessionStorage.setItem(KEY,JSON.stringify({n:d.stargazers_count,t:Date.now()})); }catch(e){}
+  }).catch(()=>{});
+})();
+
+const room=document.getElementById('room'), vid=room.querySelector('video'), env=room.querySelector('.envelope');
+function screen(card,src,poster){
+  env.querySelector('h4').innerHTML=`${card.dataset.en}<small>${card.dataset.cn}</small>`;
+  env.querySelector('.f').textContent=`“${card.dataset.film}”`;
+  vid.poster=poster||''; vid.src=src;
+  room.classList.add('on'); room.classList.remove('open');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>room.classList.add('open')));
+  setTimeout(()=>vid.play().catch(()=>{}),650);
+}
+function closeRoom(){ vid.pause(); vid.removeAttribute('src'); vid.load(); room.classList.remove('on','open'); }
+document.addEventListener('click',e=>{
+  const feat=e.target.closest('.feature .frame,[data-feature]');
+  if(feat){ e.preventDefault(); const f=document.querySelector('.feature .frame'), b=f.querySelector('.play'); screen(f,b.dataset.src,b.dataset.poster); return; }
+  const card=e.target.closest('.nominee'); if(!card)return;
+  const btn=card.querySelector('.play'); if(!btn)return;
+  if(e.target.closest('.play')||e.target.closest('[data-play]')||e.target.classList.contains('still')){
+    e.preventDefault(); screen(card,btn.dataset.src,btn.dataset.poster);
+  }
+});
+room.addEventListener('click',e=>{ if(e.target.tagName==='VIDEO')return; if(e.target.closest('.envelope'))return; closeRoom(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&room.classList.contains('on'))closeRoom(); });
+</script>
+</body>
+</html>

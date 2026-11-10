@@ -27,7 +27,8 @@
 ## 登记
 
 1. **编号。** `style.json` 里的 `num` 取 `styles/*/style.json` 中最大编号之后的下一个空号（两位数字的字符串，例如 `"02"`）；它决定风格在同一分类里的排列顺序。
-2. **列入清单。** 目前还没有构建脚本，所以要手工添加：加到 `AGENTS.md` 和 `AGENTS.zh-CN.md` 的风格列表里（在 `style-list` 标记之间：把风格写到它的分类下，更新该分类的数量和总数），再加到 `README.md` 和 `README.zh-CN.md` 里。英文文件和中文文件一起改。
+2. `python3 styleboard/build.py` 读取每个 `styles/*/style.json`，重写画廊的数据、`README.md`（英文）和 `README.zh-CN.md`（中文）里的风格表格、`styles/README.md`，以及 `AGENTS.md` 和 `AGENTS.zh-CN.md` 里的风格列表。这些生成出来的部分不要手工改。两份 README 的其余部分是手写的：两份一起改（比如上新那一行）。然后运行 `python3 styleboard/build.py --frames <slug>`（按 `frame_sec` 取 README 表格里的那一帧）和 `sh styleboard/frames.sh <slug>`（用 `demo/stills/styleframe.jpg` 做画廊卡片的图）。
+3. `sh tools/web_cuts.sh` 在 `.release/web/` 里压出 720p 网页版（只处理新的或改过的片子）。
 
 ## 关卡
 
@@ -36,9 +37,19 @@
 - **地图：** 库内示范片和其他片子一样遵守 DIRECTOR.md §13：每个地图镜头都放大检查，地图数据和所用视图写进 `CREDITS`。
 - **真实事件和产品：** 画面上和旁白里的每一条事实都来自官方来源，记在 `demo/FACTS.md` 里（说法、网址、原文引用）；最后一次渲染前，拿定稿的旁白稿对照检查。
 
+## 发布
+
+1. `sh neo/publish.sh` 重新生成画廊数据、压网页版，并把发布页上缺的传上去：完整成片传到 `films` 发布，720p 网页版传到 `web` 发布（画廊用的是这一份）。`sh neo/publish.sh --check` 只列出缺什么。（这里不用上游的 `tools/publish.sh` 和 `tools/release.py`：它们还会重新打包上游的素材包。）
+2. `git status --short`，`git add -A`，提交。
+3. 推送 `main`，然后看 CI（`gh run watch`）：如果有卡片链接的片子不在 `web` 发布里，画廊的构建会失败。
+
+画廊在 https://neohoy.github.io/neo-cine/ ，每次推送改到它时由 `.github/workflows/pages.yml` 构建。Pages 的构建（`build.py --site`）还会写出 `llms.txt` 和 `sitemap.xml`，并在页面头部放上规范链接、分享卡片标签和 JSON-LD。风格表格上方的主打位自动取最新的风格（`num` 最大的那个）。
+
+上传没完成之前不要推送。
+
 ## 修订一种风格
 
-先备份：把旧的成片、字幕和海报带上版本号移到仓库之外（`<slug>-v001.mp4`、`<slug>-v001.srt`、`poster-v001.jpg`……；先看已有的备份，取下一个号），不放进 git，也绝不删除。然后重新渲染，替换 `<slug>.mp4`、`<slug>.srt` 和 `poster.jpg`。
+先备份：把旧的成片、字幕和海报带上版本号移到仓库之外（`<slug>-v001.mp4`、`<slug>-v001.srt`、`poster-v001.jpg`……；先看已有的备份，取下一个号），不放进 git，也绝不删除。然后重新渲染，替换 `<slug>.mp4`、`<slug>.srt` 和 `poster.jpg`，再运行 `FORCE=1 sh neo/publish.sh`：它会重新上传成片并更新网页版（不加 `FORCE=1` 时，它不会替换已经发布的片子）。
 
 ## 跟随上游
 
@@ -46,6 +57,6 @@ NEO-Cine 建立在 [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) 的
 
 - **`core/` 是原样镜像**，对应上游的 `core/`。绝不在这里改它：工具名、参数和 `LEMO_*` 环境变量都和上游完全一致。NEO 自己的工具放在 `neo/`。
 - **`UPSTREAM.md`** 记录所镜像的上游提交，以及哪些部分是原样镜像、哪些部分是改编的。
-- **`sh tools/sync-upstream.sh`** 和更新的上游做对比，报告从那次提交以来上游改了什么：哪些 `core/` 文件需要复制过来，哪些指南的改动需要人工审阅（它的选项见 `UPSTREAM.md`）。各份指南是改编稿，章节、顺序和编号都和上游一致：上游的改动要手工并入，放在相同的位置。
+- **`sh tools/sync-upstream.sh`** 和更新的上游做对比，报告从那次提交以来上游改了什么：哪些镜像文件需要复制过来（`core/` 以及 `UPSTREAM.md` 列出的其他文件），哪些指南和画廊脚本的改动需要人工审阅（它的选项见 `UPSTREAM.md`）。各份指南是改编稿，章节、顺序和编号都和上游一致：上游的改动要手工并入，放在相同的位置。
 - **同步之后**，重新构建 Folding City（折叠城市）示范片的样帧作为回归检查。
 - **两种语言。** 每份文档都有 `X.md`（英文，正本，代理读的就是它）和 `X.zh-CN.md`（中文译本）。两份要在同一次改动里一起更新。

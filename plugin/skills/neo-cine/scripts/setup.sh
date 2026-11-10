@@ -26,7 +26,7 @@ case "$LIB" in /*|[A-Za-z]:[/\\]*) ;; *) LIB=$(pwd)/$LIB ;; esac   # C:/… is a
 # It runs from inside $LIB, because a -C /c/… path needs that rewriting.
 sparse() { (cd "$LIB" && MSYS_NO_PATHCONV=1 git sparse-checkout "$@"); }
 apply_sparse() {
-  set -- '/*' '!/styles/*/demo/' '!/styles/*/poster.jpg' \
+  set -- '/*' '!/styles/*/demo/' '!/styleboard/' '!/docs/' '!/styles/*/poster.jpg' \
     $(git -C "$LIB" sparse-checkout list 2>/dev/null | grep -E '^/styles/[^/*]+/(demo/|poster\.jpg)$' || true)
   sparse set --no-cone "$@" 2>/dev/null || git -C "$LIB" sparse-checkout disable || true
 }

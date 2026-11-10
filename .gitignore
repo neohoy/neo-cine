@@ -31,3 +31,6 @@ styles/*/demo/stills/*
 **/TREATMENT*.md
 # The user's own films (agent output)
 /films/
+# Release staging and the Pages build
+/.release/
+/_site/

@@ -5,12 +5,12 @@
 **NEO 的代码影片风格库：风格一个一个做，每种都配一支完全用代码做出来的短片。**<br>
 选一个风格，带上你的故事，让编程 agent 来当导演。
 
-<a href="styles/folding-city/STYLE.zh-CN.md"><img alt="01 · 折叠城市" src="https://img.shields.io/badge/-%E2%96%B6%2001%20%C2%B7%20%E6%8A%98%E5%8F%A0%E5%9F%8E%E5%B8%82-F4502A?style=for-the-badge"></a> <a href="README.md"><img alt="English" src="https://img.shields.io/badge/README-English-555?style=for-the-badge"></a> <a href="https://github.com/neohoy/neo-cine/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/neohoy/neo-cine?style=for-the-badge&color=FFC21A&label=stars"></a> <a href="#感谢与声明"><img alt="MIT" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-1B49F5?style=for-the-badge"></a>
+<a href="https://neohoy.github.io/neo-cine/"><img alt="看画廊" src="https://img.shields.io/badge/-%E2%96%B6%20%E7%9C%8B%E7%94%BB%E5%BB%8A-F4502A?style=for-the-badge"></a> <a href="README.md"><img alt="English" src="https://img.shields.io/badge/README-English-555?style=for-the-badge"></a> <a href="https://github.com/neohoy/neo-cine/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/neohoy/neo-cine?style=for-the-badge&color=FFC21A&label=stars"></a> <a href="#感谢与声明"><img alt="MIT" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-1B49F5?style=for-the-badge"></a>
 
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-10 · [01 号风格：折叠城市](styles/folding-city/STYLE.zh-CN.md)**：一座会拉开、会折叠、会立起来的平面海报城市。[往下看 ↓](#风格)
+🆕 **2026-11-10 · [01 号风格：折叠城市](https://neohoy.github.io/neo-cine/)**：一座会拉开、会折叠、会立起来的平面海报城市。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -21,7 +21,7 @@
 ## 🎬 01 号风格：折叠城市
 
 <table><tr>
-<td width="50%" valign="top"><a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4"><img src="docs/folding-city/title.jpg" alt="《折叠深圳》：折叠城市的示范片"></a><br><b>▶ 示范片</b> · 《折叠深圳》 · 40 秒<br><sub>罗湖、福田、南山，三个区用铰链首尾相连，一镜到底。没有旁白；配乐和每一个动作音都是代码合成的。</sub></td>
+<td width="50%" valign="top"><a href="https://neohoy.github.io/neo-cine/"><img src="docs/folding-city/title.jpg" alt="《折叠深圳》：折叠城市的示范片"></a><br><b>▶ 示范片</b> · 《折叠深圳》 · 40 秒<br><sub>罗湖、福田、南山，三个区用铰链首尾相连，一镜到底。没有旁白；配乐和每一个动作音都是代码合成的。</sub></td>
 <td width="50%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/folding-city/oblique.jpg" alt="折叠城市：风格全部公开"></a><br><b>风格全部公开</b> · 风格说明 · 镜头表 · 完整源码<br><sub>一座画成平面海报的城市，其实是三维模型。画面、动作和声音都可以拿去拍你自己的城市、园区或产品。</sub></td>
 </tr></table>
 
@@ -43,7 +43,7 @@
 <div align="center">
 
 每一帧画面、每一个音符，都是写代码做出来的。<br>
-[**▶ 下载成片（1080p，53 MB）**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**风格说明**](styles/folding-city/STYLE.zh-CN.md) · [**示范片说明和镜头表**](styles/folding-city/DEMO.zh-CN.md) · [**源码**](styles/folding-city/demo/)
+[**▶ 在线看**](https://neohoy.github.io/neo-cine/) · [**下载 1080p**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**风格说明**](styles/folding-city/STYLE.zh-CN.md) · [**示范片说明和镜头表**](styles/folding-city/DEMO.zh-CN.md) · [**源码**](styles/folding-city/demo/)
 
 </div>
 
@@ -154,7 +154,7 @@ claude plugin uninstall neo-cine@neo
 
 ## 风格
 
-点图看它的风格说明。后面的风格会一个一个加进来。
+点图看它的风格说明，或者到[画廊](https://neohoy.github.io/neo-cine/)里看片。后面的风格会一个一个加进来。
 
 <!-- styles:start -->
 
@@ -162,7 +162,7 @@ claude plugin uninstall neo-cine@neo
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/frames/folding-city.jpg" alt="折叠城市"></a><br><b>折叠城市</b><br>Folding City<br><i>折叠深圳</i><br><sub>深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。</sub></td>
+<td width="33%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/frames/folding-city.jpg" alt="折叠城市"></a><br><b>折叠城市</b><br>Folding City<br><i>Shenzhen, Folded</i><br><sub>深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。</sub></td>
 <td width="33%" valign="top"></td>
 <td width="33%" valign="top"></td>
 </tr>

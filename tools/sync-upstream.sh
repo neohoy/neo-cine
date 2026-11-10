@@ -15,9 +15,9 @@
 set -e
 UPSTREAM_URL=https://github.com/lemomo-ai/lemo-opuscar.git
 # Unmodified copies of upstream files
-MIRROR="core package.json package-lock.json requirements.txt requirements-voice.txt requirements-music.txt tools/fetch.sh tools/assets.json"
+MIRROR="core package.json package-lock.json requirements.txt requirements-voice.txt requirements-music.txt tools/fetch.sh tools/assets.json styleboard/frames.sh tools/web_cuts.sh .github/workflows/pages.yml"
 # Upstream files that ours are adapted from (ours live under different names where the brand is in the path)
-ADAPTED="AGENTS.md DIRECTOR.md TECHNIQUE.md MY-STYLES.md MAINTAINING.md plugin/skills/lemo-opuscar styles/_template LICENSE"
+ADAPTED="AGENTS.md DIRECTOR.md TECHNIQUE.md MY-STYLES.md MAINTAINING.md plugin/skills/lemo-opuscar styles/_template LICENSE styleboard/build.py styleboard/template.html tools/publish.sh tools/release.py"
 
 R=$(cd "$(dirname "$0")/.." && pwd -P); cd "$R"
 APPLY=""; UP=""
@@ -65,7 +65,7 @@ git -C "$UP" log --format='  %cd  %s' --date=short "$OLD..$NEW" | head -40
 echo; echo "== mirrored files that changed (copied by --apply)"
 # shellcheck disable=SC2086
 git -C "$UP" diff --stat "$OLD" "$NEW" -- $MIRROR | tail -40
-echo; echo "== files our guides and skill are adapted from (review by hand, then edit ours and their .zh-CN.md)"
+echo; echo "== files our guides, skill and gallery scripts are adapted from (review by hand, then edit ours and their .zh-CN.md)"
 # shellcheck disable=SC2086
 git -C "$UP" diff --stat "$OLD" "$NEW" -- $ADAPTED | tail -40
 echo "  full text:  git -C \"$UP\" diff $OLD $NEW -- <file>"

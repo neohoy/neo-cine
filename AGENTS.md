@@ -39,13 +39,13 @@ This repository is a library of film styles. Each style has a `styles/<slug>/STY
 
 ## Finding the style
 
-Users name a style by its name in English or Chinese ("Folding City", "折叠城市") or by its folder (`folding-city`). Look it up in `styles/*/style.json` (`en`, `cn`, `slug`). If nothing matches clearly, show the closest two or three and ask.
+Users name a style by its name in English or Chinese ("Folding City", "折叠城市") or by its folder (`folding-city`). Look it up in [`styles/README.md`](styles/README.md). If nothing matches clearly, show the closest two or three and ask.
 
 If the user hasn't picked a style:
 - Suggest two or three that fit their topic (fewer while the library is this small; if none fits, say so and offer a style of their own from a blank page, [`MY-STYLES.md`](MY-STYLES.md)).
 - If they have their own styles, list those first, under "My styles" (in their language).
 - Show them the full list below in the chat, in the user's language only: English names (and English category names) for someone writing in English, Chinese names for someone writing in Chinese. Don't drop, merge or rename anything.
-- There is no gallery to link. With the list, say in one line what each style's demo film is (`film` and `line`, or `line_cn`, in `styles/<slug>/style.json`). The list below is kept by hand from `styles/*/style.json`; if the two differ, the files are right.
+- Link the gallery, where every style has its demo film: https://neohoy.github.io/neo-cine/
 - Then ask them to type the name. The list goes in your own message (a command's output isn't shown to them), and the question is plain text, not `AskUserQuestion`: its few options would hide the rest of the list.
 
 <!-- style-list:start -->
