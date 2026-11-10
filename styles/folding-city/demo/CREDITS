@@ -1,0 +1,19 @@
+Shenzhen, Folded (折叠深圳): credits
+
+Picture: drawn entirely in code (three.js r170, MIT). No images, video or 3D models are used.
+Sound: the score, every sound effect and the ambience are synthesized by mix.py with numpy/scipy and the
+       library's core/audio/sfx.py. No samples or outside recordings are used.
+
+Fonts (fetched by tools/fonts.sh into fonts/, not kept in git):
+- Source Han Sans CN, Heavy and Bold. Adobe. SIL Open Font License 1.1.
+  https://github.com/adobe-fonts/source-han-sans
+- Inter Tight. Rasmus Andersson. SIL Open Font License 1.1.
+  https://github.com/google/fonts/tree/main/ofl/intertight
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome
+frame capture, ffmpeg encode and loudness master.
+
+Form reference (technique only, none of its pictures are used): the illusion animations of Yuma Garments (@garments__).
+
+The buildings are simplified redrawings of real Shenzhen landmarks. Heights and positions are compressed and
+rearranged to fit three 600 x 700 m plates: this is an illustration, not a survey model.

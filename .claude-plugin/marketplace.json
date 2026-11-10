@@ -1,0 +1,17 @@
+{
+  "name": "neo",
+  "owner": {
+    "name": "NEO造物集 (neohoy)",
+    "url": "https://github.com/neohoy"
+  },
+  "metadata": {
+    "description": "NEO skills: code-made film styles for coding agents."
+  },
+  "plugins": [
+    {
+      "name": "neo-cine",
+      "source": "./plugin",
+      "description": "Make a short film entirely in code, in one of NEO-Cine's styles: your agent directs, draws, scores and mixes it."
+    }
+  ]
+}

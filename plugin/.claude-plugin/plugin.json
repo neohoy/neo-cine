@@ -1,0 +1,7 @@
+{
+  "name": "neo-cine",
+  "description": "Make a short film entirely in code, in one of NEO-Cine's styles: your agent directs, draws, scores and mixes it.",
+  "author": { "name": "NEO造物集 (neohoy)", "url": "https://github.com/neohoy" },
+  "repository": "https://github.com/neohoy/neo-cine",
+  "license": "MIT"
+}

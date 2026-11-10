@@ -1,0 +1,33 @@
+node_modules/
+.venv/
+.lemo-deps.lock/
+__pycache__/
+.DS_Store
+*.log
+# Models and big assets are fetched, not committed (tools/fetch.sh)
+core/tts/*.onnx
+core/tts/*.bin
+core/assets/polyhaven/*.hdr
+core/audio/instruments/
+core/audio/*.wav
+# Renders and intermediate files
+styles/*/demo/out/
+styles/*/demo/**/*.wav
+styles/*/demo/**/*.mp3
+styles/*/demo/**/*.mp4
+styles/*/demo/events.json
+# Finished demo films are published as release assets, not in git
+styles/*/*.mp4
+# Demo fonts are free (OFL) and fetched by each demo's tools/fonts.sh; CREDITS names them
+styles/*/demo/**/*.ttf
+styles/*/demo/**/*.otf
+styles/*/demo/**/*.woff
+styles/*/demo/**/*.woff2
+# Stills: only the review frames the docs point to are committed
+styles/*/demo/stills/*
+!styles/*/demo/stills/styleframe.jpg
+!styles/*/demo/stills/frame_*.jpg
+# Process notes stay local
+**/TREATMENT*.md
+# The user's own films (agent output)
+/films/
