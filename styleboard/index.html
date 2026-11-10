@@ -71,8 +71,9 @@
 <!-- Layout and behaviour adapted from Lemo-Opuscar's styleboard/template.html (MIT, © 2026 LemoLab); the look is NEO-Cine's own. -->
 <style>
 :root{
-  --night:#171a5c; --deep:#10134a; --ink:#141a5e; --paper:#ffffff; --cream:#fff3d6;
-  --orange:#f4502a; --cobalt:#1b49f5; --yellow:#ffc21a; --soft:#c9cdf2; --dim:#8e94d6; --line:rgba(255,255,255,.18);
+  --night:#16171c; --deep:#0e0f13; --ink:#1b1d2b; --paper:#f6f2e9; --cream:#fff3d6;
+  --orange:#e8583a; --cobalt:#3d57c2; --yellow:#f4b830; --soft:#bfbcb4; --dim:#85837d; --line:rgba(255,255,255,.14);
+  --door:#22242c; --door2:#1b1d24; --mute:#6d6e7a; --body:#2c2e3d;
   --sans:"Inter Tight","Noto Sans SC","PingFang SC","Helvetica Neue",Arial,sans-serif; --cn:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
 }
 *{box-sizing:border-box}
@@ -103,10 +104,10 @@ a{color:var(--yellow)}
 .stat{display:flex;align-items:stretch;background:var(--paper);color:var(--ink)}
 .stat b{display:grid;place-items:center;min-width:64px;padding:0 14px;background:var(--ink);color:var(--paper);font:900 28px/1 var(--sans);box-shadow:inset 0 0 0 3px var(--paper)}
 .stat span{display:flex;flex-direction:column;justify-content:center;gap:5px;padding:11px 18px 10px 14px;text-align:left;font:800 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase}
-.stat small{font:500 11.5px/1 var(--cn);letter-spacing:.1em;color:#5b62a8;text-transform:none}
+.stat small{font:500 11.5px/1 var(--cn);letter-spacing:.1em;color:var(--mute);text-transform:none}
 
 /* ================= category tabs ================= */
-.tabs{position:sticky;top:0;z-index:10;background:rgba(16,19,74,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{position:sticky;top:0;z-index:10;background:rgba(14,15,19,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tabs .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding-top:12px;padding-bottom:12px}   /* wide screens: every category tab visible (they wrap) */
 .tabs .wrap::-webkit-scrollbar{display:none}
 .tabs button{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;background:transparent;color:var(--paper);
@@ -145,10 +146,10 @@ main{padding-bottom:40px}
 .plate .cn{margin:6px 0 0;font:700 15px/1.3 var(--cn);letter-spacing:.1em;color:var(--ink)}
 .for{margin:16px 0 0;font:italic 600 17px/1.3 var(--sans);color:var(--cobalt)}
 .for em{font-weight:700}
-.line{margin:10px 0 0;font:500 16px/1.5 var(--sans);color:#262c74}
-.line-cn{margin:6px 0 0;font:400 13.5px/1.7 var(--cn);color:#5b62a8}
-.by{margin:12px 0 0;font:600 14px/1.4 var(--sans);color:#5b62a8}
-.by a{color:var(--cobalt);text-decoration:none;border-bottom:1px solid rgba(27,73,245,.4)}
+.line{margin:10px 0 0;font:500 16px/1.5 var(--sans);color:var(--body)}
+.line-cn{margin:6px 0 0;font:400 13.5px/1.7 var(--cn);color:var(--mute)}
+.by{margin:12px 0 0;font:600 14px/1.4 var(--sans);color:var(--mute)}
+.by a{color:var(--cobalt);text-decoration:none;border-bottom:1px solid rgba(61,87,194,.4)}
 .by span{display:block;margin-top:4px;font:400 12.5px/1.6 var(--cn)}
 .uses{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
 .uses li{font:700 10.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1.5px solid var(--ink);padding:6px 8px}
@@ -159,11 +160,11 @@ main{padding-bottom:40px}
 .links .watch::before{content:"▶ "}
 
 /* ================= screening room: two doors fold open ================= */
-.room{position:fixed;inset:0;z-index:40;display:none;place-items:center;padding:24px 16px;background:rgba(10,12,48,.97);perspective:2200px}
+.room{position:fixed;inset:0;z-index:40;display:none;place-items:center;padding:24px 16px;background:rgba(8,9,12,.97);perspective:2200px}
 .room.on{display:grid}
 .drape{position:fixed;top:0;bottom:0;width:50%;z-index:3;pointer-events:none;transition:transform 1s cubic-bezier(.7,0,.2,1),filter 1s}
-.drape.l{left:0;background:var(--orange);transform-origin:0 50%}
-.drape.r{right:0;background:var(--cobalt);transform-origin:100% 50%}
+.drape.l{left:0;background:var(--door);box-shadow:inset -6px 0 0 var(--yellow);transform-origin:0 50%}
+.drape.r{right:0;background:var(--door2);box-shadow:inset 6px 0 0 var(--yellow);transform-origin:100% 50%}
 .room.open .drape.l{transform:rotateY(-91deg);filter:brightness(.7)}
 .room.open .drape.r{transform:rotateY(91deg);filter:brightness(.7)}
 .stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:20px;width:min(1400px,82vw)}
@@ -181,7 +182,7 @@ main{padding-bottom:40px}
 .repo svg{width:18px;height:18px;fill:currentColor;flex:none}
 .repo span{margin-right:-.22em;padding-top:1px}   /* cancel the trailing letter-spacing so the label sits centred */
 .repo:hover,.repo:focus-visible{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--orange)}
-.repo .stars{display:inline-flex;align-items:center;gap:6px;margin-left:2px;padding-left:14px;border-left:2px solid rgba(20,26,94,.4);letter-spacing:.06em}
+.repo .stars{display:inline-flex;align-items:center;gap:6px;margin-left:2px;padding-left:14px;border-left:2px solid rgba(27,29,43,.4);letter-spacing:.06em}
 .repo .stars[hidden]{display:none}
 .repo .stars i{font-style:normal}
 footer{text-align:center;padding:64px 16px 60px;border-top:1px solid var(--line);margin-top:80px}
