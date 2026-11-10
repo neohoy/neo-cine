@@ -20,7 +20,7 @@ NEO 的风格是一个一个做出来的。目前有：
 
 ## 安装
 
-还没有发布。仓库放上 GitHub 之后，在 Claude Code 里运行：
+在 Claude Code 里运行：
 
 ```
 claude plugin marketplace add neohoy/neo-cine

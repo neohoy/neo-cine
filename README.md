@@ -20,7 +20,7 @@ You can also change a style into your own, or make one from a blank page ([MY-ST
 
 ## Install
 
-Not published yet. Once the repository is on GitHub, in Claude Code:
+In Claude Code:
 
 ```
 claude plugin marketplace add neohoy/neo-cine
