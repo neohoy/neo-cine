@@ -167,9 +167,19 @@ Click a frame for its `STYLE.md`, or watch the films in the [gallery](https://ne
 </table>
 <!-- styles:end -->
 
+## Star history
+
+<a href="https://www.star-history.com/#neohoy/neo-cine&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=neohoy/neo-cine&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=neohoy/neo-cine&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=neohoy/neo-cine&type=Date" />
+ </picture>
+</a>
+
 ## Thanks and licence
 
-- **Thanks to [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) by LemoLab.** NEO-Cine is built on its framework and production tools (MIT); the styles here are NEO's own. What is kept as it is and how updates are followed: [UPSTREAM.md](UPSTREAM.md).
+- **Thanks to Lemomo ([@lemomo_ai](https://x.com/lemomo_ai)), a very talented designer.** NEO-Cine's framework follows Lemomo's skill [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar); the styles here are our own.
 - **Thanks to Yuma Garments ([@garments__](https://x.com/garments__)).** Those illusion animations gave Folding City its idea. Technique only; none of those pictures are used.
 - **Licence**: [MIT](LICENSE). Films you make with the library are yours.
 

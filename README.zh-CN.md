@@ -169,9 +169,19 @@ claude plugin uninstall neo-cine@neo
 </table>
 <!-- styles:end -->
 
+## Star 增长
+
+<a href="https://www.star-history.com/#neohoy/neo-cine&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=neohoy/neo-cine&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=neohoy/neo-cine&type=Date" />
+   <img alt="Star 增长曲线" src="https://api.star-history.com/svg?repos=neohoy/neo-cine&type=Date" />
+ </picture>
+</a>
+
 ## 感谢与声明
 
-- **感谢 LemoLab 的 [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)。** NEO-Cine 建在它的框架和制作工具上（MIT）；这里的风格是 NEO 自己做的。哪些原样保留、以后怎么跟更新，见 [UPSTREAM.zh-CN.md](UPSTREAM.zh-CN.md)。
+- **感谢 Lemomo（[@lemomo_ai](https://x.com/lemomo_ai)），一位很有才华的设计师。** NEO-Cine 的框架参考了他的技能 [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)，风格是我们自己做的。
 - **感谢 Yuma Garments（[@garments__](https://x.com/garments__)）。** 折叠城市的想法来自这位作者的错视动画。只学手法，没有使用原作的任何画面。
 - **许可**：[MIT](LICENSE)。你用这个库做出来的片子归你自己。
 
