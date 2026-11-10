@@ -20,7 +20,7 @@ other agents may not reproduce them well.
 ## 🎬 Style 01: Folding City
 
 <table><tr>
-<td width="50%" valign="top"><a href="styles/folding-city/DEMO.md"><img src="docs/folding-city/title.jpg" alt="Shenzhen, Folded: the demo film of Folding City"></a><br><b>The demo film</b> · <i>Shenzhen, Folded</i> · 40 s<br><sub>Luohu, Futian, Nanshan: three districts on one hinge chain, in one take. No narration; the score and every sound effect are synthesized in code.</sub></td>
+<td width="50%" valign="top"><a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4"><img src="docs/folding-city/title.jpg" alt="Shenzhen, Folded: the demo film of Folding City"></a><br><b>▶ The demo film</b> · <i>Shenzhen, Folded</i> · 40 s<br><sub>Luohu, Futian, Nanshan: three districts on one hinge chain, in one take. No narration; the score and every sound effect are synthesized in code.</sub></td>
 <td width="50%" valign="top"><a href="styles/folding-city/STYLE.md"><img src="docs/folding-city/oblique.jpg" alt="Folding City: the style, open"></a><br><b>The style, open</b> · style prompt · shot table · full source<br><sub>A city drawn as a flat poster that is really a 3D model. Take the look, the moves and the sound to your own city, campus or product.</sub></td>
 </tr></table>
 
@@ -42,7 +42,7 @@ What the style does:
 <div align="center">
 
 Every frame and every note of it was written in code.<br>
-[**Style prompt**](styles/folding-city/STYLE.md) · [**Demo notes and shot table**](styles/folding-city/DEMO.md) · [**Source**](styles/folding-city/demo/)
+[**▶ Download the film (1080p, 53 MB)**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**Style prompt**](styles/folding-city/STYLE.md) · [**Demo notes and shot table**](styles/folding-city/DEMO.md) · [**Source**](styles/folding-city/demo/)
 
 </div>
 

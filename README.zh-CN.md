@@ -21,7 +21,7 @@
 ## 🎬 01 号风格：折叠城市
 
 <table><tr>
-<td width="50%" valign="top"><a href="styles/folding-city/DEMO.zh-CN.md"><img src="docs/folding-city/title.jpg" alt="《折叠深圳》：折叠城市的示范片"></a><br><b>示范片</b> · 《折叠深圳》 · 40 秒<br><sub>罗湖、福田、南山，三个区用铰链首尾相连，一镜到底。没有旁白；配乐和每一个动作音都是代码合成的。</sub></td>
+<td width="50%" valign="top"><a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4"><img src="docs/folding-city/title.jpg" alt="《折叠深圳》：折叠城市的示范片"></a><br><b>▶ 示范片</b> · 《折叠深圳》 · 40 秒<br><sub>罗湖、福田、南山，三个区用铰链首尾相连，一镜到底。没有旁白；配乐和每一个动作音都是代码合成的。</sub></td>
 <td width="50%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/folding-city/oblique.jpg" alt="折叠城市：风格全部公开"></a><br><b>风格全部公开</b> · 风格说明 · 镜头表 · 完整源码<br><sub>一座画成平面海报的城市，其实是三维模型。画面、动作和声音都可以拿去拍你自己的城市、园区或产品。</sub></td>
 </tr></table>
 
@@ -43,7 +43,7 @@
 <div align="center">
 
 每一帧画面、每一个音符，都是写代码做出来的。<br>
-[**风格说明**](styles/folding-city/STYLE.zh-CN.md) · [**示范片说明和镜头表**](styles/folding-city/DEMO.zh-CN.md) · [**源码**](styles/folding-city/demo/)
+[**▶ 下载成片（1080p，53 MB）**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**风格说明**](styles/folding-city/STYLE.zh-CN.md) · [**示范片说明和镜头表**](styles/folding-city/DEMO.zh-CN.md) · [**源码**](styles/folding-city/demo/)
 
 </div>
 
