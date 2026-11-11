@@ -13,10 +13,13 @@ REPO = 'neohoy/neo-cine'
 FILMS_URL = f'https://github.com/{REPO}/releases/download/films'   # full films live on the "films" release as <slug>.mp4
 BLOB_URL = f'https://github.com/{REPO}/blob/main'
 
-# The categories, in gallery order (the same as upstream's). A style.json must name one of them (both languages, exactly).
-CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
+# The categories, in gallery order (upstream's, plus NEO-Cine's own Real Maps: styles drawn over real map data, see neo/geo/). A style.json must name one of them (both languages, exactly).
+CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
               ('图形与排版', 'Graphic & Type'), ('信息与发布', 'Information & Keynote'), ('卡通与动画', 'Cartoon & Anime'),
               ('游戏', 'Games'), ('电影与时代', 'Cinema & Eras'), ('材质与 3D', 'Materials & 3D')]
+# A note under a category's heading, in the gallery and in both READMEs: (Chinese, English).
+CAT_NOTES = {'真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
+                      'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.')}
 # The latest release's styles: the README shows them in a group of their own above the categories (and not again in their category). Empty it to drop the group.
 NEWEST = ('2026-11-10', [])
 FIELDS = ('slug', 'num', 'en', 'cn', 'category_en', 'category_cn', 'film', 'line', 'line_cn', 'uses', 'frame_sec', 'dur')
@@ -148,7 +151,8 @@ for i, (cn, en) in enumerate(cats, 1):
     sections.append(
         f'<section class="category" id="{sid}">\n'
         f'  <header class="cat-head"><div><p class="cat-no">Category {i:02d}</p><h2>{esc(en)}</h2>'
-        f'<p class="cat-cn">{esc(cn)} · {len(group)} {"style" if len(group) == 1 else "styles"}</p></div></header>\n'
+        f'<p class="cat-cn">{esc(cn)} · {len(group)} {"style" if len(group) == 1 else "styles"}</p>'
+        + (f'<p class="cat-cn">{esc(CAT_NOTES[cn][1])}<br>{esc(CAT_NOTES[cn][0])}</p>' if cn in CAT_NOTES else '') + '</div></header>\n'
         f'  <div class="grid">\n' + '\n'.join(map(card, group)) + '\n  </div>\n</section>')
 
 n_vid = sum(bool(s.get('video')) for s in styles)
@@ -278,11 +282,11 @@ def readme_grid(zh):
     padded to three cells, so a category with one or two styles keeps the column width."""
     out = []
     newest = [next(x for x in styles if x['slug'] == slug) for slug in NEWEST[1]]
-    groups = [((f'🆕 最新 · {NEWEST[0]}' if zh else f'🆕 New · {NEWEST[0]}'), newest)] if newest else []
-    groups += [((cn if zh else en), [x for x in styles if x['cat'] == cn and x['stylemd'] and x['slug'] not in NEWEST[1]]) for cn, en in cats]
-    for title, group in groups:
+    groups = [((f'🆕 最新 · {NEWEST[0]}' if zh else f'🆕 New · {NEWEST[0]}'), newest, '')] if newest else []
+    groups += [((cn if zh else en), [x for x in styles if x['cat'] == cn and x['stylemd'] and x['slug'] not in NEWEST[1]], CAT_NOTES.get(cn, ('', ''))[0 if zh else 1]) for cn, en in cats]
+    for title, group, note in groups:
         if not group: continue
-        out.append(f'\n### {title}\n\n<table>')
+        out.append(f'\n### {title}\n' + (f'\n{note}\n' if note else '') + '\n<table>')
         for i in range(0, len(group), 3):
             out.append('<tr>')
             for s in group[i:i + 3]:

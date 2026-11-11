@@ -157,7 +157,7 @@ Fonts: Google Fonts (OFL), self-hosted in the project. The typefaces a `STYLE.md
 
 ## 12. Where to look in our demos
 
-NEO-Cine has one demo so far: "Shenzhen, Folded 折叠深圳" (40 s, 120 BPM), in the style Folding City 折叠城市.
+NEO-Cine has two demos so far. "From Thirteen to Fifty 十三到五十" (56 s, 120 BPM), in the style Atlas Scroll 铜版图卷, shows a map that changes by year: dated borders and railways from `neo/geo/ohm.py`, the version lookup and neighbour colouring in `styles/atlas-scroll/demo/main.js` (`at`, `drawMap`), a traveller the camera follows (`guideAt`, `drawGuides`), screen-space plates (`drawHud`) and a banjo, guitar and harmonica score in `demo/mix.py`. The table below is for the other one, "Shenzhen, Folded 折叠深圳" (40 s, 120 BPM), in the style Folding City 折叠城市.
 
 | If you need… | Look at |
 |---|---|

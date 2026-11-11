@@ -34,3 +34,12 @@ styles/*/demo/stills/*
 # Release staging and the Pages build
 /.release/
 /_site/
+# Design-review snapshots stay local
+/.impeccable/
+# Map data: the layers a film draws are committed; the raw Overpass answers are a cache
+styles/*/demo/data/*.cache/
+styles/*/demo/data/*.log
+# Versioned builds of a demo's poster stay local; poster.jpg is the committed one
+styles/*/poster-v*.jpg
+# The full OpenHistoricalMap fetch is a cache too: tools/prep.py cuts it down to what the film draws
+styles/*/demo/data/history.json

@@ -157,7 +157,7 @@ export const HIT  = { pratfall: ['chase', 6], ... };   // 段落 + 拍
 
 ## 12. 在我们的示范片里看哪里
 
-NEO-Cine 目前只有一支示范片：《折叠深圳》（Shenzhen, Folded，40 秒，120 BPM），风格是折叠城市（Folding City）。
+NEO-Cine 目前有两支示范片。《十三到五十》（From Thirteen to Fifty，56 秒，120 BPM），风格是铜版图卷（Atlas Scroll），展示一张随年份变化的地图：带日期的边界和铁路来自 `neo/geo/ohm.py`，按年份取版本和邻接着色在 `styles/atlas-scroll/demo/main.js`（`at`、`drawMap`），镜头跟随的行旅（`guideAt`、`drawGuides`），屏幕空间的牌子（`drawHud`），班卓、吉他、口琴的配乐在 `demo/mix.py`。下表讲的是另一支，《折叠深圳》（Shenzhen, Folded，40 秒，120 BPM），风格是折叠城市（Folding City）。
 
 | 如果你需要…… | 去看 |
 |---|---|

@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-10 · [01 号风格：折叠城市](https://neohoy.github.io/neo-cine/)**：一座会拉开、会折叠、会立起来的平面海报城市。[往下看 ↓](#风格)
+🆕 **2026-11-11 · [02 号风格：铜版图卷](https://neohoy.github.io/neo-cine/)**：“真实地图”系列的第一个风格，画在 OpenStreetMap 和 OpenHistoricalMap 的数据上。一张手工设色的老地图向西展开，各州一年年上色。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -157,6 +157,18 @@ claude plugin uninstall neo-cine@neo
 点图看它的风格说明，或者到[画廊](https://neohoy.github.io/neo-cine/)里看片。后面的风格会一个一个加进来。
 
 <!-- styles:start -->
+
+### 真实地图
+
+基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。
+
+<table>
+<tr>
+<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.zh-CN.md"><img src="docs/frames/atlas-scroll.jpg" alt="铜版图卷"></a><br><b>铜版图卷</b><br>Atlas Scroll<br><i>From Thirteen to Fifty</i><br><sub>一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。</sub></td>
+<td width="33%" valign="top"></td>
+<td width="33%" valign="top"></td>
+</tr>
+</table>
 
 ### 图形与排版
 

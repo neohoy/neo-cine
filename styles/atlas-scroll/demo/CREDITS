@@ -1,0 +1,33 @@
+From Thirteen to Fifty (十三到五十): credits
+
+History: OpenHistoricalMap, CC0 1.0 (public domain). https://www.openhistoricalmap.org
+  The borders of the states, the territories and the United States with their start and end dates, and railways with
+  their opening years. Fetched 2026-11-11 through OpenHistoricalMap's Overpass API by neo/geo/ohm.py; data/us.json is
+  the part this film draws (made by tools/prep.py).
+Base map: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Land from OpenStreetMap's simplified land polygons (osmdata.openstreetmap.de); named rivers, the Great Lakes and Great
+  Salt Lake, and peaks, through the Overpass API by neo/geo/osm.py. Fetched 2026-11-11. data/land.json, water.json,
+  lakes-*.json and peaks-*.json are a derived database and stay under ODbL 1.0. The film is a produced work: it credits
+  both sources on its last card.
+  View: North America from 22 to 52 N, Albers equal-area conic (standard parallels 29.5 and 45.5 N, origin 96 W 37.5 N).
+  The film is about how borders changed. Only the borders of the United States, its states and its territories are
+  drawn, each for the years OpenHistoricalMap gives it; land outside them is bare paper with no line.
+
+Picture: drawn entirely in code (Canvas 2D). No images, video or 3D models are used.
+Sound: the score (banjo, guitar and bass by the library's core/audio/pluck.py string model; harmonica and foot drum
+       synthesized in mix.py), every sound effect and the ambience are synthesized. No samples or recordings are used.
+
+Fonts:
+- IM Fell English, roman and italic. Igino Marini. SIL Open Font License 1.1. Ships with the library (core/fonts/).
+- Noto Serif SC. Google. SIL Open Font License 1.1. Fetched by tools/fonts.sh into fonts/, not kept in git.
+  https://github.com/google/fonts/tree/main/ofl/notoserifsc
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome
+frame capture, ffmpeg encode and loudness master.
+
+Form reference (grammar only, none of their plates, ornaments or titles are used): nineteenth-century American
+engraved and lithographed atlases, and wall maps on rollers.
+
+An unofficial film about real history; the dates on screen are checked in FACTS.md. The wagon and the trains are
+guides, not records: their routes follow the National Road, the Oregon Trail and the first transcontinental line
+through well-known places, with approximate positions.
