@@ -1,0 +1,28 @@
+Shenzhen, Unrolled (鹏城长卷): credits
+
+Map data: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Fetched 2026-11-11 through the Overpass API by neo/geo/osm.py and kept in data/coast.json and data/futian.json
+  (coastline, water, rivers, woods, parks, peaks, roads, railways, place names; buildings and streets of central Futian).
+  Those two files are a derived database and stay under ODbL 1.0. The film is a produced work: it credits
+  OpenStreetMap on its last card.
+  View: a coastal strip, 113.74-114.66 E, 22.40-22.74 N, north up. No national, provincial or other boundary line is
+  drawn. Everything in the frame, the New Territories included, is drawn with the same marks and colours.
+
+Picture: drawn entirely in code (Canvas 2D). No images, video or 3D models are used.
+Sound: the score (guqin and pipa by the library's core/audio/pluck.py string model; xiao, drum and woodblock
+       synthesized in mix.py), every sound effect and the ambience are synthesized. No samples or recordings are used.
+
+Fonts (fetched by tools/fonts.sh into fonts/, not kept in git):
+- Ma Shan Zheng. Ma ShanZheng. SIL Open Font License 1.1.
+  https://github.com/google/fonts/tree/main/ofl/mashanzheng
+- LXGW WenKai, Medium. LXGW. SIL Open Font License 1.1.
+  https://github.com/lxgw/LxgwWenKai
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome
+frame capture, ffmpeg encode and loudness master.
+
+Form reference (grammar only, none of their pictures, inscriptions or seals are used): Ming and Qing coastal
+defence scroll maps, and blue-and-green landscape handscrolls.
+
+The map is an illustration, not a survey: mountains are pictorial signs placed where OpenStreetMap has woodland and
+named peaks, and buildings are drawn as houses and pavilions whose tiers follow the tagged height.

@@ -16,7 +16,8 @@ longitude/latitude to metres around an origin (x east, y north), simplifies ever
       "roads":  [{c, n, b, p}]       c class (motorway, trunk, primary, secondary, tertiary), b 1 = bridge, 2 = tunnel
       "streets":[{c, n, p}]          residential and smaller, for close views
       "rail":   [{c, n, b, p}]       c "rail" | "subway"
-      "buildings": [{p, h, n}]       p footprint ring, h height in metres (from height or building:levels; 0 when untagged)
+      "buildings": [{p, h, n}]       p footprint ring, h height in metres (from height or building:levels; 0 when untagged);
+                                     buildings tagged underground (location, a negative layer, tunnel) are left out
       "places": [{x, y, n, c}]       c suburb, town, village, quarter, neighbourhood … }
 
 For a country instead of a city: --proj albers:29.5,45.5 (a conic projection), --coarse-land (the coast from OpenStreetMap's
@@ -335,7 +336,9 @@ def main():
             for el in els:
                 rs = rings_of(el, P)
                 if not rs or abs(area(rs[0])) < max(a.min_area, 12): continue
-                t = el.get('tags', {}); res.append(dict(p=flat(simplify(rs[0], a.tol)), h=height(t), n=name(t)))
+                t = el.get('tags', {})
+                if t.get('location') == 'underground' or str(t.get('layer', '0')).startswith('-') or t.get('tunnel') not in (None, 'no'): continue   # metro boxes, underground malls
+                res.append(dict(p=flat(simplify(rs[0], a.tol)), h=height(t), n=name(t)))
             out['buildings'] = res
         elif layer == 'places':
             out['places'] = [dict(x=round(P.xy(el['lon'], el['lat'])[0]), y=round(P.xy(el['lon'], el['lat'])[1]), n=name(el.get('tags', {})), c=el['tags']['place']) for el in els if name(el.get('tags', {}))]
