@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-11 · [Style 02: Atlas Scroll](https://neohoy.github.io/neo-cine/)**: the first style of the Real Maps series, drawn over OpenStreetMap and OpenHistoricalMap data. A hand-coloured old map unrolls westward and the states take their colours year by year. [See it ↓](#the-styles)
+🆕 **2026-11-12 · [Style 03: Scroll Map](https://neohoy.github.io/neo-cine/)**: the second style of the Real Maps series, drawn over OpenStreetMap data. A painted handscroll unrolls along the coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions. [See it ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -163,7 +163,7 @@ A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMa
 <table>
 <tr>
 <td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.md"><img src="docs/frames/atlas-scroll.jpg" alt="Atlas Scroll"></a><br><b>Atlas Scroll</b><br><i>From Thirteen to Fifty</i><br><sub>A hand-coloured atlas plate unrolls westward: the states take their colours year by year, a covered wagon leads the way to the Pacific, and in 1869 the railway overtakes it.</sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.md"><img src="docs/frames/scroll-map.jpg" alt="Scroll Map"></a><br><b>Scroll Map</b><br><i>Shenzhen, Unrolled</i><br><sub>A handscroll unrolls along the real coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions.</sub></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>

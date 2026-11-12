@@ -21,7 +21,7 @@ Needs: the library's core tools, plus `neo/geo/osm.py` for the map data (Python 
 - **Land** is bare paper, with an ochre wash blurred inward from the shore, and a pale green wash under woods and parks.
 - **Ink lines** are stroked twice: once plain, once wider through an irregular dash, which reads as the pressure of a brush. Coast and railways are ink; nothing else is.
 - **Mountains** are signs, not terrain: two or three rounded peaks, ink on the ridge only, azurite at the top running through malachite into the paper at the foot, a few texture strokes and moss dots. Their size follows how deep the woodland is; a named peak with an elevation gets its own, sized by height. Northern ones are drawn first so that southern ones overlap them like ranges.
-- **Buildings** are signs too: a footprint becomes a small house (white body, dark hipped roof); a tall building becomes a pavilion whose number of tiers follows its height, each tier narrower, eaves turned up, a finial on top. Crowded small ones are thinned so that every sign is legible.
+- **Buildings** are signs too: a footprint becomes a hall of its own size, turned the way the footprint lies (white body, dark hipped roof, one bay per 11 m of frontage), and its roof always points up the sheet: a footprint that runs north–south is drawn as halls one behind the other, all facing south, never as a hall lying on its side. A tall building (24 m and more) becomes a pavilion whose number of tiers follows its height, each tier narrower, eaves turned up, a finial on top; it always stands upright. Crowded small ones are thinned so that every sign is legible; what is underground (metro boxes, malls under a square) is not drawn.
 - **Walled towns** get a crenellated square with gate towers.
 - All of it is procedural and seeded by the feature, so nothing boils. Only the vignette is in screen space.
 
@@ -87,7 +87,7 @@ A camera state is a point on the map and a frame height in metres. North is up a
 
 - **Roads become red bands up close.** Cap every line in pixels (§2), and let small roads appear only past a zoom threshold.
 - **The coast closes along the edge of the data** and draws a rectangle. Stroke only the true coast, and keep the painting's edge inside the data's edge by more than the widest wash.
-- **Data is uneven.** Building heights are often missing; small buildings come in swarms. Decide tiers from height where it exists and from footprint where it doesn't, and thin the swarms.
+- **Data is uneven.** Building heights are often missing; small buildings come in swarms. Draw a pavilion only where a height says the building is tall, a hall of the footprint's size everywhere else, and thin the swarms.
 - **Names vanish into mountains.** Halo them or put them on a slip, and place them beside the thing, not on it.
 - **A clip rectangle that starts off-screen** must still reach the right edge: compute its width from the screen, not from a constant.
 - **Boundaries.** Don't fetch or draw them (DIRECTOR.md §13). Draw both sides of any line the same way, and keep the frame regional.
@@ -96,14 +96,14 @@ A camera state is a point on the map and a frame height in metres. North is up a
 ## 10. Engine
 
 - [`neo/geo/osm.py`](../../neo/geo/osm.py): bounding box and layer names in, one JSON file out (metres around an origin, simplified lines, land closed against the box). `--origin` lets a detail file overlay a wide one.
-- [`demo/ink.js`](demo/ink.js): `makePaper`, `makeWaves`, `inkStroke(g, path, width, colour, seed)`, `drawPeak(g, x, y, w, h, seed)`, `drawHouse(g, x, y, w, tiers, seed, growth)`, `drawSlip`, `vtext`, `drawSeal`.
+- [`demo/ink.js`](demo/ink.js): `makePaper`, `makeWaves`, `inkStroke(g, path, width, colour, seed)`, `drawPeak(g, x, y, w, h, seed)`, `drawHall(g, x, y, frontage, depth, angle, bays, seed)`, `drawTower(g, x, y, w, tiers, seed, growth)`, `drawSlip`, `vtext`, `drawSeal`.
 - [`demo/main.js`](demo/main.js): `MOUNTAINS` (signs from woodland density and peaks), `HOUSES` (signs from footprints), `layer(draw, mask)` with `washMask` and `frontClip` for the fronts, `drawFort`, `drawScroll`.
 
 ```js
 // a river town at street scale, nothing from the demo: paper, one inked river, three pavilions
 g.fillStyle = C.paper; g.fillRect(0, 0, W, H);
 world(); inkStroke(g, riverPath, lw(40, 1.5, 5), C.ink, 7); screen();
-[[-300, 2], [0, 5], [280, 3]].forEach(([x, tiers], i) => drawHouse(g, sx(x), sy(120), 90 * S, tiers, i + 1, 1));
+[[-300, 2], [0, 5], [280, 3]].forEach(([x, tiers], i) => drawTower(g, sx(x), sy(120), 90 * S, tiers, i + 1, 1));
 drawSlip(g, '渡口', sx(420), sy(260), 30, 'slip');
 ```
 

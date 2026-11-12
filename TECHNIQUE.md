@@ -158,7 +158,7 @@ Fonts: Google Fonts (OFL), self-hosted in the project. The typefaces a `STYLE.md
 
 ## 12. Where to look in our demos
 
-NEO-Cine has two demos so far. "From Thirteen to Fifty 十三到五十" (56 s, 120 BPM), in the style Atlas Scroll 铜版图卷, shows a map that changes by year: dated borders and railways from `neo/geo/ohm.py`, the version lookup and neighbour colouring in `styles/atlas-scroll/demo/main.js` (`at`, `drawMap`), a traveller the camera follows (`guideAt`, `drawGuides`), screen-space plates (`drawHud`) and a banjo, guitar and harmonica score in `demo/mix.py`. The table below is for the other one, "Shenzhen, Folded 折叠深圳" (40 s, 120 BPM), in the style Folding City 折叠城市.
+NEO-Cine has three demos so far. "Shenzhen, Unrolled 鹏城长卷" (48 s, 60 BPM), in the style Scroll Map 舆图长卷, shows a real map that is painted: the coast, woodland, roads and building footprints from `neo/geo/osm.py` become signs for mountains, halls and pavilions in `styles/scroll-map/demo/main.js` (`MOUNTAINS`, `HOUSES`), fronts release the layers one at a time (`layer`, `frontClip`), the recipes are in `demo/ink.js`, and the guqin, xiao and pipa score is in `demo/mix.py`. "From Thirteen to Fifty 十三到五十" (56 s, 120 BPM), in the style Atlas Scroll 铜版图卷, shows a map that changes by year: dated borders and railways from `neo/geo/ohm.py`, the version lookup and neighbour colouring in `styles/atlas-scroll/demo/main.js` (`at`, `drawMap`), a traveller the camera follows (`guideAt`, `drawGuides`), screen-space plates (`drawHud`) and a banjo, guitar and harmonica score in `demo/mix.py`. The table below is for the third, "Shenzhen, Folded 折叠深圳" (40 s, 120 BPM), in the style Folding City 折叠城市.
 
 | If you need… | Look at |
 |---|---|

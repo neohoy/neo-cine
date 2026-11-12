@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-11 · [02 号风格：铜版图卷](https://neohoy.github.io/neo-cine/)**：“真实地图”系列的第一个风格，画在 OpenStreetMap 和 OpenHistoricalMap 的数据上。一张手工设色的老地图向西展开，各州一年年上色。[往下看 ↓](#风格)
+🆕 **2026-11-12 · [03 号风格：舆图长卷](https://neohoy.github.io/neo-cine/)**：“真实地图”系列的第二个风格，画在 OpenStreetMap 的数据上。一幅设色长卷沿着深圳的海岸展开：墨线勾出岸，青绿的山立起来，朱砂的路从罗湖散开，福田的高楼长成一层层的楼阁。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -165,7 +165,7 @@ claude plugin uninstall neo-cine@neo
 <table>
 <tr>
 <td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.zh-CN.md"><img src="docs/frames/atlas-scroll.jpg" alt="铜版图卷"></a><br><b>铜版图卷</b><br>Atlas Scroll<br><i>From Thirteen to Fifty</i><br><sub>一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。</sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.zh-CN.md"><img src="docs/frames/scroll-map.jpg" alt="舆图长卷"></a><br><b>舆图长卷</b><br>Scroll Map<br><i>Shenzhen, Unrolled</i><br><sub>一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。</sub></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>

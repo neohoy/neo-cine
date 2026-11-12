@@ -77,6 +77,7 @@ const HOUSES = (det.buildings || []).map((b, i) => {
     const w = Math.max(D, 16), d = clamp(w / 2.3, 11, 40), n = clamp(Math.round(L / (d * 1.7)), 1, 8), ux = Math.cos(ang), uy = Math.sin(ang), a2 = a - Math.sign(a) * Math.PI / 2;
     return Array.from({ length: n }, (_, q) => { const o = (n === 1 ? 0 : (q / (n - 1) - .5)) * (L - d * 1.3); return { ...base, x: mx + ux * o, y: my + uy * o, L: w, D: d, ang: a2, bays: clamp(Math.round(w / 11), 1, 7), seed: i * 9 + q + 1 }; });
   }
+  if (Math.abs(a) > .87) { const f = Math.max(D, 16); D = Math.min(L, f); L = f; a -= Math.sign(a) * Math.PI / 2; }   // 朝东西的方楼：转成朝南来画，屋顶才朝上（不转的话是一块竖着的板）
   L = Math.max(L, 16); D = clamp(Math.max(D, L / 4.2), 11, 70);                                      // 太细长的占地加一点进深，不画成一根条
   return { ...base, x: mx, y: my, L, D, ang: a, bays: clamp(Math.round(L / 11), 1, 11), seed: i + 1 };
 }).flat().filter(Boolean).sort((p, q) => q.ar * (q.tiers + 1) - p.ar * (p.tiers + 1)).filter((() => {      // 大的先占位：同一个 20 米格子里只留一座，碎楼不成团

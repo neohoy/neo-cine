@@ -9,6 +9,7 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Style | 风格 | Folder | Our demo |
 |---|---|---|---|
 | Atlas Scroll | 铜版图卷 | [`atlas-scroll`](atlas-scroll/STYLE.md) | *From Thirteen to Fifty* |
+| Scroll Map | 舆图长卷 | [`scroll-map`](scroll-map/STYLE.md) | *Shenzhen, Unrolled* |
 
 ## Graphic & Type · 图形与排版
 

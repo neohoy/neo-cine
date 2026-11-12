@@ -44,7 +44,7 @@ Native moves spent: unrolling (opening and reveal), the brush leading (the penin
 
 ## Palette & props
 
-The palette in STYLE.md §3 is this film's. Slips: pale `#f2e8cc` with a cinnabar frame; the two old towns (Dapeng Fortress, Nantou) on cinnabar slips. Seal: 深圳. Mountains come from 3,040 woodland areas and the named peaks of 60 m and more; the pavilions from 4,868 building footprints in central Futian, of which 1,357 carry a height.
+The palette in STYLE.md §3 is this film's. Slips: pale `#f2e8cc` with a cinnabar frame; the two old towns (Dapeng Fortress, Nantou) on cinnabar slips. Seal: 深圳. Mountains come from 3,040 woodland areas and the named peaks of 60 m and more; the buildings from 4,825 footprints in central Futian: the 1,143 that carry a height of 24 m and more are pavilions (Ping An Finance Centre, 599 m, has 13 tiers), the others halls drawn along their footprints.
 
 Map view: a coastal strip, 113.74–114.66° E, 22.40–22.74° N, north up, no boundary lines; the New Territories at the bottom edge are drawn exactly like the rest.
 
@@ -58,7 +58,7 @@ The whole scroll on a dark table; at its right end the title 鹏城长卷 and th
 |---|---|
 | `demo/index.html` | fonts and the canvas |
 | `demo/timeline.js` | the one source of time: camera keys, the roll, ink and cinnabar fronts, tower timing, title, labels |
-| `demo/ink.js` | the recipes: paper, waves, ink stroke, peak, house and pavilion, slip, seal |
+| `demo/ink.js` | the recipes: paper, waves, ink stroke, peak, hall and pavilion, slip, seal |
 | `demo/main.js` | data → paths and signs, the layers and their fronts, the scroll and roll, sound events, `window.render` |
 | `demo/mix.py` | score, foley, ambience and bus |
 | `demo/data/coast.json`, `futian.json` | the map, made by `neo/geo/osm.py` (commands in `build.sh`) |
@@ -73,6 +73,9 @@ The whole scroll on a dark table; at its right end the title 鹏城长卷 and th
   - Fish ponds in the south read as grey buildings until water outlines were thinned by zoom.
   - The first mountains were spiky and read as pine trees: the ridge curves were made convex.
   - Small building parts swarmed into dark blots: larger signs now claim their space first.
+  - Every footprint drawn as the same small house made the centre of Futian a field of pagodas: only buildings of 24 m and more are pavilions now, the rest are halls of the footprint's size and direction.
+  - A square building that faces east or west came out as a slab standing on end, its roof to the right: it is turned to face south before it is drawn.
+  - Metro station boxes and underground malls were drawn as huge halls in the middle of squares: `neo/geo/osm.py` leaves out what is tagged underground.
 
 ## content.json fields (scene styles only)
 

@@ -49,9 +49,9 @@
 - 然后请用户把风格名打出来。列表要写在你自己的消息里（命令的输出用户看不到），提问用纯文字，不用 `AskUserQuestion`：它的选项太少，会把列表的其余部分挡住。
 
 <!-- style-list:start -->
-All styles (2) · 全部风格:
+All styles (3) · 全部风格:
 
-- **真实地图 Real Maps** (1): 铜版图卷 Atlas Scroll
+- **真实地图 Real Maps** (2): 铜版图卷 Atlas Scroll, 舆图长卷 Scroll Map
 - **图形与排版 Graphic & Type** (1): 折叠城市 Folding City
 <!-- style-list:end -->
 
