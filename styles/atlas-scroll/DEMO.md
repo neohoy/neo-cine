@@ -41,7 +41,7 @@ Native moves spent: colour settling (48 times), the jump (1803), the traveller h
 - **22–31 s**: bass and guitar return, banjo rolls in eighths, then sixteenths from 27 s, brushes doubling, foot stomps closing up from 29 s.
 - **31 s**: the heaviest hit (stomp, full strum, spike). **31–42 s**: the full band, banjo in sixteenths, harmonica tune; states keep plucking their notes on top.
 - **42–46 s**: two held chords; **46.0–46.6 s** silence; **46.6 and 47.2 s** two stamps with a banjo fifth; **49.5 s** a last G chord and a three-note harmonica tag.
-- Levels printed by `mix.py` for this film: score −24.0 dB, reverb −33.5 dB, foley −29.0 dB, ambience −40.2 dB (RMS). Film loudness −14.9 LUFS.
+- Levels printed by `mix.py` for this film: score −24.0 dB, reverb −33.5 dB, foley −29.0 dB, ambience −40.2 dB (RMS). Film loudness −13.9 LUFS. `mix.py` ends with `neo/audio/master.py`: one gain for the whole mix to −14 LUFS, with only the peaks of the plucks and the hits shortened, so the sections keep the levels they were written with (the stamps stay the heaviest moment; a peak-normalized mix came out of the loudness pass with them as the quietest). It names the picture event each accent belongs to (`neo/audio/cues.py`): six cues, all 0 ms from the picture; the notes of the 48 states, the stamps and the title take their times from the events.
 
 ## Palette & props
 
@@ -69,7 +69,7 @@ The whole roll on a dark table. Lower left, the compass and two small plates, AL
 | `demo/FACTS.md` | every date on screen and its source |
 | `demo/build.sh` | every step in order, the data commands included |
 
-- Build: `sh styles/atlas-scroll/demo/build.sh v002` (events → mix → picture at 24 fps with 4 workers → mux at −14 LUFS, BT.709 → reading-time check → poster at 53 s and style frame at 31.3 s). Each build is a new version; nothing is overwritten.
+- Build: `sh styles/atlas-scroll/demo/build.sh vNNN`, with the next free number (events → mix with the cue check and the level check → picture at 24 fps with 4 workers → mux at −14 LUFS, BT.709 → reading-time check → poster at 53 s and style frame at 31.3 s). Each build is a new version; nothing is overwritten.
 - Render time: Apple-silicon laptop, 4 workers, 1,344 frames in about a minute; the mix takes about a minute.
 - Review: a frame every 2.8 s, then single frames around 0.3–2.4 s (the roll), 19.4–20 s (South Pass), 30.6–31.4 s (the meeting) and 46.6–50.4 s (the count and the title).
 - Pitfalls of this film:

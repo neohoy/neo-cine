@@ -33,7 +33,7 @@
 ## 关卡
 
 - **人工：** 开始制作前确认风格图，完成后确认成片。
-- **机器：** `asr_check.py` 每一句都通过；`mux.sh` 报告响度约 −14 LUFS 且没有警告；`readcheck.mjs` 通过。
+- **机器：** `asr_check.py` 每一句都通过；`mix.py` 里的卡点核对（`neo/audio/cues.py`）和电平检查（`neo/audio/master.py`）通过；`mux.sh` 报告响度约 −14 LUFS 且没有警告；`readcheck.mjs` 通过。
 - **地图：** 库内示范片和其他片子一样遵守 DIRECTOR.md §13：每个地图镜头都放大检查，地图数据和所用视图写进 `CREDITS`。
 - **真实事件和产品：** 画面上和旁白里的每一条事实都来自官方来源，记在 `demo/FACTS.md` 里（说法、网址、原文引用）；最后一次渲染前，拿定稿的旁白稿对照检查。
 

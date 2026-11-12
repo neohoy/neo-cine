@@ -12,9 +12,11 @@ D = os.path.dirname(os.path.abspath(__file__))
 LIB = os.environ.get('LIB') or os.path.abspath(os.path.join(D, '..', '..', '..'))      # 库的根目录（core/ 在这里）
 sys.path.insert(0, LIB)
 from core.audio import sfx as X, pluck as P
+from neo.audio import master as M, cues as C
 SR = X.SR
 EVJ = json.load(open(os.path.join(D, 'events.json'), encoding='utf-8'))
 EV, DUR = EVJ['ev'], EVJ['dur']
+K = C.Cues(EV, fps=24)                                            # 按名字读画面事件；配乐里的重音用 K.on() 声明它属于哪个事件，最后统一核对
 N = int((DUR + .5) * SR); B = .5; BAR = 2.0; T0 = 1.0                                     # 拍、小节、第一个小节头
 rng = np.random.default_rng(31)
 mus = np.zeros((N, 2), np.float32); rev = np.zeros((N, 2), np.float32); fx = np.zeros((N, 2), np.float32); amb = np.zeros((N, 2), np.float32)
@@ -62,7 +64,7 @@ def roll(k, div=2, v=1.0):                                        # 班卓的滚
 
 # 每加入一个州一个班卓音：五声音阶一路往上，到顶折回
 SCALE = [midi(n) for n in ['G3', 'A3', 'B3', 'D4', 'E4', 'G4', 'A4', 'B4', 'D5', 'E5', 'G5']]
-states = [e for e in EV if e['type'] == 'state']
+states = K.events('state')
 for i, e in enumerate(states):
     j = i % 20; j = j if j < 11 else 20 - j
     banjo(SCALE[j], e['t'], .62 if i < 13 else .7, pan=.6 * e.get('pan', 0), g=.8 if i < 13 else .95, d=1.4)
@@ -70,13 +72,15 @@ for i, e in enumerate(states):
 # 0–3：纸卷滚开，十三州的琶音之下只有一个低音和一记扫弦
 bass('G2', .4, .8, 1.5); strum(CH['G'][0], 2.5, .7, d=2.2, g=.85)
 # 3–9：篷车上路，吉他一三二四，口琴一句
+K.on('sec', bar_t(1), id='ohio')
 for k in range(1, 4): boomchick(k, .85)
 for at, p, d in [(3, 'D5', .9), (4, 'B4', .45), (4.5, 'D5', .45), (5, 'E5', 1.4), (6.5, 'D5', .45), (7, 'B4', .9), (8, 'A4', .9)]: harp(p, at, d, .5)
 # 9：路易斯安那购地，一把大的扫弦，之后放慢成半小节一下
-strum(CH['G'][0], 9, .95, d=3.5, g=1.0); bass('G2', 9, .95, 1.6); stomp(9, .9)
+t = K.on('sec', 9, id='purchase'); strum(CH['G'][0], t, .95, d=3.5, g=1.0); bass('G2', t, .95, 1.6); stomp(t, .9)
 for k in range(4, 7): boomchick(k, .6, half=True)
 for at, p, d in [(10, 'G4', 1.9), (12, 'E4', .9), (13, 'G4', .9), (14, 'A4', .9)]: harp(p, at, d, .4)
 # 15–22：俄勒冈小道，只有吉他分解和口琴；19.6–20.4 南山口留空
+K.on('sec', bar_t(7), id='trail'); K.on('pass', 19.6)               # 小道段从第 7 小节头起；南山口的留空（总线那里）从 19.6 前 0.05 秒开始
 for k in range(7, 11):
     c = PROG[k % 8]; ps = CH[c][0]
     for i in range(8):
@@ -92,18 +96,18 @@ for k in range(11, 15):
 for at in (29, 29.5, 30, 30.25, 30.5, 30.625, 30.75, 30.875): stomp(at, .6 + .5 * (at - 29) / 2)
 for at, p, d in [(23, 'D5', 1.9), (25, 'E5', .9), (26, 'G5', 1.9), (28, 'E5', .9), (29, 'D5', 1.9)]: harp(p, at, d, .5)
 # 31：接轨，全片最重的一下
-stomp(31, 1.25); strum(CH['G'][0], 31, 1.0, d=3, g=1.1); bass('G2', 31, 1.0, 1.5)
+t = K.on('spike', 31); stomp(t, 1.25); strum(CH['G'][0], t, 1.0, d=3, g=1.1); bass('G2', t, 1.0, 1.5)
 # 31–42：全体合奏
 for k in range(15, 21):
     boomchick(k, 1.0); roll(k, 4, 1.0)
     for i in range(4): stomp(bar_t(k) + i * B, .55 if i % 2 == 0 else .3); brushhit(bar_t(k) + i * B + B / 2, .9)
 for at, p, d in [(31.5, 'G5', .9), (32.5, 'E5', .45), (33, 'D5', .9), (34, 'B4', .45), (34.5, 'D5', .45), (35, 'E5', 1.4), (36.5, 'G5', .45), (37, 'A5', .9), (38, 'G5', .9), (39, 'E5', .45), (39.5, 'D5', .45), (40, 'E5', .9), (41, 'D5', .9)]: harp(p, at, d, .55)
 # 42–46.5：拉远，放慢；数到 50 之前留空
-strum(CH['C'][0], 42, .8, d=2.5, g=1.0); bass('C2', 42, .8, 1.5); harp('G5', 42, 2.6, .5); strum(CH['D'][0], 44, .7, d=2.2, g=.9); bass('D2', 44, .7, 1.5); harp('F#5', 44, 1.6, .4, bend=-1)
+t = K.on('sec', 42, id='whole'); strum(CH['C'][0], t, .8, d=2.5, g=1.0); bass('C2', t, .8, 1.5); harp('G5', t, 2.6, .5); strum(CH['D'][0], 44, .7, d=2.2, g=.9); bass('D2', 44, .7, 1.5); harp('F#5', 44, 1.6, .4, bend=-1)
 # 46.6、47.2：两记戳；49.5：片名，一个和弦收住
-st = [e['t'] for e in EV if e['type'] == 'stamp']
+st = K.all('stamp')
 for i, at in enumerate(st): stomp(at, 1.3); banjo(['D5', 'G5'][i], at, .8, pan=-.2 + .4 * i, g=1.1, d=2)
-tl = next(e['t'] for e in EV if e['type'] == 'title')
+tl = K.at('title')
 strum(CH['G'][0], tl - .1, .85, d=6, g=1.2); bass('G2', tl - .1, .9, 2.5); stomp(tl - .1, .9)
 for at, p, d in [(tl + .4, 'D5', .45), (tl + .9, 'E5', .45), (tl + 1.4, 'G5', 2.6)]: harp(p, at, d, .5)
 
@@ -126,7 +130,7 @@ def train(d):                                                     # 蒸汽的四
 def whistle(d=.9):
     t = tt(d); e = np.clip(t / .06, 0, 1) * np.clip((d - t) / .25, 0, 1); y = sum(np.sin(2 * np.pi * f * t * (1 + .004 * np.sin(2 * np.pi * 6 * t))) for f in (523, 622, 784)) / 3
     return (y + X.bp(X.noise(d), 600, 3000) * .5) * e
-for e in EV:
+for e in K.each('roll', 'rollEnd', 'wagon', 'train', 'whistle', 'spike', 'stamp', 'cap'):
     ty, at = e['type'], e['t']
     if ty == 'roll': put(fx, paper_roll(e['d']), at, .22, -.4)
     elif ty == 'rollEnd': put(fx, X.clack(.7, 1.0), at, .4, -.6)
@@ -142,6 +146,9 @@ def bed(a, b, make, gain, fi=1.5, fo=2.0):
 bed(14, 24, lambda d: X.bp(X.noise(d), 250, 1100) * (.4 + .6 * np.sin(2 * np.pi * .21 * tt(d)) ** 2) * .5, .22)
 bed(.5, 6, lambda d: X.lp(X.noise(d), 2200) * (.2 + .8 * np.sin(2 * np.pi * .18 * tt(d)) ** 4) * .5, .16)      # 开场：大西洋的浪
 
+# 卡点核对（neo/audio/cues.py）：上面声明过的重音和画面事件差多少毫秒；超过半帧就停下，不往下混
+K.report() or sys.exit('mix.py: 配乐的重音没有落在画面事件上（见上表）：改 timeline.js 或这里的时间，让两边重新对齐')
+
 # ———— 混响、总线 ————
 ir = rng.standard_normal(int(1.4 * SR)) * np.exp(-np.arange(int(1.4 * SR)) / (.3 * SR)); ir = X.lp(X.hp(ir, 250), 7000)
 wet = np.stack([fftconvolve(rev[:, c], np.roll(ir, c * 331))[:N] for c in (0, 1)], 1) * .012
@@ -152,10 +159,12 @@ g = np.ones(N)                                                    # 两处留空
 for a, b, lo in ((19.55, 20.42, .1), (st[0] - .6, st[0] - .02, .04)):
     ia, ib = int(a * SR), int(b * SR); f = int(.2 * SR); g[ia:ib] = lo; g[ia - f:ia] = np.linspace(1, lo, f); g[ib:ib + 480] = np.linspace(lo, 1, 480)
 mix *= g[:, None]
-peak = np.abs(mix).max(); mix = mix / peak * .9
-for c in (0, 1): mix[:, c] = X.limit(X.compress(mix[:, c], thr=.32, ratio=2.2), .92)
+# 母带前的电平（neo/audio/master.py）：整条混音只加一个增益，提到 −14 LUFS；只把拨弦和重音冒出来的几毫秒峰值收住，
+# 段落之间谁响谁轻不动。这样 mux.sh 的 loudnorm 只需要线性微调，不会替我们重新分配强弱（按峰值归一时它会）
+mix = M.master(mix[:int(DUR * SR)])
 lowE = np.sqrt(np.mean(X.lp(mix[:, 0], 120) ** 2)); allE = np.sqrt(np.mean(mix[:, 0] ** 2))
 os.makedirs(os.path.join(D, 'out'), exist_ok=True)
 sf.write(os.path.join(D, 'out', 'mix.wav'), mix[:int(DUR * SR)].astype(np.float32), SR)
 print('每 2 秒的电平 dB：' + ' '.join(f'{rms(mix[int(a * SR):int((a + 2) * SR)]):.0f}' for a in range(0, int(DUR), 2)))
 print(f'mix.wav {DUR}s  peak {np.abs(mix).max():.2f}  低频占比 {20 * math.log10(lowE / allE):.1f} dB')
+M.check(os.path.join(D, 'out', 'mix.wav')) or sys.exit('mix.py: 这条混音到了 mux.sh 会被重新分配强弱（见上一行），先把峰值或动态范围收住')

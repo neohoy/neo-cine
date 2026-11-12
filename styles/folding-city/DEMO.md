@@ -61,7 +61,7 @@ One continuous take. Times are arrivals; between them the camera travels (ease-i
 - **Ending**: drums out, a G chord hangs from 34 s, a riser into the two impacts of the closing fold (36.2 s, 36.4 s), then a D chord with five rising bell notes that rings out.
 - **Sound effects** come from `window.EV` (exported to `events.json`): whoosh per camera move, click or thump per landing, ratchet and rumble for door and screen folds, slide and clack for a docking plate, creak and rumble for a standing plate.
 - **Ambience**: street noise under Luohu, wind under Futian, waves under Nanshan, a low bed under the ending.
-- Stem levels printed by `mix.py` for this film: music −12.0 dB, reverb −17.5 dB, effects −24.0 dB, ambience −27.1 dB RMS. The master is −14 LUFS.
+- Stem levels printed by `mix.py` for this film: music −12.0 dB, reverb −17.5 dB, effects −24.0 dB, ambience −27.1 dB RMS. The master is −14 LUFS. `mix.py` ends with `neo/audio/master.py`: one gain for the whole mix to −14 LUFS, almost no peak shortened, so the three districts keep the build they were written with (the first 3 dB under the third; a peak-normalized, compressed mix came out with them level). It names the picture event each accent belongs to (`neo/audio/cues.py`): seven cues, all 0 ms from the picture, the two slams falling on the moment a plate has stood up (the end of its fold event).
 
 ## Palette & props
 

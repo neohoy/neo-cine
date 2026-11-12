@@ -33,7 +33,7 @@ Rules for library demos only (a user's film follows `DIRECTOR.md`, not these):
 ## Gates
 
 - **Human:** approve the style frame before production, and the finished film.
-- **Machine:** `asr_check.py` passes on every line; `mux.sh` reports about −14 LUFS and no warning; `readcheck.mjs` passes.
+- **Machine:** `asr_check.py` passes on every line; the cue check (`neo/audio/cues.py`) and the level check (`neo/audio/master.py`) in `mix.py` pass; `mux.sh` reports about −14 LUFS and no warning; `readcheck.mjs` passes.
 - **Maps:** library demos follow DIRECTOR.md §13 like any film: every map shot checked enlarged, the map data and its view named in `CREDITS`.
 - **Real events and products:** every fact on screen and in the voice-over comes from an official source, kept in `demo/FACTS.md` (claim, URL, quoted wording); check the final script against it before the last render.
 

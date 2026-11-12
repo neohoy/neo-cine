@@ -11,9 +11,11 @@ D = os.path.dirname(os.path.abspath(__file__))
 LIB = os.environ.get('LIB') or os.path.abspath(os.path.join(D, '..', '..', '..'))      # 库的根目录（core/ 在这里）
 sys.path.insert(0, LIB)
 from core.audio import sfx as X
+from neo.audio import master as M, cues as C
 SR = X.SR
 EVJ = json.load(open(os.path.join(D, 'events.json'), encoding='utf-8'))
 EV, DUR = EVJ['ev'], EVJ['dur']
+K = C.Cues(EV, fps=24)                                            # 按名字读画面事件；配乐里的重音用 K.on() 声明它属于哪个事件，最后统一核对
 N = int((DUR + .5) * SR); B = .5; BAR = 2.0
 rng = np.random.default_rng(11)
 mus = np.zeros((N, 2), np.float32); rev = np.zeros((N, 2), np.float32); fx = np.zeros((N, 2), np.float32); amb = np.zeros((N, 2), np.float32)
@@ -83,6 +85,7 @@ SEC = [                      # (起点, 和弦序列每小节一个, 层次)
     (12.0, ['G', 'A', 'F#m7', 'Bm7', 'G'], 2),
     (24.0, ['D', 'A', 'Bm7', 'G', 'A'], 3),
 ]
+K.on('fold', 12.0, k='fold1', up=0); K.on('fold', 24.0, k='fold2', up=0)   # 第二、三段从上一块地放平的那一刻起
 for t0, prog, lvl in SEC:
     for bi, name in enumerate(prog):
         tb = t0 + bi * BAR; root, ch = CH[name]
@@ -107,19 +110,20 @@ for t0, prog, lvl in SEC:
         for dt, m in mot: put(mus, bell(m), t0 + dt, .2, .2); put(rev, bell(m), t0 + dt, .14, -.3)
 # 两次过场：铺底悬住，往上扫，立稳时砸下来；折起来前留一拍空
 for ta, name in [(10.0, 'A'), (22.0, 'A')]:
-    root, ch = CH[name]
+    root, ch = CH[name]; K.on('fold', ta + 1.1, up=1, end=True)   # 砸下来的那一下 = 地块立稳的时刻（折叠事件的结束）
     put(mus, pad(ch, 1.6), ta + .25, .12, 0); put(mus, riser(.95, .6), ta + .2, .5, 0); put(mus, impact(1.0), ta + 1.1, .95, 0); put(rev, impact(.6), ta + 1.1, .3, 0)
     for k in range(6): put(mus, pluck(ch[k % 4] + 12 * (k // 4), .3, 1.2), ta + 1.25 + k * B / 4, .2, .5 * math.sin(k)); put(rev, pluck(ch[k % 4] + 12, .3, 1), ta + 1.25 + k * B / 4, .08, 0)
     for k in range(3): put(mus, hat(.7), ta + 1.5 + k * B / 2, .3, .2)
     put(mus, kick(.8), ta + 1.5, .5)
 # 收尾：鼓撤掉，G 和弦悬着；折成 U 的两下落点；最后 D 和弦加铃音散掉
 root, ch = CH['G']; put(mus, pad(ch, 2.6), 34.0, .2, 0); put(rev, pad([c + 12 for c in ch], 2.6), 34.0, .1, 0)
+K.on('fold', 34.9, k='fold1', up=1); K.on('fold', 36.2, k='fold1', up=1, end=True); K.on('fold', 36.4, k='fold2', up=1, end=True)   # 折成 U 形：起折、两块先后立稳
 put(mus, riser(1.3, .7), 34.9, .5, 0); put(mus, impact(1.0), 36.2, 1.0, 0); put(rev, impact(.7), 36.2, .35, 0); put(mus, impact(.7), 36.4, .5, .2)
 root, ch = CH['D']; put(mus, pad(ch + [78], 3.8), 36.3, .24, 0); put(rev, pad([c + 12 for c in ch], 3.8), 36.3, .12, 0); put(mus, bass(26, 1.6), 36.4, .5)
 for k, m in enumerate([74, 78, 81, 86, 90]): put(mus, bell(m, 2.4), 36.6 + k * .22, .22, .5 * math.sin(k * 2)); put(rev, bell(m, 2.4), 36.6 + k * .22, .2, -.5 * math.sin(k * 2))
 
 # ———— 动作音 ————
-for e in EV:
+for e in K.each('whoosh', 'land', 'door', 'slide', 'fold'):
     t, ty, d = e['t'], e['type'], e.get('d', .5)
     if ty == 'whoosh':
         w = X.whoosh(max(.3, d * 1.15), 1.0); n = len(w); sweep = np.linspace(-.6, .6, n) * (1 if int(t * 4) % 2 else -1)
@@ -144,6 +148,9 @@ bed(12, 22.4, lambda d: X.bp(X.noise(d), 300, 1300) * (.5 + .5 * np.sin(2 * np.p
 bed(24, 34.4, lambda d: X.lp(X.noise(d), 2600) * (.25 + .75 * np.sin(2 * np.pi * .19 * tt(d)) ** 4) * .5, .15)                        # 南山：浪
 bed(34.6, 40, lambda d: X.lp(X.brown(d), 200), .2)
 
+# 卡点核对（neo/audio/cues.py）：上面声明过的重音和画面事件差多少毫秒；超过半帧就停下，不往下混
+K.report() or sys.exit('mix.py: 配乐的重音没有落在画面事件上（见上表）：改 timeline.js 或这里的时间，让两边重新对齐')
+
 # ———— 混响、总线 ————
 ir = rng.standard_normal(int(1.5 * SR)) * np.exp(-np.arange(int(1.5 * SR)) / (.38 * SR)); ir = X.hp(ir, 250)
 wet = np.stack([fftconvolve(rev[:, c], np.roll(ir, c * 331))[:N] for c in (0, 1)], 1) * .028
@@ -155,9 +162,11 @@ g = np.ones(N)
 for ta in (10.0, 22.0, 34.72):
     a, b = int((ta - .06) * SR), int((ta + .2) * SR); g[a:b] = .06; g[a - 2400:a] = np.linspace(1, .06, 2400); g[b:b + 1200] = np.linspace(.06, 1, 1200)
 mix *= g[:, None]
-mono = mix.mean(1); peak = np.abs(mix).max(); mix = mix / peak * .9
-for c in (0, 1): mix[:, c] = X.limit(X.compress(mix[:, c], thr=.3, ratio=2.5), .92)
+# 母带前的电平（neo/audio/master.py）：整条混音只加一个增益到 −14 LUFS，只收冒出来的峰值，三个区一层层加厚的强弱不动。
+# 这样 mux.sh 的 loudnorm 只需要线性微调，不会替我们重新分配强弱（按峰值归一再压缩时，第一个区会被抬到和第三个区差不多）
+mix = M.master(mix[:int(DUR * SR)])
 lowE = np.sqrt(np.mean(X.lp(mix[:, 0], 120) ** 2)); allE = np.sqrt(np.mean(mix[:, 0] ** 2))
 os.makedirs(os.path.join(D, 'out'), exist_ok=True)
 sf.write(os.path.join(D, 'out', 'mix.wav'), mix[:int(DUR * SR)].astype(np.float32), SR)
 print(f'mix.wav {DUR}s  peak {np.abs(mix).max():.2f}  低频占比 {20 * math.log10(lowE / allE):.1f} dB')
+M.check(os.path.join(D, 'out', 'mix.wav')) or sys.exit('mix.py: 这条混音到了 mux.sh 会被重新分配强弱（见上一行），先把峰值或动态范围收住')

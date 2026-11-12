@@ -96,7 +96,7 @@ export const SECS = [{ id: 'chase', t: 12.0, bpm: 144, beats: 12 }, ...];
 export const HIT  = { pratfall: ['chase', 6], ... };   // section + beat
 ```
 
-A small script (`cuecheck.py`; several demos of the upstream Lemo-Opuscar library have one in `styles/<slug>/demo/tools/`) compares every visual hit with the music cue it should land on. Aim for 0 ms.
+Compare every visual hit with the music cue it should land on, and aim for 0 ms. `neo/audio/cues.py` does it for any film, from the events the page exports (`window.EV`): in `mix.py`, a sound driven by the picture takes its time from the event by name (`K.events('state')`, `K.at('title')`), an accent written on the music grid names the event it belongs to (`stomp(K.on('spike', bar_t(15)))`), and `K.report()` prints every cue with the distance between score and picture and stops the build when one is more than half a frame off. `K.near('car', t)` lets the picture gate the notes of a phrase. Usage is at the top of the file; `styles/atlas-scroll/demo/mix.py` uses it. (Several demos of the upstream Lemo-Opuscar library carry a `cuecheck.py` of their own in `styles/<slug>/demo/tools/` instead.)
 
 ## 4. Voice
 
@@ -119,6 +119,7 @@ Write an original score from the cue map, in the instruments of the style's soun
 ## 6. Sound effects and mix
 
 - `core/audio/sfx.py` synthesises foley procedurally (click, whoosh, thump, ding, paper, noise beds…) with filters, envelopes and `add(buffer, sound, at, gain, pan)`. Drive it from `window.EV`, so every sound sits exactly on its frame.
+- **Before the master**: end `mix.py` with `neo/audio/master.py` (`mix = M.master(mix)`, then `M.check(path)` on the file it wrote). `mux.sh`'s loudnorm applies one gain to the whole film only when that leaves the true peak under −1.2 dB and the loudness range within 11 LU; a peak-normalized mix with a few heavy hits over a quiet body misses both, loudnorm then rides the level, and the sections come out re-balanced (in our demos the section written as the loudest came out the quietest). `master()` gives the mix one gain to −14 LUFS and shortens only the peaks (a soft clip, then a true-peak limiter); it prints how much each stage did, and a soft clip that cuts many windows by more than 3 dB means the hits are too hot at the source. `check()` fails the build when loudnorm would still have to ride the level.
 - **Master**: `sh core/render/mux.sh video.mp4 mix.wav out.mp4 24 [grain]` muxes, runs a two-pass loudnorm to −14 LUFS with a true-peak limit, adds grain in ffmpeg and prints the measured loudness; it exits non-zero on any failure. On light backgrounds use less grain; for pixel and vector styles, none.
 - **Standard colour**: films are mastered with `LEMO_COLOR=bt709` set for `mux.sh` (`LEMO_COLOR=bt709 sh core/render/mux.sh …`): limited range, BT.709 tags. The default keeps full-range BT.601 tags, which some platforms' transcoders ignore. The output name carries the version (§2).
 - Films with grain baked into the picture compress badly; re-encode with `-tune grain` and a higher CRF.

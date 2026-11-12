@@ -96,7 +96,7 @@ export const SECS = [{ id: 'chase', t: 12.0, bpm: 144, beats: 12 }, ...];
 export const HIT  = { pratfall: ['chase', 6], ... };   // 段落 + 拍
 ```
 
-一个小脚本（`cuecheck.py`；上游 Lemo-Opuscar 库有若干示范片在 `styles/<slug>/demo/tools/` 里带了一份）把每个画面击点和它应该落在的音乐卡点做比较。目标是 0 ms。
+把每个画面击点和它应该落在的音乐卡点做比较，目标是 0 ms。`neo/audio/cues.py` 对任何影片都能做这件事，依据是页面导出的事件（`window.EV`）：在 `mix.py` 里，由画面驱动的声音按名字从事件取时间（`K.events('state')`、`K.at('title')`）；写在音乐节拍上的重音，声明它属于哪个事件（`stomp(K.on('spike', bar_t(15)))`）；`K.report()` 打印每个卡点上配乐和画面相差多少，超过半帧就让构建停下。`K.near('car', t)` 可以让画面事件决定一个乐句里哪些音响。用法见文件开头；`styles/atlas-scroll/demo/mix.py` 在用。（上游 Lemo-Opuscar 库的做法是若干示范片各自在 `styles/<slug>/demo/tools/` 里带一份 `cuecheck.py`。）
 
 ## 4. 配音
 
@@ -119,6 +119,7 @@ export const HIT  = { pratfall: ['chase', 6], ... };   // 段落 + 拍
 ## 6. 音效和混音
 
 - `core/audio/sfx.py` 程序化合成拟音（click、whoosh、thump、ding、paper、噪声底……），带滤波器、包络和 `add(buffer, sound, at, gain, pan)`。用 `window.EV` 驱动它，这样每个声音都准确落在对应的帧上。
+- **母带之前**：`mix.py` 的最后一步用 `neo/audio/master.py`（`mix = M.master(mix)`，写出文件后再 `M.check(path)`）。`mux.sh` 的 loudnorm 只有在提升后真峰值不超过 −1.2 dB、响度范围不超过 11 LU 时，才对整部片子只加一个增益；按峰值归一的混音，几下重音压着一个安静的主体，两条都过不了，loudnorm 就会动态调整电平，各段的强弱被重新分配（我们的示范片里，写成最响的那一段出来成了最轻的）。`master()` 给整条混音一个增益到 −14 LUFS，只把峰值收短（先软限，再按真峰值限幅）；它会打印每一步做了多少，软限把很多时间窗削掉 3 dB 以上，说明重音在源头就太响了。loudnorm 仍然要动态调整时，`check()` 让构建失败。
 - **母带**：`sh core/render/mux.sh video.mp4 mix.wav out.mp4 24 [grain]` 合成音画，跑两遍 loudnorm 到 −14 LUFS 并限制真峰值，在 ffmpeg 里加颗粒，并打印实测响度；任何失败都以非零退出。浅色背景少加颗粒；像素和矢量风格不加。
 - **标准色彩**：成片做母带时给 `mux.sh` 设 `LEMO_COLOR=bt709`（`LEMO_COLOR=bt709 sh core/render/mux.sh …`）：有限范围，BT.709 标记。默认保留全范围的 BT.601 标记，有些平台的转码器会忽略它。输出文件名带版本号（§2）。
 - 画面里烤进了颗粒的影片很难压缩；用 `-tune grain` 和更高的 CRF 重新编码。
