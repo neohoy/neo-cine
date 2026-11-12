@@ -49,9 +49,10 @@
 - 然后请用户把风格名打出来。列表要写在你自己的消息里（命令的输出用户看不到），提问用纯文字，不用 `AskUserQuestion`：它的选项太少，会把列表的其余部分挡住。
 
 <!-- style-list:start -->
-All styles (3) · 全部风格:
+All styles (6) · 全部风格:
 
 - **真实地图 Real Maps** (2): 铜版图卷 Atlas Scroll, 舆图长卷 Scroll Map
+- **交通 Transport** (3): 瓷砖地铁图 Metro Mosaic, 列车运行图 Train Graph, 公交点阵屏 Bus Dot Matrix
 - **图形与排版 Graphic & Type** (1): 折叠城市 Folding City
 <!-- style-list:end -->
 
@@ -78,5 +79,5 @@ All styles (3) · 全部风格:
 - 影片的项目文件夹：在克隆的仓库里是 `films/<name>/`（git 已忽略），在技能模式下是用户文件夹里的 `<name>/`（见技能的 `SKILL.md`）。指南里凡是写 `films/<name>/` 的地方，都读作“项目文件夹”。只在这里工作，除非用户要你在他们自己的项目里做。
 - **每件交付物都是新版本，绝不覆盖。** 成片、海报、字幕，以及决定某一版内容的导演方案，都按 `-v001`、`-v002`…… 另存（`<name>-v003.mp4`、`<name>-v003.srt`、`poster-v003.jpg`）。先看已有的文件，取下一个号；同一版的成片、海报和字幕用同一个号。指南里凡是不带版本号提到这些文件的地方（`<name>.mp4`、`poster.jpg`），都读作带版本号的文件名。`out/` 里的中间文件可以覆盖。
 - `node core/…` 和 `sh tools/…` 都从库的根目录运行（技能模式下是 `$LIB`）。
-- `core/` 里有现成的工具（渲染、TTS、语音检查、采样器、音效、合成封装）。用它们或用你自己的工具都行，但不要为了用户的片子去改 `core/`、`neo/` 或 `styles/`。`core/` 是 Lemo-Opuscar `core/` 的原样镜像，所以工具名、参数和 `LEMO_*` 环境变量都是上游的；只有库的所在位置用 NEO-Cine 自己的变量（`NEO_CINE_HOME`，默认 `~/neo-cine`）。NEO 自己的工具放在 `neo/`（目前为空）。
+- `core/` 里有现成的工具（渲染、TTS、语音检查、采样器、音效、合成封装）。用它们或用你自己的工具都行，但不要为了用户的片子去改 `core/`、`neo/` 或 `styles/`。`core/` 是 Lemo-Opuscar `core/` 的原样镜像，所以工具名、参数和 `LEMO_*` 环境变量都是上游的；只有库的所在位置用 NEO-Cine 自己的变量（`NEO_CINE_HOME`，默认 `~/neo-cine`）。NEO 自己的工具放在 `neo/`（[`neo/README.zh-CN.md`](neo/README.zh-CN.md)）。
 - 绝不结束不是你启动的进程。不要留下还在后台运行的进程。

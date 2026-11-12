@@ -49,9 +49,10 @@ If the user hasn't picked a style:
 - Then ask them to type the name. The list goes in your own message (a command's output isn't shown to them), and the question is plain text, not `AskUserQuestion`: its few options would hide the rest of the list.
 
 <!-- style-list:start -->
-All styles (3) · 全部风格:
+All styles (6) · 全部风格:
 
 - **真实地图 Real Maps** (2): 铜版图卷 Atlas Scroll, 舆图长卷 Scroll Map
+- **交通 Transport** (3): 瓷砖地铁图 Metro Mosaic, 列车运行图 Train Graph, 公交点阵屏 Bus Dot Matrix
 - **图形与排版 Graphic & Type** (1): 折叠城市 Folding City
 <!-- style-list:end -->
 
@@ -78,5 +79,5 @@ Report progress in the user's language. If a step fails, read the error, fix the
 - The film's project folder is `films/<name>/` in a clone (ignored by git), or `<name>/` in the user's folder in skill mode (see the skill's `SKILL.md`). Wherever a guide says `films/<name>/`, read "the project folder". Work only there, unless the user asks you to work in their own project.
 - **Every deliverable is a new version, never an overwrite.** The film, its poster, its subtitles, and a treatment that defines a version, are saved as `-v001`, `-v002`, … (`<name>-v003.mp4`, `<name>-v003.srt`, `poster-v003.jpg`). Look at the files already there first and take the next number; the film, poster and subtitles of one version share the number. Wherever a guide names one of these without a number (`<name>.mp4`, `poster.jpg`), read the numbered name. Intermediate files in `out/` may be overwritten.
 - Run `node core/…` and `sh tools/…` from the library root (`$LIB` in skill mode).
-- `core/` has ready-made tools (rendering, TTS, speech check, sampler, sfx, mux). Use them or your own stack, but don't edit `core/`, `neo/` or `styles/` for a user's film. `core/` is an unmodified mirror of Lemo-Opuscar's `core/`, so its tool names, flags and `LEMO_*` environment variables are upstream's; only the library's home is NEO-Cine's own (`NEO_CINE_HOME`, default `~/neo-cine`). NEO's own tools go in `neo/` (empty for now).
+- `core/` has ready-made tools (rendering, TTS, speech check, sampler, sfx, mux). Use them or your own stack, but don't edit `core/`, `neo/` or `styles/` for a user's film. `core/` is an unmodified mirror of Lemo-Opuscar's `core/`, so its tool names, flags and `LEMO_*` environment variables are upstream's; only the library's home is NEO-Cine's own (`NEO_CINE_HOME`, default `~/neo-cine`). NEO's own tools go in `neo/` ([`neo/README.md`](neo/README.md)).
 - Never kill processes you didn't start. Don't leave background processes running.
