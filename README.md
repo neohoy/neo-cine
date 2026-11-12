@@ -17,34 +17,22 @@ other agents may not reproduce them well.
 
 </div>
 
-## 🎬 Style 01: Folding City
+## The styles
 
-<table><tr>
-<td width="50%" valign="top"><a href="https://neohoy.github.io/neo-cine/"><img src="docs/folding-city/title.jpg" alt="Shenzhen, Folded: the demo film of Folding City"></a><br><b>▶ The demo film</b> · <i>Shenzhen, Folded</i> · 40 s<br><sub>Luohu, Futian, Nanshan: three districts on one hinge chain, in one take. No narration; the score and every sound effect are synthesized in code.</sub></td>
-<td width="50%" valign="top"><a href="styles/folding-city/STYLE.md"><img src="docs/folding-city/oblique.jpg" alt="Folding City: the style, open"></a><br><b>The style, open</b> · style prompt · shot table · full source<br><sub>A city drawn as a flat poster that is really a 3D model. Take the look, the moves and the sound to your own city, campus or product.</sub></td>
-</tr></table>
+One frame and one line for each style. Click a frame for its `STYLE.md`, and watch the films in the [gallery](https://neohoy.github.io/neo-cine/). More are on the way, one at a time.
 
-What the style does:
+<!-- styles:start -->
 
 <table>
 <tr>
-<td width="33%" valign="top"><img src="docs/folding-city/poster.jpg" alt="Poster view"><br><b>A poster</b><br><sub>Flat colour, no outlines, no perspective: every district starts as a print.</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/street.jpg" alt="The poster opens into a street"><br><b>The poster opens</b><br><sub>The camera pulls in and the same picture gains depth: you are standing in the street.</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/door-fold.jpg" alt="Door fold"><br><b>Door fold</b><br><sub>Two rows of towers swing in on hinges like a pair of doors.</sub></td>
-</tr>
-<tr>
-<td width="33%" valign="top"><img src="docs/folding-city/screen-fold.jpg" alt="Screen fold"><br><b>Screen fold</b><br><sub>A waterfront row folds into a zigzag screen, then flattens again.</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/plate.jpg" alt="A plate stands up"><br><b>A plate stands up</b><br><sub>The next district slides in and rises as a wall; the camera tips over and it becomes the ground.</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/canyon.jpg" alt="Canyon view"><br><b>The canyon</b><br><sub>Straight up between the towers, the one view a poster can't give you.</sub></td>
+<td width="33%" valign="top"><a href="styles/folding-city/STYLE.md"><img src="docs/frames/folding-city.jpg" alt="Folding City"></a><br><b>01 · Folding City</b><br><sub>Graphic &amp; Type · <i>Shenzhen, Folded</i> · 0:40</sub><br>Three districts of Shenzhen as flat posters that open into streets, fold like doors and screens, and stand up as walls until the city closes into a U.<br><sub><a href="styles/folding-city/STYLE.md">Style prompt</a> · <a href="styles/folding-city/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.md"><img src="docs/frames/atlas-scroll.jpg" alt="Atlas Scroll"></a><br><b>02 · Atlas Scroll</b><br><sub>Real Maps · <i>From Thirteen to Fifty</i> · 0:56</sub><br>A hand-coloured atlas plate unrolls westward: the states take their colours year by year, a covered wagon leads the way to the Pacific, and in 1869 the railway overtakes it.<br><sub><a href="styles/atlas-scroll/STYLE.md">Style prompt</a> · <a href="styles/atlas-scroll/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/atlas-scroll.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.md"><img src="docs/frames/scroll-map.jpg" alt="Scroll Map"></a><br><b>03 · Scroll Map</b><br><sub>Real Maps · <i>Shenzhen, Unrolled</i> · 0:48</sub><br>A handscroll unrolls along the real coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions.<br><sub><a href="styles/scroll-map/STYLE.md">Style prompt</a> · <a href="styles/scroll-map/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scroll-map.mp4">Download 1080p</a></sub></td>
 </tr>
 </table>
 
-<div align="center">
-
-Every frame and every note of it was written in code.<br>
-[**▶ Watch**](https://neohoy.github.io/neo-cine/) · [**Download 1080p**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**Style prompt**](styles/folding-city/STYLE.md) · [**Demo notes and shot table**](styles/folding-city/DEMO.md) · [**Source**](styles/folding-city/demo/)
-
-</div>
+<sub><b>Real Maps</b> (02, 03): A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.</sub>
+<!-- styles:end -->
 
 ## 👋 About
 
@@ -149,35 +137,6 @@ claude plugin uninstall neo-cine@neo
 Your own styles in `~/neo-my-styles/` stay through updates and uninstalls; delete that folder yourself if you don't want them.
 
 If a step stays stuck, [open an issue](https://github.com/neohoy/neo-cine/issues).
-
-## The styles
-
-Click a frame for its `STYLE.md`, or watch the films in the [gallery](https://neohoy.github.io/neo-cine/). More are on the way, one at a time.
-
-<!-- styles:start -->
-
-### Real Maps
-
-A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.
-
-<table>
-<tr>
-<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.md"><img src="docs/frames/atlas-scroll.jpg" alt="Atlas Scroll"></a><br><b>Atlas Scroll</b><br><i>From Thirteen to Fifty</i><br><sub>A hand-coloured atlas plate unrolls westward: the states take their colours year by year, a covered wagon leads the way to the Pacific, and in 1869 the railway overtakes it.</sub></td>
-<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.md"><img src="docs/frames/scroll-map.jpg" alt="Scroll Map"></a><br><b>Scroll Map</b><br><i>Shenzhen, Unrolled</i><br><sub>A handscroll unrolls along the real coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions.</sub></td>
-<td width="33%" valign="top"></td>
-</tr>
-</table>
-
-### Graphic & Type
-
-<table>
-<tr>
-<td width="33%" valign="top"><a href="styles/folding-city/STYLE.md"><img src="docs/frames/folding-city.jpg" alt="Folding City"></a><br><b>Folding City</b><br><i>Shenzhen, Folded</i><br><sub>Three districts of Shenzhen as flat posters that open into streets, fold like doors and screens, and stand up as walls until the city closes into a U.</sub></td>
-<td width="33%" valign="top"></td>
-<td width="33%" valign="top"></td>
-</tr>
-</table>
-<!-- styles:end -->
 
 ## Star history
 

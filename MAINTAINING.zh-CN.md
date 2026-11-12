@@ -43,7 +43,7 @@
 2. `git status --short`，`git add -A`，提交。
 3. 推送 `main`，然后看 CI（`gh run watch`）：如果有卡片链接的片子不在 `web` 发布里，画廊的构建会失败。
 
-画廊在 https://neohoy.github.io/neo-cine/ ，每次推送改到它时由 `.github/workflows/pages.yml` 构建。Pages 的构建（`build.py --site`）还会写出 `llms.txt` 和 `sitemap.xml`，并在页面头部放上规范链接、分享卡片标签和 JSON-LD。风格表格上方的主打位自动取最新的风格（`num` 最大的那个）。
+画廊在 https://neohoy.github.io/neo-cine/ ，每次推送改到它时由 `.github/workflows/pages.yml` 构建。Pages 的构建（`build.py --site`）还会写出 `llms.txt` 和 `sitemap.xml`，并在页面头部放上规范链接、分享卡片标签和 JSON-LD。页面按 `num` 的顺序把每个风格展示一次：表格上方没有主打位，也没有分类标签。两份 README 也按同样的顺序，每个风格一张图、一句话。
 
 上传没完成之前不要推送。
 

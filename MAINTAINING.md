@@ -43,7 +43,7 @@ Rules for library demos only (a user's film follows `DIRECTOR.md`, not these):
 2. `git status --short`, `git add -A`, commit.
 3. Push `main`, then watch CI (`gh run watch`): the gallery build fails when a card links a film that isn't on the `web` release.
 
-The gallery is https://neohoy.github.io/neo-cine/, built by `.github/workflows/pages.yml` on every push that touches it. The Pages build (`build.py --site`) also writes `llms.txt` and `sitemap.xml`, and puts the canonical link, share-card tags and JSON-LD in the page's head. The feature above the grid is the newest style (the highest `num`) by itself.
+The gallery is https://neohoy.github.io/neo-cine/, built by `.github/workflows/pages.yml` on every push that touches it. The Pages build (`build.py --site`) also writes `llms.txt` and `sitemap.xml`, and puts the canonical link, share-card tags and JSON-LD in the page's head. The page shows every style once, in the order of its `num`: no feature above the grid and no category tabs. The READMEs show the same order, one frame and one line per style.
 
 Don't push before the upload has finished.
 

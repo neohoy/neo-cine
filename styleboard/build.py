@@ -143,58 +143,23 @@ def card(s):
             f'  </div>\n</article>')
 
 cats = [c for c in CATEGORIES if any((s['cat'], s['cat_en']) == c for s in styles)]
-sections, tabs = [], []
-for i, (cn, en) in enumerate(cats, 1):
-    group = [s for s in styles if s['cat'] == cn]
-    sid = re.sub(r'[^a-z0-9]+', '-', en.lower()).strip('-')
-    tabs.append(f'<button data-f="{sid}">{esc(en)}<small>{esc(cn)}</small></button>')
-    sections.append(
-        f'<section class="category" id="{sid}">\n'
-        f'  <header class="cat-head"><div><p class="cat-no">Category {i:02d}</p><h2>{esc(en)}</h2>'
-        f'<p class="cat-cn">{esc(cn)} · {len(group)} {"style" if len(group) == 1 else "styles"}</p>'
-        + (f'<p class="cat-cn">{esc(CAT_NOTES[cn][1])}<br>{esc(CAT_NOTES[cn][0])}</p>' if cn in CAT_NOTES else '') + '</div></header>\n'
-        f'  <div class="grid">\n' + '\n'.join(map(card, group)) + '\n  </div>\n</section>')
+# The gallery shows every style once, in the order of its number: no feature above the grid, no category sections or tabs.
+by_num = sorted(styles, key=lambda s: (int(re.match(r'\d+', s['num']).group()), s['num']))
+sections = ['<section class="category" id="styles">\n  <div class="grid">\n' + '\n'.join(map(card, by_num)) + '\n  </div>\n</section>']
 
 n_vid = sum(bool(s.get('video')) for s in styles)
 seconds = sum(s.get('dur', 0) for s in styles)
 minutes = seconds / 60
 n_all = len(styles)
 
-# The feature above the grid: the newest style that has a film (the highest num). Upstream features one fixed film here.
+# The newest style that has a film (the highest num): its poster is the site's share card.
 FEATURE = max((s for s in styles if s.get('video')), key=lambda s: int(re.match(r'\d+', s['num']).group()), default=None)
-
-def feature():
-    s = FEATURE
-    if not s: return ''
-    img = s.get('poster') or (f'img/{s["imgs"][0]}' if s['imgs'] else '')   # the film's poster here, so the feature and the style's card below show two different frames
-    links = ['<a class="watch" href="#feature" data-feature>Watch the film</a>']
-    if s.get('stylemd'): links.append(f'<a href="{esc(s["stylemd"])}" target="_blank" rel="noopener">STYLE.md</a>')
-    if s.get('stylemd_zh'): links.append(f'<a href="{esc(s["stylemd_zh"])}" target="_blank" rel="noopener">风格说明</a>')
-    if s.get('full'): links.append(f'<a href="{esc(s["full"])}" target="_blank" rel="noopener">Download · 1080p</a>')
-    return (f'<section class="feature" id="feature"><div class="wrap">\n'
-            f'  <p class="kicker">Newest style · No. {esc(s["num"])}<small>最新风格</small></p>\n'
-            f'  <h2>{esc(s["en"])}</h2>\n'
-            f'  <p class="sub">{esc(s["cn"])} · <em>{esc(s["film"])}</em></p>\n'
-            f'  <div class="frame nominee-like" data-en="{esc(s["en"])}" data-cn="{esc(s["cn"])}" data-film="{esc(s["film"])}">\n'
-            f'    <div class="screen"><img class="still" src="{esc(img)}" alt="{esc(s["en"])} — {esc(s["film"])}">\n'
-            f'      <button class="play" type="button" data-src="{esc(s["video"])}" data-poster="{esc(s.get("poster", ""))}" aria-label="Play {esc(s["film"])}"><i></i><span>{mmss(s["dur"])}</span></button></div>\n'
-            f'  </div>\n'
-            f'  <p class="blurb">{esc(s["line"])}</p>\n'
-            f'  <p class="blurb-cn">{esc(s["line_cn"])}</p>\n'
-            f'  <nav class="links">{"".join(links)}</nav>\n'
-            f'</div></section>')
 
 def stats():
     """The three numbers under the title: styles, categories, film length (seconds until there are two minutes of it)."""
     film = (f'{minutes:.0f}', 'Minutes of film', '分钟影片') if seconds >= 120 else (f'{seconds:.0f}', 'Seconds of film', '秒影片')
     rows = [(str(n_all), 'Style' if n_all == 1 else 'Styles', '种风格'), (str(len(cats)), 'Category' if len(cats) == 1 else 'Categories', '个分类'), film]
     return ''.join(f'<div class="stat"><b>{n}</b><span>{en}<small>{cn}</small></span></div>' for n, en, cn in rows)
-
-def tabs_nav():
-    """Category tabs, once there is more than one category to choose from."""
-    if len(cats) < 2: return ''
-    return ('<nav class="tabs" id="tabs"><div class="wrap">\n  <button data-f="all" class="on">All Categories<small>全部</small></button>\n  '
-            + ''.join(tabs) + '\n</div></nav>')
 
 # What search engines and AI answer engines read: canonical URL, share cards, JSON-LD naming the repo and its author.
 # Forks copy this file, so the canonical and codeRepository keep pointing here.
@@ -236,7 +201,7 @@ def fill(name, extra):
 out_dir = site or HERE
 os.makedirs(out_dir, exist_ok=True)
 open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(fill('template.html', {
-    '{{SECTIONS}}': '\n'.join(sections), '{{TABS_NAV}}': tabs_nav(), '{{FEATURE}}': feature(), '{{STATS}}': stats(),
+    '{{SECTIONS}}': '\n'.join(sections), '{{TABS_NAV}}': '', '{{FEATURE}}': '', '{{STATS}}': stats(),
     '{{DESC}}': html.escape(GALLERY_DESC), '{{HEAD_META}}': gallery_meta}))
 
 def llms_txt():
@@ -278,29 +243,37 @@ def readme_by(s, zh):
 
 def readme_grid(zh):
     """README.md (English) and README.zh-CN.md (Chinese, with the English name under it), between <!-- styles:start --> and <!-- styles:end -->:
-    image grid by category (docs/frames/<slug>.jpg). The Chinese grid links STYLE.zh-CN.md where there is one; a short last row is
-    padded to three cells, so a category with one or two styles keeps the column width."""
-    out = []
-    newest = [next(x for x in styles if x['slug'] == slug) for slug in NEWEST[1]]
-    groups = [((f'🆕 最新 · {NEWEST[0]}' if zh else f'🆕 New · {NEWEST[0]}'), newest, '')] if newest else []
-    groups += [((cn if zh else en), [x for x in styles if x['cat'] == cn and x['stylemd'] and x['slug'] not in NEWEST[1]], CAT_NOTES.get(cn, ('', ''))[0 if zh else 1]) for cn, en in cats]
-    for title, group, note in groups:
-        if not group: continue
-        out.append(f'\n### {title}\n' + (f'\n{note}\n' if note else '') + '\n<table>')
-        for i in range(0, len(group), 3):
-            out.append('<tr>')
-            for s in group[i:i + 3]:
-                if zh:
-                    name = f'<b>{html.escape(s["cn"])}</b>' + (f'<br>{html.escape(s["en"])}' if s['cn'] != s['en'] else '')
-                    alt, line = s['cn'], s['line_cn']
-                else:
-                    name, alt, line = f'<b>{html.escape(s["en"])}</b>', s['en'], s['line']
-                md = 'STYLE.zh-CN.md' if zh and s.get('stylemd_zh') else 'STYLE.md'
-                out.append(f'<td width="33%" valign="top"><a href="styles/{s["slug"]}/{md}"><img src="docs/frames/{s["slug"]}.jpg" alt="{html.escape(alt)}"></a><br>'
-                           f'{name}<br><i>{html.escape(s["film"])}</i><br><sub>{html.escape(line)}</sub>{readme_by(s, zh)}</td>')
-            out += ['<td width="33%" valign="top"></td>'] * (3 - len(group[i:i + 3]))
-            out.append('</tr>')
-        out.append('</table>')
+    every style in one grid, in the order of its number: one frame (docs/frames/<slug>.jpg), the name, category, demo film and length,
+    one line of description, and links to the style prompt, the demo notes and the 1080p film. The Chinese grid links the .zh-CN.md
+    files where there are any; a short last row is padded to three cells, so the columns keep their width. Under the grid, one line
+    per category that has a note (CAT_NOTES), naming its styles by number."""
+    group = sorted((x for x in styles if x['stylemd']), key=lambda s: (int(re.match(r'\d+', s['num']).group()), s['num']))
+    out = ['\n<table>']
+    for i in range(0, len(group), 3):
+        out.append('<tr>')
+        for s in group[i:i + 3]:
+            d = os.path.join(ROOT, 'styles', s['slug'])
+            if zh:
+                name = f'<b>{s["num"]} · {html.escape(s["cn"])}</b>' + (f'<br>{html.escape(s["en"])}' if s['cn'] != s['en'] else '')
+                alt, line, cat = s['cn'], s['line_cn'], s['cat']
+            else:
+                name, alt, line, cat = f'<b>{s["num"]} · {html.escape(s["en"])}</b>', s['en'], s['line'], s['cat_en']
+            md = 'STYLE.zh-CN.md' if zh and s.get('stylemd_zh') else 'STYLE.md'
+            demo = next((f for f in ((['DEMO.zh-CN.md'] if zh else []) + ['DEMO.md']) if os.path.exists(os.path.join(d, f))), None)
+            links = [f'<a href="styles/{s["slug"]}/{md}">{"风格说明" if zh else "Style prompt"}</a>']
+            if demo: links.append(f'<a href="styles/{s["slug"]}/{demo}">{"示范片说明" if zh else "Demo notes"}</a>')
+            if s['dur'] > 0: links.append(f'<a href="https://github.com/{REPO}/releases/download/films/{s["slug"]}.mp4">{"下载 1080p" if zh else "Download 1080p"}</a>')
+            film = f'<i>{html.escape(s["film"])}</i>' + (f' · {mmss(s["dur"])}' if s['dur'] > 0 else '')
+            out.append(f'<td width="33%" valign="top"><a href="styles/{s["slug"]}/{md}"><img src="docs/frames/{s["slug"]}.jpg" alt="{html.escape(alt)}"></a><br>'
+                       f'{name}<br><sub>{html.escape(cat)} · {film}</sub><br>{html.escape(line)}{readme_by(s, zh)}<br><sub>{" · ".join(links)}</sub></td>')
+        out += ['<td width="33%" valign="top"></td>'] * (3 - len(group[i:i + 3]))
+        out.append('</tr>')
+    out.append('</table>')
+    for cn, en in cats:
+        note = CAT_NOTES.get(cn, ('', ''))[0 if zh else 1]
+        nums = [s['num'] for s in group if s['cat'] == cn]
+        if note and nums:
+            out.append(f'\n<sub><b>{cn}</b>（{"、".join(nums)}）：{note}</sub>' if zh else f'\n<sub><b>{en}</b> ({", ".join(nums)}): {note}</sub>')
     return '\n'.join(out) + '\n'
 
 

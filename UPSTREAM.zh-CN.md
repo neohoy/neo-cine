@@ -30,7 +30,7 @@ Upstream commit: `9eb7739a0fca4c6990fe966cb8b87b1930f7193a` (2026-11-10)
 | `AGENTS.md`、`DIRECTOR.md`、`TECHNIQUE.md`、`MY-STYLES.md`、`MAINTAINING.md` | 上游的同名文件 | 品牌和路径；NEO-Cine 自己的风格列表和画廊地址；发布走 `neo/publish.sh`；加了“交付物升版不覆盖”和“按 BT.709 出片”两条 |
 | `plugin/skills/neo-cine/SKILL.md`、`scripts/setup.sh` | `plugin/skills/lemo-opuscar/` | 品牌、仓库地址、默认目录（`~/neo-cine`）、`NEO_CINE_HOME` / `NEO_CINE_REPO`、稀疏检出的规则 |
 | `styles/_template/` | `styles/_template/` | 落版那一句 |
-| `styleboard/build.py`、`styleboard/template.html` | 上游的同名文件 | 仓库和站点地址；去掉了上游的主打影片、风格大公开和感谢片页面，风格表格上方的主打位改为最新的风格；页面外观是 NEO-Cine 自己的；中文 README 的风格表格链接到 `STYLE.zh-CN.md`；风格列表也写进 `AGENTS.zh-CN.md` |
+| `styleboard/build.py`、`styleboard/template.html` | 上游的同名文件 | 仓库和站点地址；去掉了上游的主打影片、风格大公开和感谢片页面；表格上方没有主打位，也没有分类标签：画廊和两份 README 的表格都按编号把每个风格展示一次；页面外观是 NEO-Cine 自己的；中文 README 的风格表格链接到 `STYLE.zh-CN.md`；风格列表也写进 `AGENTS.zh-CN.md` |
 | `neo/publish.sh` | `tools/publish.sh`、`tools/release.py` | 只上传成片和网页版：上游的脚本还会重新打包它的素材包并改写 `tools/assets.json`，而这个文件在这里是镜像 |
 
 `styleboard/index.html`、`styleboard/catalog.json`、`styles/README.md`、两份 README 里的风格表格，以及 `AGENTS.md` 和 `AGENTS.zh-CN.md` 里的风格列表，都由 `styleboard/build.py` 生成。

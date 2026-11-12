@@ -18,34 +18,22 @@
 
 </div>
 
-## 🎬 01 号风格：折叠城市
+## 风格
 
-<table><tr>
-<td width="50%" valign="top"><a href="https://neohoy.github.io/neo-cine/"><img src="docs/folding-city/title.jpg" alt="《折叠深圳》：折叠城市的示范片"></a><br><b>▶ 示范片</b> · 《折叠深圳》 · 40 秒<br><sub>罗湖、福田、南山，三个区用铰链首尾相连，一镜到底。没有旁白；配乐和每一个动作音都是代码合成的。</sub></td>
-<td width="50%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/folding-city/oblique.jpg" alt="折叠城市：风格全部公开"></a><br><b>风格全部公开</b> · 风格说明 · 镜头表 · 完整源码<br><sub>一座画成平面海报的城市，其实是三维模型。画面、动作和声音都可以拿去拍你自己的城市、园区或产品。</sub></td>
-</tr></table>
+每个风格一张图、一句话。点图看它的风格说明，到[画廊](https://neohoy.github.io/neo-cine/)里看片。后面的风格会一个一个加进来。
 
-这个风格会做的事：
+<!-- styles:start -->
 
 <table>
 <tr>
-<td width="33%" valign="top"><img src="docs/folding-city/poster.jpg" alt="海报视角"><br><b>一张海报</b><br><sub>平涂色块，没有描边，没有透视：每个区都从一张印刷品开始。</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/street.jpg" alt="海报拉开成街道"><br><b>海报拉开</b><br><sub>镜头推进去，同一张画长出纵深：你已经站在街上了。</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/door-fold.jpg" alt="门扇折叠"><br><b>门扇折叠</b><br><sub>两排楼绕着铰链往里转，像一对门。</sub></td>
-</tr>
-<tr>
-<td width="33%" valign="top"><img src="docs/folding-city/screen-fold.jpg" alt="屏风折叠"><br><b>屏风折叠</b><br><sub>海边的一排楼折成之字形的屏风，再重新展平。</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/plate.jpg" alt="地块立起"><br><b>地块立起</b><br><sub>下一个区滑进来，立成一面墙；镜头翻上去，它就成了新的地面。</sub></td>
-<td width="33%" valign="top"><img src="docs/folding-city/canyon.jpg" alt="峡谷视角"><br><b>峡谷仰视</b><br><sub>在楼和楼之间笔直往上看，这是海报给不了的视角。</sub></td>
+<td width="33%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/frames/folding-city.jpg" alt="折叠城市"></a><br><b>01 · 折叠城市</b><br>Folding City<br><sub>图形与排版 · <i>Shenzhen, Folded</i> · 0:40</sub><br>深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。<br><sub><a href="styles/folding-city/STYLE.zh-CN.md">风格说明</a> · <a href="styles/folding-city/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.zh-CN.md"><img src="docs/frames/atlas-scroll.jpg" alt="铜版图卷"></a><br><b>02 · 铜版图卷</b><br>Atlas Scroll<br><sub>真实地图 · <i>From Thirteen to Fifty</i> · 0:56</sub><br>一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。<br><sub><a href="styles/atlas-scroll/STYLE.zh-CN.md">风格说明</a> · <a href="styles/atlas-scroll/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/atlas-scroll.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.zh-CN.md"><img src="docs/frames/scroll-map.jpg" alt="舆图长卷"></a><br><b>03 · 舆图长卷</b><br>Scroll Map<br><sub>真实地图 · <i>Shenzhen, Unrolled</i> · 0:48</sub><br>一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。<br><sub><a href="styles/scroll-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/scroll-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scroll-map.mp4">下载 1080p</a></sub></td>
 </tr>
 </table>
 
-<div align="center">
-
-每一帧画面、每一个音符，都是写代码做出来的。<br>
-[**▶ 在线看**](https://neohoy.github.io/neo-cine/) · [**下载 1080p**](https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4) · [**风格说明**](styles/folding-city/STYLE.zh-CN.md) · [**示范片说明和镜头表**](styles/folding-city/DEMO.zh-CN.md) · [**源码**](styles/folding-city/demo/)
-
-</div>
+<sub><b>真实地图</b>（02、03）：基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。</sub>
+<!-- styles:end -->
 
 ## 👋 关于
 
@@ -151,35 +139,6 @@ claude plugin uninstall neo-cine@neo
 `~/neo-my-styles/` 里你自己的风格，更新和卸载都不会动；不想要了自己删掉那个文件夹。
 
 哪一步卡住了，[提一个 issue](https://github.com/neohoy/neo-cine/issues)。
-
-## 风格
-
-点图看它的风格说明，或者到[画廊](https://neohoy.github.io/neo-cine/)里看片。后面的风格会一个一个加进来。
-
-<!-- styles:start -->
-
-### 真实地图
-
-基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。
-
-<table>
-<tr>
-<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.zh-CN.md"><img src="docs/frames/atlas-scroll.jpg" alt="铜版图卷"></a><br><b>铜版图卷</b><br>Atlas Scroll<br><i>From Thirteen to Fifty</i><br><sub>一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。</sub></td>
-<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.zh-CN.md"><img src="docs/frames/scroll-map.jpg" alt="舆图长卷"></a><br><b>舆图长卷</b><br>Scroll Map<br><i>Shenzhen, Unrolled</i><br><sub>一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。</sub></td>
-<td width="33%" valign="top"></td>
-</tr>
-</table>
-
-### 图形与排版
-
-<table>
-<tr>
-<td width="33%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/frames/folding-city.jpg" alt="折叠城市"></a><br><b>折叠城市</b><br>Folding City<br><i>Shenzhen, Folded</i><br><sub>深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。</sub></td>
-<td width="33%" valign="top"></td>
-<td width="33%" valign="top"></td>
-</tr>
-</table>
-<!-- styles:end -->
 
 ## Star 增长
 
