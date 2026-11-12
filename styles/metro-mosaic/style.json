@@ -1,0 +1,18 @@
+{
+ "slug": "metro-mosaic",
+ "num": "04",
+ "en": "Metro Mosaic",
+ "cn": "瓷砖地铁图",
+ "category_en": "Transport",
+ "category_cn": "交通",
+ "film": "Tile by Tile",
+ "line": "On a white-tiled station wall, Shenzhen's real metro is laid tile by tile in the order it opened, from one green tile at Luohu in 2004 to the last station tile in 2026, until a passing train lights the whole glazed wall.",
+ "line_cn": "一面车站白瓷墙上，深圳地铁按真实开通的先后一片一片铺上去：从 2004 年罗湖的一片绿砖，到 2026 年最后一块站砖，一列车开过，整面釉墙一起亮起来。",
+ "uses": [
+  "A transit network's history, year by year",
+  "One line, one route or one pipeline built end to end",
+  "Station, city or anniversary films about public works"
+ ],
+ "frame_sec": 48.5,
+ "dur": 56.5
+}

@@ -1,0 +1,49 @@
+A Day Under the Harbour (海底下的一天): credits
+
+An unofficial fan film. It is not made, endorsed or checked by the Transport Department, by any bus operator or by the
+operators of the harbour tunnels. No operator's logo, livery, sign layout or chime is used; route numbers, destinations
+and stop names are public facts, shown as the timetable publishes them.
+
+Timetable: Transport Department, The Government of the Hong Kong Special Administrative Region.
+  "Headway information of public transport services" (GTFS), DATA.GOV.HK,
+  https://data.gov.hk/en-data/dataset/hk-td-tis_11-pt-headway-en
+  files https://static.data.gov.hk/td/pt-headway-tc/gtfs.zip and https://static.data.gov.hk/td/pt-headway-en/gtfs.zip,
+  downloaded 2026-11-13 (files dated 2026-11-10). Terms: DATA.GOV.HK Terms and Conditions of Use,
+  https://data.gov.hk/en/terms-and-conditions : free for commercial and non-commercial use, with the source identified,
+  the Government's and the Transport Department's ownership of the intellectual property in the data acknowledged,
+  and attribution to the Government, the Transport Department and DATA.GOV.HK. The data is provided "as is".
+  Used: the bus trips of service day 2026-11-18 (Wednesday) and the night trips of 2026-11-19 before 05:00 that call on
+  both Hong Kong Island and elsewhere, cut down by tools/prep.py into data/bus.json. Most trips in this feed are
+  published as headways (one bus every N minutes in a period): neo/geo/gtfs.py expands them into one departure per
+  headway, so the dots are where the published timetable puts a bus, not real vehicles. Stop times the feed leaves
+  blank are interpolated by distance. Counts on screen are ours, made from this file (see FACTS.md).
+
+Map data: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Fetched 2026-11-13 through the Overpass API: the coastline (neo/geo/osm.py), bus route relations (neo/geo/routes.py)
+  and drivable roads (tools/roads.py), kept as raw answers in data/*.cache/ (not committed). The derived files
+  data/bus.json (route paths) and data/map.json (coast) are a derived database and stay under ODbL 1.0. The film is a
+  produced work: it credits OpenStreetMap on its last card.
+  Paths: 244 of the 486 stop patterns follow the OSM bus route relation with the same number; the other 242 follow a
+  shortest drivable route along OSM roads between consecutive published stops (tools/prep.py). Tunnels are assigned by
+  where each path crosses the harbour.
+  View: Hong Kong and the harbour only (113.82-114.44 E, 22.14-22.58 N at most; the widest frame shows about
+  113.84-114.41 E, 22.22-22.45 N), north up. No national, provincial or other boundary line is fetched or drawn.
+
+Tunnel opening years: Transport Department, "Tunnels and Bridges: Details and Location Maps",
+  https://www.td.gov.hk/en/transport_in_hong_kong/tunnels_and_bridges_n/location_map/index.html (see FACTS.md).
+
+Font (fetched by tools/fonts.sh into fonts/, not kept in git):
+- Fusion Pixel Font (缝合像素字体), 12px proportional, zh_hk and zh_hans, release 2026.10.25. TakWolf.
+  SIL Open Font License 1.1. https://github.com/TakWolf/fusion-pixel-font
+  (It includes glyphs from Ark Pixel Font, Cubic 11 and Galmuri, all under the SIL Open Font License 1.1.)
+
+Picture: drawn entirely in code (a brightness buffer in JavaScript, the board shaded in WebGL2). No images, video or
+3D models are used.
+Sound: the score, every sound effect and the ambience are synthesized in mix.py with numpy. No samples or recordings.
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame
+capture, ffmpeg encode and loudness master; NEO-Cine's neo/ tools (gtfs.py, routes.py, osm.py, cues.py, master.py,
+remote.sh).
+
+Form reference (grammar only; no layout, typeface, livery or sound is copied): bus destination signs and stop displays,
+departure boards, LED walls.

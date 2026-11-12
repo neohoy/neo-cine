@@ -1,0 +1,42 @@
+Two Lines, One Day (两条线，一天): credits
+
+An unofficial fan film. It is not made, endorsed or checked by Deutsche Bahn, DB InfraGO, DELFI e.V. or gtfs.de, and
+shows no operator logo. Train line names (ICE 43, IC 55 ...), station names and times are public timetable facts.
+
+Timetable: gtfs.de "fv_free" feed (Schienenfernverkehr Deutschland, German long-distance rail), published by gtfs.de,
+  data provided by DELFI e.V. (feed_info: "gtfs.de - GTFS für Deutschland, Daten bereitgestellt von DELFI e.V.").
+  Licence: Creative Commons Attribution 4.0 (CC BY 4.0), as stated on https://gtfs.de/de/feeds/de_fv/ (checked 2026-11-13).
+  https://download.gtfs.de/germany/fv_free/latest.zip, downloaded 2026-11-13 (calendar 2026-11-07 to 2026-12-07).
+  The film draws the service day Wednesday 18 November 2026: every trip of that day that runs along the two lines below
+  (179 train paths). All times are the feed's published arrival and departure times; none is interpolated. Between two
+  published stops a train is drawn as a straight line, so where two lines cross between stations is approximate.
+  The feed holds long-distance trains only: no regional and no freight trains are drawn (said on the last card).
+  Trips are the feed's service day 18 Nov; trips of 17 Nov still running after midnight are not on the sheet.
+  The trimmed file the film draws is data/graph.json, made by tools/prep.py (via neo/geo/gtfs.py).
+
+Map data: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Fetched 2026-11-13 through the Overpass API (neo/geo/osm.py's fetch): railway=rail ways (no service tracks) and the
+  centre lines of the Rhine, Main, Mosel, Lahn, Sieg, Nahe, Ahr, Wied, Agger, Aar and Wisper, in 6.85-8.75 E,
+  49.95-50.98 N. tools/prep.py finds the two lines on that network (shortest path through the stations), measures them
+  in kilometres and keeps them, their tunnels and the rivers near them in data/graph.json, which is a derived database
+  and stays under ODbL 1.0. The film is a produced work: it credits OpenStreetMap on its last card.
+  View: the two lines and the rivers within 9 km of them, first as they lie on the ground (north up), then straightened
+  into the distance axis. No national, regional or other boundary line is fetched or drawn.
+  Stations are placed from the GTFS stop positions, projected onto the OSM line (gtfs.de lists OpenStreetMap
+  contributors among the feed's attributions).
+
+Picture: drawn entirely in code (Canvas 2D). No images, video or 3D models are used.
+Sound: the score (music box, harp and pizzicato bass by the library's core/audio/pluck.py; reed drone, clock tick,
+  horn, rail joints and drafting foley synthesized in mix.py) and the ambience are synthesized. No samples or
+  recordings are used.
+
+Fonts (fetched by tools/fonts.sh into fonts/, not kept in git), all SIL Open Font License 1.1:
+- Zhuque Fangsong (朱雀仿宋) v0.212, TrionesType. https://github.com/TrionesType/zhuque
+- Barlow Condensed (Medium, SemiBold, Italic), Jeremy Tribby. https://github.com/google/fonts/tree/main/ofl/barlowcondensed
+- IBM Plex Mono Medium, IBM. https://github.com/google/fonts/tree/main/ofl/ibmplexmono
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame
+capture, ffmpeg encode and loudness master; neo/geo/gtfs.py, neo/geo/osm.py, neo/audio/cues.py, neo/audio/master.py.
+
+Form reference (grammar only, no sheet, layout or lettering copied): railway time-distance diagrams (German
+Bildfahrplan, Chinese 列车运行图 with the ten-minute grid, the 19th-century Paris-Lyon graph), and railway strip maps.

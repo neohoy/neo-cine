@@ -13,13 +13,16 @@ REPO = 'neohoy/neo-cine'
 FILMS_URL = f'https://github.com/{REPO}/releases/download/films'   # full films live on the "films" release as <slug>.mp4
 BLOB_URL = f'https://github.com/{REPO}/blob/main'
 
-# The categories, in gallery order (upstream's, plus NEO-Cine's own Real Maps: styles drawn over real map data, see neo/geo/). A style.json must name one of them (both languages, exactly).
-CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
+# The categories, in gallery order (upstream's, plus NEO-Cine's own Real Maps: styles drawn over real map data, and Transport: real networks
+# and real timetables, see neo/geo/). A style.json must name one of them (both languages, exactly).
+CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
               ('图形与排版', 'Graphic & Type'), ('信息与发布', 'Information & Keynote'), ('卡通与动画', 'Cartoon & Anime'),
               ('游戏', 'Games'), ('电影与时代', 'Cinema & Eras'), ('材质与 3D', 'Materials & 3D')]
 # A note under a category's heading, in the gallery and in both READMEs: (Chinese, English).
 CAT_NOTES = {'真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
-                      'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.')}
+                      'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.'),
+             '交通': ('地铁、铁路和公交的真实线网与真实班次：线路取自 OpenStreetMap，时刻取自运营方公开的 GTFS 时刻表，画法每个风格各不相同。',
+                    'Real metro, rail and bus networks and their real timetables: the lines come from OpenStreetMap, the times from the GTFS feeds operators publish; the look changes from style to style.')}
 # The latest release's styles: the README shows them in a group of their own above the categories (and not again in their category). Empty it to drop the group.
 NEWEST = ('2026-11-10', [])
 FIELDS = ('slug', 'num', 'en', 'cn', 'category_en', 'category_cn', 'film', 'line', 'line_cn', 'uses', 'frame_sec', 'dur')

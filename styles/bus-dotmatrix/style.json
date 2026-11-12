@@ -1,0 +1,18 @@
+{
+ "slug": "bus-dotmatrix",
+ "num": "06",
+ "en": "Bus Dot Matrix",
+ "cn": "公交点阵屏",
+ "category_en": "Transport",
+ "category_cn": "交通",
+ "film": "A Day Under the Harbour",
+ "line": "An amber LED board plays one real Wednesday of Hong Kong's cross-harbour buses, first light to 5 a.m.: no tunnel is drawn under the harbour, the morning rush lights all three.",
+ "line_cn": "一块琥珀色点阵屏，放香港过海巴士真实的一个星期三，从天亮到次日清晨五点：海底下没有画任何隧道，是早高峰的车流把三条隧道照亮的。",
+ "uses": [
+  "A city's buses, trams or ferries through one day, from a real timetable",
+  "Departures, arrivals and frequencies: how often, how many, when",
+  "One route or one crossing, followed stop by stop"
+ ],
+ "frame_sec": 17.0,
+ "dur": 52.5
+}

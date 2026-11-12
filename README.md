@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-12 · [Style 03: Scroll Map](https://neohoy.github.io/neo-cine/)**: the second style of the Real Maps series, drawn over OpenStreetMap data. A painted handscroll unrolls along the coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions. [See it ↓](#the-styles)
+🆕 **2026-11-13 · [Styles 04–06: Transport](https://neohoy.github.io/neo-cine/)**: a new series built on real networks and real timetables (OpenStreetMap lines, published GTFS times). **Metro Mosaic**: Shenzhen's metro laid tile by tile on a station wall, 2004 to 2026. **Train Graph**: one real day of long-distance trains between Köln and Frankfurt, drafted as a train graph. **Bus Dot Matrix**: one real Wednesday of Hong Kong's cross-harbour buses on an amber LED board. [See them ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -29,9 +29,16 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.md"><img src="docs/frames/atlas-scroll.jpg" alt="Atlas Scroll"></a><br><b>02 · Atlas Scroll</b><br><sub>Real Maps · <i>From Thirteen to Fifty</i> · 0:56</sub><br>A hand-coloured atlas plate unrolls westward: the states take their colours year by year, a covered wagon leads the way to the Pacific, and in 1869 the railway overtakes it.<br><sub><a href="styles/atlas-scroll/STYLE.md">Style prompt</a> · <a href="styles/atlas-scroll/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/atlas-scroll.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/scroll-map/STYLE.md"><img src="docs/frames/scroll-map.jpg" alt="Scroll Map"></a><br><b>03 · Scroll Map</b><br><sub>Real Maps · <i>Shenzhen, Unrolled</i> · 0:48</sub><br>A handscroll unrolls along the real coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions.<br><sub><a href="styles/scroll-map/STYLE.md">Style prompt</a> · <a href="styles/scroll-map/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scroll-map.mp4">Download 1080p</a></sub></td>
 </tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/metro-mosaic/STYLE.md"><img src="docs/frames/metro-mosaic.jpg" alt="Metro Mosaic"></a><br><b>04 · Metro Mosaic</b><br><sub>Transport · <i>Tile by Tile</i> · 0:56</sub><br>On a white-tiled station wall, Shenzhen&#x27;s real metro is laid tile by tile in the order it opened, from one green tile at Luohu in 2004 to the last station tile in 2026, until a passing train lights the whole glazed wall.<br><sub><a href="styles/metro-mosaic/STYLE.md">Style prompt</a> · <a href="styles/metro-mosaic/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/metro-mosaic.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/train-graph/STYLE.md"><img src="docs/frames/train-graph.jpg" alt="Train Graph"></a><br><b>05 · Train Graph</b><br><sub>Transport · <i>Two Lines, One Day</i> · 0:56</sub><br>One real day of German long-distance trains between Köln and Frankfurt, drafted as a train graph: the real line straightens into the distance axis, and the high-speed line and the Rhine valley draw two different slopes.<br><sub><a href="styles/train-graph/STYLE.md">Style prompt</a> · <a href="styles/train-graph/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/train-graph.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/bus-dotmatrix/STYLE.md"><img src="docs/frames/bus-dotmatrix.jpg" alt="Bus Dot Matrix"></a><br><b>06 · Bus Dot Matrix</b><br><sub>Transport · <i>A Day Under the Harbour</i> · 0:52</sub><br>An amber LED board plays one real Wednesday of Hong Kong&#x27;s cross-harbour buses, first light to 5 a.m.: no tunnel is drawn under the harbour, the morning rush lights all three.<br><sub><a href="styles/bus-dotmatrix/STYLE.md">Style prompt</a> · <a href="styles/bus-dotmatrix/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/bus-dotmatrix.mp4">Download 1080p</a></sub></td>
+</tr>
 </table>
 
 <sub><b>Real Maps</b> (02, 03): A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.</sub>
+
+<sub><b>Transport</b> (04, 05, 06): Real metro, rail and bus networks and their real timetables: the lines come from OpenStreetMap, the times from the GTFS feeds operators publish; the look changes from style to style.</sub>
 <!-- styles:end -->
 
 ## 👋 About

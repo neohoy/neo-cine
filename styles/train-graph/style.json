@@ -1,0 +1,18 @@
+{
+ "slug": "train-graph",
+ "num": "05",
+ "en": "Train Graph",
+ "cn": "列车运行图",
+ "category_en": "Transport",
+ "category_cn": "交通",
+ "film": "Two Lines, One Day",
+ "line": "One real day of German long-distance trains between Köln and Frankfurt, drafted as a train graph: the real line straightens into the distance axis, and the high-speed line and the Rhine valley draw two different slopes.",
+ "line_cn": "科隆到法兰克福之间真实的一天长途列车，画成一张列车运行图：真实的线路被拉直成里程轴，高速新线和莱茵河谷线画出两种完全不同的斜率。",
+ "uses": [
+  "A railway, metro or bus line's real timetable over one day",
+  "Two routes or two services between the same places, compared",
+  "Clock-face timetables, overtakes, meets and gaps in service"
+ ],
+ "frame_sec": 24.6,
+ "dur": 56
+}

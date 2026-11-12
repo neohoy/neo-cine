@@ -1,0 +1,35 @@
+Tile by Tile (一片一片): credits
+
+An unofficial fan film. Not made with, endorsed by or affiliated with Shenzhen Metro Group or any operator. No operator
+logo, lettering or line bullet is used; line colours and station names are public facts.
+
+Map data: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Fetched 2026-11-13 through the Overpass API: the Shenzhen Metro route relations (network 深圳地铁) by neo/geo/routes.py into
+  data/metro.json, the coastline and water areas by neo/geo/osm.py into data/coast.json, and both cut into a tile grid by
+  tools/prep.py into data/mosaic.json. Those files are a derived database and stay under ODbL 1.0. The film is a produced
+  work: it credits OpenStreetMap on the label of the mural (its last shot).
+  View: 113.75-114.40 E, 22.45-22.85 N (lines that leave the box are kept whole), north up, equirectangular around
+  114.075 E 22.65 N, one tile = 200 m. Only the coast, the sea, and lakes and reservoirs over 1.2 km² are drawn; long thin
+  rivers are left out. No national, provincial or other boundary line is drawn: Shenzhen and Hong Kong are the same white
+  tiles. Hong Kong's MTR lines are left out (they are not part of this story), by the network filter.
+Facts on screen (opening dates, lengths, station totals): official and press sources listed in FACTS.md.
+
+Picture: made entirely in code (three.js, physically based). No photographs, textures, video or 3D models are used;
+  the station environment the glaze reflects is built in code.
+Sound: the score (glass bells, porcelain tines, bass, glass harmonica), every sound effect and the station ambience are
+  synthesized in numpy in mix.py. No samples or recordings are used.
+
+Fonts (fetched by tools/fonts.sh into fonts/, not kept in git):
+- Source Han Sans CN, Bold and Heavy. Adobe. SIL Open Font License 1.1.
+  https://github.com/adobe-fonts/source-han-sans (tag 2.004R)
+- Barlow Semi Condensed, Medium and SemiBold. Jeremy Tribby. SIL Open Font License 1.1.
+  https://github.com/google/fonts/tree/main/ofl/barlowsemicondensed
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame
+capture, ffmpeg encode and loudness master; three.js r170 (MIT).
+
+Form reference (grammar only, none of their designs or lettering are used): hand-set station wall mosaics, opus
+vermiculatum, vitreous-enamel signs.
+
+The wall is an illustration, not a survey: each line is a chain of tiles one tile apart along its OpenStreetMap path;
+where two lines share a corridor, the later one is set one tile aside.
