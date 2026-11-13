@@ -49,10 +49,10 @@ If the user hasn't picked a style:
 - Then ask them to type the name. The list goes in your own message (a command's output isn't shown to them), and the question is plain text, not `AskUserQuestion`: its few options would hide the rest of the list.
 
 <!-- style-list:start -->
-All styles (7) · 全部风格:
+All styles (4) · 全部风格:
 
 - **真实地图 Real Maps** (2): 铜版图卷 Atlas Scroll, 舆图长卷 Scroll Map
-- **交通 Transport** (4): 瓷砖地铁图 Metro Mosaic, 列车运行图 Train Graph, 公交点阵屏 Bus Dot Matrix, 地铁线路图 Transit Map
+- **交通 Transport** (1): 地铁线路图 Transit Map
 - **图形与排版 Graphic & Type** (1): 折叠城市 Folding City
 <!-- style-list:end -->
 

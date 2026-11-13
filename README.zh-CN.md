@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-13 · [04–07 号风格：交通](https://neohoy.github.io/neo-cine/)**：新的系列，画的是真实的线网和真实的班次（线路取自 OpenStreetMap，时刻取自公开的 GTFS 时刻表）。**瓷砖地铁图**：深圳地铁从 2004 到 2026 年，一片一片铺在车站的瓷砖墙上。**列车运行图**：科隆到法兰克福之间真实的一天长途列车，画成一张运行图。**公交点阵屏**：香港过海巴士真实的一个星期三，放在一块琥珀色点阵屏上。**地铁线路图**：广州地铁从 1997 到 2025 年，在一张印出来的八方向线路图上一条条拖出来，改编自 Lemo-Opuscar 的 Transit Map。[往下看 ↓](#风格)
+🆕 **2026-11-13 · [04 号风格：地铁线路图](https://neohoy.github.io/neo-cine/)**：广州地铁从 1997 到 2025 年，在一张印出来的八方向线路图上一条条拖出来，线路取自 OpenStreetMap，改编自 Lemo-Opuscar 的 Transit Map。所有示范片的片尾现在只署 NEO-Cine，数据署名留在各自的 CREDITS 里。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -31,12 +31,7 @@
 <td width="33%" valign="top"><a href="styles/scroll-map/STYLE.zh-CN.md"><img src="docs/frames/scroll-map.jpg" alt="舆图长卷"></a><br><b>03 · 舆图长卷</b><br>Scroll Map<br><sub>真实地图 · <i>Shenzhen, Unrolled</i> · 0:48</sub><br>一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。<br><sub><a href="styles/scroll-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/scroll-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scroll-map.mp4">下载 1080p</a></sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/metro-mosaic/STYLE.zh-CN.md"><img src="docs/frames/metro-mosaic.jpg" alt="瓷砖地铁图"></a><br><b>04 · 瓷砖地铁图</b><br>Metro Mosaic<br><sub>交通 · <i>Tile by Tile</i> · 0:56</sub><br>一面车站白瓷墙上，深圳地铁按真实开通的先后一片一片铺上去：从 2004 年罗湖的一片绿砖，到 2026 年最后一块站砖，一列车开过，整面釉墙一起亮起来。<br><sub><a href="styles/metro-mosaic/STYLE.zh-CN.md">风格说明</a> · <a href="styles/metro-mosaic/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/metro-mosaic.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"><a href="styles/train-graph/STYLE.zh-CN.md"><img src="docs/frames/train-graph.jpg" alt="列车运行图"></a><br><b>05 · 列车运行图</b><br>Train Graph<br><sub>交通 · <i>Two Lines, One Day</i> · 0:56</sub><br>科隆到法兰克福之间真实的一天长途列车，画成一张列车运行图：真实的线路被拉直成里程轴，高速新线和莱茵河谷线画出两种完全不同的斜率。<br><sub><a href="styles/train-graph/STYLE.zh-CN.md">风格说明</a> · <a href="styles/train-graph/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/train-graph.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"><a href="styles/bus-dotmatrix/STYLE.zh-CN.md"><img src="docs/frames/bus-dotmatrix.jpg" alt="公交点阵屏"></a><br><b>06 · 公交点阵屏</b><br>Bus Dot Matrix<br><sub>交通 · <i>A Day Under the Harbour</i> · 0:52</sub><br>一块琥珀色点阵屏，放香港过海巴士真实的一个星期三，从天亮到次日清晨五点：海底下没有画任何隧道，是早高峰的车流把三条隧道照亮的。<br><sub><a href="styles/bus-dotmatrix/STYLE.zh-CN.md">风格说明</a> · <a href="styles/bus-dotmatrix/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/bus-dotmatrix.mp4">下载 1080p</a></sub></td>
-</tr>
-<tr>
-<td width="33%" valign="top"><a href="styles/transit-map/STYLE.zh-CN.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>07 · 地铁线路图</b><br>Transit Map<br><sub>交通 · <i>The River and the Ring</i> · 0:54</sub><br>一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。<br><sub><a href="styles/transit-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/transit-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/transit-map/STYLE.zh-CN.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>04 · 地铁线路图</b><br>Transit Map<br><sub>交通 · <i>The River and the Ring</i> · 0:54</sub><br>一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。<br><sub><a href="styles/transit-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/transit-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">下载 1080p</a></sub></td>
 <td width="33%" valign="top"></td>
 <td width="33%" valign="top"></td>
 </tr>
@@ -44,7 +39,7 @@
 
 <sub><b>真实地图</b>（02、03）：基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。</sub>
 
-<sub><b>交通</b>（04、05、06、07）：地铁、铁路和公交的真实线网与真实班次：线路取自 OpenStreetMap，时刻取自运营方公开的 GTFS 时刻表，画法每个风格各不相同。</sub>
+<sub><b>交通</b>（04）：真实的公共交通线网：线路取自 OpenStreetMap，开通日期和里程查运营方和政府的公开来源。</sub>
 <!-- styles:end -->
 
 ## 👋 关于

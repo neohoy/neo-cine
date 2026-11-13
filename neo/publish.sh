@@ -31,7 +31,7 @@ one() {   # one <tag> <release title> <file>
   gh release view "$1" --repo "$REPO" >/dev/null 2>&1 || gh release create "$1" --repo "$REPO" --title "$2" --notes "$2" >/dev/null
   gh release upload "$1" "$3" --repo "$REPO" --clobber && echo "  ↑ $1/$name uploaded ($size bytes)"
 }
-for f in styles/*/STYLE.md; do
+for f in styles/*/style.json; do                 # a style on hold (style.hold.json) stays unpublished
   s=$(basename "$(dirname "$f")")
   one films "Demo films" "styles/$s/$s.mp4"
   one web "Web cuts (720p, copied into the gallery)" ".release/web/$s.mp4"

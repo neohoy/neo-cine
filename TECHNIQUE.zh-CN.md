@@ -158,7 +158,7 @@ export const HIT  = { pratfall: ['chase', 6], ... };   // 段落 + 拍
 
 ## 12. 在我们的示范片里看哪里
 
-NEO-Cine 目前有三支示范片。《鹏城长卷》（Shenzhen, Unrolled，48 秒，60 BPM），风格是舆图长卷（Scroll Map），展示一幅画出来的真实地图：`neo/geo/osm.py` 的海岸、林地、路网和建筑占地，在 `styles/scroll-map/demo/main.js` 里变成山、堂屋和楼阁的符号（`MOUNTAINS`、`HOUSES`），几条前沿把图层一层层放出来（`layer`、`frontClip`），画法在 `demo/ink.js`，古琴、箫、琵琶的配乐在 `demo/mix.py`。《十三到五十》（From Thirteen to Fifty，56 秒，120 BPM），风格是铜版图卷（Atlas Scroll），展示一张随年份变化的地图：带日期的边界和铁路来自 `neo/geo/ohm.py`，按年份取版本和邻接着色在 `styles/atlas-scroll/demo/main.js`（`at`、`drawMap`），镜头跟随的行旅（`guideAt`、`drawGuides`），屏幕空间的牌子（`drawHud`），班卓、吉他、口琴的配乐在 `demo/mix.py`。下表讲的是第三支，《折叠深圳》（Shenzhen, Folded，40 秒，120 BPM），风格是折叠城市（Folding City）。
+NEO-Cine 目前有四支示范片。《鹏城长卷》（Shenzhen, Unrolled，48 秒，60 BPM），风格是舆图长卷（Scroll Map），展示一幅画出来的真实地图：`neo/geo/osm.py` 的海岸、林地、路网和建筑占地，在 `styles/scroll-map/demo/main.js` 里变成山、堂屋和楼阁的符号（`MOUNTAINS`、`HOUSES`），几条前沿把图层一层层放出来（`layer`、`frontClip`），画法在 `demo/ink.js`，古琴、箫、琵琶的配乐在 `demo/mix.py`。《十三到五十》（From Thirteen to Fifty，56 秒，120 BPM），风格是铜版图卷（Atlas Scroll），展示一张随年份变化的地图：带日期的边界和铁路来自 `neo/geo/ohm.py`，按年份取版本和邻接着色在 `styles/atlas-scroll/demo/main.js`（`at`、`drawMap`），镜头跟随的行旅（`guideAt`、`drawGuides`），屏幕空间的牌子（`drawHud`），班卓、吉他、口琴的配乐在 `demo/mix.py`。《江与环》（The River and the Ring，54 秒），风格是地铁线路图（Transit Map，改编自上游），在一张印出来的线路图上长出真实的线网：八方向布局由 `styles/transit-map/demo/tools/prep.py` 从 OpenStreetMap 线路解出来，拖线、换乘站弹出和示意列车在 `demo/gl.js` 和 `demo/timeline.js`，每站一个音的合成配乐在 `demo/mix.py`。下表讲的是第四支，《折叠深圳》（Shenzhen, Folded，40 秒，120 BPM），风格是折叠城市（Folding City）。
 
 | 如果你需要…… | 去看 |
 |---|---|

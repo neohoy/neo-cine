@@ -21,8 +21,8 @@ CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evide
 # A note under a category's heading, in the gallery and in both READMEs: (Chinese, English).
 CAT_NOTES = {'真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
                       'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.'),
-             '交通': ('地铁、铁路和公交的真实线网与真实班次：线路取自 OpenStreetMap，时刻取自运营方公开的 GTFS 时刻表，画法每个风格各不相同。',
-                    'Real metro, rail and bus networks and their real timetables: the lines come from OpenStreetMap, the times from the GTFS feeds operators publish; the look changes from style to style.')}
+             '交通': ('真实的公共交通线网：线路取自 OpenStreetMap，开通日期和里程查运营方和政府的公开来源。',
+                    'Real public-transport networks: the lines come from OpenStreetMap, opening dates and lengths from the operators\' and governments\' published sources.')}
 # The latest release's styles: the README shows them in a group of their own above the categories (and not again in their category). Empty it to drop the group.
 NEWEST = ('2026-11-10', [])
 FIELDS = ('slug', 'num', 'en', 'cn', 'category_en', 'category_cn', 'film', 'line', 'line_cn', 'uses', 'frame_sec', 'dur')

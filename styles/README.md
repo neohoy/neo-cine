@@ -15,9 +15,6 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 
 | Style | 风格 | Folder | Our demo |
 |---|---|---|---|
-| Metro Mosaic | 瓷砖地铁图 | [`metro-mosaic`](metro-mosaic/STYLE.md) | *Tile by Tile* |
-| Train Graph | 列车运行图 | [`train-graph`](train-graph/STYLE.md) | *Two Lines, One Day* |
-| Bus Dot Matrix | 公交点阵屏 | [`bus-dotmatrix`](bus-dotmatrix/STYLE.md) | *A Day Under the Harbour* |
 | Transit Map | 地铁线路图 | [`transit-map`](transit-map/STYLE.md) | *The River and the Ring* |
 
 ## Graphic & Type · 图形与排版

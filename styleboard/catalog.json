@@ -34,59 +34,8 @@
   "dur": 48
  },
  {
-  "slug": "metro-mosaic",
-  "num": "04",
-  "en": "Metro Mosaic",
-  "cn": "瓷砖地铁图",
-  "cat": "交通",
-  "cat_en": "Transport",
-  "film": "Tile by Tile",
-  "line": "On a white-tiled station wall, Shenzhen's real metro is laid tile by tile in the order it opened, from one green tile at Luohu in 2004 to the last station tile in 2026, until a passing train lights the whole glazed wall.",
-  "line_cn": "一面车站白瓷墙上，深圳地铁按真实开通的先后一片一片铺上去：从 2004 年罗湖的一片绿砖，到 2026 年最后一块站砖，一列车开过，整面釉墙一起亮起来。",
-  "uses": [
-   "A transit network's history, year by year",
-   "One line, one route or one pipeline built end to end",
-   "Station, city or anniversary films about public works"
-  ],
-  "dur": 56.5
- },
- {
-  "slug": "train-graph",
-  "num": "05",
-  "en": "Train Graph",
-  "cn": "列车运行图",
-  "cat": "交通",
-  "cat_en": "Transport",
-  "film": "Two Lines, One Day",
-  "line": "One real day of German long-distance trains between Köln and Frankfurt, drafted as a train graph: the real line straightens into the distance axis, and the high-speed line and the Rhine valley draw two different slopes.",
-  "line_cn": "科隆到法兰克福之间真实的一天长途列车，画成一张列车运行图：真实的线路被拉直成里程轴，高速新线和莱茵河谷线画出两种完全不同的斜率。",
-  "uses": [
-   "A railway, metro or bus line's real timetable over one day",
-   "Two routes or two services between the same places, compared",
-   "Clock-face timetables, overtakes, meets and gaps in service"
-  ],
-  "dur": 56
- },
- {
-  "slug": "bus-dotmatrix",
-  "num": "06",
-  "en": "Bus Dot Matrix",
-  "cn": "公交点阵屏",
-  "cat": "交通",
-  "cat_en": "Transport",
-  "film": "A Day Under the Harbour",
-  "line": "An amber LED board plays one real Wednesday of Hong Kong's cross-harbour buses, first light to 5 a.m.: no tunnel is drawn under the harbour, the morning rush lights all three.",
-  "line_cn": "一块琥珀色点阵屏，放香港过海巴士真实的一个星期三，从天亮到次日清晨五点：海底下没有画任何隧道，是早高峰的车流把三条隧道照亮的。",
-  "uses": [
-   "A city's buses, trams or ferries through one day, from a real timetable",
-   "Departures, arrivals and frequencies: how often, how many, when",
-   "One route or one crossing, followed stop by stop"
-  ],
-  "dur": 52.5
- },
- {
   "slug": "transit-map",
-  "num": "07",
+  "num": "04",
   "en": "Transit Map",
   "cn": "地铁线路图",
   "cat": "交通",
