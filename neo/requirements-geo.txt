@@ -1,0 +1,6 @@
+# NEO-Cine's own extra for neo/geo/buildings.py: reading Overture Maps' GeoParquet (the buildings theme) by bbox.
+# Only that one source needs it; every other neo/geo script, and buildings.py --sources osm, use the standard library alone.
+# Not part of upstream's requirements*.txt (those are mirrored from Lemo-Opuscar).
+#   uv pip install --python .venv/bin/python -r neo/requirements-geo.txt      (or: .venv/bin/python -m pip install -r neo/requirements-geo.txt)
+# duckdb fetches its httpfs extension (https range reads) from extensions.duckdb.org the first time. Tested with duckdb 2.0.0.
+duckdb>=1.1
