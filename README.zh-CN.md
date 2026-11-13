@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-13 · [04–07 号风格：交通](https://neohoy.github.io/neo-cine/)**：新的系列，画的是真实的线网和真实的班次（线路取自 OpenStreetMap，时刻取自公开的 GTFS 时刻表）。**瓷砖地铁图**：深圳地铁从 2004 到 2026 年，一片一片铺在车站的瓷砖墙上。**列车运行图**：科隆到法兰克福之间真实的一天长途列车，画成一张运行图。**公交点阵屏**：香港过海巴士真实的一个星期三，放在一块琥珀色点阵屏上。**极简地铁**：维也纳地铁画成一张扁平、像游戏一样的线路图，按公开时刻表跑真实的两个夜晚。[往下看 ↓](#风格)
+🆕 **2026-11-13 · [04–07 号风格：交通](https://neohoy.github.io/neo-cine/)**：新的系列，画的是真实的线网和真实的班次（线路取自 OpenStreetMap，时刻取自公开的 GTFS 时刻表）。**瓷砖地铁图**：深圳地铁从 2004 到 2026 年，一片一片铺在车站的瓷砖墙上。**列车运行图**：科隆到法兰克福之间真实的一天长途列车，画成一张运行图。**公交点阵屏**：香港过海巴士真实的一个星期三，放在一块琥珀色点阵屏上。**地铁线路图**：广州地铁从 1997 到 2025 年，在一张印出来的八方向线路图上一条条拖出来，改编自 Lemo-Opuscar 的 Transit Map。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -36,7 +36,7 @@
 <td width="33%" valign="top"><a href="styles/bus-dotmatrix/STYLE.zh-CN.md"><img src="docs/frames/bus-dotmatrix.jpg" alt="公交点阵屏"></a><br><b>06 · 公交点阵屏</b><br>Bus Dot Matrix<br><sub>交通 · <i>A Day Under the Harbour</i> · 0:52</sub><br>一块琥珀色点阵屏，放香港过海巴士真实的一个星期三，从天亮到次日清晨五点：海底下没有画任何隧道，是早高峰的车流把三条隧道照亮的。<br><sub><a href="styles/bus-dotmatrix/STYLE.zh-CN.md">风格说明</a> · <a href="styles/bus-dotmatrix/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/bus-dotmatrix.mp4">下载 1080p</a></sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/flat-metro/STYLE.zh-CN.md"><img src="docs/frames/flat-metro.jpg" alt="极简地铁"></a><br><b>07 · 极简地铁</b><br>Flat Metro<br><sub>交通 · <i>Half Past One</i> · 0:57</sub><br>维也纳地铁的五条线从真实轨道里被拉直成形；真实的周四夜里，末班车一列列开回终点，一点半整张图都暗了；二十四小时后的周五夜里，一点半，列车还在每 15 分钟一班地开。<br><sub><a href="styles/flat-metro/STYLE.zh-CN.md">风格说明</a> · <a href="styles/flat-metro/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/flat-metro.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/transit-map/STYLE.zh-CN.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>07 · 地铁线路图</b><br>Transit Map<br><sub>交通 · <i>The River and the Ring</i> · 0:54</sub><br>一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。<br><sub><a href="styles/transit-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/transit-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">下载 1080p</a></sub></td>
 <td width="33%" valign="top"></td>
 <td width="33%" valign="top"></td>
 </tr>

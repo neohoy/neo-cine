@@ -1,0 +1,47 @@
+江与环 The River and the Ring — Transit Map (地铁线路图), a NEO-Cine library demo
+
+An unofficial fan film about a real metro. It is not made, endorsed or checked by Guangzhou Metro Group (广州地铁集团)
+or any operator, and shows no operator logo, lettering or official map. The numbered discs are generic line bullets.
+Line colours, line numbers and station names are public facts. Every date and figure on screen is sourced in FACTS.md.
+Trains are illustrative: they shuttle on the opened track at an invented pace, not on a real timetable (said on the
+last card).
+
+STYLE: adapted from Lemo-Opuscar's Transit Map (MIT, (c) 2026 LemoLab; licence text in LICENSES/lemo-opuscar-MIT.txt):
+  demo/film.js, demo/gl.js, demo/tools/subset.py and the net.js format are adapted from its demo/ (the MIT notice is kept
+  in their headers). What NEO-Cine changed is listed at the top of each file and in ../STYLE.md.
+  The style's later refinements borrow the general grammar of minimalist transit-puzzle games (bold lines, hand-dragged
+  growth, springy interchanges, running trains, tuned notes); no game's design, icons, palette, typeface, sounds or music
+  are copied.
+
+MAP DATA: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Fetched 2026-11-13 through the Overpass API:
+  - data/metro.json: neo/geo/routes.py, route=subway|light_rail|monorail relations of the networks 广州地铁 and 广佛 in
+    113.15-113.85 E, 22.55-23.65 N (19 metro lines; the trams are left out). Line 3's Airport South station, missing
+    from OSM, is added by tools/prep.py between Gaozeng and Airport North.
+  - data/water.json: neo/geo/osm.py, waterway centre lines, slimmed by tools/prep.py to the named Pearl River channels.
+  These are derived databases and stay under ODbL 1.0. The film is a produced work and credits OpenStreetMap on its
+  last card.
+  The map is a schematic: tools/prep.py keeps the real topology, station order and the published line colours (OSM
+  colour tags) and lays the network out on eight directions (net.js); it is our own drawing, not the operator's map.
+  Water is drawn as bands; every pair of neighbouring stations is checked against the real track for which channel it
+  crosses. View: the city region only; no national, provincial or other boundary is fetched or drawn.
+
+FACTS: see FACTS.md (Guangzhou Metro Group chronicles and company profile, gz.gov.cn, Yangcheng Evening News,
+  Guangzhou Daily, Science and Technology Daily, China Daily, The Paper, ifeng). Checked 2026-11-13.
+
+PICTURE: drawn entirely in code (Canvas 2D ink, WebGL2 paper, light and depth of field). No photographs, scans,
+  AI-generated images, video or 3D models.
+
+SOUND: all synthesized for this film in mix.py: tuned station notes (marimba, glass bell and vibraphone voices in
+  numpy; kalimba, music box, harp and nylon-string voices by the library's core/audio/pluck.py), pad, snaps, pops,
+  ticks, felt-tip glide and distant rail sounds through core/audio/sfx.py. No samples or recordings.
+
+FONTS (SIL Open Font License 1.1; fetched by tools/fonts.sh from github.com/google/fonts at commit 86aced91, not kept in
+  git; licence texts in fonts/):
+- Inter (variable, Inter[opsz,wght].ttf), The Inter Project Authors: Latin text and figures.
+- Noto Sans SC (variable, NotoSansSC[wght].ttf), Google / Adobe: Chinese text, subset by tools/subset.py to the
+  characters the film prints (fonts/NotoSansSC-sub.ttf).
+
+TOOLS: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame
+  capture, events export, reading-time check, ffmpeg encode and loudness master; neo/geo/routes.py, neo/geo/osm.py,
+  neo/audio/cues.py, neo/audio/master.py, neo/render/remote.sh.

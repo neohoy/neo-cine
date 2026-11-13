@@ -2,7 +2,7 @@
 
 *本文是 [UPSTREAM.md](UPSTREAM.md) 的中文版，以英文版为准。*
 
-NEO-Cine 建在 [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)（MIT，© 2026 LemoLab）的框架上：它的页面约定、制作工具、风格目录格式，以及“用指南而不是参数来导演一支片子”的做法。风格是 NEO 自己一个个做的。
+NEO-Cine 建在 [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar)（MIT，© 2026 LemoLab）的框架上：它的页面约定、制作工具、风格目录格式，以及“用指南而不是参数来导演一支片子”的做法。风格是 NEO 自己一个个做的；其中地铁线路图（Transit Map）改编自上游的一个风格（见下表）。
 
 Upstream commit: `9eb7739a0fca4c6990fe966cb8b87b1930f7193a` (2026-11-10)
 
@@ -31,6 +31,7 @@ Upstream commit: `9eb7739a0fca4c6990fe966cb8b87b1930f7193a` (2026-11-10)
 | `plugin/skills/neo-cine/SKILL.md`、`scripts/setup.sh` | `plugin/skills/lemo-opuscar/` | 品牌、仓库地址、默认目录（`~/neo-cine`）、`NEO_CINE_HOME` / `NEO_CINE_REPO`、稀疏检出的规则 |
 | `styles/_template/` | `styles/_template/` | 落版那一句 |
 | `styleboard/build.py`、`styleboard/template.html` | 上游的同名文件 | 仓库和站点地址；去掉了上游的主打影片、风格大公开和感谢片页面；表格上方没有主打位，也没有分类标签：画廊和两份 README 的表格都按编号把每个风格展示一次；页面外观是 NEO-Cine 自己的；中文 README 的风格表格链接到 `STYLE.zh-CN.md`；风格列表也写进 `AGENTS.zh-CN.md` |
+| `styles/transit-map/` | 上游的 `styles/transit-map/`（每个改编的文件都保留了 MIT 声明） | 新的示范片（广州地铁，取自 OpenStreetMap，`net.js` 由 `tools/prep.py` 生成：在骨架上解八方向布局、核心区手工钉点、每处过江都和真实轨道核对）；线更粗（0.15→0.22 G，圆角更大，终点有一根会弹出的横杠）；拖线逐站缓动，笔尖前有引线，每个拐角有弹簧过冲（`snap` 事件）；换乘站弹簧弹出（0.25→1.3→1），后来的线经过时再弹一下；每段已开通的区间上都有示意列车（`service()`），墨色胶囊逐站缓进缓出、停站，停靠的车站轻轻一跳；纸更安静，暗角更轻；汇流处的水画成一整片；环线最后一站改取路径终点（上游的环线画不出来）；钩子扩展（`roundelPos` 可以是函数，`highlight` 能拿到 drawSpan 和 PH，`trains`）；新事件 pass、snap、term；搪瓷铭牌加滚筒换成轻巧的纸卡（数字滑动，每个值标出日期）；站名更少、按镜头挑；配乐经 `neo/audio` 合成（每条线一种音色，每站一个五声音阶的音），不再用采样管弦乐叠层；24 fps；`build.sh` 按版本号构建 |
 | `neo/publish.sh` | `tools/publish.sh`、`tools/release.py` | 只上传成片和网页版：上游的脚本还会重新打包它的素材包并改写 `tools/assets.json`，而这个文件在这里是镜像 |
 
 `styleboard/index.html`、`styleboard/catalog.json`、`styles/README.md`、两份 README 里的风格表格，以及 `AGENTS.md` 和 `AGENTS.zh-CN.md` 里的风格列表，都由 `styleboard/build.py` 生成。
@@ -39,7 +40,7 @@ Upstream commit: `9eb7739a0fca4c6990fe966cb8b87b1930f7193a` (2026-11-10)
 
 ## 没有带过来的部分
 
-上游的风格和它们的示范片，它的主打影片、风格大公开、感谢片及其页面，`docs/` 里它的 README 配图，发布检查和素材打包工具（`tools/release.py`、`tools/publish.sh`），以及目录版的工具。NEO-Cine 还没有示范的手法（笔刷引擎、角色、配音、采样配乐），可以去上游的库里学。
+上游的其他风格和它们的示范片，它的主打影片、风格大公开、感谢片及其页面，`docs/` 里它的 README 配图，发布检查和素材打包工具（`tools/release.py`、`tools/publish.sh`），以及目录版的工具。NEO-Cine 还没有示范的手法（笔刷引擎、角色、配音、采样配乐），可以去上游的库里学。
 
 ## 兼容性
 
