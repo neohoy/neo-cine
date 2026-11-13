@@ -1,35 +1,32 @@
-# FACTS — 《福田站，切开看》Futian, in Section
+# FACTS — 《一座高铁站怎么运转》How a High-Speed Station Works
 
-Every fact printed on the cards or written into the model, with its source. Checked 2026-11-13. Official sources first (the Shenzhen Transport Bureau jtys.sz.gov.cn, the Futian District government szft.gov.cn, Shenzhen Metro szmc.net, the National Railway Administration nra.gov.cn), then the mainstream press (China News Service). Encyclopaedias only in support. Quotes are kept short.
+What the film says, and where it comes from. Checked 2026-11-14. Official sources only: the regulations of the Ministry of Transport (交通运输部) as published on its own site and in the State Council Gazette (gov.cn). Quotes are kept short.
 
-**The model is a diagram.** Its three tiers (street with buses, metro, high-speed rail), their order, the platforms, the single track on each tier and the escalators are an artistic section, not the station's real floors, tracks or transfer routes (the real high-speed station has three underground levels and 4 platforms with 8 tracks; the metro stations are beside it, not stacked under the street). This is said at the top of `../DEMO.md` and in `CREDITS`.
+**The station is illustrative.** It is a fictional, typical Chinese high-speed rail station with no name: a station building beside the tracks, an overpass to an island platform for departing passengers and an underpass for arriving ones ("上进下出"). It does not show any real station's layout, any operator's logo, livery, lettering or signage, and all distances are compressed. Trains, cars and people run on invented timings; no timetable is implied. This is said at the top of `../DEMO.md` and in `CREDITS`.
+
+**No numbers on screen.** The film prints no times or durations (how early gates open, when they close, how long a train stops). The time at which ticket checking stops is set by each station, so no single figure would be true (see *Checked and not used*).
 
 ## On screen
 
-| On screen | Value | Source (URL) | Quoted wording | Checked |
+| On screen | Claim | Source (URL) | Quoted wording | Checked |
 |---|---|---|---|---|
-| Title card "福田站 · 深圳 · 高铁 · 地铁 · 公交"; layer names "地面 · 公交接驳", "地铁 2 · 3 · 11 号线", "高铁 · 广深港" | Futian Station combines the high-speed railway station, the Line 2, 3 and 11 metro station, buses and taxis | jtys.sz.gov.cn/jtzx/wycx/hccx/hczfb/content/post_11457302.html (Shenzhen Transport Bureau) | "配套有地铁2、3、11号线，公交、出租等交通接驳设施"; "主要开行广深港方向列车" | 2026-11-13 |
-| | | www.szmc.net/shentiewuye/xiangmuguanli/csjtsnzhtxm/futianjiaotongshuniu/ (Shenzhen Metro, "福田交通枢纽") | "集地铁2、3、11号线福田站、广深港客运专线福田站、公交、出租等多种运输方式为一体"; "公交场站一个" | 2026-11-13 |
-| Card "2011 · 地铁 2 号线、3 号线开到福田站" | Line 2's eastern extension and Line 3's underground section opened 2011-06-28; Futian is among the Line 3 stations opened that day | www.chinanews.com.cn/df/2011/06-28/3142675.shtml (China News Service) | "深圳地铁蛇口线(2号线)东延线、龙岗线(3号线)地下段28日开通试运营" | 2026-11-13 |
-| | | www.chinanews.com.cn/auto/2011/06-21/3124994.shtml (China News Service) | Line 3 stations opening 6-28 include "福田站" | 2026-11-13 |
-| | Futian on Line 2 | The 2011 report names the extension (世界之窗 to 新秀), not each station; Futian lies on that stretch in today's Line 2 station list (jtys.sz.gov.cn/jtzx/wycx/dtcx/dtxl/content/post_12601089.html). The 2016 Line 11 report confirms Futian as the Line 2 and 3 interchange: "福田站与2、3号线实现换乘" (szft.gov.cn, below) | derived from station order; noted | 2026-11-13 |
-| Card "11 号线 · 2016" | Line 11 opened 2016-06-28 11:18; Futian is one of its interchange stations | www.szft.gov.cn/bmxx/qcsgxj/gzdt/content/post_4451083.html (Futian District government, from the municipal transport commission) | "28日11时18分，地铁11号线正式开通试运营"; "福田站、车公庙站……将在年内实现换乘" | 2026-11-13 |
-| Card "2015.12.30 · 高铁开进市中心的地下" | Futian high-speed railway station opened 2015-12-30, an all-underground station in the city centre | jtys.sz.gov.cn (above) | "2015年12月30日建成开通运营"; "位于福田区益田路与深南大道的交界处" | 2026-11-13 |
-| | | www.nra.gov.cn/ztzl/hd/cxdh/cxcg/yzgc/kcsj/201706/t20170626_146816.shtml (National Railway Administration) | "位于城市中心区的全地下大型高铁火车站"; "为地下三层站" | 2026-11-13 |
-| Station name "福田站" on the model; "FUTIAN" on the platform boards | the station's name | the sources above | | 2026-11-13 |
-| Line number squares 2, 3, 11 and their colours | Line 2 #DB6D1C (orange), Line 3 #00A2E1 (blue), Line 11 #6A1D44 (maroon) | OpenStreetMap route relations of Shenzhen Metro Lines 2, 3 and 11, `colour` tag, fetched 2026-11-13 through neo/geo/routes.py | No official colour code was found: the Shenzhen News Network says only that the signage plan "规定各线路指定色号" (www.sznews.com/news/content/2023-08/08/content_30391436.htm) | 2026-11-13 |
+| ② 实名验证 · 安检 / ID Check · Security; callout 实名验证闸机 / ID gates | Passengers' tickets are checked against their ID (real-name checking) before they may enter and board; stations use self-service checking devices and keep a staffed lane | 《铁路旅客车票实名制管理办法》, Ministry of Transport Order 2022 No. 39, in force 2023-01-01: https://xxgk.mot.gov.cn/gz/202211/W020221128628428551332.doc (PDF: https://xxgk.mot.gov.cn/gz/202211/W020221128628428098209.pdf) | "在检票、验票、乘车时出示车票和本人购票时使用的有效身份证件"; "应当拒绝其进站乘车"; "推广使用自助实名查验设备"; "车站应当设有人工实名查验通道" | 2026-11-14 |
+| | Checked and unchecked passengers are kept apart, which is why the ID gates come first and the halls behind them are a separate zone | same | "经车票实名查验的旅客与未经车票实名查验的旅客分区隔离" | 2026-11-14 |
+| ② … 安检; callout 安检仪 / X-ray scanner; the walk-through frame beside it | Passengers and their luggage are security-checked at the station; high-speed stations have X-ray scanners and walk-through metal detectors | 《铁路旅客运输安全检查管理办法》, Ministry of Transport Order 2023 No. 21, in force 2024-02-01, State Council Gazette 2024 No. 6: https://www.gov.cn/gongbao/2024/issue_11186/202402/content_6934463.html | Art. 3: "在车站、乘降所、旅客列车对旅客及其随身携带、托运的物品进行禁限物品检查"; Art. 17: "旅客应当接受并配合铁路运输企业依法开展的安全检查工作"; Art. 8: "在高速铁路车站……配备安全检查仪、通过式金属探测门" | 2026-11-14 |
+| ④ 检票 / Ticket Gates; callout 检票闸机 / Ticket gates | Tickets (and the passenger's ID) are checked again at the gates before the platform | 《铁路旅客车票实名制管理办法》 (above) | "在检票、验票、乘车时出示车票和本人购票时使用的有效身份证件"; "逐步配备自助检票、查验等设备" | 2026-11-14 |
+| ① 站前落客; ③ 候车; ⑤ 天桥 · 下站台; ⑥ 上车 · 发车; ⑦ 出站 · 地道; callouts 落客平台, 候车区, 信息屏, 扶梯, 天桥, 站台, 车门, 出站地道 | Names of the parts of the illustrative station and of the steps a passenger takes | Common words for the parts of a station; the arrangement (overpass in, underpass out) is the film's diagram, not a claim about a real station | — | 2026-11-14 |
 
 ## In the model, not printed
 
-| What | Value | Source |
+| What | Value | Note |
 |---|---|---|
-| The towers behind the station | real footprints and heights west of Yitian Road, from 45 to 560 m from the station's axis, between its two ends; 1 model unit = 45 m, horizontally and vertically | `data/city.json`: neo/geo/buildings.py, OpenStreetMap (Overpass) + Overture Maps buildings 2026-10-21.0, fetched 2026-11-13. 34 heights are tagged (`measured`, 54 % of the volume), 73 come from floor counts, 266 are estimated by the script (capped at 60 m). The tallest, Ping An Finance Center, is drawn from its OSM height tag, 599.1 m (CTBUH gives 599.1 m architectural height; official Chinese sources write 599 m: www.sznews.com/news/content/2019-04/09/content_21608553_0.htm) |
-| Where the towers stand | the block is moved back by the depth of the section: in reality Yitian Road and the station lie directly beside them | said in `../DEMO.md` and `CREDITS` |
-| The station runs north–south | the model's long axis is north (right) to south (left), seen from the east | jtys page above ("益田路与深南大道的交界处"); szft.gov.cn/xxgk/zwgk/gzxx/zdjsxm/xmjz/content/post_3965975.html: "呈南北向布置" |
-| Trains, bus, people | illustrative: one train per tier, one bus, invented timings; no timetable | — |
+| Layout | station building beside track 1, island platform between tracks 1 and 2, overpass from the waiting hall to the platform, underpass from the platform to the exit hall | illustrative; compressed (the model's train is 6 short cars) |
+| Signs | colour blocks and pictograms only (train, ID card, shield, gate, arrows, exit) | drawn in code; no operator's sign system is copied |
+| Departure board | rows of colour blocks; the first row turns amber when the passenger gets up | no text, no train numbers |
+| Door chime | a generic two-note falling third | not any operator's real chime |
 
 ## Checked and not used
 
-- "亚洲最大的地下火车站" (Asia's largest underground railway station): in Xinhua and the National Railway Administration, but the film doesn't need the superlative.
-- 4 platforms and 8 tracks, 1023 m long, 32.2 m deep (nra.gov.cn above): the model shows one track per tier on purpose.
-- The opening day's transfer: Xinhua (2015-12-30) says the passage to Lines 2, 3 and 11 was "暂未开通" on the day the railway station opened; the film doesn't claim a transfer date.
+- **When ticket checking stops.** News reports in 2026 (relaying 12306 customer service) say each station sets its own stop time, commonly 3 to 5 minutes before departure, and shows it on the gate screen. It is not one national figure, and the 12306 site could not be read directly (it refuses automated requests), so the film gives no number.
+- **How long trains stop.** Dwell times vary by train and station; not shown.
+- **Electronic tickets and QR codes** (12306 app codes at the gates): true, but not needed for this film's one passenger.

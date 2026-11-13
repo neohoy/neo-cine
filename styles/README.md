@@ -12,4 +12,4 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Atlas Scroll | 铜版图卷 | [`atlas-scroll`](atlas-scroll/STYLE.md) | *From Thirteen to Fifty* |
 | Scroll Map | 舆图长卷 | [`scroll-map`](scroll-map/STYLE.md) | *Shenzhen, Unrolled* |
 | Transit Map | 地铁线路图 | [`transit-map`](transit-map/STYLE.md) | *The River and the Ring* |
-| Miniature | 微缩景观 | [`miniature`](miniature/STYLE.md) | *Futian, in Section* |
+| Miniature | 微缩景观 | [`miniature`](miniature/STYLE.md) | *How a High-Speed Station Works* |

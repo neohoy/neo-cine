@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-13 · [Style 05: Miniature](https://neohoy.github.io/neo-cine/)**: Futian Station cut open as a tabletop model, with the real towers of Futian behind it from OpenStreetMap and Overture. The styles now come in series; the first is City Skyline: real cities, maps and networks (01–05). [See it ↓](#the-styles)
+🆕 **2026-11-14 · [Style 05: Miniature](https://neohoy.github.io/neo-cine/)**: a high-speed station cut open as a tabletop model, explained step by step, from the drop-off to the train; the style ships a kit for building any miniature (plinth, sections, parts, people, trains, light, explainer marks). The styles now come in series; the first is City Skyline: real cities, maps and networks (01–05). [See it ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -31,7 +31,7 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="styles/transit-map/STYLE.md"><img src="docs/frames/transit-map.jpg" alt="Transit Map"></a><br><b>04 · Transit Map</b><br><sub>City Skyline · <i>The River and the Ring</i> · 0:54</sub><br>A printed octilinear map of Guangzhou&#x27;s real metro is dragged out line by line from five stations under the Pearl River in 1997, trains running on every finished line, until Line 11 closes the ring and the counter lands on 19 lines and 779.9 km.<br><sub><a href="styles/transit-map/STYLE.md">Style prompt</a> · <a href="styles/transit-map/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">Download 1080p</a></sub></td>
-<td width="33%" valign="top"><a href="styles/miniature/STYLE.md"><img src="docs/frames/miniature.jpg" alt="Miniature"></a><br><b>05 · Miniature</b><br><sub>City Skyline · <i>Futian, in Section</i> · 0:54</sub><br>A cut-away model of Futian Station on a thin display plinth: the street, metro and high-speed tiers lift apart, a bus, a metro and a bullet train pull in, and the real towers behind light up as day turns to night.<br><sub><a href="styles/miniature/STYLE.md">Style prompt</a> · <a href="styles/miniature/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/miniature/STYLE.md"><img src="docs/frames/miniature.jpg" alt="Miniature"></a><br><b>05 · Miniature</b><br><sub>City Skyline · <i>How a High-Speed Station Works</i> · 1:09</sub><br>A fictional high-speed rail station cut open on a thin plinth: the roof lifts away, and one passenger with a suitcase is followed in seven numbered steps, from the taxi through ID and security checks, the waiting hall, the ticket gates and the overpass to the train, while the other side walks out through the underpass; then the roof closes and the lights come on.<br><sub><a href="styles/miniature/STYLE.md">Style prompt</a> · <a href="styles/miniature/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>

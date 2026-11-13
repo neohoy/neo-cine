@@ -3,7 +3,10 @@
     .venv/bin/python -I styles/miniature/demo/tools/subset.py      （tools/fonts.sh 会调用它）"""
 import os
 HERE = os.path.dirname(os.path.abspath(__file__)); D = os.path.dirname(HERE)
-txt = ''.join(open(os.path.join(D, f), encoding='utf-8').read() for f in ['timeline.js', 'model.js', 'kit.js', 'main.js'])
+import glob
+# 片子里印出来的字只在 main.js（讲解、标题、片尾）里；kit/ 和 station.js 也读进来，换场景描述时不会漏字
+files = ['main.js', 'station.js'] + sorted(glob.glob(os.path.join(D, 'kit', '*.js')))
+txt = ''.join(open(os.path.join(D, f), encoding='utf-8').read() for f in files)
 chars = sorted(set(ch for ch in txt if ord(ch) > 0x2E7F) | set('0123456789·→←↓↑，、'))
 open(os.path.join(HERE, 'chars.txt'), 'w', encoding='utf-8').write(''.join(chars))
 from fontTools import subset

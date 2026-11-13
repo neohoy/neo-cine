@@ -2,67 +2,66 @@
 
 One example among many. Don't reuse its story, arc, shots, props or timings.
 
-Demo: *Futian, in Section* 《福田站，切开看》 (54 s) · `miniature.mp4` · source in [`demo/`](demo/) · 中文版：[DEMO.zh-CN.md](DEMO.zh-CN.md)
+Demo: *How a High-Speed Station Works* 《一座高铁站怎么运转》 (69 s) · `miniature.mp4` · source in [`demo/`](demo/) · 中文版：[DEMO.zh-CN.md](DEMO.zh-CN.md)
 
-Futian Station in Shenzhen (high-speed rail, metro Lines 2, 3 and 11, buses) as a cut-away model. **The section is a diagram: the three tiers, their order, the platforms, the one track per tier and the escalators are artistic, not the station's real floors, tracks or transfer routes.** Trains, the bus and the people are illustrative, on invented timings. **An unofficial fan film, not affiliated with China State Railway Group, Shenzhen Metro or any operator**: no operator logo or emblem; station names, line numbers and line colours are public facts. The towers behind the model are real footprints and heights from OpenStreetMap (© OpenStreetMap contributors, ODbL 1.0) and Overture Maps (ODbL 1.0, with Shi et al. 2023, CC BY 4.0), moved back by the depth of the section. Every date on screen is sourced in [`demo/FACTS.md`](demo/FACTS.md). The look and the model are adapted from the repository owner's own refined miniature of Futian Station (v003), with consent.
+**The station is illustrative: a fictional, typical Chinese high-speed rail station with no name.** It is not any real station; it shows no operator's logo, livery, lettering or signage (signs are colour blocks and pictograms), and its layout (a station building beside the tracks, an overpass in, an underpass out, one island platform) is a diagram with compressed distances. Trains, cars and people run on invented timings. The film prints no numbers; the procedures it names (real-name ID check, security check, ticket gates) are sourced from Ministry of Transport regulations in [`demo/FACTS.md`](demo/FACTS.md). The kit, the model, the film and the sound were all written for this library from scratch.
 
 ## Story & structure
 
-Logline: a bus pulls in at a model station; the camera pulls back to find the whole station cut open on a plinth, opens it tier by tier down to the high-speed trains, and stays while the city behind it lights up for the night.
+Logline: a station opens like a box on a table, and one passenger with a suitcase shows how it works, from the taxi to the train, in seven numbered steps; the other side walks out underground; the lid closes and the lights come on.
 
-- **Street (0–4.6 s).** Close on the bus stop, tilt-shift strong: a green bus comes out of the left cut face, brakes and stops; the doors chime.
-- **The model (4.6–12.2 s).** One pull-back to the whole plinth: the three tiers under the street, the sunken plaza and the station's red name, the real towers of the Futian CBD behind with Ping An Finance Center the tallest. Title card 福田站.
-- **Opened (12.2–20.8 s).** Near-silence, then the street tier and the metro tier lift apart; the camera lowers to look into the gaps; three tier names arrive on leader lines.
-- **Metro (20.8–30.4 s).** Crane down to the metro platform: a Line 2 train comes in from the right and stops; card 2011 · Lines 2 and 3, and Line 11 · 2016.
-- **High-speed (30.4–40 s).** Down again to the lowest tier: the bullet train glides in from the left; card 2015.12.30, high-speed rail under the city centre.
-- **Night (40–54 s).** The tiers close, the camera rises and swings to the front; blue hour, near-silence, then the station's lights snap on and the towers light up in six batches; the trains and the bus leave; end card.
+- **The model (0–6.4 s).** The whole plinth, slowly turning; title card. The roof, the canopies and the upper facade lift a little.
+- **① Drop-off (6.4–11.5 s).** Push in to the curb as the lid lifts out of frame. A taxi brakes to a stop; the passenger (coral jacket, white suitcase) takes the case and walks to the doors. The gold route grows to the ID gates. Label: drop-off curb.
+- **② ID check · security (11.5–18.6 s).** A gate opens after a pause; the suitcase rides through the X-ray scanner while the passenger walks through the frame and picks it up. Labels: ID gates, X-ray scanner.
+- **③ Waiting hall (18.6–25.7 s).** Into the hall, a seat in the first row. The first row of the departure board turns amber; the passenger stands up. Labels: waiting area, departure board.
+- **④ Ticket gates (25.7–31.2 s).** Three others go through first; the passenger follows to the escalator. Behind the wall, train B pulls in on track 2. Label: ticket gates.
+- **⑤ Overpass · down to the platform (31.2–48.0 s).** Up the escalator; the camera orbits behind the station as the passenger crosses the overpass over track 1 and walks down the stairs while the train on track 2 leaves and train A arrives. Labels: escalator, overpass, platform.
+- **⑥ Board · departure (48.0–54.5 s).** Doors open, the people waiting at the doors board, then the passenger; doors close, the train pulls out through the right cut face. Label: train doors.
+- **⑦ Exit · underpass (54.5–60.1 s).** The camera swings round to the right cut face: the passengers from the other train walk through the underground passage, up the stairs and through the exit gates; a teal route grows along their way. Label: exit underpass.
+- **Night (60.1–69.4 s).** Pull back to the wide; the lid comes down in one move; blue hour, half a second of near-silence, then the lights come on in six batches; end card.
 
-Native moves spent: through the cut (bus, metro, bullet train), the lift (12–15 s, closing at 40–42 s), tier by tier (20.8–40 s), lights on (44.2 s), the real context (throughout).
+Native moves spent: lift the lid (3.2 s, out of frame at 6.4 s, down at 60.1 s), follow one person (whole film), two flows in two colours (gold in, teal out), through the cut (trains, cars, people on the plaza), into the section (⑦), lights on (63.1 s).
 
 ## Shots
 
-One continuous orthographic take. Film time in seconds; h = half-height of the frame in model units.
+One continuous orthographic take. Film time in seconds; size = half the frame height in model units (a person is 1.75).
 
-| # | Time | Shot | Camera | Native move / note |
+| # | Time | Shot | Camera | Note |
 |---|---|---|---|---|
-| 1 | 0–4.6 | bus stop close-up | yaw 30° → 36°, pitch 21–23°, h 3.5–3.8, tilt-shift 1, slow drift | bus out of the cut face 0–3.4 |
-| 2 | 4.6–9.6 | pull-back to the whole plinth | h 3.8 → 16.2, pitch → 29° | title card 7.2–12.0 |
-| 3 | 9.6–12.2 | hold on the whole model | slow drift | near-silence 11.3–12.2 |
-| 4 | 12.2–15.4 | the tiers lift | yaw → 40°, pitch → 17°, h 16.6 | the lift; tier names 15.3–20.9 |
-| 5 | 15.4–20.8 | hold on the opened model | drift | |
-| 6 | 20.8–22.8 | crane down to the metro tier | h → 3.9, pitch 12° | |
-| 7 | 22.8–30.4 | metro platform | lateral drift | train in 22.0–26.0; cards 24.4–30.6 |
-| 8 | 30.4–32.8 | crane down to the high-speed tier | h → 4.7, pitch 10° | |
-| 9 | 32.8–40.0 | high-speed platform | lateral drift | train in 31.4–36.0; card 35.0–40.6 |
-| 10 | 40.0–44.2 | rise and swing to the front | yaw 30° → 8°, h → 15.6 | tiers close 40.0–42.4; dusk from 41.6 |
-| 11 | 44.2–54 | night, front view | yaw 8° → −5° | lights 44.2; windows 44.6–47.1; departures 46.4–51.6; end card 48.8 |
+| 1 | 0–6.4 | wide, whole plinth | yaw 22° → 30°, pitch 31° → 35°, size 24.5 → 23.5 | title card 0.3–6.6; lid lifts 3.2–5.8 |
+| 2 | 6.4–11.5 | drop-off curb | yaw 16°, pitch 34°, size 8.4 | taxi stops 7.6 |
+| 3 | 11.5–18.6 | entrance hall | yaw 14°, pitch 44°, size 7.4 | gate 11.8, belt 14.9 |
+| 4 | 18.6–25.7 | waiting hall | yaw 18°, pitch 40°, size 7.8 | sits 22.3 |
+| 5 | 25.7–31.2 | ticket gates | yaw 22°, pitch 38°, size 7.2 | |
+| 6 | 31.2–35.4 | escalator | yaw 26°, pitch 30°, size 8.4 | |
+| 7 | 35.4–41.7 | orbit behind, overpass | yaw → 130°, pitch 34°, size 10.4 | train B leaves 40.0 |
+| 8 | 41.7–48.0 | stairs to the platform | yaw 152°, pitch 36°, size 8.6 | train A in 42.2–47.4 |
+| 9 | 48.0–54.5 | platform, train doors | yaw 162° → 148°, size 9.4 → 13 | doors 48.0–51.6, out 52.3 |
+| 10 | 54.5–60.1 | right cut face | yaw 72°, pitch 17°, size 9.4 | the underpass |
+| 11 | 60.1–69.4 | wide | yaw 28° → 23°, size 24.5 | lid down 60.1–63.1, lights 63.1, end card 63.4 |
 
 ## Score structure
 
-84 BPM, F major pentatonic, all synthesized (`demo/mix.py`).
+90 BPM, D major pentatonic, all synthesized (`demo/mix.py`).
 
-- 0–4.6: kalimba alone, one note every two beats; street air, birds; diesel bus, brake hiss at the stop, a two-note chime.
-- 4.6–11.3: marimba eighth-note ostinato, music-box melody, an Fmaj7 pad.
-- 11.3–12.2: near-silence. 12.2–15.1: two small motors; a wooden clack as each tier settles; a glass-bell chord and a low harp F on the last one.
-- 15.1–20.8: B♭maj7 → F, marimba and music box; paper for the cards.
-- 20.8–30.4: Dm7, darker and lower; underground hum; the metro's rails slow down, a soft brake squeal, a chime.
-- 30.4–40: Gm7 → C; the bullet train's smoother roll and air push, a chime.
-- 40–43.4: only the pad (B♭maj7); motors and clacks as the tiers close; crickets begin.
-- 43.4–44.2: near-silence. 44.2: relay click, low thump, lamp hum; music box returns; a glass note for each batch of windows; trains and bus leave; F major 9 harp arpeggio at the end card, a 1.2 s fade.
+- 0–6.4: music box alone over a Dmaj9 pad, one note every two beats; air and birds outside; a glass-bell chord when the lid has lifted.
+- Each step: the pad changes chord (D, Bm7, Gmaj7, Asus, D/F♯ → G → A, Bm7, Gmaj7), the kalimba plays three rising chord tones, a quiet marimba ostinato in eighths fills the step. Hall murmur from step ② to ⑤, open air on the platform, a hum underground in ⑦.
+- Foley from the events: taxi engine and door, gate beeps and flaps, the scanner belt, the escalator hum, rail rumble with joint clicks that slow down, brake hiss, generic two-note door chimes, a paper sound and a glass note for every label, soft air for camera moves.
+- 60.1: only the pad (Gmaj7); motors and a thump as the lid lands; crickets after dusk; near-silence 0.6 s before the lights; 63.1: relay click, a glass note per batch, a harp D major 9 arpeggio; music box at the end card; a 1.4 s fade.
 
 ## Palette & props
 
-Background #ecebe5 by day, #8f9ab2 at blue hour, #121c24 at night. Model whites #d9d9cc, #deddd1, silver #c6cdcb; plinth slate #53686b; earth #c9bea6. Accents: station name red #a52d28, bus green #6b9a64, Line 2 #db6d1c, Line 3 #00a2e1, Line 11 #6a1d44, the bullet train's blue line #669dba. Model: 25.2 × 13.3 units for the section; tiers at −3.4, 0.8 and 4.8; the city strip 12 units deep behind it; 1 unit = 45 m for the city.
+Background #e9e7e0 by day, #93a2bb at blue hour, #18222f at night. Model whites #f1efe8, #e8e4d8, #d2d0c6; plinth slate #4d5b5f; earth #cdbd9c with strata. Accents: route gold #d9a52e, exit route teal #3e9693, the passenger's coral #d4705a, the trains' blue stripe #3f6f93, gate lamps (teal for ID, amber for tickets, green for exit), exit signs green #3d6b55. Props (all from the kit): plinth 68 × 46 with 6 units of earth; station building 62 × 12, walls 9 high; ID gates (5 lanes), two X-ray scanners and walk-through frames, 27 benches of 4 seats in the hall, a departure board of colour rows, ticket gates (4), an escalator, a mezzanine and an overpass, an island platform with canopies, two tracks, two 6-car trains, a taxi, a bus, looping traffic, about 100 people.
 
 ## End card
 
-Lower left over the night model: 福田站，切开看 / FUTIAN, IN SECTION / NEO-Cine. Data credits, the diagram note and the fan-film note are in `demo/CREDITS` and at the top of this file, not on screen.
+Lower left over the night model: 一座高铁站怎么运转 / HOW A HIGH-SPEED STATION WORKS; NEO-Cine lower right. The illustrative-station note and the sources are in `demo/CREDITS`, `demo/FACTS.md` and at the top of this file, not on screen.
 
 ## Build notes
 
-- `demo/data/city.json`: `neo/geo/buildings.py --bbox 114.0395,22.5340,114.0530,22.5485 --origin 114.0512,22.5413` (both sources); `build.sh` fetches it only when it is missing.
-- `sh styles/miniature/demo/build.sh v002` (local, 3 workers) or `RENDER=remote sh styles/miniature/demo/build.sh v002` (the render desktop, 4 workers). Each version is new: `miniature-vNNN.mp4` and `poster-vNNN.jpg`; `miniature.mp4`, `poster.jpg` and `demo/stills/styleframe.jpg` are copied only when missing.
-- Review: `node core/render/still.mjs styles/miniature/demo --range 0:54:2`, then a contact sheet; `node core/render/readcheck.mjs styles/miniature/demo --q 'textonly=1'` (the `textonly` flag skips the 3D render).
-- Poster at 47.6 s (night, lights on, the bullet train leaving); style frame at 18.0 s (opened, tier names in place).
-- Render times: about 9.5 minutes on the render desktop (RTX 4060 Ti, 4 workers); on Windows (ANGLE / Direct3D 11) the first page can take more than three minutes to compile the physical-material shaders and `frames.mjs` opens it again, which then succeeds.
-- Pitfalls of this model: the HSR train is longer than the section and must be clipped at x = ±12.55; the escalators belong to the lower tier and are stretched with the gap; the city mapping turns OSM x (east) into model depth, so a sign error puts the towers on top of the station.
+- `sh styles/miniature/demo/build.sh v003` (local, 3 workers) or `RENDER=remote sh styles/miniature/demo/build.sh v003` (the render desktop, 4 workers). Each version is new: `miniature-vNNN.mp4` and `poster-vNNN.jpg`; an existing version number is refused. `miniature.mp4`, `poster.jpg` and `demo/stills/styleframe.jpg` are copied only when missing; the new style frame is also saved as `demo/out/stills/styleframe-vNNN.jpg`.
+- Code entry points: `demo/station.js` (the scene description: board, voids, lifting group, glow batches, ~150 parts, vehicles, the passenger's plan, crowds, routes, light), `demo/main.js` (the seven steps with their shots and labels, camera keys, `window.EV`, the page contract), `demo/kit/` (the kit, STYLE.md §10), `demo/mix.py` (the sound).
+- Timings follow the passenger: each step starts and ends on marks of the plan (`'@hero.idgate'`, `'@hero.sit'` …), so moving a part or changing a walking speed moves the steps with it. Train and taxi times are numbers in `station.js`; keep train A's doors open before the passenger reaches them (`board` waits for the doors anyway). `marks.close` must equal the end of step ⑦ (`main.js` warns when it doesn't).
+- Review: `node core/render/still.mjs styles/miniature/demo --range 0:69:3 --out <dir>`, then `core/render/sheet.py`; `node core/render/readcheck.mjs styles/miniature/demo --q 'textonly=1'` (`textonly` builds the timeline and the text boxes without WebGL).
+- Poster at 67 s (night, lights on, the title on screen); style frame and gallery frame at 58 s (step ⑦: the underpass in section, the label, gold and teal flows).
+- Pitfalls of this model: the near facade is cut at 3.2 and its upper part lifts with the roof, or it hides the halls; the platform canopy is split around the overpass stairs; the underpass, its stair shafts and the platform opening are voids cut from the earth and holes in the slabs, and they have to line up.

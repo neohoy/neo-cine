@@ -5,14 +5,14 @@
  "cn": "微缩景观",
  "category_en": "City Skyline",
  "category_cn": "城市天际线",
- "film": "Futian, in Section",
- "line": "A cut-away model of Futian Station on a thin display plinth: the street, metro and high-speed tiers lift apart, a bus, a metro and a bullet train pull in, and the real towers behind light up as day turns to night.",
- "line_cn": "一块切开的福田站模型放在薄底座上：地面、地铁、高铁三层被抬开，公交、地铁和高铁一辆辆进站，天黑时后面真实的高楼一批批亮起窗来。",
+ "film": "How a High-Speed Station Works",
+ "line": "A fictional high-speed rail station cut open on a thin plinth: the roof lifts away, and one passenger with a suitcase is followed in seven numbered steps, from the taxi through ID and security checks, the waiting hall, the ticket gates and the overpass to the train, while the other side walks out through the underpass; then the roof closes and the lights come on.",
+ "line_cn": "一座虚构的高铁站切开放在薄底座上：屋顶抬走，跟着一位拖箱子的旅客分七步讲，从下出租车、实名验证和安检、候车、检票、过天桥到上车，另一侧下车的人走地道出站；讲完屋顶合上，天黑亮灯。",
  "uses": [
-  "Stations, hubs and buildings shown in section",
-  "A place or a project as an architectural model",
-  "How the layers of a city connect, from the street down"
+  "How a building or a hub works, one step at a time",
+  "A visitor's route through a hospital, airport, museum or factory",
+  "A place shown as a cut-away model, with its life in loops"
  ],
- "frame_sec": 18.0,
- "dur": 54
+ "frame_sec": 58,
+ "dur": 69.4
 }

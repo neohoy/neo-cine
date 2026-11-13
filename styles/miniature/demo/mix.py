@@ -1,12 +1,12 @@
-"""《福田站，切开看》的声音 → out/mix.wav（48 kHz 立体声）。全部现场合成（numpy + core/audio 的 sfx.py、pluck.py），不用任何录音、采样或现成音乐。
-配乐：84 BPM，F 大调五声，原创。音色是"桌上的小东西"：拇指琴、音乐盒、马林巴、玻璃钟，底下一层很柔的长音（pad）；
-      地面一段只有拇指琴和鸟，拉开以后进马林巴的八分音型，三层展开前收成近乎无声，展开落定时一个钟和弦；
-      下到地铁层换成 Dm、更低更暗，高铁层 Gm → C；合拢、天黑时音乐退到只剩 pad，亮灯前 0.8 秒近乎无声，
-      亮灯的一下之后音乐盒接上，片尾落 F 大九和弦。
-动作音：读 events.json（画面导出的 window.EV）——公交进站（柴油怠速、刹车放气、开门两声提示）、地铁和高铁进出站（轮轨、刹车、到站提示音）、
-      层抬起和落下（小电机、木头"嗒"）、镜头移动（很轻的风）、说明卡（纸声）、亮灯（继电器"咔"+ 灯管嗡声）、城市的窗一批批亮（玻璃小音）。
-环境：地面是街上的空气和鸟，地下是低沉的站厅嗡声，天黑后是虫鸣和远处的城市。
-画面事件用 neo/audio/cues.py 读（声音的时间取自画面，不会漂），结尾用 neo/audio/master.py 定响度并检查。
+"""《一座高铁站怎么运转》的声音 → out/mix.wav（48 kHz 立体声）。全部现场合成（numpy + core/audio 的 sfx.py、pluck.py），不用任何录音、采样或现成音乐。
+配乐：90 BPM，D 大调五声，原创。音色是"桌上的小东西"：音乐盒、拇指琴、马林巴、玻璃钟、竖琴，底下一层很软的长音（pad）。
+      开场只有音乐盒和 pad；每讲一步，拇指琴从这一步的和弦往上走三个音，马林巴的八分音型轻轻垫着，和弦一步一换；
+      讲完退回全景，音乐收到只剩 pad；亮灯前 0.6 秒近乎无声，亮灯的一下之后玻璃钟一批一个音，片尾落在 D 大九和弦上。
+动作音：读 events.json（画面导出的 window.EV），时间全取自画面——出租车进站停车开走、闸机门翼和提示音、安检传送带、
+      扶梯、两趟车的轮轨 / 刹车 / 开关门、屋顶抬起和落下（小电机、木头"嗒"）、标注出现（纸声 + 一粒玻璃音）、镜头移动（很轻的风）、
+      亮灯（继电器"咔"）。到站提示音是通用的两个音，不是任何运营方的真实提示音。
+环境：站外是空气和鸟，候车厅是低低的人声嗡嗡，站台是空旷的风，地道是低沉的嗡声，天黑后是虫鸣。
+画面事件用 neo/audio/cues.py 读，结尾用 neo/audio/master.py 定响度（−14 LUFS）并检查。
 运行（库的根目录）：.venv/bin/python styles/miniature/demo/mix.py；build.sh 会先导出 events.json 再跑它。"""
 import os, sys, json, math
 import numpy as np, soundfile as sf
@@ -22,18 +22,19 @@ EVJ = json.load(open(os.path.join(D, 'events.json'), encoding='utf-8'))
 EV, DUR = EVJ['ev'], EVJ['dur']
 K = C.Cues(EV, fps=24)
 N = int((DUR + .5) * SR)
-rng = np.random.default_rng(2015)
+rng = np.random.default_rng(1114)
 mus = np.zeros((N, 2), np.float32); rev = np.zeros((N, 2), np.float32); fx = np.zeros((N, 2), np.float32); amb = np.zeros((N, 2), np.float32)
 tt = X.t_
 hz = lambda m: 440.0 * 2 ** ((m - 69) / 12)
-BPM = 84; B = 60 / BPM
+BPM = 90; B = 60 / BPM
 
 
 def put(buf, x, at, gain=1.0, pan=0.0):
     i = int(round(at * SR))
     if i >= N or gain <= 0: return
+    x = np.asarray(x, np.float32)
     if i < 0: x = x[-i:]; i = 0
-    x = np.asarray(x, np.float32)[:N - i]; l = math.cos((pan + 1) * math.pi / 4); r = math.sin((pan + 1) * math.pi / 4)
+    x = x[:N - i]; l = math.cos((pan + 1) * math.pi / 4); r = math.sin((pan + 1) * math.pi / 4)
     buf[i:i + len(x), 0] += x * gain * l * 1.414; buf[i:i + len(x), 1] += x * gain * r * 1.414
 
 
@@ -49,10 +50,10 @@ def voice(kind, m):
     if key in _cache: return _cache[key]
     f = hz(m)
     if kind == 'marimba':
-        t = tt(1.2); y = np.sin(2 * np.pi * f * t) * np.exp(-t / .36) + .35 * np.sin(2 * np.pi * f * 3.93 * t) * np.exp(-t / .05) + .1 * np.sin(2 * np.pi * f * 9.8 * t) * np.exp(-t / .015)
+        t = tt(1.0); y = np.sin(2 * np.pi * f * t) * np.exp(-t / .3) + .3 * np.sin(2 * np.pi * f * 3.93 * t) * np.exp(-t / .04)
     elif kind == 'glass':
-        t = tt(2.6); idx = 1.4 * np.exp(-t / .2) + .2
-        y = np.sin(2 * np.pi * f * t + idx * np.sin(2 * np.pi * f * 3.5 * t)) * np.exp(-t / 1.0) * .8
+        t = tt(2.4); idx = 1.3 * np.exp(-t / .18) + .2
+        y = np.sin(2 * np.pi * f * t + idx * np.sin(2 * np.pi * f * 3.5 * t)) * np.exp(-t / .9) * .8
     else:
         y = PL.pluck({'kalimba': 'kalimba', 'box': 'music_box', 'harp': 'harp'}[kind], m, 1.8, vel=.6)
         y = np.asarray(y, np.float64)[:int(2.2 * SR)]; y = y / (np.abs(y).max() + 1e-9) * .8
@@ -64,184 +65,170 @@ def note(kind, m, at, g, pan=0.0, wet=.5):
     x = voice(kind, m); put(mus, x, at, g, pan); put(rev, x, at, g * wet, pan)
 
 
-def padchord(ms, a, b, v=.5, fi=1.2, fo=1.5, cut=1600):
+def padchord(ms, a, b, v=.5, fi=1.2, fo=1.5, cut=1500):
     d = b - a
     if d <= .2: return
     t = tt(d); env = np.clip(t / fi, 0, 1) * np.clip((d - t) / fo, 0, 1); y = np.zeros(len(t))
     for j, m in enumerate(ms):
         f = hz(m)
-        for det in (-.08, .08):
+        for det in (-.07, .07):
             ph = 2 * np.pi * f * (1 + det / 100) * t + j
-            y += np.sin(ph) + .28 * np.sin(2 * ph) + .1 * np.sin(3 * ph)
-    y = X.lp(y * env / len(ms), cut) * (1 + .04 * np.sin(2 * np.pi * .21 * t))
+            y += np.sin(ph) + .25 * np.sin(2 * ph)
+    y = X.lp(y * env / len(ms), cut) * (1 + .04 * np.sin(2 * np.pi * .19 * t))
     put(amb, y, a, v * .16, -.25); put(amb, np.roll(y, 977), a, v * .16, .25)
 
 
 # ———————————————————— 画面上的关键时刻 ————————————————————
-t_bus = K.at('stop', k='bus'); t_metro = K.at('stop', k='metro'); t_hsr = K.at('stop', k='hsr')
-lifts = K.events('lift'); settles = K.events('settle')
-t_up = min(e['t'] for e in lifts if e['up']); t_up1 = max(e['t'] for e in settles if e['up'])
-t_dn = min(e['t'] for e in lifts if not e['up']); t_dn1 = max(e['t'] for e in settles if not e['up'])
-t_lights = K.at('lights'); t_title = K.at('title'); dusk = K.events('dusk')[0]
-cams = K.events('cam')
+steps = K.events('step')                       # 7 步讲解
+t_step = {e['n']: e['t'] for e in steps}
+lifts = K.events('lift'); t_up, t_down = lifts[0]['t'], lifts[1]['t']
+t_lights = K.events('lights')[0]['t']; t_end = K.at('end'); t_dusk = K.at('dusk'); t_title = K.at('title')
+D3, A3 = 50, 57
+# 每一步一个和弦（MIDI）：1 D  2 Bm7  3 Gmaj7  4 Asus  5 D/F#→G→A  6 Bm7  7 Gmaj7
+CH = {1: [50, 57, 62, 66], 2: [47, 54, 57, 62], 3: [43, 50, 54, 59], 4: [45, 52, 57, 62], 5: [42, 50, 57, 62], 6: [47, 54, 57, 62], 7: [43, 50, 54, 59]}
+PENT = [0, 2, 4, 7, 9]                          # D 大调五声：D E F# A B
+def deg(n, base=62): return base + 12 * (n // 5) + PENT[n % 5]
 
 # ———————————————————— 配乐 ————————————————————
-PENT = [0, 2, 4, 7, 9]                                   # F 大调五声：F G A C D
-F4 = 65
-def deg(n, base=F4): return base + 12 * (n // 5) + PENT[n % 5]
-grid = lambda a, b, step: [a + k * step for k in range(int((b - a) / step + 1e-6))]
-
-# 1) 地面（0 → 拉开前）：拇指琴，两拍一个音，慢慢往上走
-for k, at in enumerate(grid(.6, cams[0]['t'] + .2, 2 * B)):
-    note('kalimba', deg([2, 4, 3, 5, 4, 6][k % 6]), at, .30, -.3 + .12 * (k % 5), .6)
-# 2) 拉开 → 展开前：马林巴八分音型 + 拇指琴旋律，pad Fmaj7
-t_q0 = t_up - .9                                         # 近乎无声：展开前 0.9 秒
-pat = [0, 2, 4, 2, 5, 4, 2, 4]
-for k, at in enumerate(grid(cams[0]['t'], t_q0, B / 2)):
-    note('marimba', deg(pat[k % 8], 53), at, .17 + .05 * (k % 4 == 0), .25 * math.sin(k * .7), .3)
-for k, (n, at) in enumerate(zip([7, 6, 5, 7, 9, 8, 7, 5], grid(cams[0]['t'] + 2 * B, t_q0, 2 * B))):
-    note('box', deg(n), at, .26, .2, .7)
-padchord([53, 57, 60, 64], cams[0]['t'], t_q0 + .4, .55, 1.6, .5)
-# 3) 展开：低音 F 持续，落定时一个玻璃钟和弦
-for j, m in enumerate([65, 69, 72, 76, 79]): note('glass', m, t_up1 + j * .05, .22, -.5 + .25 * j, .9)
-note('harp', 41, t_up1, .5, 0, .4)
-# 4) 层名停留：Bbmaj7 → F，马林巴更舒展，音乐盒点旋律
-t_sec4 = cams[2]['t']                                    # 下到地铁层的那一刻
-padchord([46, 50, 53, 57], t_up1, (t_up1 + t_sec4) / 2 + .6, .7)
-padchord([41, 48, 53, 57, 60], (t_up1 + t_sec4) / 2, t_sec4 + 1.2, .7)
-for k, at in enumerate(grid(t_up1 + B, t_sec4, B / 2)):
-    note('marimba', deg([0, 2, 4, 5, 4, 2][k % 6], 53), at, .15, .3 * math.sin(k * .5), .3)
-for n, at in zip([9, 8, 7, 8, 10, 9], grid(t_up1 + B, t_sec4, 2 * B)): note('box', deg(n), at, .24, -.2, .7)
-# 5) 地铁层：Dm7，暗一点，马林巴低八度，拇指琴在拍上
-t_sec5 = cams[3]['t']
-padchord([50, 53, 57, 60], t_sec4, t_sec5 + 1.0, .75, 1.5, 1.5, 1300)
-for k, at in enumerate(grid(t_sec4 + .2, t_sec5, B / 2)):
-    if k % 8 in (3, 7): continue
-    note('marimba', [50, 53, 57, 60, 57, 53][k % 6], at, .15, .3 * math.sin(k * .9), .3)
-for k, at in enumerate(grid(t_sec4 + 4 * B, t_sec5, 4 * B)): note('kalimba', [69, 72, 74, 72][k % 4], at, .24, .35, .6)
-# 6) 高铁层：Gm7 → C，更开阔
-t_sec6 = cams[4]['t']
-padchord([43, 50, 53, 58], t_sec5, (t_sec5 + t_sec6) / 2 + .6, .8, 1.2, 1.5, 1500)
-padchord([48, 52, 55, 58, 62], (t_sec5 + t_sec6) / 2, t_sec6 + 1.5, .8, 1.2, 2.0, 1500)
-for k, at in enumerate(grid(t_sec5 + .2, t_sec6, B / 2)):
-    note('marimba', deg([1, 3, 5, 3, 6, 5, 3, 1][k % 8], 55) if k < 32 else deg([2, 4, 6, 4][k % 4], 53), at, .15, .3 * math.sin(k * .6), .3)
-for n, at in zip([7, 8, 9, 10, 9, 8, 7, 8], grid(t_sec5 + 2 * B, t_sec6, 2 * B)): note('box', deg(n), at, .22, .15, .7)
-# 7) 合拢、天黑：只剩 pad（Bbmaj7），亮灯前 0.8 秒近乎无声
-t_q1 = t_lights - .8
-padchord([46, 50, 53, 57, 60], t_dn - .3, t_q1 + .3, .6, 1.0, .9, 1100)
-for j, m in enumerate([58, 65]): note('glass', m, t_dn1 + j * .06, .16, .2 - .4 * j, .9)
-# 8) 亮灯以后：音乐盒慢慢的旋律，片尾 F 大九
-padchord([41, 48, 53, 57, 60, 67], t_lights, DUR + .3, .85, 1.5, 3.0, 1500)
-for k, (n, at) in enumerate(zip([5, 7, 9, 8, 7, 10, 9, 7, 8], grid(t_lights + .6, t_title, B)), start=0):
-    note('box', deg(n), at, .26, .3 * math.sin(k), .8)
-for j, m in enumerate([53, 60, 65, 67, 69, 72, 76]): note('harp', m, t_title + .1 + j * .14, .32, -.5 + .16 * j, .6)
-note('glass', 89, t_title + 1.2, .22, .1, 1.0); note('harp', 41, t_title, .5, 0, .4)
+# 开场：pad D 大九 + 音乐盒，两拍一个音，慢慢往上
+padchord([50, 57, 64, 66, 69], 0, t_step[1] + .8, v=.55)
+for k, n in enumerate([0, 2, 4, 3, 5, 4, 7, 6]):
+    at = t_title + k * 2 * B
+    if at > t_step[1] - .3: break
+    note('box', deg(n, 74), at, .2, (k % 2) * .3 - .15)
+# 屋顶抬起：玻璃钟一个和弦
+for j, m in enumerate([62, 69, 74]): note('glass', m, t_up + 2.6 + j * .05, .1, -.2 + j * .2, .7)
+# 每一步：pad 换和弦，拇指琴三个音往上走，马林巴八分音型垫着
+bounds = [t_step[n] for n in range(1, 8)] + [t_down]
+for n in range(1, 8):
+    a, b = bounds[n - 1], bounds[n]
+    ch = CH[n]
+    if n == 5:      # 最长的一步：D/F# → G → A
+        thirds = [a, a + (b - a) / 3, a + 2 * (b - a) / 3, b]
+        for (x0, x1), c in zip(zip(thirds, thirds[1:]), [[42, 50, 57, 62], [43, 50, 55, 59], [45, 52, 57, 61]]): padchord(c, x0 - .3, x1 + .6, v=.5)
+    else:
+        padchord(ch, a - .3, b + .6, v=.5)
+    s0 = a + .3
+    for j, m in enumerate([ch[1] + 12, ch[2] + 12, ch[3] + 12]): note('kalimba', m, s0 + j * B / 2, .22, -.3 + j * .3)
+    # 马林巴：每拍一个八分音型（和弦音），很轻；步与步之间留半拍空
+    k = 0; at = s0 + 2 * B
+    while at < b - .4:
+        m = ch[[1, 2, 3, 2][k % 4]] + 12
+        note('marimba', m, at, .07 + .02 * (k % 2 == 0), (k % 2) * .4 - .2, .3); at += B / 2; k += 1
+# 讲完退回全景：只剩 pad（Gmaj7 → D），亮灯前近乎无声
+padchord([43, 50, 54, 59], t_down - .3, t_lights - .5, v=.45)
+# 亮灯以后：竖琴往上的 D 大九分解和弦，音乐盒落两个音
+for j, m in enumerate([50, 57, 62, 64, 66, 69, 74, 76]): note('harp', m, t_lights + .15 + j * B / 3, .2, -.4 + j * .1, .6)
+padchord([50, 57, 64, 66, 69], t_lights, DUR + .3, v=.6, fi=.8, fo=2.0)
+note('box', 81, t_end + .2, .2, .2); note('box', 78, t_end + .2 + B, .18, -.1); note('box', 74, t_end + .2 + 2.5 * B, .2, 0)
 
 # ———————————————————— 动作音：按画面事件 ————————————————————
-def engine(d, v=1.0, f0=34.0, drift=0.0):              # 公交柴油机：低频谐波 + 粗糙的噪声
-    t = tt(d); f = f0 * (1 + drift * t / d); ph = 2 * np.pi * np.cumsum(f) / SR
-    y = sum(np.sin(k * ph) / k ** .8 for k in range(1, 9)) * (1 + .25 * np.sin(ph * .5))
-    y = X.lp(y, 380) + X.bp(X.noise(d), 80, 500) * .3
-    return y * v
-def hiss(d=.7, v=1.0):                                 # 刹车放气"嘶"
-    t = tt(d); return X.bp(X.noise(d), 2200, 7500) * np.exp(-t / (d * .35)) * np.clip(t / .015, 0, 1) * v
-def chime(m1, m2, at, g, pan=0):                       # 到站提示：两个音（通用的音高，不是真实线路的提示音）
-    note('glass', m1, at, g, pan, .8); note('glass', m2, at + .38, g, pan, .8)
-def rails(d, v=1.0, v0=1.0, v1=0.0, pitch=1.0, smooth=0.0):   # 轮轨：滚动的低噪声 + 过钢轨接缝的"咔哒"，速度从 v0 变到 v1
-    t = tt(d); sp = v0 + (v1 - v0) * (t / d) ** (.6 if v1 < v0 else 1.6)
-    roll = X.bp(X.brown(d), 60 * pitch, 900 * pitch) * (.25 + .75 * sp) * 1.4
-    y = roll.copy(); pos = np.cumsum(sp) / SR * 9.0; hits = np.nonzero(np.diff(np.floor(pos)) > 0)[0]
-    if smooth < 1:
-        for i in hits:
-            for o in (0, int(.07 * SR / max(.25, sp[i]))):
-                x = X.bp(X.noise(.05), 300 * pitch, 2400 * pitch) * np.exp(-tt(.05) / .008) * .9 * sp[i] * (1 - smooth); j = i + o; y[j:j + len(x)] += x[:len(y) - j]
-    return fade(y, .05, .2) * v
-def squeal(d=.9, v=1.0, f=2900):
-    t = tt(d); return np.sin(2 * np.pi * f * t + 3 * np.sin(2 * np.pi * 6 * t)) * np.sin(np.pi * t / d) ** 2 * v
-def motor(d, v=1.0, up=1):                             # 层升降的小电机：一条随速度起伏的锯齿，低通得很软 + 齿轮的细碎声
-    t = tt(d); s = np.sin(np.pi * t / d); f = 95 + 45 * s * (1 if up else .8)
-    ph = 2 * np.pi * np.cumsum(f) / SR; y = X.lp(((ph / (2 * np.pi)) % 1) * 2 - 1, 900) * s
-    y += X.bp(X.noise(d), 2500, 6000) * s * (.5 + .5 * np.sin(2 * np.pi * 38 * t)) * .15
-    return y * v
-def tick(v=1.0, f=3200):
-    d = .03; t = tt(d); return (np.sin(2 * np.pi * f * t) * np.exp(-t / .004) + X.hp(X.noise(d), 3000) * np.exp(-t / .003) * .5) * v
-def paper(d=.4, v=1.0):
-    t = tt(d); return X.bp(X.noise(d), 1800, 7000) * np.sin(np.pi * t / d) ** 2 * .3 * v
+def rumble(d, v0, v1, cut=(500, 120), clicks=True, gap=1.1):
+    """轮轨：低噪声的滚动声，随速度（v0 → v1，0–1）变响变亮；过钢轨接缝的"咔哒"随速度变疏"""
+    t = tt(d); v = np.linspace(v0, v1, len(t))
+    y = X.lp(X.brown(d), 260) * (.3 + v) + X.bp(X.noise(d), 300, 900) * .08 * v
+    y = y * np.clip(t / .3, 0, 1) * np.clip((d - t) / .4, 0, 1)
+    if clicks:
+        pos, tt0 = 0.0, 0.0
+        while tt0 < d - .1:
+            sp = v0 + (v1 - v0) * tt0 / d
+            if sp < .04: break
+            for dd in (0, .09):
+                i = int((tt0 + dd) * SR); c = X.clack(.7, .5 * sp); y[i:i + len(c)] += c[:len(y) - i] * .5
+            tt0 += gap / max(sp, .05) * .25
+    return y
+def hiss(d=.6): return X.hp(X.noise(d), 2500) * np.exp(-tt(d) / (d / 3)) * .4
+def chime(at, g, pan, m1=76, m2=72):         # 通用的两个音（大三度下行），不是真实运营方的提示音
+    for j, m in enumerate((m1, m2)):
+        t = tt(1.0); y = np.sin(2 * np.pi * hz(m) * t) * np.exp(-t / .35) * .6
+        put(fx, y, at + j * .32, g, pan); put(rev, y, at + j * .32, g * .4, pan)
+def motor(d, v=1.0):
+    t = tt(d); s = np.sin(np.pi * np.clip(t / d, 0, 1)); f = 90 + 70 * s
+    y = np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * .2; y = X.lp(y, 700) * s
+    return y + X.bp(X.noise(d), 2000, 5000) * .02 * s
+def beep(f=1650, d=.09): t = tt(d); return np.sin(2 * np.pi * f * t) * np.sin(np.pi * t / d) * .35
+def paper(d=.3): return X.bp(X.noise(d), 1500, 6000) * np.exp(-tt(d) / .07) * .4
+def air(d): t = tt(d); return X.bp(X.noise(d), 300, 1600) * np.sin(np.pi * t / d) ** 2 * .12
 
-for e in K.each('arrive', 'stop', 'depart'):
-    ty, at, k = e['type'], e['t'], e['k']
-    if k == 'bus':
+for e in K.each('arrive', 'stop', 'doors', 'depart'):
+    k, t, ty = e['k'], e['t'], e['type']
+    if k == 'taxi':
         if ty == 'arrive':
-            d = e['d'] + 1.2; x = engine(d, 1.0, 38, -.25); t = tt(d); x *= np.clip(t / .5, 0, 1) * (1 - .55 * np.clip((t - e['d']) / .6, 0, 1)) * np.clip((d - t) / .3, 0, 1)
-            put(fx, x, at, .22, -.6); put(fx, X.bp(X.noise(.5), 1500, 4000) * np.exp(-tt(.5) / .2) * .4, at + e['d'] - .45, .25, -.2)   # 轮胎在地面减速
+            d = e['d']; t_ = tt(d); y = X.lp(X.brown(d), 180) * (1.2 - .7 * t_ / d) + np.sin(2 * np.pi * 38 * t_) * .1
+            put(fx, y * np.clip(t_ / .6, 0, 1), t, .4, -.6)
         elif ty == 'stop':
-            put(fx, hiss(.8), at + .15, .32, -.3); chime(84, 79, at + 1.0, .16, -.3)
-            x = engine(1.2, 1, 34) * np.clip(1 - tt(1.2) / 1.2, 0, 1); put(fx, x, at, .12, -.3)
-        else:
-            d = e['d']; x = engine(d, 1.0, 34, .5) * np.clip(tt(d) / .4, 0, 1) * np.clip((d - tt(d)) / 1.2, 0, 1); put(fx, x, at, .2, .4); put(fx, hiss(.5), at - .3, .15, 0)
-    elif k == 'metro':
-        if ty == 'arrive':
-            d = e['d'] + .3; put(fx, rails(d, 1.0, 1.0, .05), at, .26, .5); put(fx, squeal(1.1, .06, 2700), at + e['d'] - 1.3, 1.0, .2)
-        elif ty == 'stop':
-            chime(81, 76, at + .5, .2, 0); put(fx, hiss(.5, .6), at + .3, .2, 0)
-        else:
-            put(fx, rails(e['d'], 1.0, .05, 1.0), at, .24, -.4)
-    else:
-        if ty == 'arrive':
-            d = e['d'] + .3; put(fx, rails(d, 1.0, 1.0, .03, .7, .7), at, .3, -.5)
-            w = X.lp(X.noise(d), 700) * np.sin(np.pi * tt(d) / d) ** 2; put(fx, w, at, .2, -.3)       # 车头推着的风
-        elif ty == 'stop':
-            chime(77, 84, at + .5, .2, 0)
-        else:
-            d = e['d']; put(fx, rails(d, 1.0, .03, 1.0, .7, .7), at, .28, .5)
-            w = X.lp(X.noise(d), 900) * (tt(d) / d) ** 1.5 * np.clip((d - tt(d)) / .6, 0, 1); put(fx, w, at, .22, .5)
+            put(fx, X.thump(.4, 90), t + .7, .35, -.4); put(fx, X.clack(1.3, .5), t + .75, .25, -.4)     # 开车门、关后备箱
+        elif ty == 'depart':
+            d = e['d']; t_ = tt(d); y = X.lp(X.brown(d), 220) * (.4 + .8 * t_ / d) * np.clip((d - t_) / 1.2, 0, 1)
+            put(fx, y, t, .4, .5)
+        continue
+    pan0 = -.7 if k == 'A' else .7                 # A 从左边开进来，B 从右边
+    if ty == 'arrive':
+        put(fx, rumble(e['d'] + .3, 1.0, .02), e['t'], .55 if k == 'A' else .4, pan0 * .6)
+        put(fx, X.bp(X.noise(1.2), 2600, 3400) * np.sin(np.pi * tt(1.2) / 1.2) * .08, e['t'] + e['d'] - 1.3, .4, pan0 * .3)   # 刹车的一点尖声
+    elif ty == 'stop':
+        put(fx, hiss(.7), t + .05, .3, pan0 * .2)
+    elif ty == 'doors':
+        if e['open']: chime(t - .15, .22 if k == 'A' else .14, pan0 * .2)
+        put(fx, hiss(.45), t + .15, .2, pan0 * .2); put(fx, X.clack(.8, .4), t + .75, .2, pan0 * .2)
+    elif ty == 'depart':
+        put(fx, rumble(e['d'] + 1.5, .02, 1.0), t, .55 if k == 'A' else .4, -pan0 * .5)
 
-for e in lifts:
-    put(fx, motor(e['d'], 1.0, e['up']), e['t'], .1, .4 if e['k'] == 'ground' else .2)
-for e in settles:
-    put(fx, X.clack(.8 if e['up'] else .65, 1.0), e['t'], .32, .3); put(fx, X.thump(1.0, 60), e['t'], .25, 0)
-for e in cams:                                         # 镜头移动：很轻的风（推近或拉远都是一口气）
-    d = e['d']; t = tt(d); w = X.bp(X.noise(d), 300, 2600) * np.sin(np.pi * t / d) ** 3 * .5
-    put(fx, w, e['t'], .09, -.2); put(fx, np.roll(w, 3000), e['t'], .09, .2)
-for e in K.events('card'): put(fx, paper(.35), e['t'], .5, -.4); put(fx, tick(.5, 2400), e['t'] + .05, .25, -.4)
-# 亮灯：继电器"咔"、一声低沉的合闸，灯管的嗡声铺进来
-put(fx, X.thump(1.0, 55), t_lights, .5, 0); put(fx, tick(1.0, 1800), t_lights, .5, -.2); put(fx, tick(.8, 2600), t_lights + .03, .4, .2)
-d = DUR - t_lights; t = tt(d); hum = (np.sin(2 * np.pi * 100 * t) + .4 * np.sin(2 * np.pi * 200 * t) + .2 * np.sin(2 * np.pi * 300 * t)) * np.clip(t / .3, 0, 1) * np.clip((d - t) / 1.5, 0, 1)
-put(amb, X.lp(hum, 500), t_lights, .02, 0)
-for e in K.events('window'):                           # 城市的窗一批批亮：一粒玻璃音，一批比一批高
-    note('glass', [84, 86, 88, 91, 93, 96][e['i']], e['t'], .1, -.6 + .24 * e['i'], 1.0)
+for e in K.events('gate'):                     # 闸机：一声提示、门翼收回的"嗖"、关上的轻响
+    pan = -.5 if e['k'] == 'idGates' else (.0 if e['k'] == 'ticketGates' else .6)
+    put(fx, beep(1650 if e['k'] != 'exitGates' else 1400), e['t'] + .05, .12, pan)
+    put(fx, X.bp(X.noise(.18), 800, 3000) * np.sin(np.pi * tt(.18) / .18) * .3, e['t'] + .12, .1, pan)
+for e in K.events('belt'): put(fx, motor(e['d'] + .3), e['t'], .12, -.5)
+for e in K.events('ride'):
+    d = e['d']; t_ = tt(d); y = X.lp(X.brown(d), 140) * .6 + np.sin(2 * np.pi * 100 * t_) * .04
+    put(fx, y * np.clip(t_ / .4, 0, 1) * np.clip((d - t_) / .4, 0, 1), e['t'], .25, .1)
+for e in K.events('sit'): put(fx, X.thump(.3, 120), e['t'] + .35, .18, -.2)
+for e in K.events('board'): put(fx, X.step(.5), e['t'], .25, -.2)
+for e in K.events('callout'):
+    put(fx, paper(.25), e['t'], .25, .3)
+    note('glass', 86 if e['id'] in ('curb', 'seats', 'esc', 'pf', 'under') else 81, e['t'] + .55, .05, .3, .6)
+for e in K.events('step'): put(fx, X.click(1.4, .4), e['t'] + .25, .12, -.6)
+for e in K.events('cam'): put(fx, air(min(e['d'], 3.0)), e['t'], .25 * min(1, e['d'] / 2), 0)
+for e in K.events('lift'):                     # 屋顶抬起 / 落下：小电机，落定一声木头"嗒"
+    put(fx, motor(e['d']), e['t'], .25, -.1); put(fx, X.clack(.6 if e['up'] else .5, .7), e['t'] + e['d'] - .05, .3, 0)
+    if not e['up']: put(fx, X.thump(.5, 70), e['t'] + e['d'], .3, 0)
+for e in K.events('lights'):                   # 亮灯：继电器"咔"，一批一粒玻璃音，一批比一批高
+    put(fx, X.click(.7, .8), e['t'], .25, -.4 + e['i'] * .16)
+    note('glass', [74, 78, 81, 83, 86, 90][e['i']], e['t'] + .05, .1, -.4 + e['i'] * .16, .7)
 
 # ———————————————————— 环境 ————————————————————
 def bed(a, b, kind, v):
-    d = b - a; t = tt(d); env = np.clip(t / 1.0, 0, 1) * np.clip((d - t) / 1.2, 0, 1)
-    if kind == 'street':
-        y = X.lp(X.brown(d), 420) * 1.6 + X.bp(X.noise(d), 1200, 4000) * .05
+    d = b - a; t = tt(d); env = np.clip(t / 1.2, 0, 1) * np.clip((d - t) / 1.2, 0, 1)
+    if kind == 'out':
+        y = X.lp(X.brown(d), 380) * 1.4 + X.bp(X.noise(d), 1200, 4000) * .04
+    elif kind == 'hall':        # 大厅：低的人声嗡嗡（带通噪声加慢慢的起伏）
+        y = X.bp(X.noise(d), 250, 900) * (1 + .4 * np.sin(2 * np.pi * .7 * t) * np.sin(2 * np.pi * .23 * t)) * .5 + X.lp(X.brown(d), 200)
     elif kind == 'under':
-        y = X.lp(X.brown(d), 180) * 2.2 + (np.sin(2 * np.pi * 60 * t) * .15 + np.sin(2 * np.pi * 120 * t) * .08) * (1 + .2 * np.sin(2 * np.pi * .3 * t))
+        y = X.lp(X.brown(d), 160) * 2 + np.sin(2 * np.pi * 50 * t) * .08
     else:
-        y = X.lp(X.brown(d), 260) * 1.2
+        y = X.lp(X.brown(d), 260) * 1.1
     put(amb, y * env, a, v, -.15); put(amb, np.roll(y, 5111) * env, a, v, .15)
-bed(0, t_q0 + .3, 'street', .06); bed(t_up1 - .3, t_sec4 + .8, 'street', .035)
-bed(t_sec4 - .3, t_dn + 1.0, 'under', .05); bed(dusk['t'], DUR + .3, 'night', .045)
-for k in range(9):                                     # 鸟（地面那几秒）：快速上滑的两三声
-    at = .4 + k * 1.3 + rng.uniform(0, .5)
-    if at > t_q0 - .4: break
+bed(0, t_step[2] + 1.0, 'out', .05); bed(t_step[2], t_step[5] + 6, 'hall', .045)
+bed(t_step[5] + 4, t_step[7] + .5, 'out', .04); bed(t_step[7], t_down + 1.5, 'under', .05); bed(t_dusk, DUR + .3, 'night', .04)
+for k in range(10):                            # 站外的鸟（开场到进站）
+    at = .6 + k * 1.4 + rng.uniform(0, .5)
+    if at > t_step[2] - .3: break
     for j in range(rng.integers(2, 4)):
-        d = .07; t = tt(d); f = 3800 + 1600 * t / d + rng.uniform(-300, 300)
+        d = .07; t = tt(d); f = 3800 + 1500 * t / d + rng.uniform(-300, 300)
         put(amb, np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * t / d), at + j * .11, .02, rng.uniform(-.8, .8))
-t0 = dusk['t'] + 1.5                                   # 天黑：虫鸣，三只，不同的节奏
+t0 = t_dusk + 1.2                              # 天黑：虫鸣
 for c, (f, rate, pan) in enumerate([(4300, 2.6, -.6), (4900, 3.3, .5), (3900, 2.1, .1)]):
-    at = t0 + c * .7
-    while at < DUR - .6:
-        if not (t_q1 - .1 < at < t_lights + .3):
+    at = t0 + c * .6
+    while at < DUR - .5:
+        if not (t_lights - .7 < at < t_lights + .2):
             for j in range(3):
                 d = .035; t = tt(d); put(amb, np.sin(2 * np.pi * f * t) * np.sin(np.pi * t / d) * (1 + np.sin(2 * np.pi * 70 * t)) * .5, at + j * .05, .012 * min(1, (at - t0) / 2), pan)
         at += 1 / rate + rng.uniform(0, .08)
 
-K.report() or sys.exit('mix.py: 声音没有落在画面事件上（见上表）：改 timeline.js 或这里的时间，让两边重新对齐')
+K.report() or sys.exit('mix.py: 声音没有落在画面事件上（见上表）：改 main.js 或这里的时间，让两边重新对齐')
 
 # ———————————————————— 混响（桌面模型的小房间：短而亮）、总线 ————————————————————
-ir = rng.standard_normal(int(1.6 * SR)) * np.exp(-np.arange(int(1.6 * SR)) / (.38 * SR)); ir = X.lp(X.hp(ir, 250), 7000)
+ir = rng.standard_normal(int(1.5 * SR)) * np.exp(-np.arange(int(1.5 * SR)) / (.36 * SR)); ir = X.lp(X.hp(ir, 250), 7000)
 wet = np.stack([fftconvolve(rev[:, c], np.roll(ir, c * 271))[:N] for c in (0, 1)], 1) * .012
 rms = lambda x: 20 * math.log10(np.sqrt(np.mean(x ** 2)) + 1e-9)
 def tame(x, crest_db):
@@ -250,17 +237,15 @@ def tame(x, crest_db):
 fx = tame(fx, 14); mus = tame(mus, 13)
 print(f'各路电平 dB：旋律 {rms(mus):.1f}  混响 {rms(wet):.1f}  pad/环境 {rms(amb):.1f}  动作音 {rms(fx):.1f}')
 mix = mus + wet + fx + amb
-# 两处近乎无声：展开前、亮灯前（音乐和环境都压下去，只剩一点点空气）
-g = np.ones(N)
-for a, b in ((t_q0, t_up + .1), (t_q1, t_lights - .02)):
-    ia, ib, f = int(a * SR), int(b * SR), int(.25 * SR)
-    g[ia:ib] = np.minimum(g[ia:ib], .12); g[ia - f:ia] = np.minimum(g[ia - f:ia], np.linspace(1, .12, f)); g[ib:ib + 240] = np.minimum(g[ib:ib + 240], np.linspace(.12, 1, 240))
+# 亮灯前近乎无声（只剩一点空气），亮灯那一下是第一个声音
+g = np.ones(N); a, b = t_lights - .6, t_lights - .02
+ia, ib, f = int(a * SR), int(b * SR), int(.3 * SR)
+g[ia:ib] = .1; g[ia - f:ia] = np.minimum(g[ia - f:ia], np.linspace(1, .1, f)); g[ib:ib + 240] = np.linspace(.1, 1, 240)
 mix *= g[:, None]
-fo = int(1.2 * SR); n0 = int(DUR * SR); mix[n0 - fo:n0] *= np.linspace(1, 0, fo)[:, None] ** 1.5
+fo = int(1.4 * SR); n0 = int(DUR * SR); mix[n0 - fo:n0] *= np.linspace(1, 0, fo)[:, None] ** 1.5
 mix = M.master(mix[:n0])
-lowE = np.sqrt(np.mean(X.lp(mix[:, 0], 120) ** 2)); allE = np.sqrt(np.mean(mix[:, 0] ** 2))
 os.makedirs(os.path.join(D, 'out'), exist_ok=True)
 sf.write(os.path.join(D, 'out', 'mix.wav'), mix.astype(np.float32), SR)
 print('每 2 秒的电平 dB：' + ' '.join(f'{rms(mix[int(a * SR):int((a + 2) * SR)]):.0f}' for a in range(0, int(DUR), 2)))
-print(f'mix.wav {DUR}s  peak {np.abs(mix).max():.2f}  低频占比 {20 * math.log10(lowE / allE):.1f} dB')
+print(f'mix.wav {DUR}s  peak {np.abs(mix).max():.2f}')
 M.check(os.path.join(D, 'out', 'mix.wav')) or sys.exit('mix.py: 这条混音到了 mux.sh 会被重新分配强弱（见上一行），先把峰值或动态范围收住')
