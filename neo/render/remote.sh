@@ -46,7 +46,7 @@ RUN="node $RD/runtime/neo/render/frames.mjs --site $JOB/site --page $PAGE --out 
 [ -n "$Q" ] && RUN="$RUN --q '$Q'"
 T0=$(date +%s)
 if [ -n "$TIMES" ]; then
-  ssh "$HOST" "$RUN --times $TIMES --workers 1"
+  ssh "$HOST" "$RUN --times '$TIMES' --workers 1"      # quoted: PowerShell reads 3,18.0 as an array of numbers (18.0 → 18)
   mkdir -p "$STILLS"; for t in $(echo "$TIMES" | tr ',' ' '); do rm -f "$STILLS/t_$t.jpg"; done     # an old still must not pass for a new one
   ssh "$HOST" "tar cf - -C $JOB/frames ." | tar xf - -C "$STILLS"
   for t in $(echo "$TIMES" | tr ',' ' '); do

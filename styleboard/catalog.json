@@ -1,11 +1,28 @@
 [
  {
+  "slug": "folding-city",
+  "num": "01",
+  "en": "Folding City",
+  "cn": "折叠城市",
+  "cat": "城市天际线",
+  "cat_en": "City Skyline",
+  "film": "Shenzhen, Folded",
+  "line": "Three districts of Shenzhen as flat posters that open into streets, fold like doors and screens, and stand up as walls until the city closes into a U.",
+  "line_cn": "深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。",
+  "uses": [
+   "City and district promos",
+   "Campus, park or property walk-throughs",
+   "Openers for travel and place-based series"
+  ],
+  "dur": 40
+ },
+ {
   "slug": "atlas-scroll",
   "num": "02",
   "en": "Atlas Scroll",
   "cn": "铜版图卷",
-  "cat": "真实地图",
-  "cat_en": "Real Maps",
+  "cat": "城市天际线",
+  "cat_en": "City Skyline",
   "film": "From Thirteen to Fifty",
   "line": "A hand-coloured atlas plate unrolls westward: the states take their colours year by year, a covered wagon leads the way to the Pacific, and in 1869 the railway overtakes it.",
   "line_cn": "一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。",
@@ -21,8 +38,8 @@
   "num": "03",
   "en": "Scroll Map",
   "cn": "舆图长卷",
-  "cat": "真实地图",
-  "cat_en": "Real Maps",
+  "cat": "城市天际线",
+  "cat_en": "City Skyline",
   "film": "Shenzhen, Unrolled",
   "line": "A handscroll unrolls along the real coast of Shenzhen: ink traces the shore, blue-green mountains stand up, cinnabar roads spread from Luohu and the towers of Futian rise as tiered pavilions.",
   "line_cn": "一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。",
@@ -38,8 +55,8 @@
   "num": "04",
   "en": "Transit Map",
   "cn": "地铁线路图",
-  "cat": "交通",
-  "cat_en": "Transport",
+  "cat": "城市天际线",
+  "cat_en": "City Skyline",
   "film": "The River and the Ring",
   "line": "A printed octilinear map of Guangzhou's real metro is dragged out line by line from five stations under the Pearl River in 1997, trains running on every finished line, until Line 11 closes the ring and the counter lands on 19 lines and 779.9 km.",
   "line_cn": "一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。",
@@ -51,20 +68,20 @@
   "dur": 54
  },
  {
-  "slug": "folding-city",
-  "num": "01",
-  "en": "Folding City",
-  "cn": "折叠城市",
-  "cat": "图形与排版",
-  "cat_en": "Graphic & Type",
-  "film": "Shenzhen, Folded",
-  "line": "Three districts of Shenzhen as flat posters that open into streets, fold like doors and screens, and stand up as walls until the city closes into a U.",
-  "line_cn": "深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。",
+  "slug": "miniature",
+  "num": "05",
+  "en": "Miniature",
+  "cn": "微缩景观",
+  "cat": "城市天际线",
+  "cat_en": "City Skyline",
+  "film": "Futian, in Section",
+  "line": "A cut-away model of Futian Station on a thin display plinth: the street, metro and high-speed tiers lift apart, a bus, a metro and a bullet train pull in, and the real towers behind light up as day turns to night.",
+  "line_cn": "一块切开的福田站模型放在薄底座上：地面、地铁、高铁三层被抬开，公交、地铁和高铁一辆辆进站，天黑时后面真实的高楼一批批亮起窗来。",
   "uses": [
-   "City and district promos",
-   "Campus, park or property walk-throughs",
-   "Openers for travel and place-based series"
+   "Stations, hubs and buildings shown in section",
+   "A place or a project as an architectural model",
+   "How the layers of a city connect, from the street down"
   ],
-  "dur": 40
+  "dur": 54
  }
 ]

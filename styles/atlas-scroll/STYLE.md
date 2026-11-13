@@ -1,6 +1,6 @@
 # Atlas Scroll — Style Prompt
 
-> One of the Real Maps series: styles drawn over OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year).
+> One of the City Skyline series: real cities drawn from open data. This one is drawn over OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year).
 > A real map that changes with the years, drawn as a nineteenth-century hand-coloured atlas plate on one long roll: engraved coast and rivers, each state or province in a pale wash with a darker band inside its border, names in spaced roman capitals, hills in hachures. A small traveller leads the eye across it. Borders by year come from OpenHistoricalMap, the ground from OpenStreetMap; every mark is drawn in code.
 > References (grammar only): American engraved and lithographed atlases of the 1800s (outline colour, water lining, hachured hills, letter-spaced capitals, a cartouche for the title) and wall maps mounted on rollers. Never copy a plate's layout, ornament or title, and never name an atlas in the film.
 

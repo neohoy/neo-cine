@@ -1,0 +1,48 @@
+福田站，切开看 Futian, in Section — Miniature (微缩景观), a NEO-Cine library demo
+
+An unofficial fan film about a real place, Futian Station in Shenzhen. It is not made, endorsed or checked by China State
+Railway Group, Shenzhen Metro or any operator, and shows no operator logo or emblem. Station names, line numbers and line
+colours are public facts; every date and fact on screen is sourced in FACTS.md.
+THE SECTION IS A DIAGRAM: the three tiers (street with buses, metro, high-speed rail), their order, the platforms, the single
+track on each tier and the escalators are artistic, not the station's real floors, tracks or transfer routes. Trains, the bus
+and the people are illustrative, on invented timings. (The end card signs off with NEO-Cine only; this note is in DEMO.md.)
+
+DESIGN SOURCE: the look and the model are adapted, with the author's consent, from the repository owner's own project
+"福田站 · 精致微缩 v003" (refined miniature of Futian Station): the three-tier cut model, the bevelled parts, physical glass
+and paint, the stone and wood micro-surfaces, the rounded tree crowns, the people, trains, bus, stairs, escalators and the
+thin display plinth (demo/kit.js, demo/model.js, demo/main.js say what was taken and what was changed).
+
+BUILDING DATA: data/city.json, made by neo/geo/buildings.py on 2026-11-13 for 114.0395–114.0530 E, 22.5340–22.5485 N:
+  - OpenStreetMap, (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0, https://www.openstreetmap.org/copyright
+    (through the Overpass API);
+  - Overture Maps Foundation, buildings theme, release 2026-10-21.0, ODbL 1.0, https://overturemaps.org; the footprints it adds
+    here come from Qian Shi et al., "A First High-quality Vector Data of Buildings in East Asian Countries Based on a
+    Comprehensive Large-scale Mapping Framework", Zenodo 2023, doi:10.5281/zenodo.8174931, CC BY 4.0.
+  data/city.json is a derived database and stays under ODbL 1.0. The film is a produced work.
+  How it is drawn: only the buildings west of Yitian Road, 45 to 560 m from the station's axis and between its two ends, as
+  white massing at 1 model unit = 45 m (horizontally and vertically). Heights: 34 tagged, 73 from floor counts, 266 estimated
+  by the script (capped at 60 m). The block keeps its real plan but is moved back by the depth of the section (in reality the
+  station runs under the road directly beside it). No boundary of any kind is fetched or drawn.
+LINE COLOURS: the `colour` tags of the OpenStreetMap route relations of Shenzhen Metro Lines 2, 3 and 11 (ODbL 1.0), fetched
+  2026-11-13 through neo/geo/routes.py; no official colour code was found (FACTS.md).
+
+FACTS: see FACTS.md (Shenzhen Transport Bureau, Futian District government, Shenzhen Metro, National Railway Administration,
+  China News Service). Checked 2026-11-13.
+
+PICTURE: built entirely in code with three.js r170 (MIT): procedural geometry, RoomEnvironment reflections, GTAO, a tilt-shift
+  blur and bloom written for this film. No photographs, scans, AI-generated images, video or 3D model files.
+
+SOUND: all synthesized for this film in mix.py: kalimba, music-box and harp voices by the library's core/audio/pluck.py;
+  marimba, glass bell, pads, engines, rails, brakes, chimes, motors, clacks, paper, relay, hum, birds and crickets in numpy and
+  through core/audio/sfx.py. The arrival chimes are generic two-note intervals, not any operator's real chime. No samples or
+  recordings.
+
+FONTS (SIL Open Font License 1.1; fetched by tools/fonts.sh from github.com/google/fonts at commit 86aced91, not kept in git;
+  licence texts in fonts/):
+- Inter (variable, Inter[opsz,wght].ttf), The Inter Project Authors: Latin text and figures.
+- Noto Sans SC (variable, NotoSansSC[wght].ttf), Google / Adobe: Chinese text, subset by tools/subset.py to the characters
+  the film uses (fonts/NotoSansSC-sub.ttf).
+
+TOOLS: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame capture,
+  events export, reading-time check, ffmpeg encode and loudness master; neo/geo/buildings.py, neo/geo/routes.py,
+  neo/audio/cues.py, neo/audio/master.py, neo/render/remote.sh.

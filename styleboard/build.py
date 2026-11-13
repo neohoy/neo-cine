@@ -13,13 +13,17 @@ REPO = 'neohoy/neo-cine'
 FILMS_URL = f'https://github.com/{REPO}/releases/download/films'   # full films live on the "films" release as <slug>.mp4
 BLOB_URL = f'https://github.com/{REPO}/blob/main'
 
-# The categories, in gallery order (upstream's, plus NEO-Cine's own Real Maps: styles drawn over real map data, and Transport: real networks
-# and real timetables, see neo/geo/). A style.json must name one of them (both languages, exactly).
-CATEGORIES = [('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
+# The categories, in gallery order: NEO-Cine's own two series first (City Skyline: real cities, maps and networks drawn from open data, see
+# neo/geo/; Frame by Frame: hand-drawn frame-by-frame animation), then upstream's, plus Real Maps and Transport (styles on hold use them). A style.json must name one of them (both languages, exactly).
+CATEGORIES = [('城市天际线', 'City Skyline'), ('定格画', 'Frame by Frame'), ('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
               ('图形与排版', 'Graphic & Type'), ('信息与发布', 'Information & Keynote'), ('卡通与动画', 'Cartoon & Anime'),
               ('游戏', 'Games'), ('电影与时代', 'Cinema & Eras'), ('材质与 3D', 'Materials & 3D')]
 # A note under a category's heading, in the gallery and in both READMEs: (Chinese, English).
-CAT_NOTES = {'真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
+CAT_NOTES = {'城市天际线': ('画真实的城市：地图、线网、街区和楼。数据取自 OpenStreetMap 等公开来源，画法每个风格各不相同。',
+                         'Real cities: their maps, networks, streets and buildings, drawn from OpenStreetMap and other open data; the look changes from style to style.'),
+             '定格画': ('逐帧手绘的动画：粗墨线、平涂、一拍两张，线条会抖，像一张张画定格下来。',
+                     'Hand-drawn animation, frame by frame: bold ink lines, flat colour, on twos, lines that boil, like drawings caught one at a time.'),
+             '真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
                       'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.'),
              '交通': ('真实的公共交通线网：线路取自 OpenStreetMap，开通日期和里程查运营方和政府的公开来源。',
                     'Real public-transport networks: the lines come from OpenStreetMap, opening dates and lengths from the operators\' and governments\' published sources.')}

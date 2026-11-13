@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-13 · [04 号风格：地铁线路图](https://neohoy.github.io/neo-cine/)**：广州地铁从 1997 到 2025 年，在一张印出来的八方向线路图上一条条拖出来，线路取自 OpenStreetMap，改编自 Lemo-Opuscar 的 Transit Map。所有示范片的片尾现在只署 NEO-Cine，数据署名留在各自的 CREDITS 里。[往下看 ↓](#风格)
+🆕 **2026-11-13 · [05 号风格：微缩景观](https://neohoy.github.io/neo-cine/)**：把福田站切开做成一个桌上的模型，后面是取自 OpenStreetMap 和 Overture 的福田真实楼群。风格现在按系列分，第一个系列是城市天际线：画真实的城市、地图和线网（01–05）。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -26,20 +26,18 @@
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/frames/folding-city.jpg" alt="折叠城市"></a><br><b>01 · 折叠城市</b><br>Folding City<br><sub>图形与排版 · <i>Shenzhen, Folded</i> · 0:40</sub><br>深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。<br><sub><a href="styles/folding-city/STYLE.zh-CN.md">风格说明</a> · <a href="styles/folding-city/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.zh-CN.md"><img src="docs/frames/atlas-scroll.jpg" alt="铜版图卷"></a><br><b>02 · 铜版图卷</b><br>Atlas Scroll<br><sub>真实地图 · <i>From Thirteen to Fifty</i> · 0:56</sub><br>一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。<br><sub><a href="styles/atlas-scroll/STYLE.zh-CN.md">风格说明</a> · <a href="styles/atlas-scroll/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/atlas-scroll.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.zh-CN.md"><img src="docs/frames/scroll-map.jpg" alt="舆图长卷"></a><br><b>03 · 舆图长卷</b><br>Scroll Map<br><sub>真实地图 · <i>Shenzhen, Unrolled</i> · 0:48</sub><br>一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。<br><sub><a href="styles/scroll-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/scroll-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scroll-map.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/folding-city/STYLE.zh-CN.md"><img src="docs/frames/folding-city.jpg" alt="折叠城市"></a><br><b>01 · 折叠城市</b><br>Folding City<br><sub>城市天际线 · <i>Shenzhen, Folded</i> · 0:40</sub><br>深圳三个区像三张平面海报：拉开变成街道，楼像门扇和屏风一样折起来，整块地立成墙，最后把城市折成一个 U。<br><sub><a href="styles/folding-city/STYLE.zh-CN.md">风格说明</a> · <a href="styles/folding-city/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/folding-city.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/atlas-scroll/STYLE.zh-CN.md"><img src="docs/frames/atlas-scroll.jpg" alt="铜版图卷"></a><br><b>02 · 铜版图卷</b><br>Atlas Scroll<br><sub>城市天际线 · <i>From Thirteen to Fifty</i> · 0:56</sub><br>一张手工设色的地图集图版向西展开：各州一年年上色，一辆篷车带路走到太平洋，1869 年铁路追上了它。<br><sub><a href="styles/atlas-scroll/STYLE.zh-CN.md">风格说明</a> · <a href="styles/atlas-scroll/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/atlas-scroll.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/scroll-map/STYLE.zh-CN.md"><img src="docs/frames/scroll-map.jpg" alt="舆图长卷"></a><br><b>03 · 舆图长卷</b><br>Scroll Map<br><sub>城市天际线 · <i>Shenzhen, Unrolled</i> · 0:48</sub><br>一幅长卷沿着真实的深圳海岸展开：墨线勾出岸，青绿的山一座座立起来，朱砂的路从罗湖烧开，福田的高楼长成一层层的楼阁。<br><sub><a href="styles/scroll-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/scroll-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scroll-map.mp4">下载 1080p</a></sub></td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="styles/transit-map/STYLE.zh-CN.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>04 · 地铁线路图</b><br>Transit Map<br><sub>交通 · <i>The River and the Ring</i> · 0:54</sub><br>一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。<br><sub><a href="styles/transit-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/transit-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/transit-map/STYLE.zh-CN.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>04 · 地铁线路图</b><br>Transit Map<br><sub>城市天际线 · <i>The River and the Ring</i> · 0:54</sub><br>一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。<br><sub><a href="styles/transit-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/transit-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"><a href="styles/miniature/STYLE.zh-CN.md"><img src="docs/frames/miniature.jpg" alt="微缩景观"></a><br><b>05 · 微缩景观</b><br>Miniature<br><sub>城市天际线 · <i>Futian, in Section</i> · 0:54</sub><br>一块切开的福田站模型放在薄底座上：地面、地铁、高铁三层被抬开，公交、地铁和高铁一辆辆进站，天黑时后面真实的高楼一批批亮起窗来。<br><sub><a href="styles/miniature/STYLE.zh-CN.md">风格说明</a> · <a href="styles/miniature/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">下载 1080p</a></sub></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>
 
-<sub><b>真实地图</b>（02、03）：基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。</sub>
-
-<sub><b>交通</b>（04）：真实的公共交通线网：线路取自 OpenStreetMap，开通日期和里程查运营方和政府的公开来源。</sub>
+<sub><b>城市天际线</b>（01、02、03、04、05）：画真实的城市：地图、线网、街区和楼。数据取自 OpenStreetMap 等公开来源，画法每个风格各不相同。</sub>
 <!-- styles:end -->
 
 ## 👋 关于
