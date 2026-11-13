@@ -1,0 +1,18 @@
+{
+ "slug": "flat-metro",
+ "num": "07",
+ "en": "Flat Metro",
+ "cn": "极简地铁",
+ "category_en": "Transport",
+ "category_cn": "交通",
+ "film": "Half Past One",
+ "line": "Vienna's five U-Bahn lines are pulled taut out of their real tracks; on a real Thursday night the last trains run home and every line goes dark by half past one, and twenty-four hours later the trains are still running every 15 minutes.",
+ "line_cn": "维也纳地铁的五条线从真实轨道里被拉直成形；真实的周四夜里，末班车一列列开回终点，一点半整张图都暗了；二十四小时后的周五夜里，一点半，列车还在每 15 分钟一班地开。",
+ "uses": [
+  "A metro or tram network's real service, from a published timetable",
+  "Two days, two nights or two timetables of one network, compared",
+  "One line drawn out of its real track, station by station"
+ ],
+ "frame_sec": 41.0,
+ "dur": 57
+}

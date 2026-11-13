@@ -1,0 +1,38 @@
+Half Past One (凌晨一点半): credits
+
+An unofficial fan film. Not made with, endorsed by or affiliated with Wiener Linien or any operator. No operator logo,
+lettering, map design or line bullet is used; line colours and station names are public facts.
+
+Timetable: Wiener Linien GTFS ("Wiener Linien – Fahrplandaten GTFS Wien", data.gv.at), Wiener Linien GmbH & Co KG,
+  Creative Commons Attribution 4.0 International (CC BY 4.0). https://creativecommons.org/licenses/by/4.0/
+  https://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip (files dated 2026-11-09, downloaded 2026-11-13). Read by
+  neo/geo/gtfs.py for the service days 19, 20 and 21 November 2026 (U-Bahn only) and cut by tools/prep.py into the trips of
+  data/net.json. Changes: only the U-Bahn, only three service days, positions between stops estimated (see FACTS.md).
+  Credited on the last card.
+
+Map data: (c) OpenStreetMap contributors, Open Database License (ODbL) 1.0. https://www.openstreetmap.org/copyright
+  Fetched 2026-11-13 through the Overpass API: the U-Bahn route relations (U1, U2, U3, U4, U6) by neo/geo/routes.py into
+  data/metro.json; water, woods and parks by neo/geo/osm.py into data/osm.cache/city.json (not kept in git). tools/prep.py
+  derives data/net.json from them (octilinear lines, softened water and green areas); data/metro.json and data/net.json are
+  derived databases and stay under ODbL 1.0. The film is a produced work: it credits OpenStreetMap on the last card.
+  View: 16.16-16.60 E, 48.09-48.33 N, north up, equirectangular around 16.37 E 48.21 N; the lines are a diagram (stations
+  moved on average 270 m so that every line runs at 0, 45 or 90 degrees), water and green areas keep their true outline;
+  thin streams under 60 m wide are left out. No national, provincial or other boundary line is drawn.
+
+Facts on screen: FACTS.md (the GTFS feed above, and wien.info, the official tourist board of the City of Vienna).
+
+Picture: made entirely in code (Canvas 2D). No photographs, textures, video or icons are used.
+Sound: the score (soft-mallet vibraphone, felt marimba, sine bass, breath pad), every sound effect and the city air are
+  synthesized in numpy in mix.py. No samples or recordings are used.
+
+Fonts (fetched by tools/fonts.sh into fonts/, not kept in git):
+- Source Han Sans CN, Regular and Medium. Adobe. SIL Open Font License 1.1.
+  https://github.com/adobe-fonts/source-han-sans (tag 2.004R)
+- Manrope (variable). Mikhail Sharanda. SIL Open Font License 1.1.
+  https://github.com/google/fonts/tree/main/ofl/manrope
+
+Tools: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame
+capture, ffmpeg encode and loudness master.
+
+Form reference (grammar only, none of their designs, palettes, type, icons, interface or sound are used): minimalist
+transit-puzzle games and flat transit design.

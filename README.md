@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-13 · [Styles 04–06: Transport](https://neohoy.github.io/neo-cine/)**: a new series built on real networks and real timetables (OpenStreetMap lines, published GTFS times). **Metro Mosaic**: Shenzhen's metro laid tile by tile on a station wall, 2004 to 2026. **Train Graph**: one real day of long-distance trains between Köln and Frankfurt, drafted as a train graph. **Bus Dot Matrix**: one real Wednesday of Hong Kong's cross-harbour buses on an amber LED board. [See them ↓](#the-styles)
+🆕 **2026-11-13 · [Styles 04–07: Transport](https://neohoy.github.io/neo-cine/)**: a new series built on real networks and real timetables (OpenStreetMap lines, published GTFS times). **Metro Mosaic**: Shenzhen's metro laid tile by tile on a station wall, 2004 to 2026. **Train Graph**: one real day of long-distance trains between Köln and Frankfurt, drafted as a train graph. **Bus Dot Matrix**: one real Wednesday of Hong Kong's cross-harbour buses on an amber LED board. **Flat Metro**: Vienna's U-Bahn as a flat, game-like map, two real nights of trains from the published timetable. [See them ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -34,11 +34,16 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <td width="33%" valign="top"><a href="styles/train-graph/STYLE.md"><img src="docs/frames/train-graph.jpg" alt="Train Graph"></a><br><b>05 · Train Graph</b><br><sub>Transport · <i>Two Lines, One Day</i> · 0:56</sub><br>One real day of German long-distance trains between Köln and Frankfurt, drafted as a train graph: the real line straightens into the distance axis, and the high-speed line and the Rhine valley draw two different slopes.<br><sub><a href="styles/train-graph/STYLE.md">Style prompt</a> · <a href="styles/train-graph/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/train-graph.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/bus-dotmatrix/STYLE.md"><img src="docs/frames/bus-dotmatrix.jpg" alt="Bus Dot Matrix"></a><br><b>06 · Bus Dot Matrix</b><br><sub>Transport · <i>A Day Under the Harbour</i> · 0:52</sub><br>An amber LED board plays one real Wednesday of Hong Kong&#x27;s cross-harbour buses, first light to 5 a.m.: no tunnel is drawn under the harbour, the morning rush lights all three.<br><sub><a href="styles/bus-dotmatrix/STYLE.md">Style prompt</a> · <a href="styles/bus-dotmatrix/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/bus-dotmatrix.mp4">Download 1080p</a></sub></td>
 </tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/flat-metro/STYLE.md"><img src="docs/frames/flat-metro.jpg" alt="Flat Metro"></a><br><b>07 · Flat Metro</b><br><sub>Transport · <i>Half Past One</i> · 0:57</sub><br>Vienna&#x27;s five U-Bahn lines are pulled taut out of their real tracks; on a real Thursday night the last trains run home and every line goes dark by half past one, and twenty-four hours later the trains are still running every 15 minutes.<br><sub><a href="styles/flat-metro/STYLE.md">Style prompt</a> · <a href="styles/flat-metro/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/flat-metro.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"></td>
+<td width="33%" valign="top"></td>
+</tr>
 </table>
 
 <sub><b>Real Maps</b> (02, 03): A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.</sub>
 
-<sub><b>Transport</b> (04, 05, 06): Real metro, rail and bus networks and their real timetables: the lines come from OpenStreetMap, the times from the GTFS feeds operators publish; the look changes from style to style.</sub>
+<sub><b>Transport</b> (04, 05, 06, 07): Real metro, rail and bus networks and their real timetables: the lines come from OpenStreetMap, the times from the GTFS feeds operators publish; the look changes from style to style.</sub>
 <!-- styles:end -->
 
 ## 👋 About
