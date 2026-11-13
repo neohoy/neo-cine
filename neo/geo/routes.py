@@ -22,7 +22,7 @@ an origin (x east, y north; the same --origin and --proj as an osm.py file puts 
 Names: n is name:zh, else name; en is name:en. A colour the relation lacks is taken from its route_master; still missing
 stays "". OSM is a map of what exists, with the dates its mappers added (start = start_date, often missing): opening dates
 for a film come from the operator (DIRECTOR.md §13 and the style's facts rule), never from this file alone.
-Data © OpenStreetMap contributors, ODbL 1.0: credit it on screen and in CREDITS. Python standard library only.
+Data © OpenStreetMap contributors, ODbL 1.0: credit it in CREDITS (a library demo keeps it off screen: MAINTAINING.md). Python standard library only.
 """
 import argparse, json, math, os, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

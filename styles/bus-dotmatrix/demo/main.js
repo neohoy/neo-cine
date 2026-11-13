@@ -179,7 +179,6 @@ function headAt(t) {                                                   // 每拍
 function drawHead(t, T) {
   const [hx, hy, hw] = LAYOUT.head;
   const ck = t >= END.title - .7 ? '05:00' : hhmm(T), cw = tw(ck); put(ck, hx + hw - 4 - cw, 1);
-  if (t >= END.credit + .75) { const sg = 'NEO-Cine · 公交点阵屏 Bus Dot Matrix', m = textMask(sg); B.blit(m, 4, 1, LV.text * .9, [0, 0, 4 + Math.floor((t - END.credit - .75) * 600), 16]); report('sign', sg, 4, 1, 4 + m.w, 13, true); }
   report('clock', ck, hx + hw - 4 - cw, 1, hx + hw - 4, 13, true);
   for (let i = 0; i < NX; i += 2) B.max(i, 16, LV.dim * .5);
   const cur = headAt(t); if (!cur) return;
@@ -225,9 +224,7 @@ function drawTunnels(t, V, r0, r1) {
 // ---------- 片尾：地图关掉，屏上只剩字 ----------
 const ENDL = [
   [26, '海底下的一天', 2, FONT.sc, END.title, false], [56, 'A DAY UNDER THE HARBOUR', 1, FONT.sc, END.title + .25, false],
-  [82, '非官方同人片 · 班次按公布的班距推算', 1, FONT.sc, END.credit, true], [96, 'Unofficial fan film · trips from published headways', 1, FONT.sc, END.credit, true],
-  [112, '数据：香港特区政府运输署 · DATA.GOV.HK', 1, FONT.sc, END.credit + .25, true], [126, 'Data: Transport Department, HKSAR · DATA.GOV.HK', 1, FONT.sc, END.credit + .25, true],
-  [153, '地图 © OpenStreetMap 贡献者（ODbL）', 1, FONT.sc, END.credit + .5, true], [166, 'Map © OpenStreetMap contributors (ODbL)', 1, FONT.sc, END.credit + .5, true],
+  [96, 'NEO-Cine · 公交点阵屏', 1, FONT.sc, END.credit, false], [110, 'NEO-Cine · Bus Dot Matrix', 1, FONT.sc, END.credit, false],   // 片尾只署 NEO-Cine；数据署名在 CREDITS 和 DEMO.md
 ];
 function drawEnd(t) {
   for (const [y, s, sc, fam, t0, pass] of ENDL) {

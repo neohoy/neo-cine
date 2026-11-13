@@ -52,7 +52,7 @@
 
 ## 落版
 
-整张图；图下左边是铅笔脚注 “只画长途列车，没有区域列车和货车 / Long-distance trains only: no regional or freight trains”；右边是图签：图名和运营日期、数量、署名“时刻表 gtfs.de（DELFI e.V.）CC BY 4.0 · 线路 © OpenStreetMap contributors ODbL · 非官方影片”。没有落款签名。
+整张图；图下左边是铅笔脚注 “只画长途列车，没有区域列车和货车 / Long-distance trains only: no regional or freight trains”；右边是图签：图名和运营日期、数量，以及 NEO-Cine · 列车运行图 / NEO-Cine · Train Graph。数据署名和许可写在 [`demo/CREDITS`](demo/CREDITS) 和本文开头，不上画面：本库的示范片片尾只署 NEO-Cine。
 
 ## 构建笔记
 

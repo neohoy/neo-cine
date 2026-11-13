@@ -256,8 +256,8 @@ window.render = (t) => {
   drawLabels(t); drawTitle(t);
   g.restore();
   drawScroll(xr);
-  const kc = clamp((t - 45.4) / .8);                                                           // 片尾小字：数据署名
-  if (kc > 0) { const fs = 21 * K, txt = '地图数据 © OpenStreetMap contributors'; g.font = `${fs}px WenKai`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = rgba(C.mountGold, .8 * kc); g.fillText(txt, W / 2, H - 78 * K); const tw = g.measureText(txt).width; texts.push({ id: 'credit', text: txt, x0: W / 2 - tw / 2, y0: H - 78 * K - fs * .6, x1: W / 2 + tw / 2, y1: H - 78 * K + fs * .6, pass: true }); }
+  const kc = clamp((t - 45.4) / .8);                                                           // 片尾小字：只署 NEO-Cine（数据署名在 CREDITS 和 DEMO.md）
+  if (kc > 0) { const fs = 21 * K, txt = 'NEO-Cine · 舆图长卷'; g.font = `${fs}px WenKai`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = rgba(C.mountGold, .8 * kc); g.fillText(txt, W / 2, H - 78 * K); const tw = g.measureText(txt).width; texts.push({ id: 'credit', text: txt, x0: W / 2 - tw / 2, y0: H - 78 * K - fs * .6, x1: W / 2 + tw / 2, y1: H - 78 * K + fs * .6, pass: true }); }
 };
 window.TEXTS = (t) => { window.render(t); return texts; };
 window.DUR = DUR;

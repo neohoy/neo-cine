@@ -52,7 +52,7 @@ Demo：《一片一片》（Tile by Tile，56.5 秒）· `metro-mosaic.mp4` · �
 
 ## 片尾卡
 
-壁画的左下角：珠江口海面上 2026 年的牌子，马赛克下方的说明牌：非官方粉丝作品 · Unofficial fan film、OpenStreetMap 署名（ODbL 1.0）、日期的来源、"线路颜色与站名是公开信息；与运营方无关，不用其标识"，以及 NEO-Cine · 瓷砖地铁图 Metro Mosaic。
+壁画的左下角：珠江口海面上 2026 年的牌子，马赛克下方一块小牌：NEO-Cine、一道横线、瓷砖地铁图 · Metro Mosaic。非官方粉丝作品的说明、OpenStreetMap 署名（ODbL 1.0）、日期的来源和“线路颜色与站名是公开信息；与运营方无关，不用其标识”写在 [`demo/CREDITS`](demo/CREDITS)、[`demo/FACTS.md`](demo/FACTS.md) 和本文开头，不上画面：本库的示范片片尾只署 NEO-Cine。
 
 ## 构建说明
 

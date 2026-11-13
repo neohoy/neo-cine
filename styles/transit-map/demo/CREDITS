@@ -3,8 +3,8 @@
 An unofficial fan film about a real metro. It is not made, endorsed or checked by Guangzhou Metro Group (广州地铁集团)
 or any operator, and shows no operator logo, lettering or official map. The numbered discs are generic line bullets.
 Line colours, line numbers and station names are public facts. Every date and figure on screen is sourced in FACTS.md.
-Trains are illustrative: they shuttle on the opened track at an invented pace, not on a real timetable (said on the
-last card).
+Trains are illustrative: they shuttle on the opened track at an invented pace, not on a real timetable (said in DEMO.md;
+the end card signs off with NEO-Cine only).
 
 STYLE: adapted from Lemo-Opuscar's Transit Map (MIT, (c) 2026 LemoLab; licence text in LICENSES/lemo-opuscar-MIT.txt):
   demo/film.js, demo/gl.js, demo/tools/subset.py and the net.js format are adapted from its demo/ (the MIT notice is kept

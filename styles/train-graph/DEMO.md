@@ -50,7 +50,7 @@ Map view: the two lines and the rivers within 9 km of them, 6.85–8.75° E, 49.
 
 ## End card
 
-The whole sheet; below it, left, the pencil footnote "只画长途列车，没有区域列车和货车 / Long-distance trains only: no regional or freight trains"; right, the title block: title and service date, the counts, and the credits "时刻表 gtfs.de（DELFI e.V.）CC BY 4.0 · 线路 © OpenStreetMap contributors ODbL · 非官方影片". No signature.
+The whole sheet; below it, left, the pencil footnote "只画长途列车，没有区域列车和货车 / Long-distance trains only: no regional or freight trains"; right, the title block: title and service date, the counts, and NEO-Cine · 列车运行图 / NEO-Cine · Train Graph. The data credits and licences are in [`demo/CREDITS`](demo/CREDITS) and at the top of this file, not on screen: a library demo signs off with NEO-Cine only.
 
 ## Build notes
 

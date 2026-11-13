@@ -26,7 +26,7 @@ simplified land polygons) and --filter to name the few rivers, lakes or peaks wa
 Dated history (borders, railways, trails by year) comes from OpenHistoricalMap: see ohm.py beside this file.
 
 No boundary lines are fetched: a film that needs borders takes them from a source that fits DIRECTOR.md §13.
-OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0: credit it on screen and in CREDITS.
+OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0: credit it in CREDITS (a library demo keeps it off screen: MAINTAINING.md).
 Only the Python standard library is used.
 """
 import argparse, hashlib, json, math, os, sys, time, urllib.parse, urllib.request

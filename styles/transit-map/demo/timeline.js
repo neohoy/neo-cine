@@ -156,11 +156,7 @@ function furniture(c, t, view, K2) {
   c.restore();
   endBlock(c, t, K2);
 }
-const END_LINES = [
-  ['广州地铁 1997—2025 · 非官方致敬短片', 'Guangzhou Metro 1997–2025 · Unofficial fan film'],
-  ['列车为示意 · 线网图为自绘示意', 'Trains illustrative · schematic drawn by us'],
-  ['地图数据 © OpenStreetMap 贡献者（ODbL）', 'Map data © OpenStreetMap contributors (ODbL)'],
-  ['改编自 Lemo-Opuscar 的 Transit Map（MIT）', 'Adapted from Lemo-Opuscar’s Transit Map (MIT)'],
+const END_LINES = [                                   // 片尾只署 NEO-Cine；数据署名、示意说明和 MIT 出处在 CREDITS 和 DEMO.md
   ['NEO-Cine · 地铁线路图', 'NEO-Cine · Transit Map'],
 ];
 function endBlock(c, t, K2) {

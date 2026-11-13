@@ -17,7 +17,7 @@ Work in `styles/<slug>/` (lowercase letters, digits, hyphens; unique). Start fro
 | `demo/stills/` | stills the docs link (`styleframe.jpg` is the style frame) |
 | `<slug>.mp4`, `<slug>.srt`, `poster.jpg` | the 1080p film, its subtitles when it is spoken, its poster |
 
-Assets are CC0, CC BY or OFL only, each in `demo/CREDITS`. No watermark on any film. Real people, brands and events appear only in an unofficial fan film; its `DEMO.md` says so.
+Assets are CC0, CC BY or OFL only, each in `demo/CREDITS`. No watermark on any film. Real people, brands and events appear only in an unofficial fan film; its `DEMO.md` says so. A library demo's end card signs off with NEO-Cine only (with the film's or style's name at most): data credits, licences, the fan-film note and notes such as "trains illustrative" go in `demo/CREDITS` and at the top of `DEMO.md`, never on screen.
 
 Rules for library demos only (a user's film follows `DIRECTOR.md`, not these):
 

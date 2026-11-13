@@ -59,7 +59,7 @@
 
 ## 片尾
 
-最后的全景里，印在整张线网右边的纸上：江与环 / The River and the Ring；广州地铁 1997—2025 · 非官方致敬短片 / Guangzhou Metro 1997–2025 · Unofficial fan film；列车为示意 · 线网图为自绘示意 / Trains illustrative · schematic drawn by us；地图数据 © OpenStreetMap 贡献者（ODbL）/ Map data © OpenStreetMap contributors (ODbL)；改编自 Lemo-Opuscar 的 Transit Map（MIT）/ Adapted from Lemo-Opuscar's Transit Map (MIT)；NEO-Cine · 地铁线路图 / NEO-Cine · Transit Map。停留 5.3 s。NEO-Cine 的署名只属于本库的示范片；用户的片子没有 NEO-Cine 署名，也不复制这张卡。
+最后的全景里，印在整张线网右边的纸上：江与环 / The River and the Ring；NEO-Cine · 地铁线路图 / NEO-Cine · Transit Map。停留 5.3 s。非官方致敬短片的说明、“列车为示意 · 线网图为自绘示意”、OpenStreetMap 署名（ODbL）和“改编自 Lemo-Opuscar 的 Transit Map（MIT）”写在 [`demo/CREDITS`](demo/CREDITS) 和本文开头，不上画面：本库的示范片片尾只署 NEO-Cine。NEO-Cine 的署名只属于本库的示范片；用户的片子没有 NEO-Cine 署名，也不复制这张卡。
 
 ## 构建说明
 

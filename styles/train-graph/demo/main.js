@@ -452,7 +452,7 @@ function drawTitleBlock(t) {
   lab('图名', 'Title', y + 32); lab('数据', 'Data', yd + 24);
   cell(0, '列车运行图 · 科隆—法兰克福 · 2026 年 11 月 18 日 星期三', 'Train graph · Köln – Frankfurt · Wednesday 18 November 2026', x + w * .13 + 14, y + 32, 24, 18);
   cell(1, `这一天 ${NTR.all} 条运行线：新线 ${NTR.hsl}，河谷 ${NTR.rhine}`, `${NTR.all} train paths: ${NTR.hsl} high-speed line, ${NTR.rhine} Rhine valley`, x + w * .13 + 14, yd + 24, 19, 15);
-  cell(2, '时刻表 gtfs.de（DELFI e.V.）CC BY 4.0 · 线路 © OpenStreetMap contributors ODbL · 非官方影片', 'Timetable gtfs.de, data DELFI e.V., CC BY 4.0 · Track © OpenStreetMap contributors, ODbL · Unofficial fan film', x + w * .13 + 14, yd + 64, 15, 13, true);
+  cell(2, 'NEO-Cine · 列车运行图', 'NEO-Cine · Train Graph', x + w * .13 + 14, yd + 64, 15, 13, true);
 }
 
 // ---------- 一帧 ----------

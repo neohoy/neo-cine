@@ -50,7 +50,7 @@ The palette in STYLE.md §3 is this film's. 340 × 210 tiles of 200 m (113.76–
 
 ## End card
 
-The bottom-left corner of the mural: the 2026 plaque over the Pearl River estuary, and below the mosaic the label: 非官方粉丝作品 · Unofficial fan film, the OpenStreetMap credit (ODbL 1.0), the sources of the dates, "line colours and station names are public facts; no operator marks", and NEO-Cine · 瓷砖地铁图 Metro Mosaic.
+The bottom-left corner of the mural: the 2026 plaque over the Pearl River estuary, and below the mosaic a small plaque: NEO-Cine, a rule, 瓷砖地铁图 · Metro Mosaic. The fan-film note, the OpenStreetMap credit (ODbL 1.0), the sources of the dates and "line colours and station names are public facts; no operator marks" are in [`demo/CREDITS`](demo/CREDITS), [`demo/FACTS.md`](demo/FACTS.md) and at the top of this file, not on screen: a library demo signs off with NEO-Cine only.
 
 ## Build notes
 

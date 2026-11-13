@@ -59,7 +59,7 @@ Mix (`mix.py`): melody, pad, effects and a short bright room reverb, each bus pe
 
 ## End card
 
-Printed in the sheet's right margin in the final wide view, beside the whole network: 江与环 / The River and the Ring; 广州地铁 1997—2025 · 非官方致敬短片 / Guangzhou Metro 1997–2025 · Unofficial fan film; 列车为示意 · 线网图为自绘示意 / Trains illustrative · schematic drawn by us; 地图数据 © OpenStreetMap 贡献者（ODbL）/ Map data © OpenStreetMap contributors (ODbL); 改编自 Lemo-Opuscar 的 Transit Map（MIT）/ Adapted from Lemo-Opuscar's Transit Map (MIT); NEO-Cine · 地铁线路图 / NEO-Cine · Transit Map. Held 5.3 s. The NEO-Cine sign-off belongs to this library's demo only; a user's film carries no NEO-Cine credit and no copy of this card.
+Printed in the sheet's right margin in the final wide view, beside the whole network: 江与环 / The River and the Ring; NEO-Cine · 地铁线路图 / NEO-Cine · Transit Map. Held 5.3 s. The fan-film note, "trains illustrative, schematic drawn by us", the OpenStreetMap credit (ODbL) and "adapted from Lemo-Opuscar's Transit Map (MIT)" are in [`demo/CREDITS`](demo/CREDITS) and at the top of this file, not on screen: a library demo signs off with NEO-Cine only. The NEO-Cine sign-off belongs to this library's demo only; a user's film carries no NEO-Cine credit and no copy of this card.
 
 ## Build notes
 

@@ -32,7 +32,7 @@ The demo's actual colours, characters, objects and their design notes.
 
 ## End card
 
-What our end card shows. A library demo may sign off with NEO-Cine; a user's film carries no NEO-Cine credit and no copy of this card.
+What our end card shows. A library demo signs off with NEO-Cine only: data credits, licences and the fan-film note go in `demo/CREDITS` and at the top of this file, not on screen (MAINTAINING.md). A user's film carries no NEO-Cine credit and no copy of this card.
 
 ## Build notes
 

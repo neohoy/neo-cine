@@ -27,7 +27,7 @@ Native moves spent: the lamp test (opening), the flip (the header throughout; it
 | 5 | 25–32.5 | all of Hong Kong, 16:00–21:30 | locked fill frame | re-scan at 25 s; the evening swell; the day's count |
 | 6 | 32.5–40.4 | the harbour, then the Cross Harbour Tunnel, 21:30–03:06 | locked fill frame | re-scans at 32.5 and 35.625 s; the board dims; N121 and its trail |
 | 7 | 40.4–44.4 | N121 under the water | push to 15 px following the bus, back to 6 px | the stop bell at 42.5 s; the clock races to 05:00 |
-| 8 | 44.4–52.5 | the end card | pull back to 2.8 px, turned 15°, tilted −5° | the map switches off at 45 s; title 45.6 s; credits 48.1 s |
+| 8 | 44.4–52.5 | the end card | pull back to 2.8 px, turned 15°, tilted −5° | the map switches off at 45 s; title 45.6 s; NEO-Cine 48.1 s |
 
 ## Score structure
 
@@ -50,7 +50,7 @@ Map view: Hong Kong and the harbour, north up, no boundary lines; the widest fra
 
 ## End card
 
-The board alone on a dark wall, the map off: 海底下的一天 at 2×, A DAY UNDER THE HARBOUR, "非官方同人片 · 班次按公布的班距推算 / Unofficial fan film · trips from published headways", the Transport Department and DATA.GOV.HK, © OpenStreetMap contributors (ODbL); the header reads "NEO-Cine · 公交点阵屏 Bus Dot Matrix" and 05:00.
+The board alone on a dark wall, the map off: 海底下的一天 at 2×, A DAY UNDER THE HARBOUR, then NEO-Cine · 公交点阵屏 / NEO-Cine · Bus Dot Matrix; the header reads 05:00. The fan-film note ("trips from published headways"), the Transport Department and DATA.GOV.HK, and © OpenStreetMap contributors (ODbL) are in [`demo/CREDITS`](demo/CREDITS) and at the top of this file, not on screen: a library demo signs off with NEO-Cine only.
 
 ## Build notes
 

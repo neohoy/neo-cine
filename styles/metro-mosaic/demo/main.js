@@ -229,14 +229,11 @@ for (const P of TL.PLAQUES) {
     const b = spot(138, 17, p.w, p.h, { r: 10 });
     hang('title', p, b[0], b[1], P.t, P.read);
   } else if (P.kind === 'credit') {
-    const p = plaque(56, 17, (g, Wc, Hc, px, m) => {
-      const x = m + px * 2, b = [];
-      b.push(line(g, 'credit-fan', '非官方粉丝作品 · Unofficial fan film', F(700, px * 2.6), x, m + px * 4.0));
-      g.fillRect(x, m + px * 5.3, Wc - 2 * x, Math.max(2, px * .08));
-      b.push(line(g, 'credit-osm', '线路、车站与海岸 Lines, stations, coast: © OpenStreetMap contributors, ODbL 1.0', F(700, px * 1.15), x, m + px * 7.3, 'left', { pass: true, maxW: Wc - 2 * x }));
-      b.push(line(g, 'credit-src', '开通日期与里程 Opening dates and lengths: 深圳地铁集团, 深圳市交通运输局, 深圳新闻网 等', F(700, px * 1.15), x, m + px * 9.0, 'left', { pass: true, maxW: Wc - 2 * x }));
-      b.push(line(g, 'credit-dis', '线路颜色与站名是公开信息；与运营方无关，不用其标识 Line colours and station names are public facts; no operator marks', F(700, px * .95), x, m + px * 10.6, 'left', { pass: true, maxW: Wc - 2 * x }));
-      b.push(line(g, 'credit-neo', 'NEO-Cine · 瓷砖地铁图 Metro Mosaic', F(700, px * 1.8), x, m + px * 13.4, 'left'));
+    const p = plaque(38, 10, (g, Wc, Hc, px, m) => {                 // 片尾只署 NEO-Cine；数据署名在 CREDITS 和 DEMO.md
+      const b = [];
+      b.push(line(g, 'credit-neo', 'NEO-Cine', F(900, px * 3.6, FONT_EN), Wc / 2, m + px * 4.4, 'center', { spacing: px * .2 }));
+      g.fillRect(Wc * .22, m + px * 5.5, Wc * .56, Math.max(2, px * .09));
+      b.push(line(g, 'credit-style', '瓷砖地铁图 · Metro Mosaic', F(700, px * 1.6), Wc / 2, m + px * 7.6, 'center', { spacing: px * .1 }));
       return b;
     }, { rnd: mulberry(11), bg: '#1c3260' });
     hang('credit', p, P.at[0], P.at[1], P.t ?? -9, P.read);

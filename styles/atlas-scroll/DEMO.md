@@ -28,7 +28,7 @@ Native moves spent: colour settling (48 times), the jump (1803), the traveller h
 | 6 | 31–34 | 1869 | Promontory | 560 km, follow the train | the lines meet at 31.0 s; the train passes the second wagon |
 | 7 | 34–42 | to 1912 | the filling map | slow travel at 2,500–2,750 km | a second train on the northern line; 48 states |
 | 8 | 42–49.5 | 1912, 1959 | the whole roll | pull out to 3,950 km | insets stamped at 46.6 and 47.2 s |
-| 9 | 49.5–56 | | title | locked | cartouche, then the data credit at 51 s |
+| 9 | 49.5–56 | | title | locked | cartouche, then the NEO-Cine line at 51 s |
 
 ## Score structure
 
@@ -53,7 +53,7 @@ Map view: North America from 22° to 52° N, Albers equal-area conic (standard p
 
 ## End card
 
-The whole roll on a dark table. Lower left, the compass and two small plates, ALASKA 1959 and HAWAII 1959; lower right, over the Atlantic, the cartouche: FROM · THIRTEEN TO FIFTY · 十三到五十 · 1776 — 1959. Below the roll: Map data: OpenHistoricalMap (CC0) and © OpenStreetMap contributors. No signature.
+The whole roll on a dark table. Lower left, the compass and two small plates, ALASKA 1959 and HAWAII 1959; lower right, over the Atlantic, the cartouche: FROM · THIRTEEN TO FIFTY · 十三到五十 · 1776 — 1959. Below the roll, one small line: NEO-Cine · Atlas Scroll. The data credits and licences are in [`demo/CREDITS`](demo/CREDITS) and at the top of this file, not on screen: a library demo signs off with NEO-Cine only.
 
 ## Build notes
 

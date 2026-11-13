@@ -50,7 +50,7 @@ Map view: a coastal strip, 113.74–114.66° E, 22.40–22.74° N, north up, no 
 
 ## End card
 
-The whole scroll on a dark table; at its right end the title 鹏城长卷 and the seal 深圳. Below the scroll, one small line: 地图数据 © OpenStreetMap contributors. No signature.
+The whole scroll on a dark table; at its right end the title 鹏城长卷 and the seal 深圳. Below the scroll, one small line: NEO-Cine · 舆图长卷. The data credits and licences are in [`demo/CREDITS`](demo/CREDITS) and at the top of this file, not on screen: a library demo signs off with NEO-Cine only.
 
 ## Build notes
 

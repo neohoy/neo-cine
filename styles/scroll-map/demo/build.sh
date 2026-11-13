@@ -20,7 +20,8 @@ node core/render/events.mjs "$D"
 echo "== 2. score, foley and ambience (all synthesized; needs the music tier: setup.sh deps music) → out/mix.wav"
 $PY "$D/mix.py"
 echo "== 3. render the picture (24 fps, 4 workers)"
-node core/render/video.mjs "$D" --fps 24 --workers 4 --out "$D/out/video.mp4"
+if [ "$RENDER" = remote ]; then sh neo/render/remote.sh "$D" --out "$D/out/video.mp4" --workers 4   # RENDER=remote: render on the desktop
+else node core/render/video.mjs "$D" --fps 24 --workers 4 --out "$D/out/video.mp4"; fi
 echo "== 4. mux (two-pass loudnorm -14 LUFS, light grain, BT.709 limited range)"
 LEMO_COLOR=bt709 sh core/render/mux.sh "$D/out/video.mp4" "$D/out/mix.wav" "$OUT" 24 1
 echo "== 5. reading-time check, poster and style frame"
