@@ -3,7 +3,7 @@
 //   node frames.mjs --site <dir> --page /styles/<slug>/demo/index.html --out <dir> [--fps 24] [--workers 4] [--times 1.5,20]
 //                   [--size 1920x1080] [--q k=v] [--channel msedge]
 // /core/… and /node_modules/… are served from this runtime folder, everything else from --site. Frames are f_00000.jpg …,
-// or t_<time>.jpg with --times. A frame whose page threw, or whose WebGL context was lost, is rendered again in a new browser.
+// or t_<time>.jpg with --times. A frame whose page threw or crashed, or whose WebGL context was lost, is rendered again in a new browser.
 import { chromium } from 'playwright-core';
 import http from 'http'; import fs from 'fs'; import path from 'path'; import { fileURLToPath } from 'url';
 import { WATCH_GL_LOST } from '../../core/render/browser.mjs';
@@ -30,6 +30,7 @@ async function open() {
   await page.addInitScript(WATCH_GL_LOST);
   const st = { bad: null };
   page.on('pageerror', e => { st.bad = 'pageerror ' + e.message.slice(0, 300); });
+  page.on('crash', () => { st.bad = 'the page crashed (a screenshot now would be the browser\'s white error page)'; });
   page.on('response', r => { if (r.status() >= 400 && !/favicon/.test(r.url())) { st.bad = `http ${r.status()} ${r.url()}`; console.error('[http]', r.status(), r.url()); } });
   await page.goto(URL0);
   await page.waitForFunction(() => window.READY === true, null, { timeout: 180000 });
