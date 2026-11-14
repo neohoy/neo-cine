@@ -13,3 +13,9 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Scroll Map | 舆图长卷 | [`scroll-map`](scroll-map/STYLE.md) | *Shenzhen, Unrolled* |
 | Transit Map | 地铁线路图 | [`transit-map`](transit-map/STYLE.md) | *The River and the Ring* |
 | Miniature | 微缩景观 | [`miniature`](miniature/STYLE.md) | *How a High-Speed Station Works* |
+
+## Frame by Frame · 定格画
+
+| Style | 风格 | Folder | Our demo |
+|---|---|---|---|
+| Scrapbook Song | 手账歌谣 | [`scrapbook-song`](scrapbook-song/STYLE.md) | *Wind Through Hsinchu* |

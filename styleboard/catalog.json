@@ -83,5 +83,22 @@
    "A place shown as a cut-away model, with its life in loops"
   ],
   "dur": 69.4
+ },
+ {
+  "slug": "scrapbook-song",
+  "num": "06",
+  "en": "Scrapbook Song",
+  "cn": "手账歌谣",
+  "cat": "定格画",
+  "cat_en": "Frame by Frame",
+  "film": "Wind Through Hsinchu",
+  "line": "The bridge and last chorus of hoy neo's song 风吹新竹, drawn frame by frame: two friends in two cities, a suitcase packed with home, a gust of wind on the chorus, a night street of lighting windows, and the word 家 (home) slammed down in the last lit one.",
+  "line_cn": "hoy neo《风吹新竹》的桥段和最后一遍副歌，一格一格画出来：两个朋友在两座城市，行李箱里装进家乡，副歌一阵风吹过，夜街的窗一扇扇亮起，最后一扇亮着的窗里砸下一个「家」字。",
+  "uses": [
+   "A lyric video for your own song, whole or a chorus: every line typed onto something in the picture",
+   "A poem, slogan or narration written onto the places and things it names",
+   "A city, campus or brand story told in collage type and flat cel drawings"
+  ],
+  "dur": 48.5
  }
 ]

@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-14 · [05 号风格：微缩景观](https://neohoy.github.io/neo-cine/)**：把一座高铁站切开做成桌上的模型，从落客一步步讲到上车；风格自带一套搭微缩景观的工具包（底座、截面、构件、小人、列车、灯光、讲解标注）。风格现在按系列分，第一个系列是城市天际线：画真实的城市、地图和线网（01–05）。[往下看 ↓](#风格)
+🆕 **2026-11-14 · [05–06 号风格](https://neohoy.github.io/neo-cine/)**：风格现在分两个系列。**城市天际线**（01–05）画真实的城市、地图和线网，新加**微缩景观**：把一座高铁站切开做成桌上的模型，一步步讲解，附一套能搭任何微缩景观的工具包。**定格画**系列从**手账歌谣**开始：一拍两张的手绘歌词 MV，歌词像标签、缎带、印章一样贴上去；带着你自己的歌和歌词来，照风格的制作手册就能做成整支片子。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -33,11 +33,13 @@
 <tr>
 <td width="33%" valign="top"><a href="styles/transit-map/STYLE.zh-CN.md"><img src="docs/frames/transit-map.jpg" alt="地铁线路图"></a><br><b>04 · 地铁线路图</b><br>Transit Map<br><sub>城市天际线 · <i>The River and the Ring</i> · 0:54</sub><br>一张印出来的八方向广州地铁图：从 1997 年白鹅潭江底的 5 个站开始，一条条线被拖出来，开通的线上一直有车在跑；11 号线把环合上，计数器落在 19 条线、779.9 公里。<br><sub><a href="styles/transit-map/STYLE.zh-CN.md">风格说明</a> · <a href="styles/transit-map/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">下载 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/miniature/STYLE.zh-CN.md"><img src="docs/frames/miniature.jpg" alt="微缩景观"></a><br><b>05 · 微缩景观</b><br>Miniature<br><sub>城市天际线 · <i>How a High-Speed Station Works</i> · 1:09</sub><br>一座虚构的高铁站切开放在薄底座上：屋顶抬走，跟着一位拖箱子的旅客分七步讲，从下出租车、实名验证和安检、候车、检票、过天桥到上车，另一侧下车的人走地道出站；讲完屋顶合上，天黑亮灯。<br><sub><a href="styles/miniature/STYLE.zh-CN.md">风格说明</a> · <a href="styles/miniature/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/scrapbook-song/STYLE.zh-CN.md"><img src="docs/frames/scrapbook-song.jpg" alt="手账歌谣"></a><br><b>06 · 手账歌谣</b><br>Scrapbook Song<br><sub>定格画 · <i>Wind Through Hsinchu</i> · 0:48</sub><br>hoy neo《风吹新竹》的桥段和最后一遍副歌，一格一格画出来：两个朋友在两座城市，行李箱里装进家乡，副歌一阵风吹过，夜街的窗一扇扇亮起，最后一扇亮着的窗里砸下一个「家」字。<br><sub><a href="styles/scrapbook-song/STYLE.zh-CN.md">风格说明</a> · <a href="styles/scrapbook-song/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scrapbook-song.mp4">下载 1080p</a></sub></td>
 </tr>
 </table>
 
 <sub><b>城市天际线</b>（01、02、03、04、05）：画真实的城市：地图、线网、街区和楼。数据取自 OpenStreetMap 等公开来源，画法每个风格各不相同。</sub>
+
+<sub><b>定格画</b>（06）：逐帧手绘的动画：粗墨线、平涂、一拍两张，线条会抖，像一张张画定格下来。</sub>
 <!-- styles:end -->
 
 ## 👋 关于

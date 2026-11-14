@@ -1,0 +1,35 @@
+风吹新竹 Wind Through Hsinchu — Scrapbook Song (手账歌谣), a NEO-Cine library demo
+
+SONG: 《风吹新竹》, words, music and vocals by hoy neo (2026).
+  audio/song-excerpt.mp3 is the part of the song the film uses (146.0–196.0 s of the 205.92 s song, 160 kbps); the film
+  plays 146.64–195.20 s of it, faded in over 0.25 s and out over 2.6 s, levelled to -14 LUFS; nothing else is changed.
+  data/lyrics.json holds the song's 48 lyric lines with the timings checked for the original music video (simplified).
+  data/audiomap.json holds the beat grid, downbeats and drum hits the original video was timed against (the whole song,
+  and the 30 s clip of the final chorus, analysed with librosa through HyperFrames' music-to-video); a new film is
+  analysed with the kit's own tools/analyze.py instead.
+
+PICTURE AND CODE: from the hand-drawn music video for 风吹新竹, part of this library under its licence.
+  - ../kit/: the Scrapbook Song kit (drawing, lyric carriers, scene layer, page player, tools).
+  - scripts/scenes/ (the bridge and final-chorus scenes, the end card) and scripts/assets/ (the characters, the Hsinchu
+    props, the night street, songlib.py): this song's own drawings. A film in this style draws its own.
+  - The page player ../kit/page/gsap-lite.js evaluates the scenes' GSAP-style timelines as a pure function of time;
+    GSAP itself is not used or shipped.
+  Drawn entirely in code (SVG generated in Python, rendered in a browser). No photographs, scans, AI-generated images,
+  video or 3D models. The East Gate (东门城) and the other Hsinchu props are drawn from their general shape; this is not
+  an official depiction of any place.
+
+FONTS (SIL Open Font License 1.1; fetched by ../kit/tools/fonts.py from github.com/google/fonts at commit 86aced91 into
+  out/fonts-src/, subset to the characters the film prints into fonts/*.ttf; none kept in git; licence texts in fonts/):
+- ZCOOL KuaiLe (站酷快乐体), (c) 2018 The ZCOOL KuaiLe Project Authors: slammed words, ribbons, seals (fonts/KL.ttf).
+- LXGW WenKai TC (霞鹜文楷 TC), (c) 2024 The LXGW WenKai Project Authors: sung lines, labels (fonts/WK.ttf).
+- JetBrains Mono, (c) 2020 The JetBrains Mono Project Authors: page numbers, ticket numbers (fonts/JBM.ttf).
+- Instrument Serif Italic, (c) 2022 The Instrument Serif Project Authors: the hand-written signature (fonts/IS.ttf).
+  (Traditional films use Chiron GoRound TC 900, (c) 2025 The Chiron GoRound TC Project Authors, OFL, for the KL role.)
+
+TOOLS: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame
+  capture, events export, reading-time check, ffmpeg encode and loudness master; neo/audio/cues.py, neo/audio/master.py,
+  neo/render/remote.sh.
+
+ON SCREEN: the end card signs off with NEO-Cine and the style's name only. The song's title and its singer appear on the
+  song's own title page inside the film (the scrapbook page: the 风吹新竹 seal and the hand-written "hoy neo"), as
+  information about the work, as in the original video.

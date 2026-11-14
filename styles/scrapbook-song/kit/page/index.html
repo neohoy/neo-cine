@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>手账歌谣 Scrapbook Song</title>
+<style>
+  /* 字体都是 OFL，tools/fonts.py 下载并按片子里的用字切成子集（见 CREDITS）；繁体片的 KL 是 Chiron GoRound TC 900 */
+  @font-face { font-family: "KL"; src: url(fonts/KL.ttf) format("truetype"); }   /* 站酷快乐体（繁体片换 Chiron GoRound TC）：砸拍大字、缎带、印章 */
+  @font-face { font-family: "WK"; src: url(fonts/WK.ttf) format("truetype"); }   /* 霞鹜文楷：歌词句子、标签 */
+  @font-face { font-family: "JBM"; src: url(fonts/JBM.ttf) format("truetype"); } /* JetBrains Mono：页码、编号 */
+  @font-face { font-family: "IS"; src: url(fonts/IS.ttf) format("truetype"); }   /* Instrument Serif 斜体：剪贴簿上的手写署名 */
+  html, body { margin: 0; width: 100vw; height: 100vh; overflow: hidden; background: #F3EDE0; }
+  #stage { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+  .scene { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module" src="film.js"></script>
+</body>
+</html>

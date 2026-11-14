@@ -1,0 +1,8 @@
+# 每次构建重新生成的：镜头（tools/build.py）、整片页面（从 ../kit/page/ 复制）、按需装的包
+/scenes/
+/index.html
+/film.js
+/gsap-lite.js
+/.pylib/
+# 歌的这一段要进 git（库根目录的 .gitignore 不收 demo 里的 mp3，这里单独放行）
+!/audio/song-excerpt.mp3

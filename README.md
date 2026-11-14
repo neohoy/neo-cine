@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-14 · [Style 05: Miniature](https://neohoy.github.io/neo-cine/)**: a high-speed station cut open as a tabletop model, explained step by step, from the drop-off to the train; the style ships a kit for building any miniature (plinth, sections, parts, people, trains, light, explainer marks). The styles now come in series; the first is City Skyline: real cities, maps and networks (01–05). [See it ↓](#the-styles)
+🆕 **2026-11-14 · [Styles 05–06](https://neohoy.github.io/neo-cine/)**: the styles now come in two series. **City Skyline** (01–05), real cities, maps and networks, adds **Miniature**: a high-speed station cut open as a tabletop model and explained step by step, with a kit for building any miniature. **Frame by Frame** begins with **Scrapbook Song**: a hand-drawn lyric music video on twos, lyrics pasted on as labels, ribbons and stamps; bring your own song and its lyrics, and the style's production manual takes it to a finished film. [See them ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -32,11 +32,13 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <tr>
 <td width="33%" valign="top"><a href="styles/transit-map/STYLE.md"><img src="docs/frames/transit-map.jpg" alt="Transit Map"></a><br><b>04 · Transit Map</b><br><sub>City Skyline · <i>The River and the Ring</i> · 0:54</sub><br>A printed octilinear map of Guangzhou&#x27;s real metro is dragged out line by line from five stations under the Pearl River in 1997, trains running on every finished line, until Line 11 closes the ring and the counter lands on 19 lines and 779.9 km.<br><sub><a href="styles/transit-map/STYLE.md">Style prompt</a> · <a href="styles/transit-map/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/transit-map.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/miniature/STYLE.md"><img src="docs/frames/miniature.jpg" alt="Miniature"></a><br><b>05 · Miniature</b><br><sub>City Skyline · <i>How a High-Speed Station Works</i> · 1:09</sub><br>A fictional high-speed rail station cut open on a thin plinth: the roof lifts away, and one passenger with a suitcase is followed in seven numbered steps, from the taxi through ID and security checks, the waiting hall, the ticket gates and the overpass to the train, while the other side walks out through the underpass; then the roof closes and the lights come on.<br><sub><a href="styles/miniature/STYLE.md">Style prompt</a> · <a href="styles/miniature/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">Download 1080p</a></sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/scrapbook-song/STYLE.md"><img src="docs/frames/scrapbook-song.jpg" alt="Scrapbook Song"></a><br><b>06 · Scrapbook Song</b><br><sub>Frame by Frame · <i>Wind Through Hsinchu</i> · 0:48</sub><br>The bridge and last chorus of hoy neo&#x27;s song 风吹新竹, drawn frame by frame: two friends in two cities, a suitcase packed with home, a gust of wind on the chorus, a night street of lighting windows, and the word 家 (home) slammed down in the last lit one.<br><sub><a href="styles/scrapbook-song/STYLE.md">Style prompt</a> · <a href="styles/scrapbook-song/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scrapbook-song.mp4">Download 1080p</a></sub></td>
 </tr>
 </table>
 
 <sub><b>City Skyline</b> (01, 02, 03, 04, 05): Real cities: their maps, networks, streets and buildings, drawn from OpenStreetMap and other open data; the look changes from style to style.</sub>
+
+<sub><b>Frame by Frame</b> (06): Hand-drawn animation, frame by frame: bold ink lines, flat colour, on twos, lines that boil, like drawings caught one at a time.</sub>
 <!-- styles:end -->
 
 ## 👋 About

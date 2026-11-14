@@ -1,0 +1,140 @@
+{
+ "title": "风吹新竹",
+ "artist": "hoy neo",
+ "year": "2026",
+ "script": "zh-Hans",
+ "name": "scrapbook-song",
+ "audio": "audio/song-excerpt.mp3",
+ "audio_t0": 146.0,
+ "audiomap": "data/audiomap.json",
+ "lyrics": "data/lyrics.json",
+ "range": [
+  146.64,
+  195.2
+ ],
+ "fade": [
+  0.25,
+  2.6
+ ],
+ "scenes": [
+  {
+   "id": "s18-apart",
+   "start": 146.64,
+   "end": 156.18,
+   "builder": "scripts/scenes/full_s18.py",
+   "args": []
+  },
+  {
+   "id": "s19-strange-street",
+   "start": 156.18,
+   "end": 159.9,
+   "builder": "scripts/scenes/full_s19.py",
+   "args": []
+  },
+  {
+   "id": "01-f1-wind-rises",
+   "start": 159.9,
+   "end": 164.428,
+   "builder": "scripts/scenes/build_f1.py",
+   "args": []
+  },
+  {
+   "id": "02-f2-gust-chorus",
+   "start": 164.428,
+   "end": 174.018,
+   "builder": "scripts/scenes/build_f2.py",
+   "args": []
+  },
+  {
+   "id": "03-f3-thousand-windows",
+   "start": 174.018,
+   "end": 180.635,
+   "builder": "scripts/scenes/build_f3.py",
+   "args": []
+  },
+  {
+   "id": "04-f4-brightest-home",
+   "start": 180.635,
+   "end": 190.6,
+   "builder": "scripts/scenes/build_f4.py",
+   "args": []
+  },
+  {
+   "id": "end-card",
+   "start": 190.6,
+   "end": 195.2,
+   "builder": "scripts/scenes/end_card.py",
+   "args": []
+  }
+ ],
+ "hits": [
+  {
+   "name": "suitcase0",
+   "t": 151.812
+  },
+  {
+   "name": "suitcase1",
+   "t": 152.439
+  },
+  {
+   "name": "suitcase2",
+   "t": 153.043
+  },
+  {
+   "name": "suitcase3",
+   "t": 153.623
+  },
+  {
+   "name": "suitcase4",
+   "t": 154.227
+  },
+  {
+   "name": "suitcase5",
+   "t": 154.831
+  },
+  {
+   "name": "f1-seal",
+   "t": 163.824
+  },
+  {
+   "name": "f2-burst",
+   "t": 165.008
+  },
+  {
+   "name": "f3-spark",
+   "t": 179.985
+  },
+  {
+   "name": "f4-jia",
+   "t": 184.792
+  },
+  {
+   "name": "f4-seal",
+   "t": 187.834
+  },
+  {
+   "name": "end-slam",
+   "t": 190.822
+  },
+  {
+   "name": "end-seal",
+   "t": 192.029
+  }
+ ],
+ "pass_texts": {
+  "s18-apart": [
+   "东门城 → 海岸",
+   "17 公里 · 去海边",
+   "No.0159"
+  ],
+  "01-f1-wind-rises": [
+   "风城"
+  ]
+ },
+ "poster": 38.5,
+ "notes": {
+  "audio_t0": "the excerpt starts at 146.0 s of the 205.92 s song",
+  "hits": "original climax builders are not Scene-based, so their beat hits are listed here (song time): 6 suitcase drops on the beats, the 风城 seal, the burst, the window sparks, 家, the title seal, the end card's slam and seal",
+  "pass_texts": "s18: the old ticket only passes through, dropping into the suitcase 2.5 s before the cut (it is read later, on the coast and in the scrapbook); f1: the small 风城 stamp hits the downbeat 0.6 s before the chorus cut"
+ }
+}
