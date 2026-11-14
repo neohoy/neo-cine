@@ -100,5 +100,22 @@
    "A city, campus or brand story told in collage type and flat cel drawings"
   ],
   "dur": 48.5
+ },
+ {
+  "slug": "tech-launch",
+  "num": "07",
+  "en": "Tech Launch",
+  "cn": "科技发布",
+  "cat": "产品发布",
+  "cat_en": "Product Launch",
+  "film": "On the Record",
+  "line": "A launch film for 建造观察局 (BITBUILD), the library author's own site, made from its real pages frozen as they are: company cards scattered in depth gather into one library, a revenue split is pushed in on and counted up, a line in an earnings article is underlined in place, two sources are bracketed into one feed, and the window folds into the brand's blue square.",
+  "line_cn": "给建造观察局（库作者本人的网站）做的发布片，画面是冻结下来的真实页面：散在纵深里的公司卡片汇进一页公司库，推近一个收入数字从 0 数上去，在财报文章原文里划出一句，两个来源被一道括线收到一处，最后整个窗口收成品牌的蓝色方块。",
+  "uses": [
+   "A 30-second launch or promo film for a website or web app, from its URL or screenshots",
+   "A feature release: one claim per shot, each proved by a real component lifted out of the page",
+   "A product's year in numbers: real figures pushed in on, counted up and underlined where the page states them"
+  ],
+  "dur": 35.4
  }
 ]

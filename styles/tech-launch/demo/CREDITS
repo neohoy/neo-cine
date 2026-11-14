@@ -1,0 +1,32 @@
+记录在案 On the Record — Tech Launch (科技发布), a NEO-Cine library demo
+
+PRODUCT AND INTERFACE: 建造观察局 (BITBUILD), https://news.bitbuild.cc, the library author's own website.
+  Every interface in the film is a page of the site frozen on 2026-11-14 with ../kit/tools/freeze.mjs: its DOM, CSS, images
+  (company and article covers) and fonts, unchanged; the film only enlarges, clones and moves them. Nothing is redrawn.
+  Facts on screen: FACTS.md. The frozen pages (site/) are made by the build and not kept in git.
+  The site's own fonts, served by the site and used as they are inside the interface: Archivo and IBM Plex Mono (both SIL OFL 1.1)
+  and the site's own serif (a subset made for the site); Chinese body text in the site's system font stack (PingFang SC on macOS,
+  Microsoft YaHei on Windows).
+
+FILM'S OWN FONTS (SIL Open Font License 1.1; fetched by ../kit/tools/fonts.py from github.com/google/fonts at commit 86aced91 into
+  out/fonts-src/, subset to the characters the film prints into fonts/*.ttf; none kept in git; licence texts in fonts/):
+- Instrument Serif, (c) 2022 The Instrument Serif Project Authors: English titles and figures (fonts/IS.ttf).
+- Noto Sans SC, (c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source': Chinese titles, notes, cards
+  (fonts/NSC-500.ttf, fonts/NSC-700.ttf, instances of the variable font).
+- JetBrains Mono, (c) 2020 The JetBrains Mono Project Authors: frame type, eyebrows, kickers, the address (fonts/JBM.ttf).
+
+SOUND: synthesized in code, no recordings or samples. Score: ../kit/tools/score.mjs (D major, 100 BPM, from the page's events);
+  effects: ../kit/tools/sfx_synth.mjs (eight sounds); mix: ../kit/tools/mix.py. No narration.
+
+STYLE AND CODE: adapted from the Tech Company theme (主题-科技公司式) of the NEO Product Promo skill (neo-product-promo,
+  MIT, (c) 2026 NEO造物集 (neohoy), the library author): the page logic (window, frozen pages, floating components, Canvas marks),
+  the time plan, the score and the effects, and the freeze, explore, login and screenshot tools. What changed for the library is
+  listed at the top of each file in ../kit/. GSAP and HyperFrames, which the skill used, are not used or shipped: text entrances
+  are evaluated by ../kit/page/tween.js, adapted from Scrapbook Song's gsap-lite.js.
+
+TOOLS: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame capture,
+  events export, reading-time check, ffmpeg encode and loudness master; neo/audio/cues.py, neo/audio/master.py,
+  neo/render/remote.sh.
+
+ON SCREEN: the brand's own end card (the blue square, 建造观察局, the address) is part of the film's content; the last card signs
+  off with NEO-Cine and the style's name only.

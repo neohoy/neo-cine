@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-14 · [Styles 05–06](https://neohoy.github.io/neo-cine/)**: the styles now come in two series. **City Skyline** (01–05), real cities, maps and networks, adds **Miniature**: a high-speed station cut open as a tabletop model and explained step by step, with a kit for building any miniature. **Frame by Frame** begins with **Scrapbook Song**: a hand-drawn lyric music video on twos, lyrics pasted on as labels, ribbons and stamps; bring your own song and its lyrics, and the style's production manual takes it to a finished film. [See them ↓](#the-styles)
+🆕 **2026-11-14 · [Styles 05–07](https://neohoy.github.io/neo-cine/)**: the styles now come in three series. **City Skyline** (01–05), real cities, maps and networks, adds **Miniature**: a high-speed station cut open as a tabletop model and explained step by step, with a kit for building any miniature. **Frame by Frame** begins with **Scrapbook Song**: a hand-drawn lyric video on twos; bring your own song and its lyrics. **Product Launch** begins with **Tech Launch**: a promo film made from a product's real web pages, frozen as they are, with real components lifted and labelled; bring a URL or screenshots. [See them ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -34,11 +34,18 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <td width="33%" valign="top"><a href="styles/miniature/STYLE.md"><img src="docs/frames/miniature.jpg" alt="Miniature"></a><br><b>05 · Miniature</b><br><sub>City Skyline · <i>How a High-Speed Station Works</i> · 1:09</sub><br>A fictional high-speed rail station cut open on a thin plinth: the roof lifts away, and one passenger with a suitcase is followed in seven numbered steps, from the taxi through ID and security checks, the waiting hall, the ticket gates and the overpass to the train, while the other side walks out through the underpass; then the roof closes and the lights come on.<br><sub><a href="styles/miniature/STYLE.md">Style prompt</a> · <a href="styles/miniature/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/scrapbook-song/STYLE.md"><img src="docs/frames/scrapbook-song.jpg" alt="Scrapbook Song"></a><br><b>06 · Scrapbook Song</b><br><sub>Frame by Frame · <i>Wind Through Hsinchu</i> · 0:48</sub><br>The bridge and last chorus of hoy neo&#x27;s song 风吹新竹, drawn frame by frame: two friends in two cities, a suitcase packed with home, a gust of wind on the chorus, a night street of lighting windows, and the word 家 (home) slammed down in the last lit one.<br><sub><a href="styles/scrapbook-song/STYLE.md">Style prompt</a> · <a href="styles/scrapbook-song/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scrapbook-song.mp4">Download 1080p</a></sub></td>
 </tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/tech-launch/STYLE.md"><img src="docs/frames/tech-launch.jpg" alt="Tech Launch"></a><br><b>07 · Tech Launch</b><br><sub>Product Launch · <i>On the Record</i> · 0:35</sub><br>A launch film for 建造观察局 (BITBUILD), the library author&#x27;s own site, made from its real pages frozen as they are: company cards scattered in depth gather into one library, a revenue split is pushed in on and counted up, a line in an earnings article is underlined in place, two sources are bracketed into one feed, and the window folds into the brand&#x27;s blue square.<br><sub><a href="styles/tech-launch/STYLE.md">Style prompt</a> · <a href="styles/tech-launch/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/tech-launch.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"></td>
+<td width="33%" valign="top"></td>
+</tr>
 </table>
 
 <sub><b>City Skyline</b> (01, 02, 03, 04, 05): Real cities: their maps, networks, streets and buildings, drawn from OpenStreetMap and other open data; the look changes from style to style.</sub>
 
 <sub><b>Frame by Frame</b> (06): Hand-drawn animation, frame by frame: bold ink lines, flat colour, on twos, lines that boil, like drawings caught one at a time.</sub>
+
+<sub><b>Product Launch</b> (07): Promo films made from a real product interface: the site's pages frozen into the film as they are, real components lifted, pushed in on and labelled, every fact on screen found on the page.</sub>
 <!-- styles:end -->
 
 ## 👋 About

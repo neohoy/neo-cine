@@ -24,6 +24,7 @@ Requests that only change the plan:
 - **No voice, or no subtitles.** Drop those steps and say so in the treatment.
 - **Their own voice recording.** Use it as it is; transcribe it with faster-whisper for word timings.
 - **Their own song, for a music video.** The song is the score and the clock: no voice-over and no added music; analyse its beats and cut the picture to them; its lyrics are the subtitles, written into the picture. A style made for this carries its own production manual (Scrapbook Song: `styles/scrapbook-song/PRODUCTION.md`); in any other style the song can be the soundtrack, cut the same way.
+- **Their own product, for a launch or promo film.** They bring a URL (or a local copy of the site, or screenshots of the interface): the film is made from the real pages, frozen as they are, and argues the user's problem and the product's answers on them; every fact on screen is found on those pages. The style made for this carries its own production manual (Tech Launch: `styles/tech-launch/PRODUCTION.md`). A site behind a login is signed in by the user in a window the kit opens; you never type a password, and page actions only look.
 - **Their own material**: logos, photos, footage, and for styles built from real material their own data, scans, imagery or CAD. Ask whether they have any; what they give comes first, and the sources in the `STYLE.md` are the fallback. Before you download from those sources, tell the user what you will fetch, from where and under which licence. Rights: section 12.
 
 ## 2. Find a benchmark first

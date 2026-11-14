@@ -36,6 +36,7 @@ This repository is a library of film styles. Each style has a `styles/<slug>/STY
 - **Treatment first, demo later.** Write your own `TREATMENT.md`, with three candidate structures and your choice (DIRECTOR.md §4), before you open `DEMO.md` or the demo code. Then use the demo only to learn techniques (a brush engine, a rig, a shader, a mix), never its story, arc, shots, props or timeline. One exception: a style cut from real material needs its material before the treatment, so the tools its `STYLE.md` names in `demo/tools/` for finding and logging material (`footage.py` and the like) may be used first, copied into the project folder and run there; still read `DEMO.md` and the rest of the demo only after the treatment is written.
 - **Scene styles** (a set-up guide, a spec walkthrough, a museum plate, a trail guide) list use cases in their `STYLE.md`. Read them as grammar for the order in which information arrives and how long each part needs on screen, then build the user's content in your own structure. Swapping text into a demo's `content.json` is only a technical check, never the way to deliver.
 - **Styles made from the user's own song.** A style whose `STYLE.md` links a production manual (`PRODUCTION.md`; for now Scrapbook Song) is made from what the user brings: a song and its timed lyrics. Follow that manual from the brief on: its imagery table and storyboard are the treatment, and its three checkpoints (the asset sheet with the storyboard, a sample, the render time) stand even when the user did not ask to see a storyboard. Its kit sits in the style's `kit/` folder, outside `demo/`, so it is there in skill mode too.
+- **Styles made from the user's product.** When the user brings a product's URL or screenshots for a launch or promo film, the style for it is Tech Launch (`styles/tech-launch/`): its `STYLE.md` links a production manual (`PRODUCTION.md`) that takes it from the URL or screenshots to delivery. Follow it from the brief on: its script and cut list are the treatment, and its three checkpoints (the cut list, the sample stills, the user watching and listening to the whole film) stand even when the user did not ask to see a storyboard. The interface stays real, the user signs in to their site themselves (never type a password), and page actions only look. Its kit sits in the style's `kit/` folder, outside `demo/`.
 - Never build inside `styles/`: copy what you need into the film's project folder.
 
 ## Finding the style
@@ -50,10 +51,11 @@ If the user hasn't picked a style:
 - Then ask them to type the name. The list goes in your own message (a command's output isn't shown to them), and the question is plain text, not `AskUserQuestion`: its few options would hide the rest of the list.
 
 <!-- style-list:start -->
-All styles (6) · 全部风格:
+All styles (7) · 全部风格:
 
 - **城市天际线 City Skyline** (5): 折叠城市 Folding City, 铜版图卷 Atlas Scroll, 舆图长卷 Scroll Map, 地铁线路图 Transit Map, 微缩景观 Miniature
 - **定格画 Frame by Frame** (1): 手账歌谣 Scrapbook Song
+- **产品发布 Product Launch** (1): 科技发布 Tech Launch
 <!-- style-list:end -->
 
 ## Workflow

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN" __HTML_ATTRS__>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>{{title}} · 科技发布 Tech Launch</title>
+    <!-- 站点原样 CSS（tools/freeze.mjs 取下，多页合并）；影片自己的样式写在后面，id 和 class 一律带 pp- 前缀 -->
+    <link rel="stylesheet" href="site/site.css" />
+    <style>
+      /* 影片自己的字：全部是工具包下载的 OFL 字体（tools/fonts.py 按片子里印出来的字切子集），不用系统字体，Mac 和 Windows 渲出来一样 */
+      @font-face { font-family: "Film Serif"; src: url(fonts/IS.ttf) format("truetype"); font-weight: 400; }   /* Instrument Serif：英文大标题、数字 */
+      @font-face { font-family: "Film Sans"; src: url(fonts/NSC-500.ttf) format("truetype"); font-weight: 500; } /* Noto Sans SC 500：说明、副行 */
+      @font-face { font-family: "Film Sans"; src: url(fonts/NSC-700.ttf) format("truetype"); font-weight: 700; } /* Noto Sans SC 700：中文标题 */
+      @font-face { font-family: "Film Mono"; src: url(fonts/JBM.ttf) format("truetype"); font-weight: 100 800; } /* JetBrains Mono：画框小字、编号 */
+      :root {
+        --pp-en: "Film Serif", "Film Sans", serif;
+        --pp-zh: "Film Sans", sans-serif;
+        --pp-mono: "Film Mono", "Film Sans", monospace;
+        --pp-paper: #f4f1ea;
+        --pp-ink: #1a1916;
+        --pp-ink-2: #4a4740;
+        --pp-muted: #66625a;
+        --pp-hair: #ddd7cb;
+        --pp-accent: {{brand.color}};
+        --pp-winbg: {{window.bg}};
+        --pp-lift: 0 1px 2px rgba(26, 25, 22, 0.06), 0 14px 28px -10px rgba(26, 25, 22, 0.14), 0 48px 96px -24px rgba(26, 25, 22, 0.22);
+      }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--pp-paper); }
+      #pp-root {
+        position: relative; width: 100%; height: 100%; overflow: hidden;
+        /* 纸面打一点光：中间略亮，四周略沉 */
+        background: radial-gradient(120% 90% at 58% 46%, #faf8f3 0%, var(--pp-paper) 55%, #ebe6db 100%);
+        color: var(--pp-ink); font-family: var(--pp-zh); text-align: left; line-height: normal; letter-spacing: normal;
+      }
+      .pp-layer { position: absolute; inset: 0; }
+
+      /* ---------- 画框：全片常驻 ---------- */
+      .pp-furn { position: absolute; font-family: var(--pp-zh); }
+      #pp-brand { left: 96px; top: 52px; display: flex; align-items: center; gap: 14px; font-size: 24px; font-weight: 700; letter-spacing: 0.02em; }
+      #pp-brand i { display: block; width: 18px; height: 18px; background: var(--pp-accent); }
+      #pp-brand span { font: 500 15px var(--pp-mono); letter-spacing: 0.22em; color: var(--pp-muted); }
+      #pp-tagline { right: 96px; top: 58px; font: 500 17px var(--pp-mono); letter-spacing: 0.24em; color: var(--pp-muted); }
+      #pp-track { left: 96px; right: 96px; bottom: 44px; height: 1px; background: var(--pp-hair); }
+      #pp-track b { display: block; width: 100%; height: 2px; margin-top: -0.5px; background: var(--pp-ink); transform-origin: 0 50%; }
+
+      /* ---------- 文字 ---------- */
+      .pp-eyebrow { font: 500 22px var(--pp-mono); letter-spacing: 0.2em; color: var(--pp-ink-2); }
+      .pp-en { font-family: var(--pp-en); font-weight: 400; letter-spacing: -0.035em; line-height: 0.92; color: var(--pp-ink); }
+      .pp-zh { font-family: var(--pp-zh); font-weight: 700; letter-spacing: 0.01em; color: var(--pp-ink); }
+      .pp-note { font-family: var(--pp-zh); font-weight: 500; color: var(--pp-muted); }
+      .pp-line { display: block; }
+      #pp-a { position: absolute; left: 112px; top: 236px; width: 960px; }
+      #pp-a .pp-en { font-size: 168px; margin: 26px 0 30px -6px; }
+      #pp-a .pp-zh { font-size: 66px; line-height: 1.2; }
+      #pp-a .pp-note { font-size: 30px; line-height: 1.6; margin-top: 26px; max-width: 820px; }
+      .pp-b { position: absolute; left: 112px; top: 128px; width: 1700px; display: flex; align-items: baseline; gap: 40px; }
+      .pp-b .pp-en { font-size: 104px; white-space: nowrap; }
+      .pp-b .pp-zh { font-size: 44px; line-height: 1.3; }
+      /* split：左边大号双语标题，右边是浮起的组件 */
+      .pp-split { position: absolute; left: 112px; top: 236px; width: 840px; }
+      .pp-split .pp-en { font-size: 128px; margin: 22px 0 30px -5px; }
+      .pp-split .pp-zh { font-size: 52px; line-height: 1.28; }
+      .pp-split .pp-note { font-size: 30px; line-height: 1.6; margin-top: 24px; }
+      /* hero：组件占满画面宽度，标题缩成左下角一行 */
+      .pp-cap { position: absolute; left: 112px; bottom: 96px; width: 1700px; display: flex; align-items: baseline; gap: 32px; }
+      .pp-cap .pp-en { font-size: 80px; white-space: nowrap; }
+      .pp-cap .pp-zh { font-size: 38px; line-height: 1.3; }
+      /* statement：章节大字，不放界面 */
+      .pp-stmt { position: absolute; left: 112px; top: 316px; width: 1700px; }
+      .pp-stmt .pp-en { font-size: 216px; white-space: nowrap; }
+      .pp-stmt .pp-zh { font-size: 60px; margin-top: 44px; }
+      .pp-stmt .pp-eyebrow { margin-bottom: 34px; }
+      /* 落版：品牌一句话 + 中文名 + 地址。各行用固定位置：方块收拢的落点按这里的数字算（屏幕 x 112、y 544、46×46） */
+      #pp-end { position: absolute; left: 112px; top: 300px; width: 1400px; height: 420px; }
+      #pp-end .pp-en { position: absolute; left: -8px; top: 0; font-size: 196px; white-space: nowrap; }
+      #pp-end .pp-sq { position: absolute; left: 0; top: 244px; width: 46px; height: 46px; background: var(--pp-accent); }
+      #pp-end .pp-zh { position: absolute; left: 72px; top: 224px; font-size: 72px; line-height: 86px; white-space: nowrap; }
+      #pp-end .pp-url { position: absolute; left: 0; top: 344px; font: 500 30px var(--pp-mono); letter-spacing: 0.08em; color: var(--pp-ink-2); }
+
+      /* ---------- 文字手法 ---------- */
+      /* 槽位轮换：一次只显示一个词，品牌色加下划线 */
+      .pp-slot { color: var(--pp-accent); border-bottom: 3px solid var(--pp-accent); }
+      .pp-sw { font-weight: inherit; display: none; }
+      .pp-sw:first-child { display: inline; }
+      .pp-wf .pp-w { display: inline-block; }
+      /* 切片错位：底层占位，几层横条叠在上面，各自从不同偏移弹回 */
+      .pp-sl { position: relative; }
+      .pp-sl-base { visibility: hidden; }
+      .pp-sl-s { position: absolute; left: 0; top: 0; white-space: nowrap; }
+      .pp-sl-bar { position: absolute; left: -10px; right: -10px; top: 50%; height: 3px; background: var(--pp-accent); transform-origin: 0 50%; transform: scaleX(0); }
+      /* 逐字打出 */
+      .pp-ty .pp-c { display: none; }
+      .pp-caret { display: inline-block; width: 0.05em; height: 0.72em; margin-left: 0.05em; background: var(--pp-ink); opacity: 0; }
+
+      /* ---------- 3D 空间：浮起来的真实组件 ---------- */
+      #pp-space { position: absolute; inset: 0; perspective: 2400px; perspective-origin: 62% 48%; }
+      .pp-float { position: absolute !important; left: 0 !important; top: 0 !important; margin: 0 !important; transform-origin: 50% 50%; outline: 1px solid rgba(26, 25, 22, 0.06); }
+
+      /* ---------- 产品窗口：每个产品镜头一页，换镜头时在窗口里换页 ---------- */
+      #pp-win { position: absolute; left: 96px; top: 330px; width: 1728px; height: 670px; border-radius: 18px; overflow: hidden;
+        background: var(--pp-winbg); box-shadow: var(--pp-lift); outline: 1px solid rgba(26, 25, 22, 0.08); }
+      #pp-win .pp-chrome { position: absolute; left: 0; right: 0; top: 0; height: 46px; display: flex; align-items: center; gap: 14px; padding: 0 22px;
+        border-bottom: 1px solid var(--pp-hair); background: var(--pp-winbg); font: 500 16px var(--pp-mono); color: var(--pp-muted); z-index: 2; box-sizing: border-box; }
+      #pp-win .pp-paths { position: relative; flex: 1; height: 22px; }
+      #pp-win .pp-path { position: absolute; left: 0; top: 0; font-style: normal; font-family: var(--pp-zh); font-weight: 500; color: var(--pp-ink); white-space: nowrap; }
+      #pp-win .pp-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--pp-hair); }
+      #pp-win .pp-view { position: absolute; left: 0; right: 0; top: 46px; bottom: 0; overflow: hidden; }
+      .pp-stage { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+      /* 换页的品牌色擦除 */
+      #pp-wipe { position: absolute; left: 0; top: 0; width: 1728px; height: 624px; background: var(--pp-accent); transform-origin: 0 0; visibility: hidden; z-index: 2; }
+      /* 落版：整个窗口收成品牌方块 */
+      #pp-morph { position: absolute; left: 96px; top: 330px; width: 1728px; height: 670px; background: var(--pp-accent); transform-origin: 0 0; visibility: hidden; }
+      #pp-morph i { position: absolute; inset: 0; background: var(--pp-winbg); }
+      #pp-dim { position: absolute; inset: 0; background: var(--pp-paper); opacity: 0; z-index: 3; }
+      #pp-fx { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; }
+    </style>
+  </head>
+  <body __BODY_ATTRS__>
+    <div id="pp-root">
+      <section id="pp-scene" class="pp-layer">
+        <!-- 产品窗口：冻结页面等于一张"活的截图" -->
+        <div id="pp-win">
+          <div class="pp-chrome">
+            <span class="pp-dot"></span><span>{{window.url}}</span><span>/</span>
+            <span class="pp-paths">__PATHS__</span>
+          </div>
+          <div class="pp-view">
+            __STAGES__
+            <div id="pp-wipe"></div>
+            <div id="pp-dim"></div>
+          </div>
+        </div>
+        <div id="pp-morph"><i></i></div>
+        <!-- 浮起的组件和 Canvas 在文字下层：两者都不压字 -->
+        <div id="pp-space"></div>
+        <canvas id="pp-fx" width="1920" height="1080"></canvas>
+        <!-- 各镜头的文字（kit/theme.mjs 按镜头列表生成）。开场英文大标题第 0 帧就完整在场，可以直接当封面 -->
+        __SHOTS_HTML__
+        <div id="pp-brand" class="pp-furn"><i></i>{{brand.name}}<span>{{brand.mark}}</span></div>
+        <div id="pp-tagline" class="pp-furn">{{tagline}}</div>
+        <div id="pp-track" class="pp-furn"><b></b></div>
+      </section>
+    </div>
+    <script id="pp-data" type="application/json">__DATA__</script>
+    <script type="module" src="page/film.js"></script>
+  </body>
+</html>

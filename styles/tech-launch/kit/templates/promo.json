@@ -1,0 +1,32 @@
+{
+  "name": "promo",
+  "title": "产品名",
+  "poster": 8.6,
+  "site": {
+    "url": "https://example.com/",
+    "viewport": { "width": 1280, "height": 720 },
+    "colorScheme": "light",
+    "root": "body",
+    "remove": [],
+    "pages": [
+      { "id": "home", "label": "首页", "route": "/", "items": { "selector": ".card", "name": "h3" }, "focus": "main" }
+    ]
+  },
+  "film": {
+    "brand": { "name": "产品名", "mark": "PRODUCT", "color": "#1a1916" },
+    "tagline": "EXAMPLE.COM",
+    "window": { "url": "example.com" },
+    "shots": [
+      { "type": "opening", "dur": 5.4, "page": "home", "eyebrow": "ONE LINE ABOUT THE FIELD",
+        "en": ["The problem,", "in five words."], "zh": "用户的难处，\n一句话说清。", "note": "难处出现在{slot}里。",
+        "open": "scatter", "stack": ["组件名 1", "组件名 2", "组件名 3", "组件名 4"], "slots": ["这里", "那里", "到处"], "noteAt": 1.2 },
+      { "type": "feature", "dur": 6.6, "page": "home", "en": "The first answer.", "zh": "第一个方案怎样解决它。",
+        "hero": "组件名 1", "move": "lift", "title": "slices", "lift": 1.8,
+        "mark": { "kicker": "来源 · 编号", "title": "一个事实" } },
+      { "type": "end", "dur": 3.6, "en": "Brand line.", "zh": "产品名", "note": "example.com", "close": "square", "title": "type" }
+    ]
+  },
+  "audio": {
+    "music": { "src": "out/score.wav", "volume": 0.9 }
+  }
+}

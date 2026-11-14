@@ -1,0 +1,199 @@
+{
+  "name": "tech-launch",
+  "title": "建造观察局",
+  "poster": 20.4,
+  "site": {
+    "url": "https://news.bitbuild.cc/",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "colorScheme": "light",
+    "htmlAttrs": {
+      "data-theme": "light"
+    },
+    "root": ".app",
+    "pages": [
+      {
+        "id": "companies",
+        "label": "公司库",
+        "route": "#/companies",
+        "waitFor": "#view > *",
+        "items": {
+          "selector": ".ccard",
+          "name": ".ch b"
+        },
+        "focus": ".cgrid"
+      },
+      {
+        "id": "company",
+        "label": "公司库 / 群核科技",
+        "route": "#/c/manycore",
+        "waitFor": "#view > *",
+        "items": {
+          "selector": ".dstat"
+        },
+        "focus": ".dwrap"
+      },
+      {
+        "id": "deep",
+        "label": "深度",
+        "route": "#/deep",
+        "waitFor": "#view > *",
+        "items": {
+          "selector": ".dlead .dtx, .drow",
+          "name": "h2, h3"
+        }
+      },
+      {
+        "id": "observe",
+        "label": "观察",
+        "route": "#/observe",
+        "waitFor": "#view > *",
+        "items": {
+          "selector": ".erow",
+          "name": "h4"
+        },
+        "maxHeight": 3000
+      }
+    ]
+  },
+  "film": {
+    "brand": {
+      "name": "建造观察局",
+      "mark": "BITBUILD",
+      "color": "#002fa7"
+    },
+    "tagline": "NEWS.BITBUILD.CC",
+    "window": {
+      "url": "news.bitbuild.cc"
+    },
+    "shots": [
+      {
+        "type": "opening",
+        "dur": 5.4,
+        "page": "companies",
+        "eyebrow": "THE AEC TECH OBSERVATORY",
+        "en": [
+          "Too much noise,",
+          "too few facts."
+        ],
+        "zh": "AI 发布越来越多，\n哪些是真生意？",
+        "note": "消息散在{slot}里。",
+        "open": "scatter",
+        "stack": [
+          "广联达",
+          "构力科技",
+          "盈建科",
+          "博智林",
+          "明源云",
+          "Nemetschek Group",
+          "Bobyard",
+          "品茗科技"
+        ],
+        "slots": [
+          "公众号",
+          "官网",
+          "发布会",
+          "招股书",
+          "财报"
+        ],
+        "noteAt": 1.2
+      },
+      {
+        "type": "feature",
+        "dur": 6.0,
+        "page": "companies",
+        "en": "One file per company.",
+        "zh": "27 家公司，各建一份档案。",
+        "hero": "广联达",
+        "move": "lift",
+        "title": "slices",
+        "lift": 1.8,
+        "mark": {
+          "kicker": "GLODON · 上市",
+          "title": "广联达",
+          "sub": "观察 54 条"
+        }
+      },
+      {
+        "type": "feature",
+        "dur": 5.4,
+        "page": "company",
+        "layout": "hero",
+        "en": "Numbers over buzz.",
+        "zh": "看收入结构，判断真生意。",
+        "hero": 0,
+        "move": "zoom",
+        "highlight": "96.9%",
+        "title": "waterfall",
+        "stat": {
+          "to": 96.9,
+          "decimals": 1,
+          "suffix": "%",
+          "bar": 96.9
+        },
+        "mark": {
+          "kicker": "群核科技 · 2025",
+          "title": "订阅占比",
+          "sub": "2025 营收 8.20亿"
+        }
+      },
+      {
+        "type": "feature",
+        "dur": 6.0,
+        "page": "deep",
+        "layout": "split",
+        "en": "From launch\nto revenue.",
+        "zh": "把一次发布，\n追到财报里的收入。",
+        "hero": "Procore，开始深度进入工地AI",
+        "with": [
+          "盈建科，从结构设计软件走向AI辅助设计"
+        ],
+        "move": "mark",
+        "highlight": "收入增长15.8%",
+        "title": "blur",
+        "mark": {
+          "kicker": "PROCORE · 2026Q2",
+          "title": "收入增长 15.8%"
+        }
+      },
+      {
+        "type": "feature",
+        "dur": 6.0,
+        "page": "observe",
+        "layout": "compare",
+        "en": "Every update, one place.",
+        "zh": "各家发布汇到一处，每条附原文。",
+        "hero": 0,
+        "with": [
+          10
+        ],
+        "labels": [
+          "国内 · 公众号「盈建科」",
+          "国际 · Nemetschek Group 官网"
+        ],
+        "title": "waterfall",
+        "mark": {
+          "title": "汇到一处"
+        }
+      },
+      {
+        "type": "end",
+        "dur": 3.6,
+        "en": "On the record.",
+        "zh": "建造观察局",
+        "note": "news.bitbuild.cc",
+        "close": "square",
+        "title": "type"
+      },
+      {
+        "type": "statement",
+        "dur": 3.0,
+        "en": "NEO-Cine",
+        "zh": "科技发布",
+        "bare": true
+      }
+    ]
+  }
+}

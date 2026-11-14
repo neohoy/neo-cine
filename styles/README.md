@@ -19,3 +19,9 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Style | 风格 | Folder | Our demo |
 |---|---|---|---|
 | Scrapbook Song | 手账歌谣 | [`scrapbook-song`](scrapbook-song/STYLE.md) | *Wind Through Hsinchu* |
+
+## Product Launch · 产品发布
+
+| Style | 风格 | Folder | Our demo |
+|---|---|---|---|
+| Tech Launch | 科技发布 | [`tech-launch`](tech-launch/STYLE.md) | *On the Record* |

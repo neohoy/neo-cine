@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-14 · [05–06 号风格](https://neohoy.github.io/neo-cine/)**：风格现在分两个系列。**城市天际线**（01–05）画真实的城市、地图和线网，新加**微缩景观**：把一座高铁站切开做成桌上的模型，一步步讲解，附一套能搭任何微缩景观的工具包。**定格画**系列从**手账歌谣**开始：一拍两张的手绘歌词 MV，歌词像标签、缎带、印章一样贴上去；带着你自己的歌和歌词来，照风格的制作手册就能做成整支片子。[往下看 ↓](#风格)
+🆕 **2026-11-14 · [05–07 号风格](https://neohoy.github.io/neo-cine/)**：风格现在分三个系列。**城市天际线**（01–05）画真实的城市、地图和线网，新加**微缩景观**：把一座高铁站切开做成桌上的模型，一步步讲解，附一套能搭任何微缩景观的工具包。**定格画**系列从**手账歌谣**开始：一拍两张的手绘歌词 MV，带着你自己的歌和歌词来就能做。**产品发布**系列从**科技发布**开始：用产品真实的网页做宣传片，页面原样冻结，真实组件浮起、标注；带一个网址或几张截图来就能做。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -35,11 +35,18 @@
 <td width="33%" valign="top"><a href="styles/miniature/STYLE.zh-CN.md"><img src="docs/frames/miniature.jpg" alt="微缩景观"></a><br><b>05 · 微缩景观</b><br>Miniature<br><sub>城市天际线 · <i>How a High-Speed Station Works</i> · 1:09</sub><br>一座虚构的高铁站切开放在薄底座上：屋顶抬走，跟着一位拖箱子的旅客分七步讲，从下出租车、实名验证和安检、候车、检票、过天桥到上车，另一侧下车的人走地道出站；讲完屋顶合上，天黑亮灯。<br><sub><a href="styles/miniature/STYLE.zh-CN.md">风格说明</a> · <a href="styles/miniature/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/miniature.mp4">下载 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/scrapbook-song/STYLE.zh-CN.md"><img src="docs/frames/scrapbook-song.jpg" alt="手账歌谣"></a><br><b>06 · 手账歌谣</b><br>Scrapbook Song<br><sub>定格画 · <i>Wind Through Hsinchu</i> · 0:48</sub><br>hoy neo《风吹新竹》的桥段和最后一遍副歌，一格一格画出来：两个朋友在两座城市，行李箱里装进家乡，副歌一阵风吹过，夜街的窗一扇扇亮起，最后一扇亮着的窗里砸下一个「家」字。<br><sub><a href="styles/scrapbook-song/STYLE.zh-CN.md">风格说明</a> · <a href="styles/scrapbook-song/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/scrapbook-song.mp4">下载 1080p</a></sub></td>
 </tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/tech-launch/STYLE.zh-CN.md"><img src="docs/frames/tech-launch.jpg" alt="科技发布"></a><br><b>07 · 科技发布</b><br>Tech Launch<br><sub>产品发布 · <i>On the Record</i> · 0:35</sub><br>给建造观察局（库作者本人的网站）做的发布片，画面是冻结下来的真实页面：散在纵深里的公司卡片汇进一页公司库，推近一个收入数字从 0 数上去，在财报文章原文里划出一句，两个来源被一道括线收到一处，最后整个窗口收成品牌的蓝色方块。<br><sub><a href="styles/tech-launch/STYLE.zh-CN.md">风格说明</a> · <a href="styles/tech-launch/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/tech-launch.mp4">下载 1080p</a></sub></td>
+<td width="33%" valign="top"></td>
+<td width="33%" valign="top"></td>
+</tr>
 </table>
 
 <sub><b>城市天际线</b>（01、02、03、04、05）：画真实的城市：地图、线网、街区和楼。数据取自 OpenStreetMap 等公开来源，画法每个风格各不相同。</sub>
 
 <sub><b>定格画</b>（06）：逐帧手绘的动画：粗墨线、平涂、一拍两张，线条会抖，像一张张画定格下来。</sub>
+
+<sub><b>产品发布</b>（07）：用真实的产品界面做宣传片：网站页面原样冻结进片子，组件像实物一样浮起、推近、标注，界面上的事实都能在页面上找到。</sub>
 <!-- styles:end -->
 
 ## 👋 关于
