@@ -26,6 +26,11 @@ const URL0 = `http://127.0.0.1:${srv.address().port}${PAGE}${Q ? '?' + Q : ''}`;
 const ARGS = ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist', '--font-render-hinting=none', '--force-color-profile=srgb'];
 async function open() {
   const browser = await chromium.launch({ channel: opt('--channel', 'msedge'), headless: true, args: ARGS });
+  // Warm the GPU up first: on the render desktop the first WebGL context a fresh browser asks for fails (any attributes),
+  // and every later one works. A page that creates its renderer at once (an isle in an iframe) would die on that first one.
+  const warm = await browser.newPage();
+  await warm.evaluate(() => { const g = document.createElement('canvas').getContext('webgl2'); g && g.getExtension('WEBGL_lose_context')?.loseContext(); }).catch(() => {});
+  await warm.close();
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   await page.addInitScript(WATCH_GL_LOST);
   const st = { bad: null };
