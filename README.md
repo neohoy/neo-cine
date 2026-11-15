@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-14 · [Styles 05–07](https://neohoy.github.io/neo-cine/)**: the styles now come in three series. **City Skyline** (01–05), real cities, maps and networks, adds **Miniature**: a high-speed station cut open as a tabletop model and explained step by step, with a kit for building any miniature. **Frame by Frame** begins with **Scrapbook Song**: a hand-drawn lyric video on twos; bring your own song and its lyrics. **Product Launch** begins with **Tech Launch**: a promo film made from a product's real web pages, frozen as they are, with real components lifted and labelled; bring a URL or screenshots. [See them ↓](#the-styles)
+🆕 **2026-11-15 · [Style 08: Isle Film](https://neohoy.github.io/neo-cine/)**: a new series, **Tiny Worlds**. [NEO-Isle](https://github.com/neohoy/neo-isle) builds a miniature world in glass; Isle Film turns it into a film: a slow long lens moves through the glass, a whole day passes, and the camera waits for the one quiet wonder. Demo: *Snowfall Peak*. The styles now come in four series: City Skyline (01–05), Frame by Frame (06), Product Launch (07) and Tiny Worlds (08). [See them ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -36,7 +36,7 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="styles/tech-launch/STYLE.md"><img src="docs/frames/tech-launch.jpg" alt="Tech Launch"></a><br><b>07 · Tech Launch</b><br><sub>Product Launch · <i>On the Record</i> · 0:35</sub><br>A launch film for 建造观察局 (BITBUILD), the library author&#x27;s own site, made from its real pages frozen as they are: company cards scattered in depth gather into one library, a revenue split is pushed in on and counted up, a line in an earnings article is underlined in place, two sources are bracketed into one feed, and the window folds into the brand&#x27;s blue square.<br><sub><a href="styles/tech-launch/STYLE.md">Style prompt</a> · <a href="styles/tech-launch/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/tech-launch.mp4">Download 1080p</a></sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/isle-film/STYLE.md"><img src="docs/frames/isle-film.jpg" alt="Isle Film"></a><br><b>08 · Isle Film</b><br><sub>Tiny Worlds · <i>Snowfall Peak</i> · 0:36</sub><br>NEO-Isle&#x27;s second isle, Snowfall Peak, filmed by a slow long lens: from a glass cube in deep space through the glass to yaks crossing the snow, an afternoon running into dusk over a stone hut as its window lights, a wait on the frozen lake until glowing fish swim up under the ice and the score drops, and back out to the whole container at night.<br><sub><a href="styles/isle-film/STYLE.md">Style prompt</a> · <a href="styles/isle-film/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/isle-film.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>
@@ -46,6 +46,8 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <sub><b>Frame by Frame</b> (06): Hand-drawn animation, frame by frame: bold ink lines, flat colour, on twos, lines that boil, like drawings caught one at a time.</sub>
 
 <sub><b>Product Launch</b> (07): Promo films made from a real product interface: the site's pages frozen into the film as they are, real components lifted, pushed in on and labelled, every fact on screen found on the page.</sub>
+
+<sub><b>Tiny Worlds</b> (08): Films of the miniature worlds NEO-Isle builds in glass: a slow long lens moves through the glass, a whole day passes, and waits for the one quiet wonder.</sub>
 <!-- styles:end -->
 
 ## 👋 About

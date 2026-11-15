@@ -1,0 +1,25 @@
+雪落寒山 Snowfall Peak — Isle Film (方寸影像), a NEO-Cine library demo
+
+THE WORLD: 雪落寒山 (Snowfall Peak), the second isle of NEO-Isle (方寸之境), https://github.com/neohoy/neo-isle,
+  MIT, (c) 2026 NEO造物集 (neohoy), the library author. world.js is copied from NEO-Isle's examples/02-雪落寒山/world.js
+  unchanged (a note at its top says so). Everything in the picture is that isle as NEO-Isle builds it: the film only chooses
+  the camera, the hour and the isle's clock.
+
+ENGINE: NEO-Isle's engine (fangcun.js and template.html), version 1.2.0 with its film mode, pinned in ../kit/isle-core/
+  (MIT, its LICENSE and SOURCE are there), synced by ../kit/tools/sync_isle.sh. three.js r170 (MIT, (c) 2010-2024 three.js
+  authors), the library's own node_modules/three.
+
+FONTS (SIL Open Font License 1.1; fetched by ../kit/tools/fonts.py from github.com/google/fonts at commit 86aced91 into
+  out/fonts-src/, subset to the characters the film prints into fonts/*.ttf; none kept in git; licence texts in fonts/):
+- Noto Serif SC, Copyright 2012 Google Inc.: Chinese title, subtitles, end card
+  (fonts/NSerif-300.ttf, fonts/NSerif-400.ttf, instances of the variable font).
+- Cormorant Garamond, Copyright 2015 the Cormorant Project Authors (github.com/CatharsisFonts/Cormorant): English lines and the sign-off (fonts/CG-500.ttf, fonts/CGI-500.ttf).
+
+SOUND: synthesized in code (numpy and the library's core/audio/sfx.py filters), no recordings, samples or existing music:
+  ../kit/tools/mix.py (wind, snow, crows, the hour chimes, the glass, the wonder, the score in D at 80 BPM). No narration.
+
+TOOLS: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame capture,
+  events export, reading-time check, ffmpeg encode and loudness master; neo/audio/cues.py, neo/audio/master.py.
+
+ON SCREEN: the title card names the work (方寸之境 · 第二境, 雪落寒山, Snowfall Peak); the end card signs off with NEO-Cine and
+  the style's name only.

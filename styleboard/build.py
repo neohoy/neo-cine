@@ -14,8 +14,9 @@ FILMS_URL = f'https://github.com/{REPO}/releases/download/films'   # full films 
 BLOB_URL = f'https://github.com/{REPO}/blob/main'
 
 # The categories, in gallery order: NEO-Cine's own series first (City Skyline: real cities, maps and networks drawn from open data, see
-# neo/geo/; Frame by Frame: hand-drawn frame-by-frame animation; Product Launch: promo films from a real product interface), then upstream's, plus Real Maps and Transport (styles on hold use them). A style.json must name one of them (both languages, exactly).
-CATEGORIES = [('城市天际线', 'City Skyline'), ('定格画', 'Frame by Frame'), ('产品发布', 'Product Launch'), ('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
+# neo/geo/; Frame by Frame: hand-drawn frame-by-frame animation; Product Launch: promo films from a real product interface;
+# Tiny Worlds: films of NEO-Isle's miniature worlds), then upstream's, plus Real Maps and Transport (styles on hold use them). A style.json must name one of them (both languages, exactly).
+CATEGORIES = [('城市天际线', 'City Skyline'), ('定格画', 'Frame by Frame'), ('产品发布', 'Product Launch'), ('方寸之境', 'Tiny Worlds'), ('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
               ('图形与排版', 'Graphic & Type'), ('信息与发布', 'Information & Keynote'), ('卡通与动画', 'Cartoon & Anime'),
               ('游戏', 'Games'), ('电影与时代', 'Cinema & Eras'), ('材质与 3D', 'Materials & 3D')]
 # A note under a category's heading, in the gallery and in both READMEs: (Chinese, English).
@@ -25,6 +26,8 @@ CAT_NOTES = {'城市天际线': ('画真实的城市：地图、线网、街区�
                      'Hand-drawn animation, frame by frame: bold ink lines, flat colour, on twos, lines that boil, like drawings caught one at a time.'),
              '产品发布': ('用真实的产品界面做宣传片：网站页面原样冻结进片子，组件像实物一样浮起、推近、标注，界面上的事实都能在页面上找到。',
                       'Promo films made from a real product interface: the site\'s pages frozen into the film as they are, real components lifted, pushed in on and labelled, every fact on screen found on the page.'),
+             '方寸之境': ('把 NEO-Isle 造出来的玻璃容器里的微缩世界拍成片：一台很慢的长焦镜头穿过玻璃，一天的时辰流过去，等那件奇事出现。',
+                      'Films of the miniature worlds NEO-Isle builds in glass: a slow long lens moves through the glass, a whole day passes, and waits for the one quiet wonder.'),
              '真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
                       'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.'),
              '交通': ('真实的公共交通线网：线路取自 OpenStreetMap，开通日期和里程查运营方和政府的公开来源。',

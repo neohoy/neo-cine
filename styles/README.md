@@ -25,3 +25,9 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Style | 风格 | Folder | Our demo |
 |---|---|---|---|
 | Tech Launch | 科技发布 | [`tech-launch`](tech-launch/STYLE.md) | *On the Record* |
+
+## Tiny Worlds · 方寸之境
+
+| Style | 风格 | Folder | Our demo |
+|---|---|---|---|
+| Isle Film | 方寸影像 | [`isle-film`](isle-film/STYLE.md) | *Snowfall Peak* |

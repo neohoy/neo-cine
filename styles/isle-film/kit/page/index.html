@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>__TITLE__ · 方寸影像</title>
+<!-- 方寸影像 Isle Film：由 styles/isle-film/kit/tools/build.mjs 生成。改 film.json，再跑 build.mjs，不要改这里 -->
+<style>
+  @font-face { font-family: 'Isle Serif'; font-weight: 300; src: url('fonts/NSerif-300.ttf') format('truetype'); }
+  @font-face { font-family: 'Isle Serif'; font-weight: 400; src: url('fonts/NSerif-400.ttf') format('truetype'); }
+  @font-face { font-family: 'Isle Latin'; font-weight: 500; font-style: normal; src: url('fonts/CG-500.ttf') format('truetype'); }
+  @font-face { font-family: 'Isle Latin'; font-weight: 500; font-style: italic; src: url('fonts/CGI-500.ttf') format('truetype'); }
+  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+  iframe.isle { position: fixed; inset: 0; width: 100vw; height: 100vh; border: 0; visibility: hidden; }
+  iframe.isle.on { visibility: visible; }
+  #carry { position: fixed; inset: 0; width: 100vw; height: 100vh; display: none; }
+  #black { position: fixed; inset: 0; background: #000; opacity: 0; }
+  #txt { position: fixed; inset: 0; pointer-events: none; color: #f3f1ec; }
+  .tx { position: absolute; opacity: 0; }
+  .tx span { display: block; white-space: nowrap; }
+  /* 片名卡：左下，像博物馆展签；作品信息一行，境名，英文名 */
+  .tx.title { left: 132px; bottom: 132px; text-shadow: 0 0 24px rgba(0, 0, 0, .55); }
+  .tx.title .kicker { font: 300 25px/1 'Isle Serif'; letter-spacing: .42em; opacity: .72; margin-bottom: 26px; }
+  .tx.title .zh { font: 300 84px/1 'Isle Serif'; letter-spacing: .32em; }
+  .tx.title .en { font: italic 500 40px/1 'Isle Latin', 'Isle Serif'; letter-spacing: .05em; opacity: .86; margin-top: 22px; }
+  /* 字幕：下方正中，中文一行，英文一行 */
+  .tx.sub { left: 0; right: 0; bottom: 84px; text-align: center; text-shadow: 0 0 14px rgba(0, 0, 0, .7), 0 0 34px rgba(0, 0, 0, .45); }
+  .tx.sub::before { content: ''; position: absolute; left: 50%; top: 50%; width: 1100px; height: 260px; transform: translate(-50%, -50%); z-index: -1;
+    background: radial-gradient(closest-side, rgba(8, 10, 18, .46), rgba(8, 10, 18, 0)); }   /* 一团很淡的暗晕：亮雪地上也读得清，不是字幕条 */
+  .tx.sub .zh { font: 400 40px/1.2 'Isle Serif'; letter-spacing: .16em; }
+  .tx.sub .en { font: italic 500 32px/1.2 'Isle Latin', 'Isle Serif'; letter-spacing: .03em; opacity: .9; margin-top: 10px; }
+  /* 片尾卡：黑底正中 */
+  .tx.end { left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; }
+  .tx.end .kicker { font: 500 58px/1 'Isle Latin', 'Isle Serif'; letter-spacing: .14em; }
+  .tx.end .zh { font: 300 40px/1 'Isle Serif'; letter-spacing: .5em; margin-top: 34px; opacity: .85; padding-left: .5em; }
+  .tx.end .en { font: italic 500 32px/1 'Isle Latin', 'Isle Serif'; letter-spacing: .06em; margin-top: 18px; opacity: .7; }
+</style>
+</head>
+<body>
+<canvas id="carry"></canvas>
+<div id="black"></div>
+<div id="txt"></div>
+<script id="film-data" type="application/json">/*__FILM__*/</script>
+<script type="module" src="page/film.js"></script>
+</body>
+</html>

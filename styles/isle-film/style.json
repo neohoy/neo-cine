@@ -1,0 +1,18 @@
+{
+ "slug": "isle-film",
+ "num": "08",
+ "en": "Isle Film",
+ "cn": "方寸影像",
+ "category_en": "Tiny Worlds",
+ "category_cn": "方寸之境",
+ "film": "Snowfall Peak",
+ "line": "NEO-Isle's second isle, Snowfall Peak, filmed by a slow long lens: from a glass cube in deep space through the glass to yaks crossing the snow, an afternoon running into dusk over a stone hut as its window lights, a wait on the frozen lake until glowing fish swim up under the ice and the score drops, and back out to the whole container at night.",
+ "line_cn": "用一台很慢的长焦拍 NEO-Isle 的第二境《雪落寒山》：从深空里的玻璃立方体推进去，穿过玻璃，牦牛走过雪原；石屋前一个下午快进到黄昏，窗亮起来；镜头停在冰湖上等，冰面下发光的鱼游出来，配乐在这一刻落下；最后拉远，夜里的整只容器。",
+ "uses": [
+  "A short film of an isle you made with NEO-Isle: through the glass, a day in seconds, the wonder, the whole",
+  "A 10-second loop or teaser of a miniature world for a post or a gallery card",
+  "A series trailer: several isles, or one isle in several containers, joined by a change of glass"
+ ],
+ "frame_sec": 26.8,
+ "dur": 36.5
+}

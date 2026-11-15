@@ -1,0 +1,7 @@
+# 每次构建重新生成的：两张页面（kit/tools/build.mjs 写）、页面脚本（从 ../kit/page/ 复制）、字体子集（kit/tools/fonts.py 下载并切）、画面事件
+/index.html
+/isle.html
+/page/
+/fonts/
+/events.json
+/out/

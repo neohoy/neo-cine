@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>__TITLE__</title>
+<!-- 方寸之境 · 由 NEO-Isle（neo-isle）的 build.py 生成：引擎 __ENGINE__，构建于 __BUILT__ -->
+<style>
+  :root{
+    --fg:#eef2fa; --mute:rgba(238,242,250,.58); --faint:rgba(238,242,250,.5);
+    --panel:rgba(14,18,32,.40); --line:rgba(255,255,255,.10);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:#03040a;overflow:hidden;color:var(--fg);
+    font-family:"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  canvas{display:block;outline:none;touch-action:none}
+  .hud{transition:opacity .6s ease}
+  body.hide-ui .hud{opacity:0;pointer-events:none}
+  body.shot .hud, body.shot #loader{display:none !important}   /* 出图模式：界面和加载幕直接不画 */
+
+  #title{position:fixed;left:36px;top:30px;pointer-events:none}
+  #title h1{margin:0;font-weight:300;font-size:24px;letter-spacing:.46em}
+  #sub{margin:10px 0 0;font-size:13px;color:var(--fg);opacity:.82;letter-spacing:.3em}
+  #tag{margin:8px 0 0;font-size:11px;color:var(--faint);letter-spacing:.22em}
+
+  #clock{position:fixed;right:36px;top:28px;text-align:right;pointer-events:none}
+  #clock .t{font-size:32px;font-weight:200;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+  #clock .p{font-size:12px;color:var(--mute);letter-spacing:.34em;margin-top:2px}
+
+  #panel{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);
+    display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify-content:center;
+    padding:11px 20px;border-radius:999px;background:var(--panel);border:1px solid var(--line);
+    backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);
+    font-size:12px;color:var(--mute);max-width:calc(100vw - 32px);user-select:none}
+  #panel .grp{display:flex;align-items:center;gap:9px}
+  #panel button{all:unset;cursor:pointer;color:var(--mute);padding:5px 10px;border-radius:999px;
+    border:1px solid transparent;transition:all .25s ease;letter-spacing:.12em}
+  #panel button:hover{color:var(--fg)}
+  #panel button.on{color:var(--fg);border-color:var(--line);background:rgba(255,255,255,.06)}
+  #play{width:30px;height:30px;padding:0 !important;display:grid;place-items:center;
+    border:1px solid var(--line) !important;font-size:11px}
+  .sep{width:1px;height:16px;background:var(--line)}
+
+  input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;height:18px;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:var(--track,rgba(255,255,255,.2))}
+  input[type=range]::-moz-range-track{height:3px;border-radius:3px;background:var(--track,rgba(255,255,255,.2))}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;
+    margin-top:-4.5px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+  input[type=range]::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+  #time{width:220px;--track:linear-gradient(90deg,#1b2350 0%,#2a2e66 20%,#ff9a6a 27%,#ffe2b8 38%,#cfe6ff 52%,#ffd59a 68%,#ff7a4a 76%,#3a3474 82%,#1b2350 100%)}
+  #focus{width:84px}
+
+  #hint{position:fixed;right:36px;bottom:36px;font-size:11px;color:var(--faint);letter-spacing:.18em;pointer-events:none}
+
+  #loader{position:fixed;inset:0;display:grid;place-items:center;background:#03040a;z-index:10;transition:opacity 1.2s ease}
+  #loader span{font-size:13px;letter-spacing:.5em;color:var(--mute);animation:breathe 2.4s ease-in-out infinite}
+  #loader.done{opacity:0;pointer-events:none}
+  @keyframes breathe{0%,100%{opacity:.35}50%{opacity:1}}
+
+  @media (max-width:760px){
+    #title{left:20px;top:20px} #title h1{font-size:18px} #sub{font-size:12px;letter-spacing:.18em} #tag{display:none}
+    #clock{right:20px;top:18px} #clock .t{font-size:24px}
+    #hint{display:none}
+    #panel{border-radius:20px;bottom:16px;padding:10px 14px;gap:10px 12px}
+    #time{width:min(220px,52vw)}
+  }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="loader"><span>正在塑造这一方天地</span></div>
+
+<div id="title" class="hud">
+  <h1>方寸之境</h1>
+  <p id="sub"></p>
+  <p id="tag"></p>
+</div>
+<div id="clock" class="hud"><div class="t" id="clockT">--:--</div><div class="p" id="clockP"></div></div>
+
+<div id="panel" class="hud">
+  <div class="grp">
+    <button id="play" title="播放 / 暂停昼夜流转">❚❚</button>
+    <input id="time" type="range" min="0" max="24" step="0.01" value="7.2" aria-label="时辰" />
+  </div>
+  <div class="sep"></div>
+  <div class="grp" id="speeds">
+    <button data-s="0.1">慢</button><button data-s="0.27" class="on">中</button><button data-s="0.8">快</button>
+  </div>
+  <div class="sep"></div>
+  <div class="grp">
+    <button id="rot" class="on">旋转</button>
+    <button id="tilt" class="on">移轴</button>
+    <input id="focus" type="range" min="0.3" max="0.7" step="0.005" value="0.5" aria-label="焦平面" title="焦平面" />
+  </div>
+</div>
+<div id="hint" class="hud">拖拽旋转 · 滚轮缩放 · H 隐藏界面</div>
+
+<script type="module">
+/*__CORE__*/
+{
+/*__WORLD__*/
+startFangcun(WORLD);
+}
+</script>
+</body>
+</html>

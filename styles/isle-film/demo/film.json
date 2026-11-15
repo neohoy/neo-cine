@@ -1,0 +1,190 @@
+{
+ "name": "isle-film",
+ "world": "world.js",
+ "clock": 60,
+ "poster": 26.8,
+ "title": {
+  "kicker": "方寸之境 · 第二境",
+  "zh": "雪落寒山",
+  "en": "Snowfall Peak",
+  "at": 1.0,
+  "dur": 5.0
+ },
+ "shots": [
+  {
+   "id": "arrive",
+   "move": "through",
+   "dur": 12.5,
+   "hour": [
+    15.6,
+    15.95
+   ],
+   "keys": [
+    {
+     "at": 0,
+     "az": 0.42,
+     "pol": 1.13,
+     "dist": 2.7,
+     "target": [
+      0,
+      -0.4,
+      0
+     ]
+    },
+    {
+     "at": 5.5,
+     "az": 0.58,
+     "pol": 1.1,
+     "dist": 1.05,
+     "target": [
+      -0.2,
+      -0.6,
+      0.3
+     ]
+    },
+    {
+     "at": 12.5,
+     "az": 0.85,
+     "pol": 1.2,
+     "dist": 0.062,
+     "target": [
+      -1.75,
+      -1.85,
+      2.45
+     ]
+    }
+   ],
+   "sub": {
+    "at": 8.2,
+    "dur": 4.3,
+    "zh": "牦牛走过雪原",
+    "en": "Yaks cross the snow"
+   }
+  },
+  {
+   "id": "hut",
+   "move": "timelapse",
+   "dur": 6.5,
+   "in": "dissolve",
+   "inDur": 1.2,
+   "hour": [
+    16.0,
+    18.05
+   ],
+   "from": {
+    "az": -1.12,
+    "pol": 1.18,
+    "dist": 0.104,
+    "target": [
+     3.7,
+     -1.75,
+     0.7
+    ]
+   },
+   "to": {
+    "az": -0.8,
+    "pol": 1.15,
+    "dist": 0.09
+   },
+   "sub": {
+    "at": 3.2,
+    "dur": 3.3,
+    "zh": "石屋点灯",
+    "en": "A window lights up"
+   },
+   "hourEase": "inout"
+  },
+  {
+   "id": "wonder",
+   "move": "wait",
+   "dur": 7.0,
+   "in": "dissolve",
+   "inDur": 1.0,
+   "hour": [
+    18.05,
+    19.1
+   ],
+   "hourEase": "linear",
+   "ease": "linear",
+   "from": {
+    "az": -0.5,
+    "pol": 1.0,
+    "dist": 0.066,
+    "target": [
+     1.9,
+     -1.94,
+     2.15
+    ]
+   },
+   "to": {
+    "az": -0.45,
+    "pol": 0.99,
+    "dist": 0.056,
+    "target": [
+     1.82,
+     -1.94,
+     2.22
+    ]
+   },
+   "wonder": 3.5,
+   "sub": {
+    "at": 3.9,
+    "dur": 3.7,
+    "zh": "冰下有光",
+    "en": "Light under the ice"
+   }
+  },
+  {
+   "id": "whole",
+   "move": "pullback",
+   "dur": 6.5,
+   "hour": [
+    19.1,
+    19.9
+   ],
+   "keys": [
+    {
+     "at": 0
+    },
+    {
+     "at": 5.0,
+     "az": 0.55,
+     "pol": 1.08,
+     "dist": 1.08,
+     "target": [
+      0,
+      -0.35,
+      0
+     ]
+    },
+    {
+     "at": 6.5,
+     "az": 0.6,
+     "pol": 1.08,
+     "dist": 1.14
+    }
+   ]
+  }
+ ],
+ "end": {
+  "dur": 4.0,
+  "fade": 1.2,
+  "kicker": "NEO-Cine",
+  "zh": "方寸影像",
+  "en": "Isle Film"
+ },
+ "sound": {
+  "beds": {
+   "wind": 0.9,
+   "snow": 0.6,
+   "birds": "crow",
+   "water": 0
+  },
+  "music": {
+   "key": "D",
+   "level": 1.0,
+   "drop": "wonder"
+  },
+  "chimes": 1.0
+ }
+}
