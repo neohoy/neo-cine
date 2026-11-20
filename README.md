@@ -70,7 +70,7 @@ Two ways in; the skill is the easiest.
 
 ### Option 1: install the skill (recommended)
 
-In your terminal:
+**Claude Code**, in your terminal:
 
 ```sh
 claude plugin marketplace add neohoy/neo-cine
@@ -81,7 +81,17 @@ Then use it from any folder.
 
 - On first use it downloads the guides, tools and style prompts to `~/neo-cine`, shared by all your films.
 - Each film's project, from source to finished video, goes in the folder you started from.
-- For other agents, copy [`plugin/skills/neo-cine/`](plugin/skills/neo-cine/) into their skills folder.
+
+#### Other agents
+
+For Codex, DeepSeek Harness, Doubao Work (豆包工作) and others, send your agent this:
+
+> Install this skill: https://github.com/neohoy/neo-cine/tree/main/plugin/skills/neo-cine
+
+Restart the agent afterwards. On first use, the skill downloads the library to `~/neo-cine` itself.
+
+- The styles were tuned in Claude Code; with other agents, results may differ.
+- In Doubao Work, run films on **本地电脑** (local computer): the cloud computer's sandbox is destroyed when idle, along with what was installed in it.
 
 ### Option 2: clone the repo
 
@@ -101,7 +111,7 @@ Then start your agent in that folder and ask it to read [`AGENTS.md`](AGENTS.md)
 
 Name the style in English or Chinese.
 
-Not sure yet? With the skill installed, type `/neo-cine:neo-cine` and nothing else. It asks which language to use, then what you'd like to do.
+Not sure yet? With the skill installed, type `/neo-cine:neo-cine` (`$neo-cine` in Codex) and nothing else. It asks which language to use, then what you'd like to do.
 
 It asks you once, up front:
 
@@ -149,6 +159,8 @@ Uninstall, then delete `~/neo-cine`:
 ```sh
 claude plugin uninstall neo-cine@neo
 ```
+
+Other agents: to update, send the same message again; to uninstall, ask it to remove the neo-cine skill, then delete `~/neo-cine`.
 
 Your own styles in `~/neo-my-styles/` stay through updates and uninstalls; delete that folder yourself if you don't want them.
 

@@ -71,7 +71,7 @@
 
 ### 方式一：装成技能（推荐）
 
-在终端里：
+**Claude Code**，在终端里：
 
 ```sh
 claude plugin marketplace add neohoy/neo-cine
@@ -82,7 +82,17 @@ claude plugin install neo-cine@neo
 
 - 第一次使用时，它会把指南、工具和风格说明下载到 `~/neo-cine`，所有片子共用这一份。
 - 每支片子的工程，从源码到成片，都放在你发起时所在的文件夹里。
-- 其他 agent 可以把 [`plugin/skills/neo-cine/`](plugin/skills/neo-cine/) 复制到它们的技能目录。
+
+#### 其他 agent
+
+Codex、DeepSeek Harness、豆包工作等，把这句话发给你的 agent：
+
+> 帮我安装这个技能：https://github.com/neohoy/neo-cine/tree/main/plugin/skills/neo-cine
+
+装好后重启 agent。第一次用时，技能会自己把库下载到 `~/neo-cine`。
+
+- 风格是在 Claude Code 里调出来的，换成其他 agent 效果不保证一样。
+- 豆包工作做片时，运行环境选 **本地电脑**：云电脑的沙箱闲置后会销毁，装好的包会丢。
 
 ### 方式二：克隆仓库
 
@@ -102,7 +112,7 @@ sh plugin/skills/neo-cine/scripts/setup.sh deps
 
 风格用中文名或英文名都行。
 
-还没想好也没关系：装成技能的，输入 `/neo-cine:neo-cine` 直接启动。它先问你用什么语言，再问这次想做什么。
+还没想好也没关系：装成技能的，只输入 `/neo-cine:neo-cine`（Codex 里是 `$neo-cine`）直接启动。它先问你用什么语言，再问这次想做什么。
 
 它开工前只问你一次：
 
@@ -151,6 +161,8 @@ claude plugin marketplace update neo && claude plugin update neo-cine@neo
 ```sh
 claude plugin uninstall neo-cine@neo
 ```
+
+其他 agent：更新时把上面那句话再发一次；卸载时让它删掉 neo-cine 技能，再删掉 `~/neo-cine`。
 
 `~/neo-my-styles/` 里你自己的风格，更新和卸载都不会动；不想要了自己删掉那个文件夹。
 
