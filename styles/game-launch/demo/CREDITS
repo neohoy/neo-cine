@@ -1,0 +1,39 @@
+一趟跑商 One Trade Run —— 《归路：新旅途》宣传片 · Game Launch (游戏发布), a NEO-Cine library demo
+
+GAME: 《归路：新旅途》 © 开发者青椒（个人开发者）。The gameplay footage, key art, character art, logo and in-game music in
+  this film are the game's own, used for this library demo with the developer's permission. They are not covered by the
+  library's licence and may not be reused outside this demo without the developer's permission.
+  Source: the game's TapTap page, https://www.taptap.cn/app/984135
+  - Gameplay recording: the page's 9 min 24 s gameplay video (3840×2160, 30 fps), kept out of git (build.sh says where it goes).
+    Clips used (recording time, m:ss): 7:30.0 world map and airship; 6:35.8 regional market table; 6:07.6–6:21.6 trading post,
+    持有货钞 4351 → 14775; 1:30.3 node map; 1:16.4 「遗失的日志」 event; 2:16.0 boss battle; 3:39.0 auto battle (自动战斗中).
+  - Key art: the page's video cover (assets/stills/keyart.jpg, cropped by the camera so its printed logo stays out of frame).
+  - Logo: the page's logo image (assets/stills/logo.png).
+  - Character art (assets/stills/p1–p6.jpg): crops of the key art (p1, p2), the recording at 7:39.5, 5:55.0 and 7:21.0 (p3–p5)
+    and the page's screenshot 07 (p6); game.json (stills.*.grab) records each crop.
+  - Music: the recording's own soundtrack from 6:02.255 (the trading-post theme, 140 BPM), with the game's interface sounds in it.
+  Facts on screen: FACTS.md (the page's wording, or the recording time where it can be seen).
+
+FILM'S OWN FONTS (SIL Open Font License 1.1; fetched by ../kit/tools/fonts.py into out/fonts-src/ and subset to the characters
+  the film prints into fonts/title.ttf and fonts/small.ttf, not kept in git; licence texts in fonts/):
+- Smiley Sans 得意黑 v2.0.1 (Oblique), Copyright (c) 2022--2024, atelierAnchor, with Reserved Font Name <Smiley> and <得意黑>:
+  the plate titles, the first call to action and the sign-off (github.com/atelier-anchor/smiley-sans, release v2.0.1).
+- Noto Sans SC (weight 600), (c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source': the small
+  call-to-action lines and the style name on the sign-off (github.com/google/fonts at commit 86aced91).
+
+SOUND EFFECTS: synthesized in code by ../kit/tools/mix.py with the library's core/audio/sfx.py (whooshes on three cuts and on the
+  band, a swish on the push-in, a pop on the 14775 plate, a low impact on the logo, a thud on the sign-off card). No recordings
+  or samples. No narration.
+
+STYLE AND CODE: the look, the plate material and the story are taken from a HyperFrames trailer of the game made by the library's
+  author (its SPEC, its three story options and its v002 cut); the film here is rebuilt on the library's page contract with
+  ../kit/: no HyperFrames, no GSAP, no <video> playback (the clips are cut into frames on the film's frame grid by
+  ../kit/tools/clips.py). ../kit/page/tween.js comes from Tech Launch's tween.js (same library), with clip-path added;
+  ../kit/tools/beats.py is adapted from Scrapbook Song's analyze.py (same library).
+
+TOOLS: the NEO-Cine library's core/ tools, which are Lemo-Opuscar's (MIT, (c) 2026 LemoLab): headless Chrome frame capture,
+  events export, reading-time check, ffmpeg encode and loudness master; neo/audio/cues.py, neo/audio/master.py,
+  neo/render/remote.sh.
+
+ON SCREEN: the game's own end (the logo on the iron band, Demo 试玩已上线, TapTap 搜索「归路：新旅途」, PC · 安卓 · iOS) is part of
+  the film's content; the last card signs off with NEO-Cine and the style's name only.

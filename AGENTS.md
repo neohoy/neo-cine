@@ -37,6 +37,7 @@ This repository is a library of film styles. Each style has a `styles/<slug>/STY
 - **Scene styles** (a set-up guide, a spec walkthrough, a museum plate, a trail guide) list use cases in their `STYLE.md`. Read them as grammar for the order in which information arrives and how long each part needs on screen, then build the user's content in your own structure. Swapping text into a demo's `content.json` is only a technical check, never the way to deliver.
 - **Styles made from the user's own song.** A style whose `STYLE.md` links a production manual (`PRODUCTION.md`; for now Scrapbook Song) is made from what the user brings: a song and its timed lyrics. Follow that manual from the brief on: its imagery table and storyboard are the treatment, and its three checkpoints (the asset sheet with the storyboard, a sample, the render time) stand even when the user did not ask to see a storyboard. Its kit sits in the style's `kit/` folder, outside `demo/`, so it is there in skill mode too.
 - **Styles made from the user's product.** When the user brings a product's URL or screenshots for a launch or promo film, the style for it is Tech Launch (`styles/tech-launch/`): its `STYLE.md` links a production manual (`PRODUCTION.md`) that takes it from the URL or screenshots to delivery. Follow it from the brief on: its script and cut list are the treatment, and its three checkpoints (the cut list, the sample stills, the user watching and listening to the whole film) stand even when the user did not ask to see a storyboard. The interface stays real, the user signs in to their site themselves (never type a password), and page actions only look. Its kit sits in the style's `kit/` folder, outside `demo/`.
+- **Styles made from the user's game.** When the user brings a game's material (a gameplay recording, key art, logo, character art, the store page's text) for a launch, Demo or update trailer, the style for it is Game Launch (`styles/game-launch/`): its `STYLE.md` links a production manual (`PRODUCTION.md`) that takes it from the material to delivery. Follow it from the brief on: its three story options and its cut list are the treatment, and its three checkpoints (the story and the cut list, the sample stills, the user watching and listening to the whole film) stand even when the user did not ask to see a storyboard. Use only a game that is the user's own or that they have the developer's permission for; every number and claim on screen is seen in the recording or written on the store page. Its kit sits in the style's `kit/` folder, outside `demo/`.
 - **Styles made from the user's NEO-Isle world.** When the user has an isle made with NEO-Isle (方寸之境: a folder with its `world.js`, usually `fangcun/<nn>-<name>/`) and wants it as a film, the style for it is Isle Film (`styles/isle-film/`): its `STYLE.md` links a production manual (`PRODUCTION.md`) that takes it from the isle's folder to delivery. Follow it from the brief on: its shot list is the treatment, and its three checkpoints (the shot list, the sample stills, the render time and then a full viewing and listening) stand even when the user did not ask to see a storyboard. The isle is used as it is: nothing is added to the world. Its kit, with a pinned copy of NEO-Isle's engine, sits in the style's `kit/` folder, outside `demo/`.
 - Never build inside `styles/`: copy what you need into the film's project folder.
 
@@ -52,11 +53,11 @@ If the user hasn't picked a style:
 - Then ask them to type the name. The list goes in your own message (a command's output isn't shown to them), and the question is plain text, not `AskUserQuestion`: its few options would hide the rest of the list.
 
 <!-- style-list:start -->
-All styles (8) · 全部风格:
+All styles (9) · 全部风格:
 
 - **城市天际线 City Skyline** (5): 折叠城市 Folding City, 铜版图卷 Atlas Scroll, 舆图长卷 Scroll Map, 地铁线路图 Transit Map, 微缩景观 Miniature
 - **定格画 Frame by Frame** (1): 手账歌谣 Scrapbook Song
-- **产品发布 Product Launch** (1): 科技发布 Tech Launch
+- **产品发布 Product Launch** (2): 科技发布 Tech Launch, 游戏发布 Game Launch
 - **方寸之境 Tiny Worlds** (1): 方寸影像 Isle Film
 <!-- style-list:end -->
 

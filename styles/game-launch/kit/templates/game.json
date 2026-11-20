@@ -1,0 +1,42 @@
+{
+  "title": "游戏名",
+  "name": "game-promo",
+  "fps": 30,
+  "poster": 0,
+  "sources": {
+    "play": { "file": "assets/footage/实机录像.mp4", "crop": null, "note": "实机录像；crop = [x, y, w, h] 裁掉录屏的黑边（inventory.py 给建议值）" }
+  },
+  "stills": {
+    "keyart": { "file": "assets/stills/主视觉.png", "note": "官方主视觉" },
+    "logo": { "file": "assets/stills/logo.png", "note": "官方 Logo（透明底最好）" }
+  },
+  "audio": { "from": "play", "start": "0:00.000", "bpm": 120, "volume": 0.9, "fade": [0.15, 2.0],
+             "note": "游戏原声：beats.py --scan 挑一段，beats.py 核对网格" },
+  "look": {
+    "plate": { "top": "#30343a", "bottom": "#1c1e22", "frame": "#6b3a20", "frameWidth": 3, "inner": "#c46a34", "innerWidth": 2,
+               "rivet": ["#e9e6df", "#8d8a85", "#4a4846"], "rivetSize": 12, "shadow": "0 10px 0 rgba(0,0,0,.35)", "brushed": 0.05,
+               "note": "plate.py 从这款游戏的 UI 截图里取色，再按 UI 有没有铆钉、斜纹手动开关" },
+    "text": "#f4efe6", "accent": "#63dd8a", "warm": "#e3995f", "muted": "#a9a49b",
+    "title": { "font": "smiley", "size": 104, "tracking": 0.02 },
+    "small": { "font": "notosanssc", "weight": 600 }
+  },
+  "shots": [
+    { "id": "hook", "beats": 8,
+      "layers": [{ "still": "keyart", "moves": [{ "at": 0, "dur": "8b", "ease": "sine.inOut", "zoom": [1, 1.1] }] }],
+      "plates": [{ "text": "一句话[钩子]", "at": 0, "pos": "bottom" }] },
+    { "id": "play1", "beats": 8, "sound": "whoosh",
+      "layers": [{ "src": "play", "in": "0:10.000", "moves": [{ "at": "1b", "dur": 0.52, "ease": "power3.inOut", "zoom": [1, 1.5], "focus": [960, 540] }] }],
+      "plates": [{ "text": "一个[卖点]", "at": 0.12, "pos": "top" }] },
+    { "id": "finale", "beats": 20,
+      "plates": [{ "text": "最后一个[卖点]", "at": "1b", "to": 3.3, "pos": "bottom" }],
+      "finale": {
+        "band": { "land": "9b", "sound": "whoosh" },
+        "logo": { "still": "logo", "at": "9b", "sound": "impact" },
+        "cta": [
+          { "text": "Demo [已上线]", "at": "11b", "style": "title" },
+          { "text": "TapTap 搜索 {「游戏名」}", "at": "12b", "style": "small" },
+          { "text": "PC · 安卓 · iOS", "at": "13b", "style": "muted" }
+        ]
+      } }
+  ]
+}

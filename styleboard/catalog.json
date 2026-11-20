@@ -119,6 +119,23 @@
   "dur": 35.4
  },
  {
+  "slug": "game-launch",
+  "num": "09",
+  "en": "Game Launch",
+  "cn": "游戏发布",
+  "cat": "产品发布",
+  "cat_en": "Product Launch",
+  "film": "One Trade Run",
+  "line": "A Demo trailer for the indie RPG 归路：新旅途, made with its developer's permission from the game's own footage and art: real gameplay fills the frame, captions sit on plates cut from the game's copper-and-iron UI, the camera pushes in until a trade counter reads 4351 → 14775 on the beat of the game's own score, and the crew wipes in before the logo lands with where to play it.",
+  "line_cn": "给独立游戏《归路：新旅途》做的宣传片，经开发者授权，用游戏自己的实机录像和美术：实机画面铺满全画面，字幕牌用游戏铜框铁板的 UI 材质，镜头卡着游戏原声的拍子推近交易所，货钞从 4351 跳到 14775，最后六位伙伴按拍擦入，Logo 落地，告诉你去哪儿玩。",
+  "uses": [
+   "A 30–45-second trailer or Demo announcement for your own game, from its gameplay recording, key art and store page",
+   "A feature spot for one system (trading, combat, exploration): one real number or one real payoff carried through the film",
+   "A store-page or social-media cut for an indie, pixel, mobile or anime RPG, captioned in the game's own UI material"
+  ],
+  "dur": 41.1
+ },
+ {
   "slug": "isle-film",
   "num": "08",
   "en": "Isle Film",

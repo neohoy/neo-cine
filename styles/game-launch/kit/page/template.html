@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>{{title}} · 游戏发布 Game Launch</title>
+    <style>
+      /* 影片自己的两种字（tools/fonts.py 按片子里印出来的字切子集；全是 OFL，不用系统字体，Mac 和 Windows 渲出来一样） */
+      @font-face { font-family: "GL Title"; src: url(fonts/title.ttf) format("truetype"); }
+      @font-face { font-family: "GL Small"; src: url(fonts/small.ttf) format("truetype"); }
+      :root {
+        /* 字幕牌的材质：从这款游戏自己的 UI 里取（game.json 的 look.plate，tools/plate.py 取色） */
+        --gl-top: {{plate.top}};
+        --gl-bottom: {{plate.bottom}};
+        --gl-frame: {{plate.frame}};
+        --gl-frame-w: {{plate.frameWidth}}px;
+        --gl-inner: {{plate.inner}};
+        --gl-inner-w: {{plate.innerWidth}}px;
+        --gl-rivet-a: {{plate.rivet0}};
+        --gl-rivet-b: {{plate.rivet1}};
+        --gl-rivet-c: {{plate.rivet2}};
+        --gl-rivet: {{plate.rivetSize}}px;
+        --gl-shadow: {{plate.shadow}};
+        --gl-brushed: {{plate.brushed}};
+        --gl-text: {{text}};
+        --gl-accent: {{accent}};
+        --gl-warm: {{warm}};
+        --gl-muted: {{muted}};
+        --gl-title-size: {{title.size}}px;
+        --gl-title-track: {{title.tracking}}em;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #15171a; }
+      #gl-root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #15171a; }
+      .gl-host { position: absolute; inset: 0; display: none; }
+
+      /* ---------- 画面层：录像的帧或静图，铺满全画面（STYLE.md §2：不留黑底） ---------- */
+      .gl-layer { position: absolute; inset: 0; overflow: hidden; display: none; }
+      .gl-layer img { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; image-rendering: auto; }
+
+      /* ---------- 字幕牌：游戏 UI 的铁板、外框、内描、铆钉 ---------- */
+      .gl-plate {
+        position: absolute; left: 150px; padding: 14px 64px 22px;
+        background: linear-gradient(180deg, var(--gl-top) 0%, var(--gl-bottom) 100%);
+        border: var(--gl-frame-w) solid var(--gl-frame);
+        box-shadow: inset 0 0 0 var(--gl-inner-w) var(--gl-inner), var(--gl-shadow);
+        clip-path: inset(0 100% 0 0);
+      }
+      .gl-plate.gl-bottom { bottom: 150px; }
+      .gl-plate.gl-top { top: 130px; }
+      .gl-plate::before, .gl-plate::after, .gl-rivets::before, .gl-rivets::after {
+        content: ""; position: absolute; top: 50%; width: var(--gl-rivet); height: var(--gl-rivet); margin-top: calc(var(--gl-rivet) / -2); border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, var(--gl-rivet-a) 0%, var(--gl-rivet-b) 60%, var(--gl-rivet-c) 100%);
+      }
+      .gl-plate::before { left: 20px; } .gl-plate::after { right: 20px; }
+      .gl-title { font-family: "GL Title", "GL Small", sans-serif; font-size: var(--gl-title-size); line-height: 1.1; color: var(--gl-text);
+        letter-spacing: var(--gl-title-track); white-space: nowrap; }
+      .gl-title b, .gl-small b { font-weight: inherit; color: var(--gl-accent); }
+      .gl-title i { font-style: normal; color: var(--gl-inner); padding: 0 .25em; }
+      .gl-small i { font-style: normal; color: var(--gl-warm); }
+
+      /* ---------- 收尾：立绘竖条、铁板横幅、Logo、行动号召 ---------- */
+      .gl-slice { position: absolute; top: 0; height: 1080px; overflow: hidden; clip-path: inset(0 0 100% 0); }
+      .gl-slice img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+      .gl-slice::after { content: ""; position: absolute; top: 0; right: 0; width: 3px; height: 100%; background: var(--gl-inner); }
+      .gl-slice:last-child::after { display: none; }
+      .gl-iron {
+        background:
+          repeating-linear-gradient(115deg, rgba(255,255,255,var(--gl-brushed)) 0 1px, transparent 1px 7px),
+          linear-gradient(180deg, var(--gl-top) 0%, color-mix(in srgb, var(--gl-top) 45%, var(--gl-bottom)) 55%, color-mix(in srgb, var(--gl-bottom) 80%, #000) 100%);
+      }
+      #gl-band { position: absolute; left: 0; top: 630px; width: 1920px; height: 340px;
+        border-top: 4px solid var(--gl-inner); border-bottom: 4px solid var(--gl-inner);
+        box-shadow: 0 -3px 0 var(--gl-frame), 0 3px 0 var(--gl-frame), 0 -18px 40px rgba(0,0,0,.45); }
+      #gl-band .gl-rivets::before { left: 40px; width: 14px; height: 14px; margin-top: -7px; }
+      #gl-band .gl-rivets::after { right: 40px; width: 14px; height: 14px; margin-top: -7px; }
+      .gl-rivets { position: absolute; inset: 0; }
+      #gl-logo { position: absolute; left: 150px; top: 616px; width: 620px; height: 365px; transform-origin: 310px 183px; object-fit: contain; }
+      #gl-cta-1 { position: absolute; left: 900px; top: 676px; font-size: 96px; }
+      #gl-cta-2, #gl-cta-3 { position: absolute; font-family: "GL Small", sans-serif; white-space: nowrap; }
+      #gl-cta-2 { left: 904px; top: 812px; font-size: 46px; color: var(--gl-text); }
+      #gl-cta-3 { left: 906px; top: 884px; font-size: 30px; color: var(--gl-muted); letter-spacing: .2em; }
+
+      /* ---------- 片尾卡：整屏一块铁板（只署 NEO-Cine 和风格名；用户的片子没有这一张） ---------- */
+      #gl-card { position: absolute; inset: 0; display: none; }
+      #gl-card .gl-frame { position: absolute; inset: 44px; border: var(--gl-frame-w) solid var(--gl-frame); box-shadow: inset 0 0 0 var(--gl-inner-w) var(--gl-inner); }
+      #gl-card .gl-frame i { position: absolute; width: 14px; height: 14px; border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, var(--gl-rivet-a) 0%, var(--gl-rivet-b) 60%, var(--gl-rivet-c) 100%); }
+      #gl-card .gl-lines { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; }
+      #gl-card .gl-l1 { font-family: "GL Title", sans-serif; font-size: 150px; line-height: 1.1; color: var(--gl-text); letter-spacing: .02em; }
+      #gl-card .gl-l2 { margin-top: 18px; font-family: "GL Small", sans-serif; font-size: 44px; color: var(--gl-warm); letter-spacing: .4em; padding-left: .4em; }
+    </style>
+  </head>
+  <body>
+    <div id="gl-root">
+      <div id="gl-pic"></div>
+      <div id="gl-crew" class="gl-host"></div>
+      <div id="gl-plates"></div>
+      <div id="gl-fin" class="gl-host">
+        <div id="gl-band" class="gl-iron"><div class="gl-rivets"></div></div>
+        <img id="gl-logo" src="{{logo}}" alt="" />
+        <div id="gl-cta-1" class="gl-title"></div>
+        <div id="gl-cta-2" class="gl-small"></div>
+        <div id="gl-cta-3" class="gl-small"></div>
+      </div>
+      <div id="gl-card" class="gl-iron">
+        <div class="gl-frame"><i style="left:22px;top:22px"></i><i style="right:22px;top:22px"></i><i style="left:22px;bottom:22px"></i><i style="right:22px;bottom:22px"></i></div>
+        <div class="gl-lines"><div class="gl-l1"></div><div class="gl-l2"></div></div>
+      </div>
+    </div>
+    <script id="gl-data" type="application/json">{{data}}</script>
+    <script type="module" src="page/film.js"></script>
+  </body>
+</html>

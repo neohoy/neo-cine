@@ -10,7 +10,7 @@
 ⚠️ **为 Claude Code 做的。** 风格都是用 Claude 做出来、调出来的，<br>
 换成其他 agent 不保证能做出同样的效果。
 
-🆕 **2026-11-15 · [08 号风格：方寸影像](https://neohoy.github.io/neo-cine/)**：新系列**方寸之境**。[NEO-Isle](https://github.com/neohoy/neo-isle) 造一方装在玻璃里的微缩世界，方寸影像把它拍成片：一台很慢的长焦镜头穿过玻璃，一天的时辰流过去，停下来等那件奇事。示范片《雪落寒山》。风格现在分四个系列：城市天际线（01–05）、定格画（06）、产品发布（07）、方寸之境（08）。[往下看 ↓](#风格)
+🆕 **2026-11-20 · [09 号风格：游戏发布](https://neohoy.github.io/neo-cine/)**：给你自己的游戏做宣传片，素材就是实机录像、主视觉和商店页。实机画面铺满全屏，字幕牌用游戏自己的 UI 材质，镜头卡着游戏原声的拍子推近一个真实的爽点（示范片里是货钞 4351 → 14775），最后 Logo 落地，告诉观众去哪儿玩。示范片是独立 RPG《归路：新旅途》的 Demo 宣传片，经开发者授权。产品发布系列现在有两种风格（07、09）。[往下看 ↓](#风格)
 
 <sub>官方仓库：[github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · NEO造物集（[@neohoy](https://github.com/neohoy)）</sub>
 
@@ -38,7 +38,7 @@
 <tr>
 <td width="33%" valign="top"><a href="styles/tech-launch/STYLE.zh-CN.md"><img src="docs/frames/tech-launch.jpg" alt="科技发布"></a><br><b>07 · 科技发布</b><br>Tech Launch<br><sub>产品发布 · <i>On the Record</i> · 0:35</sub><br>给建造观察局（库作者本人的网站）做的发布片，画面是冻结下来的真实页面：散在纵深里的公司卡片汇进一页公司库，推近一个收入数字从 0 数上去，在财报文章原文里划出一句，两个来源被一道括线收到一处，最后整个窗口收成品牌的蓝色方块。<br><sub><a href="styles/tech-launch/STYLE.zh-CN.md">风格说明</a> · <a href="styles/tech-launch/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/tech-launch.mp4">下载 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/isle-film/STYLE.zh-CN.md"><img src="docs/frames/isle-film.jpg" alt="方寸影像"></a><br><b>08 · 方寸影像</b><br>Isle Film<br><sub>方寸之境 · <i>Snowfall Peak</i> · 0:36</sub><br>用一台很慢的长焦拍 NEO-Isle 的第二境《雪落寒山》：从深空里的玻璃立方体推进去，穿过玻璃，牦牛走过雪原；石屋前一个下午快进到黄昏，窗亮起来；镜头停在冰湖上等，冰面下发光的鱼游出来，配乐在这一刻落下；最后拉远，夜里的整只容器。<br><sub><a href="styles/isle-film/STYLE.zh-CN.md">风格说明</a> · <a href="styles/isle-film/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/isle-film.mp4">下载 1080p</a></sub></td>
-<td width="33%" valign="top"></td>
+<td width="33%" valign="top"><a href="styles/game-launch/STYLE.zh-CN.md"><img src="docs/frames/game-launch.jpg" alt="游戏发布"></a><br><b>09 · 游戏发布</b><br>Game Launch<br><sub>产品发布 · <i>One Trade Run</i> · 0:41</sub><br>给独立游戏《归路：新旅途》做的宣传片，经开发者授权，用游戏自己的实机录像和美术：实机画面铺满全画面，字幕牌用游戏铜框铁板的 UI 材质，镜头卡着游戏原声的拍子推近交易所，货钞从 4351 跳到 14775，最后六位伙伴按拍擦入，Logo 落地，告诉你去哪儿玩。<br><sub><a href="styles/game-launch/STYLE.zh-CN.md">风格说明</a> · <a href="styles/game-launch/DEMO.zh-CN.md">示范片说明</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/game-launch.mp4">下载 1080p</a></sub></td>
 </tr>
 </table>
 
@@ -46,7 +46,7 @@
 
 <sub><b>定格画</b>（06）：逐帧手绘的动画：粗墨线、平涂、一拍两张，线条会抖，像一张张画定格下来。</sub>
 
-<sub><b>产品发布</b>（07）：用真实的产品界面做宣传片：网站页面原样冻结进片子，组件像实物一样浮起、推近、标注，界面上的事实都能在页面上找到。</sub>
+<sub><b>产品发布</b>（07、09）：用真实的产品界面做宣传片：网站页面原样冻结进片子，组件像实物一样浮起、推近、标注，界面上的事实都能在页面上找到。</sub>
 
 <sub><b>方寸之境</b>（08）：把 NEO-Isle 造出来的玻璃容器里的微缩世界拍成片：一台很慢的长焦镜头穿过玻璃，一天的时辰流过去，等那件奇事出现。</sub>
 <!-- styles:end -->

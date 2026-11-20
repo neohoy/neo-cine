@@ -25,6 +25,7 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Style | 风格 | Folder | Our demo |
 |---|---|---|---|
 | Tech Launch | 科技发布 | [`tech-launch`](tech-launch/STYLE.md) | *On the Record* |
+| Game Launch | 游戏发布 | [`game-launch`](game-launch/STYLE.md) | *One Trade Run* |
 
 ## Tiny Worlds · 方寸之境
 

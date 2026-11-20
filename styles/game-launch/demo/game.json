@@ -1,0 +1,126 @@
+{
+  "title": "归路：新旅途",
+  "name": "game-launch",
+  "fps": 30,
+  "poster": 17.6,
+  "sources": {
+    "play": {
+      "file": "assets/footage/play-4k.mp4",
+      "crop": [365, 60, 3116, 2016],
+      "note": "TapTap 游戏页 app/984135 上 9 分 24 秒的实机录像（3840×2160，30 fps）；crop 是游戏画面，裁掉录屏四周的黑边"
+    }
+  },
+  "stills": {
+    "keyart": { "file": "assets/stills/keyart.jpg", "grab": { "from": "assets/source/video-cover.png" }, "note": "官方主视觉（TapTap 页面的视频封面，2000×1125）" },
+    "logo": { "file": "assets/stills/logo.png", "grab": { "from": "assets/source/logo.png" }, "note": "官方 Logo（TapTap 页面原图，透明底）" },
+    "p1": { "file": "assets/stills/p1.jpg", "grab": { "from": "assets/source/video-cover.png", "crop": [1238, 0, 249, 840], "size": [640, 2160] }, "note": "韩天汐，主视觉右侧" },
+    "p2": { "file": "assets/stills/p2.jpg", "grab": { "from": "assets/source/video-cover.png", "crop": [652, 0, 334, 1125], "size": [640, 2160] }, "note": "云雅风，主视觉左侧" },
+    "p3": { "file": "assets/stills/p3.jpg", "grab": { "from": "play", "t": "7:39.500", "crop": [560, 304, 408, 1368], "size": [640, 2160] }, "note": "李佩雯，录像 7:39.5 的对话立绘" },
+    "p4": { "file": "assets/stills/p4.jpg", "grab": { "from": "play", "t": "5:55.000", "crop": [672, 312, 504, 1696], "size": [640, 2160] }, "note": "辛连娜，录像 5:55 交易所的立绘" },
+    "p5": { "file": "assets/stills/p5.jpg", "grab": { "from": "play", "t": "7:21.000", "crop": [464, 288, 456, 1536], "size": [640, 2160] }, "note": "商人，录像 7:21 的对话立绘" },
+    "p6": { "file": "assets/stills/p6.jpg", "grab": { "from": "assets/source/screenshot-07.png", "crop": [280, 153, 200, 673], "size": [640, 2160] }, "note": "魔族少女，TapTap 截图 07" }
+  },
+  "audio": {
+    "from": "play",
+    "start": "6:02.255",
+    "bpm": 140,
+    "volume": 0.9,
+    "fade": [0.15, 2.2],
+    "note": "游戏原声：录像里城市交易所的配乐（6:02.255 起，第 0 秒落在拍上）；里面混着少量点击和交易的界面音"
+  },
+  "look": {
+    "plate": {
+      "top": "#30343a", "bottom": "#1c1e22",
+      "frame": "#6b3a20", "frameWidth": 3,
+      "inner": "#c46a34", "innerWidth": 2,
+      "rivet": ["#e9e6df", "#8d8a85", "#4a4846"], "rivetSize": 12,
+      "shadow": "0 10px 0 rgba(0,0,0,.35)",
+      "brushed": 0.05,
+      "note": "取自游戏 UI：交易所、对话框的枪灰铁板、铜色外框、橙铜内描和银色铆钉（tools/plate.py 从 4351 那一帧取色）"
+    },
+    "text": "#f4efe6",
+    "accent": "#63dd8a",
+    "warm": "#e3995f",
+    "muted": "#a9a49b",
+    "title": { "font": "smiley", "size": 104, "tracking": 0.02 },
+    "small": { "font": "notosanssc", "weight": 600 },
+    "note": "强调色是 Logo 的绿；标题字得意黑斜体对应 Logo 的斜笔画"
+  },
+  "shots": [
+    {
+      "id": "hook", "beats": 8,
+      "layers": [
+        { "still": "keyart", "view": [419.75, 0, 1481.5],
+          "moves": [{ "at": 0, "dur": "8b", "ease": "sine.inOut", "zoom": [1, 1.1], "focus": [1500, 100.3] }] }
+      ],
+      "plates": [{ "text": "从一座城邦[出发]", "at": 0, "pos": "bottom" }]
+    },
+    {
+      "id": "map", "beats": 8, "sound": "whoosh",
+      "layers": [
+        { "src": "play", "in": "7:30.000",
+          "moves": [{ "at": 0, "dur": "8b", "ease": "sine.inOut", "zoom": [1, 1.35], "focus": [1433.0, 1147.4] }] }
+      ],
+      "plates": [{ "text": "跨城[跑商]", "at": 0.12, "pos": "bottom" }]
+    },
+    {
+      "id": "market", "beats": 8,
+      "layers": [
+        { "src": "play", "in": "6:35.800",
+          "moves": [{ "at": "1b", "dur": 0.52, "ease": "power3.inOut", "zoom": [1, 1.55], "focus": [2056.2, 1043.5] }] }
+      ],
+      "plates": [{ "text": "看准[行情]", "at": 0.12, "pos": "top" }]
+    },
+    {
+      "id": "trade", "beats": 23,
+      "layers": [
+        { "src": "play", "in": "6:07.600", "rate": 1.6, "to": 6.9167, "view": [0, 262.9, 3116],
+          "moves": [{ "at": "1b", "dur": 0.52, "ease": "power3.inOut", "view": [1100, 1453.5, 1000], "sound": "swish" }] },
+        { "src": "play", "in": "6:18.667", "from": 6.9167, "view": [1100, 1453.5, 1000],
+          "note": "14775 落定以后回到原速：录像里 14775 只停 3.6 秒，1.6 倍速撑不到镜头结束" }
+      ],
+      "plates": [
+        { "text": "低买[高卖]", "at": 1.0, "to": 6.85, "pos": "top" },
+        { "text": "货钞 4351{→}[14775]", "at": 6.87, "pos": "top", "size": 96, "sound": "pop" }
+      ]
+    },
+    {
+      "id": "explore", "beats": 8, "sound": "whoosh",
+      "layers": [
+        { "src": "play", "in": "1:30.300", "to": "4b",
+          "moves": [{ "at": 0, "dur": "4b", "ease": "sine.inOut", "zoom": [1.08, 1.22], "focus": [373.3, 1095.5] }] },
+        { "src": "play", "in": "1:16.400", "from": "4b",
+          "moves": [{ "at": 0, "dur": "4b", "ease": "sine.out", "zoom": [1.32, 1.42], "focus": [2710.3, 1165.2] }] }
+      ],
+      "plates": [{ "text": "探索[秘境]", "at": 0.12, "pos": "top" }]
+    },
+    {
+      "id": "battle", "beats": 12, "sound": "whoosh-long",
+      "layers": [
+        { "src": "play", "in": "2:16.000", "to": "6b",
+          "moves": [{ "at": 0, "dur": "6b", "ease": "sine.inOut", "zoom": [1, 1.12], "focus": [1558.0, 1233.4] }] },
+        { "src": "play", "in": "3:39.000", "from": "6b",
+          "moves": [{ "at": 0, "dur": 0.52, "ease": "power3.out", "zoom": [1.18, 1.0], "focus": [1558.0, 1428.2] }] }
+      ],
+      "plates": [{ "text": "深度策略[回合制]", "at": 0.12, "pos": "top" }]
+    },
+    {
+      "id": "finale", "beats": 23,
+      "plates": [{ "text": "招揽[伙伴]", "at": 0.5486, "to": 3.3285, "pos": "bottom" }],
+      "finale": {
+        "crew": { "stills": ["p1", "p2", "p3", "p4", "p5", "p6"], "every": "0.5b" },
+        "band": { "land": "9b", "slide": 0.5286, "sound": "whoosh" },
+        "logo": { "still": "logo", "at": "9b", "sound": "impact" },
+        "cta": [
+          { "text": "Demo 试玩[已上线]", "at": "11b", "style": "title" },
+          { "text": "TapTap 搜索 {「归路：新旅途」}", "at": "12b", "style": "small" },
+          { "text": "PC · 安卓 · iOS", "at": "13b", "style": "muted" }
+        ]
+      }
+    },
+    {
+      "id": "signoff", "beats": 6,
+      "card": { "lines": ["NEO-Cine", "游戏发布"], "land": 0, "slide": 0.5286, "sound": "thud" }
+    }
+  ]
+}

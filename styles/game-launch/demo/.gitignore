@@ -1,0 +1,9 @@
+# 不进 git：实机录像（170 MB，从 TapTap 游戏页取，见 DEMO.md 开头）、裁静图用的原图、按镜头表抽的帧、节拍分析、字体子集说明，
+# 以及每次构建重新生成的整片页面（kit/tools/build.py 写）和页面脚本（从 ../kit/page/ 复制）
+/assets/footage/
+/assets/source/
+/frames/
+/data/
+/fonts/fonts.json
+/index.html
+/page/
