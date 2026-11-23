@@ -1,0 +1,2 @@
+# 不进 git：洋红底原图（28 MB，cast.json 里有提示词，../kit/tools/cast.py 能重出）、渲染和中间文件、字体文件（fonts.py 会重新下载）
+/cast/raw/

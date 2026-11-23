@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>一起跑通 · Persona Pop</title>
+<link rel="stylesheet" href="/styles/persona-pop/kit/page/base.css">
+<style>
+  @font-face { font-family: PP-Display; src: url("fonts/display.ttf"); }
+  @font-face { font-family: PP-Sans; src: url("fonts/sans.ttf"); font-weight: 100 900; }
+  @font-face { font-family: PP-Mono; src: url("fonts/mono.ttf"); font-weight: 100 900; }
+
+  /* 片名、名牌 */
+  .title { position: absolute; left: 90px; right: 90px; top: 230px; text-align: center; font-family: PP-Display; font-size: 210px; line-height: 1; color: var(--ink); white-space: nowrap; }
+  .title span { display: inline-block; }
+  .title.small { top: 200px; font-size: 120px; color: #fff; -webkit-text-stroke: 12px var(--navy); paint-order: stroke fill; z-index: 7; }
+  .sub { position: absolute; left: 90px; right: 90px; top: 470px; text-align: center; font-size: 40px; color: var(--mute); letter-spacing: .08em; }
+  .name { position: absolute; font-family: PP-Display; font-size: 96px; color: #fff; z-index: 7; padding: 4px 26px; }
+  .name small { font-family: PP-Sans; font-size: 34px; margin-left: 12px; opacity: .85; }
+
+  /* 群聊 */
+  .msg { position: absolute; right: 60px; top: 150px; background: var(--ink); color: #fff; font-size: 46px; padding: 22px 36px; border-radius: 36px 36px 8px 36px; }
+  .crow { position: absolute; left: 40px; display: flex; align-items: center; gap: 22px; font-size: 38px; color: var(--ink2); }
+  .dots span { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--mute); margin: 0 4px; }
+  .av { width: 64px; height: 64px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 30px; }
+  .av.a { background: var(--a); color: #fff; } .av.b { background: var(--b-chip); color: var(--b-glow); font-family: PP-Mono; }
+
+  /* 对峙 */
+  .vs { position: absolute; inset: 0; }
+  .vs-l { background: var(--a); clip-path: polygon(0 0, 62% 0, 38% 100%, 0 100%); }
+  .vs-r { background: var(--b-chip); clip-path: polygon(62% 0, 100% 0, 100% 100%, 38% 100%); }
+  .vsx { position: absolute; left: 0; right: 0; top: 760px; text-align: center; font-family: PP-Display; font-size: 360px; color: var(--yellow); -webkit-text-stroke: 18px var(--navy); paint-order: stroke fill; z-index: 6; }
+
+  /* 思考 */
+  .head { position: absolute; left: 34px; top: 30px; font-size: 34px; color: var(--mute); display: flex; align-items: center; gap: 14px; }
+  .spin { width: 30px; height: 30px; border-radius: 50%; border: 5px solid #E4DDD2; border-top-color: var(--a); }
+  .tline { position: absolute; left: 34px; right: 24px; font-size: 32px; color: var(--ink2); line-height: 1.4; padding-left: 18px; border-left: 5px solid #EDE6DB; }
+  .qm { position: absolute; font-family: PP-Display; font-size: 120px; color: var(--a); }
+  .ringbg { position: absolute; left: -460px; top: -200px; width: 2000px; height: 2000px; border-radius: 50%; background: repeating-radial-gradient(circle, rgba(76,111,255,.10) 0 40px, transparent 40px 110px); }
+  .drift { position: absolute; left: 0; font-size: 58px; color: rgba(76,111,255,.22); font-weight: 700; white-space: nowrap; }
+  .bulb { position: absolute; left: 760px; top: 560px; width: 220px; height: 220px; z-index: 5; opacity: 0; }
+  .bulb .rays { left: 0; top: 0; width: 100%; height: 100%; }
+  .bulb b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: PP-Display; font-size: 150px; color: var(--yellow); -webkit-text-stroke: 10px #fff; paint-order: stroke fill; }
+  .pill { position: absolute; left: 90px; top: 1240px; z-index: 5; background: #fff; border-radius: 999px; padding: 16px 34px; font-size: 40px; color: var(--ink2); box-shadow: 0 12px 30px rgba(0,0,0,.16); }
+  .pill b { color: var(--blue); font-family: PP-Mono; }
+  .pill.done { background: var(--green); color: #fff; font-weight: 700; opacity: 0; z-index: 6; }
+
+  /* 终端 */
+  .bang { position: absolute; left: 680px; top: 560px; font-family: PP-Display; font-size: 200px; color: #fff; -webkit-text-stroke: 14px #1F1F1F; paint-order: stroke fill; z-index: 6; }
+  .term { background: #161616; border: 2px solid #2C2C2C; z-index: 4; }
+  .term .bar { background: #232323; color: #9A9A9A; border: none; }
+  .term .tl { position: absolute; left: 36px; font-size: 29px; color: #E8E8E8; white-space: pre; }
+  .term .g, .term .ok { color: #5BE3B0; } .term .dim { color: #777; }
+  .cursor { display: inline-block; width: 16px; height: 32px; background: #5BE3B0; vertical-align: middle; }
+  .rain { position: absolute; top: -700px; font-family: PP-Mono; font-size: 34px; line-height: 1.1; color: #5BE3B0; opacity: .28; text-align: center; width: 40px; }
+
+  /* 分镜表、立绘格 */
+  .paper { position: absolute; width: 300px; height: 390px; background: #FFFDF8; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.2); padding: 40px 30px; }
+  .paper i { display: block; height: 12px; border-radius: 6px; background: #EADFD0; margin-bottom: 26px; }
+  .code { position: absolute; left: 34px; font-size: 26px; color: var(--ink2); white-space: pre; }
+  .code k { color: var(--a); }
+  #s3-pen { position: absolute; left: 420px; top: 1000px; width: 620px; height: 200px; z-index: 4; }
+  .gridbg { position: absolute; inset: 0; background-image: linear-gradient(rgba(91,227,176,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(91,227,176,.12) 2px, transparent 2px); background-size: 90px 90px; }
+  .grid { position: absolute; left: 60px; top: 560px; width: 960px; height: 1290px; }
+  .tile { position: absolute; width: 300px; height: 300px; border-radius: 26px; background: #fff; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  .tile img { width: 100%; height: 200%; object-fit: cover; object-position: 50% 0; }
+  .tile b { position: absolute; left: 10px; bottom: 10px; font-size: 24px; background: rgba(31,31,31,.85); color: var(--b-glow); padding: 4px 10px; border-radius: 10px; font-family: PP-Mono; }
+  .gcount { position: absolute; left: 0; right: 0; top: 1360px; text-align: center; z-index: 5; }
+  .gcount span { font-size: 44px; font-weight: 700; background: #1F1F1F; color: var(--b-glow); padding: 12px 34px; border-radius: 999px; font-family: PP-Mono; }
+
+  /* 测试列表 */
+  .trow { position: absolute; left: 30px; right: 30px; height: 68px; border-radius: 18px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 34px; color: var(--ink2); }
+  .trow .ic { position: relative; width: 50px; height: 50px; font-size: 40px; font-weight: 800; }
+  .trow .ic span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .i0 { color: var(--mute); } .bad { color: var(--red); } .good { color: var(--green); }
+  .ring { position: absolute; right: 12px; top: -6px; width: 80px; height: 80px; border-radius: 50%; border: 6px solid var(--green); opacity: 0; }
+  .tint { position: absolute; inset: 0; background: var(--red); opacity: 0; }
+  .glitch { position: absolute; left: 0; right: 0; height: 40px; mix-blend-mode: multiply; opacity: 0; z-index: 8; }
+  .panel { position: absolute; width: 520px; height: 900px; border: 12px solid #fff; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  .fallx { position: absolute; top: -120px; font-size: 90px; font-weight: 900; color: #fff; opacity: .8; z-index: 6; }
+  .verdict { position: absolute; left: 90px; right: 90px; top: 1240px; text-align: center; font-family: PP-Display; font-size: 200px; color: #fff; -webkit-text-stroke: 16px #1F1F1F; paint-order: stroke fill; z-index: 7; opacity: 0; }
+  .verdict.good { top: 720px; font-size: 300px; -webkit-text-stroke: 18px #1E7A48; z-index: 5; }
+  .cf { position: absolute; top: -60px; width: 22px; height: 34px; border-radius: 5px; z-index: 6; }
+  .band { position: absolute; left: -300px; width: 1700px; height: 110px; background: var(--yellow); color: #1F1F1F; font-family: PP-Display; font-size: 70px; line-height: 110px; white-space: nowrap; z-index: 4; box-shadow: 0 10px 30px rgba(0,0,0,.2); }
+
+  /* 泳道 */
+  .half { position: absolute; inset: 0; }
+  .lane { position: absolute; width: 430px; }
+  .file { height: 76px; border-radius: 16px; background: rgba(255,255,255,.95); display: flex; align-items: center; padding: 0 22px; margin-bottom: 16px; font-size: 29px; color: var(--ink2); position: relative; }
+  .lock { position: absolute; right: 18px; top: 24px; width: 34px; height: 28px; border-radius: 6px; background: var(--ink); }
+  .lock::before { content: ""; position: absolute; left: 6px; top: -17px; width: 16px; height: 18px; border: 5px solid var(--ink); border-bottom: none; border-radius: 12px 12px 0 0; }
+  .dim { position: absolute; inset: 0; background: rgba(0,0,0,.55); }
+  .tape { position: absolute; left: -200px; width: 1500px; height: 96px; top: 1000px; z-index: 6; background: repeating-linear-gradient(45deg, var(--yellow) 0 50px, #1F1F1F 50px 100px); box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+  .tape b { position: absolute; left: 0; right: 0; top: 14px; text-align: center; }
+  .tape b span { background: var(--yellow); color: #1F1F1F; font-family: PP-Display; font-size: 60px; padding: 0 28px; }
+
+  /* 合并 */
+  .vcard { position: absolute; top: 880px; width: 560px; height: 220px; border-radius: 30px; padding: 30px; font-size: 34px; color: #fff; box-shadow: 0 20px 40px rgba(0,0,0,.35); z-index: 4; }
+  .vcard small { display: block; font-family: PP-Sans; font-size: 28px; opacity: .85; margin-bottom: 16px; }
+  #s7-boom { position: absolute; left: 290px; top: 740px; width: 500px; height: 500px; z-index: 5; opacity: 0; }
+  .spark { position: absolute; width: 18px; height: 60px; border-radius: 9px; background: var(--yellow); left: 530px; top: 960px; z-index: 5; opacity: 0; }
+  .mk { position: absolute; font-size: 40px; color: #FF8A8E; font-weight: 700; z-index: 3; opacity: 0; }
+  .resln { position: absolute; left: 40px; right: 40px; top: 120px; height: 90px; border-radius: 18px; background: rgba(47,158,98,.14); color: #1E7A48; font-size: 38px; font-weight: 700; display: flex; align-items: center; padding: 0 26px; }
+  .stamp { position: absolute; left: 500px; top: 560px; width: 420px; height: 190px; border: 14px solid var(--red); border-radius: 28px; color: var(--red); font-family: PP-Display; font-size: 120px; display: flex; align-items: center; justify-content: center; z-index: 6; background: rgba(255,255,255,.7); opacity: 0; }
+  .ink { position: absolute; border-radius: 50%; background: var(--red); z-index: 5; opacity: 0; }
+
+  /* 渲染、交付 */
+  .strip { position: absolute; left: 0; height: 250px; display: flex; gap: 18px; padding: 20px 18px; background: #111; white-space: nowrap; }
+  .strip::before, .strip::after { content: ""; position: absolute; left: 0; right: 0; height: 14px; background: repeating-linear-gradient(90deg, #fff 0 18px, transparent 18px 40px); opacity: .6; }
+  .strip::before { top: 3px; } .strip::after { bottom: 3px; }
+  .strip div { width: 170px; height: 210px; border-radius: 10px; overflow: hidden; background: var(--paper); flex: none; }
+  .strip img { width: 100%; height: 190%; object-fit: cover; object-position: 50% 0; }
+  .rh { position: absolute; left: 40px; top: 100px; font-size: 44px; font-weight: 700; color: var(--ink); }
+  .rfile { position: absolute; left: 40px; top: 170px; font-size: 32px; color: var(--ink2); }
+  .track { position: absolute; left: 40px; right: 40px; top: 240px; height: 40px; border-radius: 20px; background: #EDE6DB; overflow: hidden; }
+  .fill { width: 100%; height: 100%; border-radius: 20px; background: linear-gradient(90deg, var(--a), var(--yellow) 50%, var(--green)); }
+  .rpct { position: absolute; right: 40px; top: 300px; font-size: 32px; color: var(--ink2); }
+  .rfr { position: absolute; left: 40px; top: 300px; font-size: 28px; color: var(--mute); }
+  .donepill { position: absolute; left: 0; right: 0; top: 1300px; text-align: center; z-index: 7; opacity: 0; }
+  .donepill span { background: var(--green); color: #fff; font-size: 54px; font-weight: 800; padding: 18px 44px; border-radius: 999px; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+
+  /* 尾声 */
+  .stamp2 { position: absolute; left: 640px; top: 420px; border: 10px solid var(--green); color: var(--green); border-radius: 20px; font-family: PP-Display; font-size: 80px; padding: 6px 30px; background: rgba(255,255,255,.7); z-index: 5; opacity: 0; }
+  .cred { padding: 40px 50px; }
+  .cr { display: flex; justify-content: space-between; font-size: 34px; color: var(--ink2); margin-bottom: 26px; }
+  .cr b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script type="module">
+  import { play } from "/styles/persona-pop/kit/page/film.js";
+  import { setCast } from "/styles/persona-pop/kit/page/persona.js";
+  import { scenes } from "./scenes.js";
+  const j = (u) => fetch(u).then((r) => r.json());
+  const [mv, cast, lyrics] = await Promise.all([j("mv.json"), j("cast.json"), j("data/lyrics.json")]);
+  cast.meta = await j(cast.dir + "meta.json").catch(() => ({}));  // key.py 写的全身图比例和位置
+  setCast(cast.images, { dir: cast.dir, ext: cast.ext, meta: cast.meta });  // scenes() 拼 HTML 时就要用到
+  play({ dur: mv.dur, fps: mv.fps, cast, lyrics, parts: scenes(), hud: mv.hud });
+</script>
+</body>
+</html>

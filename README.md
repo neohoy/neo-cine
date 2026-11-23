@@ -11,7 +11,7 @@ Pick a style, bring your story, and let your coding agent direct.<br>
 ⚠️ **Built for Claude Code.** The styles are made and tuned with Claude;<br>
 other agents may not reproduce them well.
 
-🆕 **2026-11-20 · [Style 09: Game Launch](https://neohoy.github.io/neo-cine/)**: a trailer for your own game, made from its gameplay recording, key art and store page. Real gameplay fills the frame, captions sit on plates cut from the game's own UI, the camera pushes in on one real payoff (here a trade counter, 4351 → 14775) on the beat of the game's own score, and the logo lands with where to play it. Demo: a Demo trailer for the indie RPG 《归路：新旅途》, with the developer's permission. Product Launch now has two styles (07, 09). [See them ↓](#the-styles)
+🆕 **2026-11-23 · [Style 10: Persona Pop](https://neohoy.github.io/neo-cine/)**: a new series, **Character Songs**. Two characters drawn as still cut-outs by an image model act out a piece of work in a vertical music video: one interface gag drawn in code per lyric line (a thinking timer, a terminal, a test list turning red then green, a merge conflict), karaoke type that fills on the melody, and the whole frame cutting and bouncing on the beat, with one frozen half-second of silence before the chorus. Demo: *Run It Through*, an unofficial fan film about two AI coding assistants as characters. [See them ↓](#the-styles)
 
 <sub>Official repo: [github.com/neohoy/neo-cine](https://github.com/neohoy/neo-cine) · by NEO造物集 ([@neohoy](https://github.com/neohoy))</sub>
 
@@ -39,6 +39,11 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <td width="33%" valign="top"><a href="styles/isle-film/STYLE.md"><img src="docs/frames/isle-film.jpg" alt="Isle Film"></a><br><b>08 · Isle Film</b><br><sub>Tiny Worlds · <i>Snowfall Peak</i> · 0:36</sub><br>NEO-Isle&#x27;s second isle, Snowfall Peak, filmed by a slow long lens: from a glass cube in deep space through the glass to yaks crossing the snow, an afternoon running into dusk over a stone hut as its window lights, a wait on the frozen lake until glowing fish swim up under the ice and the score drops, and back out to the whole container at night.<br><sub><a href="styles/isle-film/STYLE.md">Style prompt</a> · <a href="styles/isle-film/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/isle-film.mp4">Download 1080p</a></sub></td>
 <td width="33%" valign="top"><a href="styles/game-launch/STYLE.md"><img src="docs/frames/game-launch.jpg" alt="Game Launch"></a><br><b>09 · Game Launch</b><br><sub>Product Launch · <i>One Trade Run</i> · 0:41</sub><br>A Demo trailer for the indie RPG 归路：新旅途, made with its developer&#x27;s permission from the game&#x27;s own footage and art: real gameplay fills the frame, captions sit on plates cut from the game&#x27;s copper-and-iron UI, the camera pushes in until a trade counter reads 4351 → 14775 on the beat of the game&#x27;s own score, and the crew wipes in before the logo lands with where to play it.<br><sub><a href="styles/game-launch/STYLE.md">Style prompt</a> · <a href="styles/game-launch/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/game-launch.mp4">Download 1080p</a></sub></td>
 </tr>
+<tr>
+<td width="33%" valign="top"><a href="styles/persona-pop/STYLE.md"><img src="docs/frames/persona-pop.jpg" alt="Persona Pop"></a><br><b>10 · Persona Pop</b><br><sub>Character Songs · <i>Run It Through</i> · 0:40</sub><br>Two AI characters sing their working day as a duet: Klaude thinks, Kodex runs, the tests go red, the frame freezes for half a second of silence, then twelve checks turn green and they hand over the cut. An unofficial fan film, vertical, one interface gag per lyric line.<br><sub><a href="styles/persona-pop/STYLE.md">Style prompt</a> · <a href="styles/persona-pop/DEMO.md">Demo notes</a> · <a href="https://github.com/neohoy/neo-cine/releases/download/films/persona-pop.mp4">Download 1080p</a></sub></td>
+<td width="33%" valign="top"></td>
+<td width="33%" valign="top"></td>
+</tr>
 </table>
 
 <sub><b>City Skyline</b> (01, 02, 03, 04, 05): Real cities: their maps, networks, streets and buildings, drawn from OpenStreetMap and other open data; the look changes from style to style.</sub>
@@ -48,6 +53,8 @@ One frame and one line for each style. Click a frame for its `STYLE.md`, and wat
 <sub><b>Product Launch</b> (07, 09): Promo films made from a real product interface: the site's pages frozen into the film as they are, real components lifted, pushed in on and labelled, every fact on screen found on the page.</sub>
 
 <sub><b>Tiny Worlds</b> (08): Films of the miniature worlds NEO-Isle builds in glass: a slow long lens moves through the glass, a whole day passes, and waits for the one quiet wonder.</sub>
+
+<sub><b>Character Songs</b> (10): Music videos acted by drawn characters: still cut-outs made with an image model, one interface gag drawn in code per lyric line, karaoke type on screen, the whole frame cutting, changing colour and bouncing on the beat.</sub>
 <!-- styles:end -->
 
 ## 👋 About

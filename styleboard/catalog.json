@@ -151,5 +151,22 @@
    "A series trailer: several isles, or one isle in several containers, joined by a change of glass"
   ],
   "dur": 36.5
+ },
+ {
+  "slug": "persona-pop",
+  "num": "10",
+  "en": "Persona Pop",
+  "cn": "拟人 MV",
+  "cat": "角色歌",
+  "cat_en": "Character Songs",
+  "film": "Run It Through",
+  "line": "Two AI characters sing their working day as a duet: Klaude thinks, Kodex runs, the tests go red, the frame freezes for half a second of silence, then twelve checks turn green and they hand over the cut. An unofficial fan film, vertical, one interface gag per lyric line.",
+  "line_cn": "两个 AI 角色把一天的活唱成二重唱：小克（Claude 娘）想得多，扣扣（Codex 娘）跑得快，测试红了一片，画面冻住半秒、一片安静，然后十二个全变绿，一起交出样片。非官方同人，竖屏，一句歌词一个界面梗。",
+  "uses": [
+   "A song for an AI product, a mascot or a team: two characters act out the work, one interface gag per lyric line",
+   "A release note, weekly report or onboarding guide sung as a duet",
+   "A vertical fan MV for your own song, with characters drawn by an image model"
+  ],
+  "dur": 40
  }
 ]

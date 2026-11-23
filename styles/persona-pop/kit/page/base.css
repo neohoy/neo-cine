@@ -1,0 +1,55 @@
+/* 拟人 MV 的公共样式（STYLE.md §2–§4）。工程的 index.html 先引入它，再写自己的场景样式。
+   字体由工程提供三个族名：PP-Display（大字、歌词、名牌）、PP-Sans（界面小字）、PP-Mono（终端、代码）。
+   规矩：被 tween.js 动的元素不写 CSS transform（会被覆盖）；要倾斜的用补间里的 rotation。 */
+:root {
+  --paper: #F4EFE6; --ink: #2B2622; --ink2: #4A423B; --mute: #B3A99B;
+  --a: #D97757; --b: #148F65; --b-chip: #1F1F1F; --b-glow: #7CF5C4;
+  --red: #E5484D; --green: #2F9E62; --yellow: #F2C14E; --blue: #4C6FFF; --navy: #1E2547;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: PP-Sans, sans-serif; color: var(--ink); }
+.part { position: absolute; inset: 0; }
+.shot { position: absolute; inset: 0; overflow: hidden; }
+.shot::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(43,38,34,.08) 2.2px, transparent 2.6px); background-size: 44px 44px; }
+.cam { position: absolute; inset: 0; transform-origin: 50% 55%; }
+
+/* 角色：外层定位，body 从脚底压缩，每张姿势图叠在同一格里 */
+.char { position: absolute; }
+.body { position: absolute; inset: 0; display: grid; place-items: end center; transform-origin: 50% 100%; }
+.pose { grid-area: 1 / 1; height: 100%; width: auto; transform-origin: 50% 100%; }
+
+/* 假界面：白卡、标题栏、名牌、头像 */
+.card { position: absolute; background: #fff; border-radius: 36px; box-shadow: 0 22px 60px rgba(30,20,10,.22), 0 2px 0 rgba(0,0,0,.03); overflow: hidden; }
+.card .bar { height: 76px; display: flex; align-items: center; gap: 12px; padding: 0 30px; font-size: 30px; color: var(--ink2); border-bottom: 2px solid #F0EAE0; }
+.card .bar .back { font-size: 54px; margin-right: 6px; } .card .bar .more { margin-left: auto; letter-spacing: 2px; }
+.dot { width: 20px; height: 20px; border-radius: 50%; display: inline-block; }
+.chip { display: inline-block; font-size: 30px; font-weight: 700; padding: 6px 20px; border-radius: 999px; }
+.chip.a { background: var(--a); color: #fff; } .chip.b { background: var(--b-chip); color: var(--b-glow); }
+.chip.duet { background: linear-gradient(90deg, var(--a) 50%, var(--b-chip) 50%); color: #fff; }
+.mono { font-family: PP-Mono, PP-Sans, monospace; }
+
+/* 装饰 */
+.rays { position: absolute; left: -460px; top: -40px; width: 2000px; height: 2000px; border-radius: 50%; }
+.streaks { position: absolute; inset: 0; } .streaks i { position: absolute; border-radius: 99px; }
+.emo { position: absolute; padding: 10px 26px; border-radius: 999px; font-weight: 800; z-index: 8; box-shadow: 0 8px 20px rgba(0,0,0,.18); white-space: nowrap; }
+.spk { position: absolute; z-index: 7; opacity: 0; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
+.flash { position: absolute; inset: 0; opacity: 0; z-index: 20; pointer-events: none; }
+.impact { position: absolute; inset: 0; opacity: 0; z-index: 19; background: #fff; overflow: hidden; }
+
+/* 歌词：常驻行（左上，整句一直在）和居中大字（闪卡） */
+.ly-line { position: absolute; left: 80px; top: 215px; opacity: 0; transform-origin: 0 0; }
+.ly-row { position: absolute; left: 0; white-space: nowrap; }
+.ly-row .chip { margin-bottom: 8px; }
+.ly-txt { font-family: PP-Display; font-size: 108px; line-height: 1.08; white-space: nowrap; }
+.ly-c { display: inline-block; color: #C9BEAF; transform-origin: 50% 80%; -webkit-text-stroke: 12px #fff; paint-order: stroke fill; }
+.ly-big { position: absolute; left: 40px; right: 40px; top: 420px; text-align: center; opacity: 0; }
+.ly-bt { font-family: PP-Display; line-height: 1.05; white-space: nowrap; }
+.ly-w { display: inline-block; -webkit-text-stroke: 18px #fff; paint-order: stroke fill; transform-origin: 50% 70%; }
+
+/* 进度 HUD */
+#hud-box { position: absolute; right: 40px; top: 178px; width: 230px; padding: 12px 16px; border-radius: 18px; background: rgba(31,31,31,.82); color: #fff; font-size: 26px; font-weight: 700; }
+#hud-box .tr { margin-top: 8px; height: 12px; border-radius: 6px; background: rgba(255,255,255,.2); overflow: hidden; }
+#hud-fill { height: 100%; width: 100%; background: linear-gradient(90deg, var(--a), var(--b-glow)); transform-origin: 0 50%; }
+#hud-n { float: right; font-family: PP-Mono, monospace; color: var(--b-glow); }

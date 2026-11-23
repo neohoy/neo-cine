@@ -32,3 +32,9 @@ Users may name a style in English, in Chinese, or by its folder. Find it here, t
 | Style | 风格 | Folder | Our demo |
 |---|---|---|---|
 | Isle Film | 方寸影像 | [`isle-film`](isle-film/STYLE.md) | *Snowfall Peak* |
+
+## Character Songs · 角色歌
+
+| Style | 风格 | Folder | Our demo |
+|---|---|---|---|
+| Persona Pop | 拟人 MV | [`persona-pop`](persona-pop/STYLE.md) | *Run It Through* |

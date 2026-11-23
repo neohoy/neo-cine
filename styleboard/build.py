@@ -15,8 +15,8 @@ BLOB_URL = f'https://github.com/{REPO}/blob/main'
 
 # The categories, in gallery order: NEO-Cine's own series first (City Skyline: real cities, maps and networks drawn from open data, see
 # neo/geo/; Frame by Frame: hand-drawn frame-by-frame animation; Product Launch: promo films from a real product interface;
-# Tiny Worlds: films of NEO-Isle's miniature worlds), then upstream's, plus Real Maps and Transport (styles on hold use them). A style.json must name one of them (both languages, exactly).
-CATEGORIES = [('城市天际线', 'City Skyline'), ('定格画', 'Frame by Frame'), ('产品发布', 'Product Launch'), ('方寸之境', 'Tiny Worlds'), ('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
+# Tiny Worlds: films of NEO-Isle's miniature worlds; Character Songs: music videos acted by drawn characters), then upstream's, plus Real Maps and Transport (styles on hold use them). A style.json must name one of them (both languages, exactly).
+CATEGORIES = [('城市天际线', 'City Skyline'), ('定格画', 'Frame by Frame'), ('产品发布', 'Product Launch'), ('方寸之境', 'Tiny Worlds'), ('角色歌', 'Character Songs'), ('剪辑与纪实', 'Edit & Documentary'), ('实证影像', 'Evidence Films'), ('真实地图', 'Real Maps'), ('交通', 'Transport'), ('手绘与绘画', 'Hand-drawn & Painting'), ('东方传统', 'East Asian Traditions'), ('印刷与版画', 'Print & Printmaking'),
               ('图形与排版', 'Graphic & Type'), ('信息与发布', 'Information & Keynote'), ('卡通与动画', 'Cartoon & Anime'),
               ('游戏', 'Games'), ('电影与时代', 'Cinema & Eras'), ('材质与 3D', 'Materials & 3D')]
 # A note under a category's heading, in the gallery and in both READMEs: (Chinese, English).
@@ -28,6 +28,8 @@ CAT_NOTES = {'城市天际线': ('画真实的城市：地图、线网、街区�
                       'Promo films made from a real product interface: the site\'s pages frozen into the film as they are, real components lifted, pushed in on and labelled, every fact on screen found on the page.'),
              '方寸之境': ('把 NEO-Isle 造出来的玻璃容器里的微缩世界拍成片：一台很慢的长焦镜头穿过玻璃，一天的时辰流过去，等那件奇事出现。',
                       'Films of the miniature worlds NEO-Isle builds in glass: a slow long lens moves through the glass, a whole day passes, and waits for the one quiet wonder.'),
+             '角色歌': ('由画出来的角色演的音乐视频：角色是图像模型生成的静态抠图，一句歌词一个用代码画的界面梗，歌词是卡拉 OK 大字，整屏卡着拍子切、换色、弹跳。',
+                     'Music videos acted by drawn characters: still cut-outs made with an image model, one interface gag drawn in code per lyric line, karaoke type on screen, the whole frame cutting, changing colour and bouncing on the beat.'),
              '真实地图': ('基于 OpenStreetMap（今天的地面）和 OpenHistoricalMap（历年的边界、铁路、路线）的系列：地图是真的，画法每个风格各不相同。',
                       'A series built on OpenStreetMap (the ground as it is today) and OpenHistoricalMap (borders, railways and routes by year): the map is real, the look changes from style to style.'),
              '交通': ('真实的公共交通线网：线路取自 OpenStreetMap，开通日期和里程查运营方和政府的公开来源。',
@@ -76,6 +78,12 @@ def load_styles(refresh_dur):
     return out
 
 
+# 800×450 for any film: a 16:9 film fills it as before; a vertical one (Persona Pop) stands in the middle, full height,
+# over a blurred, darkened copy of the same frame, instead of being squashed.
+FRAME_VF = ('split[a][b];[a]scale=800:450:force_original_aspect_ratio=increase,crop=800:450,boxblur=24:2,eq=brightness=-0.06[bg];'
+            '[b]scale=-2:450[fg];[bg][fg]overlay=(W-w)/2:0')
+
+
 def grab_frames(styles, slugs):
     """docs/frames/<slug>.jpg for the README grid: one frame of the film at the style's frame_sec."""
     by = {s['slug']: s for s in styles}
@@ -83,7 +91,7 @@ def grab_frames(styles, slugs):
     for slug in slugs:
         s = by.get(slug) or exit(f'no style "{slug}"')
         mp4 = os.path.join(ROOT, 'styles', slug, slug + '.mp4')
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(s['frame_sec']), '-i', mp4, '-frames:v', '1', '-vf', 'scale=800:450', '-q:v', '3',
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(s['frame_sec']), '-i', mp4, '-frames:v', '1', '-vf', FRAME_VF, '-q:v', '3',
                         os.path.join(ROOT, 'docs', 'frames', slug + '.jpg')], check=True)
         print(f'docs/frames/{slug}.jpg ← {slug}.mp4 @ {s["frame_sec"]}s')
 

@@ -1,0 +1,217 @@
+{
+ "dir": "assets/chars/",
+ "ext": ".webp",
+ "who": {
+  "klaude": {
+   "name": "小克",
+   "color": "#D97757",
+   "chip": "a",
+   "look": "小克（Claude 娘），原创角色，约 17 岁的少女。及腰长发，暖陶土橙色（#D97757）带自然卷，左侧别一枚奶白色八角星形发夹。奶油白粗针织开衫，里面白衬衫配陶土橙小领结，陶土橙百褶短裙，白色长袜，棕色小皮鞋，胸前一张白色工牌。常拿一本棕色皮面笔记本和铅笔。性格温柔、想得多。"
+  },
+  "kodex": {
+   "name": "扣扣",
+   "color": "#148F65",
+   "chip": "b",
+   "look": "扣扣（Codex 娘），原创角色，约 17 岁的少女。齐下巴黑色短发，左侧一缕白色挑染，头戴白色头戴式耳机，眼睛冷灰色。宽大的黑色连帽卫衣，胸前白色印字 >_，袖口卷起，深灰工装短裤，黑白高帮帆布鞋。常抱一台银色笔记本电脑。性格急、行动派。"
+  },
+  "duet": {
+   "name": "合唱",
+   "color": "#2B2622",
+   "chip": "duet"
+  }
+ },
+ "style": "干净的日系二次元插画，赛璐璐上色，线条清晰，色彩明亮柔和。{bg}参考图只用来对角色（脸、发型、饰品、服装、配色、画风、头身比例都不能变），构图按这一张的要求来。",
+ "bg": "magenta",
+ "make": [
+  {
+   "name": "klaude-base",
+   "ref": [],
+   "prompt": "全身立绘，竖版，头顶和鞋底都留白，人物居中。正面站立、微笑、双手抱着笔记本。"
+  },
+  {
+   "name": "klaude-think",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "全身立绘。歪头思考，右手食指抵着下巴，眼睛往上看，左手抱着笔记本，嘴巴抿成小波浪。"
+  },
+  {
+   "name": "klaude-write",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "全身立绘。低头专心在笔记本上用铅笔写字，表情认真，嘴角带一点笑。"
+  },
+  {
+   "name": "klaude-panic",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "全身立绘。慌张，双手捂着脸颊，眼睛睁大成圆圈状，额头一滴汗，身体往后缩。"
+  },
+  {
+   "name": "klaude-cheer",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "全身立绘。开心跳起来，双臂高举过头，双脚离地，笔记本夹在腋下，眼睛笑成弯月，嘴巴张大欢呼，头发和裙摆向上飘。",
+   "lift": 0.17
+  },
+  {
+   "name": "klaude-peace",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "全身立绘。面向镜头比耶，右手 V 字放在眼睛旁边，眨一只眼，笑容灿烂，左手叉腰。"
+  },
+  {
+   "name": "klaude-cu-think",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "胸部以上的半身特写，头部占画面上半部、脸大而清晰，画面下边缘切在胸口。歪头，食指抵下巴，眼睛往上看，若有所思。"
+  },
+  {
+   "name": "klaude-cu-panic",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "胸部以上的半身特写。双手捂脸颊，眼睛睁圆，额头一滴汗，嘴巴张成小 o 形。"
+  },
+  {
+   "name": "klaude-cu-wink",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "胸部以上的半身特写。眨一只眼，脸旁比 V 字，笑得很甜。"
+  },
+  {
+   "name": "kodex-base",
+   "ref": [
+    "klaude-base"
+   ],
+   "prompt": "这一张画扣扣（不是参考图里的小克），只沿用参考图的画风、线条和头身比例。全身立绘，正面站立，双臂抱胸，自信的坏笑。"
+  },
+  {
+   "name": "kodex-type",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "全身立绘。一只手托着打开的银色笔记本电脑，另一只手在键盘上飞快打字，身体前倾，表情兴奋，眼睛发亮。"
+  },
+  {
+   "name": "kodex-point",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "全身立绘。身体前倾，右手食指直指镜头（透视放大），左手叉腰，自信大笑。"
+  },
+  {
+   "name": "kodex-panic",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "全身立绘。抱头慌张，耳机歪到一边，眼睛变成漩涡，嘴巴张开呈波浪形，额头冒汗。"
+  },
+  {
+   "name": "kodex-cheer",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "全身立绘。跳起来单手握拳高举，另一只手抱着笔记本电脑，双脚离地，大笑。",
+   "lift": 0.13
+  },
+  {
+   "name": "kodex-peace",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "全身立绘。面向镜头双手比耶，吐一点舌头，俏皮表情。"
+  },
+  {
+   "name": "kodex-cu-grin",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "胸部以上的半身特写，头部占画面上半部、脸大而清晰，画面下边缘切在胸口。自信坏笑，眉毛一挑，眼睛直视镜头。"
+  },
+  {
+   "name": "kodex-cu-panic",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "胸部以上的半身特写。抱头，耳机歪掉，眼睛变成漩涡，嘴巴波浪形，冒汗。"
+  },
+  {
+   "name": "kodex-cu-hype",
+   "ref": [
+    "kodex-base"
+   ],
+   "prompt": "胸部以上的半身特写。兴奋大笑，眼睛发亮，一只手握拳举在脸旁。"
+  },
+  {
+   "name": "klaude-cu-think-mouth",
+   "ref": [
+    "klaude-cu-think"
+   ],
+   "bg": "transparent",
+   "grid": [
+    2,
+    2
+   ],
+   "cells": [
+    "klaude-cu-think-m",
+    "klaude-cu-think-a",
+    "klaude-cu-think-o",
+    "klaude-cu-think-b"
+   ],
+   "prompt": "四格是同一张近景，照参考图原样画：姿势、手、头的角度、视线方向、头发、衣服、裁切都和参考图一样，四格之间只改嘴和眼睛：1 嘴闭着（和参考图一样的表情）；2 嘴张大唱\"啊\"；3 嘴圆圆的唱\"哦\"；4 和第 1 格一样但眼睛闭上（眨眼）。"
+  },
+  {
+   "name": "kodex-cu-hype-mouth",
+   "ref": [
+    "kodex-cu-hype"
+   ],
+   "bg": "transparent",
+   "grid": [
+    2,
+    2
+   ],
+   "cells": [
+    "kodex-cu-hype-m",
+    "kodex-cu-hype-a",
+    "kodex-cu-hype-o",
+    "kodex-cu-hype-b"
+   ],
+   "prompt": "四格是同一张近景，照参考图原样画：姿势、手、头的角度、视线方向、头发、衣服、裁切都和参考图一样，四格之间只改嘴和眼睛：1 嘴闭着（和参考图一样的表情）；2 嘴张大唱\"啊\"；3 嘴圆圆的唱\"哦\"；4 和第 1 格一样但眼睛闭上（眨眼）。"
+  }
+ ],
+ "images": [
+  "klaude-base",
+  "klaude-think",
+  "klaude-write",
+  "klaude-panic",
+  "klaude-cheer",
+  "klaude-peace",
+  "klaude-cu-think",
+  "klaude-cu-panic",
+  "klaude-cu-wink",
+  "kodex-base",
+  "kodex-type",
+  "kodex-point",
+  "kodex-panic",
+  "kodex-cheer",
+  "kodex-peace",
+  "kodex-cu-grin",
+  "kodex-cu-panic",
+  "kodex-cu-hype",
+  "klaude-cu-think-m",
+  "klaude-cu-think-a",
+  "klaude-cu-think-o",
+  "klaude-cu-think-b",
+  "kodex-cu-hype-m",
+  "kodex-cu-hype-a",
+  "kodex-cu-hype-o",
+  "kodex-cu-hype-b"
+ ]
+}
