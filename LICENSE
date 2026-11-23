@@ -23,7 +23,7 @@ SOFTWARE.
 ---
 
 Parts of this repository come from Lemo-Opuscar (https://github.com/lemomo-ai/lemo-opuscar),
-Copyright (c) 2026 LemoLab, MIT License: the whole of core/, tools/fetch.sh, tools/assets.json,
+Copyright (c) 2026 SecondFirst Pty Ltd, trading as LemoLab, MIT License: the whole of core/, tools/fetch.sh, tools/assets.json,
 package.json, package-lock.json and the requirements files are unmodified copies; the guides,
 the skill's setup script and styles/_template/ are adapted from it. The full text of that
 licence is in LICENSES/lemo-opuscar-MIT.txt, and UPSTREAM.md lists every file and the commit.

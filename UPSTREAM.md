@@ -2,9 +2,9 @@
 
 *中文版：[UPSTREAM.zh-CN.md](UPSTREAM.zh-CN.md)*
 
-NEO-Cine is built on the framework of [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) (MIT, © 2026 LemoLab): its page contract, its production tools, its style-folder format and its way of directing a film with guides instead of parameters. The styles are NEO's own, made one by one; one of them, Transit Map, is adapted from an upstream style (below).
+NEO-Cine is built on the framework of [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) (code MIT, © 2026 SecondFirst Pty Ltd, trading as LemoLab; see Licences below): its page contract, its production tools, its style-folder format and its way of directing a film with guides instead of parameters. The styles are NEO's own, made one by one; one of them, Transit Map, is adapted from an upstream style (below).
 
-Upstream commit: `9eb7739a0fca4c6990fe966cb8b87b1930f7193a` (2026-11-10)
+Upstream commit: `8ca0dd805e214bcc1d30714cd5b9d21cc02a454b` (2026-11-23)
 
 ## What is mirrored (never edit these here)
 
@@ -12,12 +12,12 @@ Unmodified copies of the upstream files at that commit. `sh tools/sync-upstream.
 
 | Path | What it is |
 |---|---|
-| `core/` | the production tools: page contract, rendering, mux, reading check, sfx, sampler, TTS |
+| `core/` | the production tools: page contract, rendering, mux, reading check, sfx, sampler, TTS, image generation through the Codex CLI (`core/image/gen_image.py`) |
 | `package.json`, `package-lock.json` | Node packages the tools need (the package name stays upstream's) |
 | `requirements.txt`, `requirements-voice.txt`, `requirements-music.txt` | Python package tiers |
 | `tools/fetch.sh`, `tools/assets.json` | fetches big assets (instrument libraries, voice models) from upstream's releases |
-| `styleboard/frames.sh`, `tools/web_cuts.sh`, `.github/workflows/pages.yml` | the gallery's helpers: the card frame of a style, the 720p web cuts, the GitHub Pages build |
-| `LICENSES/lemo-opuscar-MIT.txt` | upstream's `LICENSE` |
+| `styleboard/frames.sh`, `tools/web_cuts.sh` | the gallery's helpers: the card frame of a style, the 720p web cuts |
+| `LICENSES/lemo-opuscar-MIT.txt` | upstream's MIT text, with its copyright line (not mirrored: since 2.0.0 upstream's `LICENSE` is a guide to several licences; see Licences) |
 
 Because `core/` is unmodified, the names inside it stay upstream's: `LEMO_ANGLE`, `LEMO_COLOR` and the other `LEMO_*` environment variables, and the marker files `.lemo-ok`, `.lemo-<tier>` and `.lemo-deps.lock`. NEO's own tools go in `neo/`.
 
@@ -32,6 +32,7 @@ Same structure, headings and numbering as the upstream file, so a later upstream
 | `styles/_template/` | `styles/_template/` | the end-card sentence |
 | `styleboard/build.py`, `styleboard/template.html` | the same files upstream | repository and site addresses; upstream's feature film, stylebook and thank-you pages removed; no feature above the grid and no category tabs: the gallery and both README grids show every style once, in the order of its number; the page's look is NEO-Cine's own; the Chinese README grid links `STYLE.zh-CN.md`; the style list is also written to `AGENTS.zh-CN.md` |
 | `styles/transit-map/` | upstream's `styles/transit-map/` (MIT notice kept in each adapted file) | a new demo (Guangzhou Metro from OpenStreetMap, net.js made by `tools/prep.py`: octilinear solve on the skeleton, pinned core, every river crossing checked against the real track); bolder lines (0.15→0.22 G, rounder corners, a terminus bar that pops); line growth eased stop by stop with a lead line and a springy overshoot at each corner (`snap` event); interchanges spring in (0.25→1.3→1) and pop again when a later line passes; illustrative trains on every open section (`service()`), ink capsules that ease into stations and dwell, stations nudge when one stops; a quieter paper and lighter vignette; water drawn as one sheet at confluences; the last stop of a ring now taken at the path's end (upstream's ring could not draw); hooks extended (`roundelPos` as a function, `highlight` gets drawSpan and PH, `trains`); new events pass, snap, term; the enamel plaque with rollers replaced by a light paper card (sliding digits, a dated source per value); fewer, camera-chosen labels; the score synthesized through `neo/audio` (a timbre per line, a pentatonic note per station) instead of sampled orchestral layers; 24 fps; versioned `build.sh` |
+| `.github/workflows/pages.yml` | the same file upstream, at 9eb7739 | kept at that version: from 2.0.0 upstream's workflow builds its new site (`styleboard/pages.py`, a `site-media` release, a films repository, `check_site.py`), which this gallery does not have |
 | `neo/publish.sh` | `tools/publish.sh`, `tools/release.py` | uploads films and web cuts only: upstream's also repack its asset packs and rewrite `tools/assets.json`, a mirrored file here |
 
 `styleboard/index.html`, `styleboard/catalog.json`, `styles/README.md`, the style grids in the two READMEs and the style lists in `AGENTS.md` and `AGENTS.zh-CN.md` are generated by `styleboard/build.py`.
@@ -40,7 +41,17 @@ Every adapted document has a Chinese translation next to it (`X.zh-CN.md`). Engl
 
 ## What is not taken
 
-Upstream's other styles and their demo films, its feature film, stylebook and thank-you films with their pages, its README artwork in `docs/`, the release checker and asset packer (`tools/release.py`, `tools/publish.sh`) and the directory tooling. To study a technique that NEO-Cine has no demo for yet (brush engines, characters, voice, sampled scores), read it in the upstream library.
+Upstream's other styles and their demo films, its feature film, stylebook and thank-you films with their pages, its README artwork in `docs/`, its 2.0.0 site (`styleboard/pages.py`, `home.py`, `check_site.py`, the `site-media` release and the films repository), the release checker and asset packer (`tools/release.py`, `tools/publish.sh`) and the directory tooling. To study a technique that NEO-Cine has no demo for yet (brush engines, characters, voice, sampled scores), read it in the upstream library.
+
+## Licences
+
+From 2.0.0 (2026-11-12) upstream licenses its parts separately: code (`core/`, `tools/`, `styleboard/`, `plugin/`, each demo's code) under MIT; every Markdown file (the guides, each style's `STYLE.md` and `DEMO.md`) and the image-generation prompts under CC BY-NC 4.0; its films and stills under CC BY 4.0. Clawd, and third-party interfaces, names and logos (Claude, GPT, …), are licensed by no one there. Versions published before 2.0.0 keep the licence they were published under.
+
+NEO-Cine is MIT. So:
+
+- **Code** is mirrored or adapted as before, with the MIT notice.
+- **Our adapted guides** come from upstream's guides at 9eb7739 (before 2.0.0, MIT) and stay MIT. A change upstream made to its guides after 2.0.0 is not copied, whole or in part: if the idea is worth having, write it in our own words, in our own structure. The same holds for its `STYLE.md` and `DEMO.md` files and its prompts.
+- **Characters and marks**: a NEO-Cine demo that names a real product (for example Persona Pop's Claude and Codex characters) is an unofficial fan film, says so in its `DEMO.md` and `CREDITS`, and draws no official logo or interface.
 
 ## Compatibility
 

@@ -15,9 +15,9 @@
 set -e
 UPSTREAM_URL=https://github.com/lemomo-ai/lemo-opuscar.git
 # Unmodified copies of upstream files
-MIRROR="core package.json package-lock.json requirements.txt requirements-voice.txt requirements-music.txt tools/fetch.sh tools/assets.json styleboard/frames.sh tools/web_cuts.sh .github/workflows/pages.yml"
+MIRROR="core package.json package-lock.json requirements.txt requirements-voice.txt requirements-music.txt tools/fetch.sh tools/assets.json styleboard/frames.sh tools/web_cuts.sh"
 # Upstream files that ours are adapted from (ours live under different names where the brand is in the path)
-ADAPTED="AGENTS.md DIRECTOR.md TECHNIQUE.md MY-STYLES.md MAINTAINING.md plugin/skills/lemo-opuscar styles/_template LICENSE styleboard/build.py styleboard/template.html tools/publish.sh tools/release.py"
+ADAPTED="AGENTS.md DIRECTOR.md TECHNIQUE.md MY-STYLES.md MAINTAINING.md plugin/skills/lemo-opuscar styles/_template LICENSE styleboard/build.py styleboard/template.html .github/workflows/pages.yml tools/publish.sh tools/release.py"
 
 R=$(cd "$(dirname "$0")/.." && pwd -P); cd "$R"
 APPLY=""; UP=""
@@ -77,7 +77,9 @@ if [ -z "$APPLY" ]; then echo; echo "report only. To copy the mirrored files: ad
 git -C "$UP" archive "$NEW" $MIRROR | tar -x -C "$R"
 # shellcheck disable=SC2086
 git -C "$UP" diff --name-only --diff-filter=D "$OLD" "$NEW" -- $MIRROR | while IFS= read -r f; do rm -f "$R/$f" && echo "  removed (deleted upstream): $f"; done
-git -C "$UP" show "$NEW:LICENSE" > "$R/LICENSES/lemo-opuscar-MIT.txt"
+# Since upstream 2.0.0 its LICENSE is a guide to several licences (code MIT, docs CC BY-NC 4.0), not the MIT text: our
+# LICENSES/lemo-opuscar-MIT.txt keeps the MIT text with the copyright line; a change upstream is reviewed by hand.
+git -C "$UP" diff --quiet "$OLD" "$NEW" -- LICENSE LICENSES/MIT.txt || echo "  note: upstream LICENSE or LICENSES/MIT.txt changed: review by hand (UPSTREAM.md, Licences)"
 D=$(git -C "$UP" log -1 --format=%cd --date=short "$NEW")
 sed -i.bak "s/^Upstream commit: \`[0-9a-f]\{40\}\`.*/Upstream commit: \`$NEW\` ($D)/" UPSTREAM.md UPSTREAM.zh-CN.md && rm -f UPSTREAM.md.bak UPSTREAM.zh-CN.md.bak
 echo "✓ mirror copied; UPSTREAM.md now records $NEW"
